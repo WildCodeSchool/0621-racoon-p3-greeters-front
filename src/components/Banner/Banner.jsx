@@ -7,13 +7,18 @@ import './Banner.css'
 import BannerCard from "../BannerCard/BannerCard";
 
 const Banner = () => {
+
   return ( 
     <div>
+      
       <AliceCarousel autoPlay autoPlayInterval="3500">
-      <BannerCard />
+      {City.map((d) =>
+      <BannerCard {...d} />
+       )}
       </AliceCarousel>
+      
     </div>
-   );
-}
+   )
+};
  
 export default Banner;
