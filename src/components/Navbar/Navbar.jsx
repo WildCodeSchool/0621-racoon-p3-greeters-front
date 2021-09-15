@@ -2,8 +2,27 @@ import './Navbar.css'
 import logo from '../../assets/greeters-logo-red.PNG'
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
+import Swal from 'sweetalert2'
 
 const Navbar = () => {
+  /***** Language selection */
+  const [language, setLanguage] = useState('fr')
+
+  const handleLanguage = choice => {
+    setLanguage(choice)
+    language === 'fr'
+      ? Swal.fire('Language changed to English')
+      : Swal.fire('Langue changée en français')
+  }
+
+  /***** Search bar */
+  const [searchBar, setSearchBar] = useState(false)
+
+  const handleSearchBar = () => {
+    setSearchBar(!searchBar)
+  }
+
+  /***** Menu */
   const [showMenu, setShowMenu] = useState(false)
 
   const handleShowMenu = () => {
@@ -15,9 +34,18 @@ const Navbar = () => {
       {/* Fixed Menu */}
       <div className='nav-close'>
         <div className='nav-element'>
-          <span className='nav-menu-button' onClick={() => handleShowMenu()}>
-            &#9776;
-          </span>
+          <div
+            className={
+              showMenu
+                ? 'toggle-button toHide-button'
+                : 'toggle-button toShow-button'
+            }
+            onClick={() => handleShowMenu()}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
 
         <div className='nav-element logo-element'>
@@ -28,10 +56,13 @@ const Navbar = () => {
 
         <div className='nav-element'>
           <div className='nav-sub-element'>
-            <button>&#128270;</button>
-            <select>
-              <option>FR</option>
-              <option>EN</option>
+            <button onClick={handleSearchBar}>&#128270;</button>
+            <select
+              className='language-button'
+              onChange={e => handleLanguage(e.target.value)}
+            >
+              <option value='fr'>🇫🇷</option>
+              <option value='en'>🇬🇧</option>
             </select>
           </div>
         </div>
@@ -39,7 +70,9 @@ const Navbar = () => {
 
       {/* Dynamic Menu */}
 
-      <div className={showMenu ? 'nav-open toShow' : 'nav-open toHide'}>
+      <div
+        className={showMenu ? 'nav-open toShow-menu' : 'nav-open toHide-menu'}
+      >
         <NavLink to='/greeters'>
           <h3>Qu'est ce qu'un greeter ?</h3>
         </NavLink>

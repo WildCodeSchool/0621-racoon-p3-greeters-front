@@ -19,8 +19,57 @@
   font-size: 3rem;
 }
 
+.Navbar .toggle-button {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+
+.Navbar .toggle-button span{
+  position: absolute;
+  width: 50px;
+  height: 6px;
+  background-color: rgb(75, 75, 75);
+  display: block;
+  margin-top: 4px;
+  transition: 0.5s ease;
+}
+
+.Navbar span:nth-child(1){
+  top: 0px;
+}
+
+.Navbar span:nth-child(2){
+  top: 15px;
+}
+
+.Navbar span:nth-child(3){
+  top: 30px;
+}
+
+.Navbar .toHide-button span:nth-child(1){
+  transform: rotate(45deg);
+  top: 15px;
+}
+
+.Navbar .toHide-button span:nth-child(2){
+  opacity: 0;
+}
+
+.Navbar .toHide-button span:nth-child(3){
+  transform: rotate(-45deg);
+  top: 15px;
+}
+
 .Navbar .nav-element .nav-menu-button {
   cursor: pointer;
+  padding: 30px 40px;
+  margin-left: -20px;
 }
 
 .Navbar .logo-element {
@@ -30,6 +79,7 @@
 
 .Navbar .logo-element img {
   width: 100%;
+  margin-top: 10px;
 }
 
 .Navbar .nav-sub-element {
@@ -40,15 +90,26 @@
   cursor: pointer;
   margin: 10px;
   height: 45px;
-  width: 45px;
+  /* width: 45px; */
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
 }
 
 /**** Navbar dynamic open ****/
-.toShow {
+.toShow-button {
+  background-color: white;
+}
+
+.toHide-button {
+  /* background-color: #FDF7F0; */
+}
+
+.toShow-menu {
   display: flex;
 }
 
-.toHide {
+.toHide-menu {
   display: none;
 }
 
@@ -56,11 +117,14 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
   width: 100%;
   min-height: 20vh;
   padding: 10px;
-  background-color: #FDF7F0;
+  /* background-color: #FDF7F0; */
+  background-color: #fefefe;
   transition: 0.3s linear;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .Navbar .nav-open a {
@@ -72,4 +136,21 @@
 .Navbar .nav-open a:hover {
   font-size: 1.5rem;
   color: #ff0d0d;
+}
+
+@media screen and (max-width:950px) {
+  .Navbar .nav-open a {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width:700px) {
+  .Navbar .nav-open {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .Navbar .nav-open a:hover {
+    font-size: 1.3rem;
+    color: #ff0d0d;
+  }
 }
