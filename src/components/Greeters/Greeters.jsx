@@ -6,8 +6,8 @@ const Greeters = () => {
   return (
     <div>
       <h2>Greeters</h2>
-      {GreetersData.map(g => (
-        <GreeterCard {...g} />
+      {GreetersData.map((g, index) => (
+        <GreeterCard key={index} {...g} />
       ))}
     </div>
   )

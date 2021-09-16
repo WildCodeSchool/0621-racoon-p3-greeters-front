@@ -1,5 +1,3 @@
-import { City } from '../../data'
-
 import './BannerCard.css'
 
 const BannerCard = props => {

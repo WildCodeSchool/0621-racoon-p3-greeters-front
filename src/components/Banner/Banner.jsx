@@ -10,8 +10,8 @@ const Banner = () => {
   return (
     <div>
       <AliceCarousel autoPlay autoPlayInterval='3500'>
-        {City.map(d => (
-          <BannerCard {...d} />
+        {City.map((d, index) => (
+          <BannerCard key={index} {...d} />
         ))}
       </AliceCarousel>
     </div>
