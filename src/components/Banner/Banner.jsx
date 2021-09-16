@@ -4,16 +4,29 @@ import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 
 import './Banner.css'
-import BannerCard from '../BannerCard/BannerCard'
 
 const Banner = () => {
+  const handleDragStart = e => e.preventDefault()
+
+  const item = []
+  City.map(d => {
+    let photo = (
+      <div>
+        <img
+          style={{ borderRadius: '25px' }}
+          src={d.city_banner}
+          onDragStart={handleDragStart}
+        />
+        <button className='banner-button'>Réserver Votre Balade</button>
+        <h2 className='banner-text'>Découvrir {d.city_name}</h2>
+      </div>
+    )
+    item.push(photo)
+  })
+
   return (
     <div>
-      <AliceCarousel autoPlay autoPlayInterval='3500'>
-        {City.map((d, index) => (
-          <BannerCard key={index} {...d} />
-        ))}
-      </AliceCarousel>
+      <AliceCarousel mouseTracking items={item} />
     </div>
   )
 }

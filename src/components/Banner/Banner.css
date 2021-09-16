@@ -1,12 +1,18 @@
-.ban-slider-img{
+/* .ban-slider-img{
   width: 100%;
   height: 500px;
-  object-fit: cover
-}
+  object-fit: contain;
+} */
 
-.alice-carousel__prev-btn {
+.alice-carousel__prev-btn, .alice-carousel__next-btn{
   display: none;
 }
+
+/* .alice-carousel_dot {
+  position: relative;
+  bottom: 80%;
+  z-index: 12;
+} */
 
 .alice-carousel__dots-item:not(.__custom):hover, 
 .alice-carousel__dots-item:not(.__custom).__active {
