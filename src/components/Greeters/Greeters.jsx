@@ -9,6 +9,7 @@ const Greeters = () => {
       {GreetersData.map((g, index) => (
         <GreeterCard key={index} {...g} />
       ))}
+      <button>Tout Voir</button>
     </div>
   )
 }

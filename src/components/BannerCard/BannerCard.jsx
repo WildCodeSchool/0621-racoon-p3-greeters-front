@@ -8,6 +8,7 @@ const BannerCard = props => {
         alt={props.city_name}
         className='banner-img'
       />
+      <button>Réserver Votre Balade</button>
       <h2>Découvrir {props.city_name}</h2>
     </div>
   )
