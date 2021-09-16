@@ -15,3 +15,17 @@ export const City = [
     city_photo:"http://www.loirevalleygreeters.com/sites/loirevalleygreeters/files/styles/gallery_lightbox/public/content/images/1508939868-1467020684.jpg?itok=mQ6N2bkN",
   }
 ];
+export const GreetersData = [
+  {
+    greeter_name:"Nicole",
+    greeter_photo:"https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  },
+  {
+    greeter_name:"Jean-Pierre",
+    greeter_photo:"https://images.pexels.com/photos/3824771/pexels-photo-3824771.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+  },
+  {
+    greeter_name:"Claude",
+    greeter_photo:"https://images.pexels.com/photos/3779770/pexels-photo-3779770.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+  },
+];

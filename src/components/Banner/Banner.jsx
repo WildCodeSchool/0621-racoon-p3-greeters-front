@@ -1,24 +1,21 @@
-import { City } from "../../data";
+import { City } from '../../data'
 
-import AliceCarousel from 'react-alice-carousel';
-import "react-alice-carousel/lib/alice-carousel.css";
+import AliceCarousel from 'react-alice-carousel'
+import 'react-alice-carousel/lib/alice-carousel.css'
 
 import './Banner.css'
-import BannerCard from "../BannerCard/BannerCard";
+import BannerCard from '../BannerCard/BannerCard'
 
 const Banner = () => {
-
-  return ( 
+  return (
     <div>
-      
-      <AliceCarousel autoPlay autoPlayInterval="3500">
-      {City.map((d) =>
-      <BannerCard {...d} />
-       )}
+      <AliceCarousel autoPlay autoPlayInterval='3500'>
+        {City.map(d => (
+          <BannerCard {...d} />
+        ))}
       </AliceCarousel>
-      
     </div>
-   )
-};
- 
-export default Banner;
+  )
+}
+
+export default Banner
