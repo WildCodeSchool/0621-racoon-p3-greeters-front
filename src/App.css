@@ -1,3 +1,9 @@
+/*********** CODE COULEUR :
+#ff0d0d
+rgb(255,13,13)
+*/
+
+
 .App {
   text-align: center;
 }
@@ -35,4 +41,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.city{
+  margin-top: 15rem;
 }
