@@ -34,6 +34,11 @@ rgb(255,13,13)
   color: #61dafb;
 }
 
+.map {
+  height: 50vh;
+  width: 50vw;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
