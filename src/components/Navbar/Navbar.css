@@ -11,6 +11,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  height: 15vh;
 }
 
 .Navbar .nav-element {
@@ -73,13 +74,17 @@
 }
 
 .Navbar .logo-element {
+  position: absolute;
   width: 200px;
   cursor: pointer;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
 }
 
 .Navbar .logo-element img {
   width: 100%;
-  margin-top: 10px;
+  border-radius: 0 0 20px 20px ;
 }
 
 .Navbar .nav-sub-element {
