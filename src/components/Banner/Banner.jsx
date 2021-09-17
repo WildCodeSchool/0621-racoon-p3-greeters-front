@@ -13,7 +13,6 @@ const Banner = () => {
     let photo = (
       <div>
         <img
-          style={{ borderRadius: '25px' }}
           src={d.city_banner}
           onDragStart={handleDragStart}
           className='banner-img'

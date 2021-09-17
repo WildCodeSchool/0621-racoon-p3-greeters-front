@@ -106,6 +106,7 @@
 }
 
 .toShow-menu {
+  position: absolute;
   display: flex;
 }
 
@@ -114,6 +115,8 @@
 }
 
 .Navbar .nav-open {
+  margin-top: -10px;
+  z-index: 10000;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;

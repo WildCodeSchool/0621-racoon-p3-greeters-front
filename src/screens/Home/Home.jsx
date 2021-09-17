@@ -6,7 +6,6 @@ import './Home.css'
 const Home = () => {
   return (
     <div>
-      <h1>NavBar</h1>
       <Banner />
       <Greeters />
       <Cities />
