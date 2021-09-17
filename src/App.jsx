@@ -1,109 +1,107 @@
 // import './App.css'
-// import Navbar from './components/Navbar/Navbar'
-// import { BrowserRouter, Switch, Route } from 'react-router-dom'
-// import Map from './components/Map/Map'
+// import L from 'leaflet'
+// import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+// import leafGreen from './assets/map/leaf-green.png'
+// import leafRed from './assets/map/leaf-red.png'
+// import leafOrange from './assets/map/leaf-orange.png'
+// import leafShadow from './assets/map/leaf-shadow.png'
 
-// function App() {
+// const App = () => {
+//   const city = [
+//     {
+//       name: 'Tours',
+//       cordonates: [47.39, 0.68],
+//       orangeIcon: {
+//         lat: 47.39,
+//         lng: 0.68
+//       }
+//     },
+//     {
+//       name: 'Chinon',
+//       cordonates: [47.1, 0.14],
+//       orangeIcon: {
+//         lat: 47.1,
+//         lng: 0.14
+//       }
+//     },
+//     {
+//       name: 'Jouè-lés-Tours',
+//       cordonates: [47.35, 0.66],
+//       orangeIcon: {
+//         lat: 47.35,
+//         lng: 0.66
+//       }
+//     }
+//   ]
+
+//   const greenIcon = L.icon({
+//     iconUrl: leafGreen,
+//     shadowUrl: leafShadow,
+//     iconSize: [38, 95], // size of the icon
+//     shadowSize: [50, 64], // size of the shadow
+//     iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+//     shadowAnchor: [4, 62], // the same for the shadow
+//     popupAnchor: [-3, -76]
+//   })
+
+//   const redIcon = L.icon({
+//     iconUrl: leafRed,
+//     shadowUrl: leafShadow,
+//     iconSize: [38, 95], // size of the icon
+//     shadowSize: [50, 64], // size of the shadow
+//     iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+//     shadowAnchor: [4, 62], // the same for the shadow
+//     popupAnchor: [-3, -86]
+//   })
+
+//   const orangeIcon = L.icon({
+//     iconUrl: leafOrange,
+//     shadowUrl: leafShadow,
+//     iconSize: [38, 95], // size of the icon
+//     shadowSize: [50, 64], // size of the shadow
+//     iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+//     shadowAnchor: [4, 62], // the same for the shadow
+//     popupAnchor: [-3, -86]
+//   })
+
 //   return (
-//     <div className='App'>
-//       <BrowserRouter>
-//         <Navbar />
-//         <Map />
-//       </BrowserRouter>
-//     </div>
+//     <MapContainer className='map' center={city[0].cordonates} zoom={13}>
+//       <TileLayer
+//         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+//         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+//       />
+//       {city.map((element, index) => (
+//         <Marker
+//           key={index}
+//           position={[element.orangeIcon.lat, element.orangeIcon.lng]}
+//           icon={orangeIcon}
+//         >
+//           <Popup>{element.name}</Popup>
+//         </Marker>
+//       ))}
+//     </MapContainer>
 //   )
 // }
 
 // export default App
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import React, { Component } from 'react'
+import Navbar from './components/Navbar/Navbar'
+import Map from './components/Map/Map'
+
 import './App.css'
-import L from 'leaflet'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import leafGreen from './assets/map/leaf-green.png'
-import leafRed from './assets/map/leaf-red.png'
-import leafOrange from './assets/map/leaf-orange.png'
-import leafShadow from './assets/map/leaf-shadow.png'
 
-class App extends Component {
-  state = {
-    greenIcon: {
-      lat: 35.787449,
-      lng: -78.6438197
-    },
-    redIcon: {
-      lat: 35.774416,
-      lng: -78.633271
-    },
-    orangeIcon: {
-      lat: 35.77279,
-      lng: -78.652305
-    },
-    zoom: 13
-  }
-
-  grenIcon = L.icon({
-    iconUrl: leafGreen,
-    shadowUrl: leafShadow,
-    iconSize: [38, 95], // size of the icon
-    shadowSize: [50, 64], // size of the shadow
-    iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62], // the same for the shadow
-    popupAnchor: [-3, -76]
-  })
-
-  redIcon = L.icon({
-    iconUrl: leafRed,
-    shadowUrl: leafShadow,
-    iconSize: [38, 95], // size of the icon
-    shadowSize: [50, 64], // size of the shadow
-    iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62], // the same for the shadow
-    popupAnchor: [-3, -86]
-  })
-
-  orangeIcon = L.icon({
-    iconUrl: leafOrange,
-    shadowUrl: leafShadow,
-    iconSize: [38, 95], // size of the icon
-    shadowSize: [50, 64], // size of the shadow
-    iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62], // the same for the shadow
-    popupAnchor: [-3, -86]
-  })
-
-  render() {
-    const positionRedIcon = [this.state.redIcon.lat, this.state.redIcon.lng]
-    const positionGreenIcon = [
-      this.state.greenIcon.lat,
-      this.state.greenIcon.lng
-    ]
-    const positionOrangeIcon = [
-      this.state.orangeIcon.lat,
-      this.state.orangeIcon.lng
-    ]
-    return (
-      <MapContainer
-        className='map'
-        center={positionGreenIcon}
-        zoom={this.state.zoom}
-      >
-        <TileLayer
-          attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-        />
-        <Marker position={positionGreenIcon} icon={this.grenIcon}>
-          <Popup>I am a green leaf</Popup>
-        </Marker>
-        <Marker position={positionRedIcon} icon={this.redIcon}>
-          <Popup>I am a red leaf</Popup>
-        </Marker>
-        <Marker position={positionOrangeIcon} icon={this.orangeIcon}>
-          <Popup>I am an orange leaf</Popup>
-        </Marker>
-      </MapContainer>
-    )
-  }
+function App() {
+  return (
+    <div className='App'>
+      <BrowserRouter>
+        <Navbar />
+        <Route path='/' exact>
+          <Map />
+        </Route>
+      </BrowserRouter>
+    </div>
+  )
 }
 
 export default App
