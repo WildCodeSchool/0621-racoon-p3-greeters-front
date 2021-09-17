@@ -1,9 +1,17 @@
 import './App.css'
-
-import Home from './screens/Home/Home'
+import Navbar from './components/Navbar/Navbar'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 function App() {
-  return <Home />
+  return (
+    <div className='App'>
+      <BrowserRouter>
+        <Route path='/' exact>
+          <Navbar />
+        </Route>
+      </BrowserRouter>
+    </div>
+  )
 }
 
 export default App
