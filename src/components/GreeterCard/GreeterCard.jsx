@@ -1,3 +1,5 @@
+import './GreeterCard.css'
+
 const GreeterCard = props => {
   return (
     <div className='greeter-card'>
@@ -6,7 +8,7 @@ const GreeterCard = props => {
         alt={props.greeter_name}
         className='greeter-img'
       />
-      <h2>Découvrir {props.greeter_name}</h2>
+      <h2 className='greeter-name'>{props.greeter_name}</h2>
     </div>
   )
 }
