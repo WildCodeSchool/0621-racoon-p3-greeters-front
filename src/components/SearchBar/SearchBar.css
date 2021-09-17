@@ -1,8 +1,11 @@
 .searchBar {
+  height: 0.5rem;
+  margin-right: 1rem;
   position: relative;
-  width: 300px;
+  width: 15vw;
 }
 .searchBar input {
+  
   width: 100%;
   font-size: 1.5rem;
   padding: 0.5rem;

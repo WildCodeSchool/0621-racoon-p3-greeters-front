@@ -22,6 +22,8 @@ const Navbar = () => {
   const handleSearchBar = () => {
     setSearchBar(!searchBar)
   }
+  /***** Search value */
+  const [searchValue, setSearchValue] = useState('')
 
   /***** Menu */
   const [showMenu, setShowMenu] = useState(false)
@@ -34,6 +36,11 @@ const Navbar = () => {
     <div className='Navbar'>
       {/* Fixed Menu */}
       <div className='nav-close'>
+        <div className='logo-element'>
+          <NavLink to='/'>
+            <img src={logo} alt='logo' />
+          </NavLink>
+        </div>
         <div className='nav-element'>
           <div
             className={
@@ -48,16 +55,16 @@ const Navbar = () => {
             <span></span>
           </div>
         </div>
-        <div className='nav-element logo-element'>
-          <NavLink to='/'>
-            <img src={logo} alt='logo' />
-          </NavLink>
-        </div>
-        {/* searchBar */}
-        <SearchBar />
-        {/* searchBar */}
         <div className='nav-element'>
           <div className='nav-sub-element'>
+            {/* searchBar */}
+            {searchBar && (
+              <SearchBar
+                searchValue={searchValue}
+                setSearchValue={setSearchValue}
+              />
+            )}
+
             <button onClick={handleSearchBar}>&#128270;</button>
             <select
               className='language-button'
