@@ -5,7 +5,7 @@ import GreeterCard from '../GreeterCard/GreeterCard'
 const Greeters = () => {
   return (
     <div>
-      <h2>Greeters</h2>
+      <h2>Les Greeters</h2>
       {GreetersData.map((g, index) => (
         <GreeterCard key={index} {...g} />
       ))}

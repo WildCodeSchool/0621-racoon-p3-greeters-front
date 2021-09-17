@@ -16,6 +16,7 @@ const Banner = () => {
           style={{ borderRadius: '25px' }}
           src={d.city_banner}
           onDragStart={handleDragStart}
+          className='banner-img'
         />
         <button className='banner-button'>Réserver Votre Balade</button>
         <h2 className='banner-text'>Découvrir {d.city_name}</h2>
