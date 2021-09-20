@@ -1,0 +1,68 @@
+.Contact {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.Contact h1 {
+  font-size: 4rem;
+  font-weight: 900;
+}
+
+.Contact p {
+  font-style: italic;
+}
+
+.Contact .contactForm {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.Contact .messageContent, .Contact .emailContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.Contact h3 {
+  font-weight: bold;
+  width: 30vw;
+  color: red;
+}
+
+.Contact h4 {
+  font-weight: bold;
+  width: 30vw;
+}
+
+.Contact .messageContent textarea, .Contact .emailContent input {
+  width: 60vw;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.Contact .messageContent textarea {
+  height: 15vh;
+}
+
+.Contact .emailContent input {
+  height: 5vh;
+}
+
+.Contact .submitButton {
+  margin: 30px auto;
+  padding: 20px;
+  width: 15vw;
+  border-radius: 10px;
+  color: red;
+  border: 1px solid red;
+  background-color: white;
+}
+
+.Contact .info {
+  font-size: 0.7rem;
+}
+
+
