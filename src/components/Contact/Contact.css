@@ -41,6 +41,7 @@
   width: 60vw;
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 10px;
 }
 
 .Contact .messageContent textarea {
@@ -52,6 +53,7 @@
 }
 
 .Contact .submitButton {
+  cursor: pointer;
   margin: 30px auto;
   padding: 20px;
   width: 15vw;

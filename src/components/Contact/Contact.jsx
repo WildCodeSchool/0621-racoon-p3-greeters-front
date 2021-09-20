@@ -1,10 +1,14 @@
 import { useState } from 'react/cjs/react.development'
 
+import Swal from 'sweetalert2'
+
 import './Contact.css'
 
 const Contact = () => {
   const [message, setMessage] = useState('')
   const [email, setEmail] = useState('')
+
+  const [fullMessage, setFullMessage] = useState({})
 
   const handleMessage = message => {
     setMessage(message)
@@ -13,6 +17,14 @@ const Contact = () => {
   const handleEmail = email => {
     setEmail(email)
   }
+
+  const handleSubmit = (e, message, email) => {
+    e.preventDefault()
+    setFullMessage({ message: message, email: email })
+    Swal.fire('Message bien envoyé')
+  }
+
+  console.log(fullMessage)
 
   return (
     <div className='Contact'>
@@ -37,13 +49,18 @@ const Contact = () => {
             <h4>
               E-mail <span style={{ color: 'red' }}>*</span>
             </h4>
-            <input type='email' placeholder='monemail@gmail.com' />
+            <input
+              type='email'
+              placeholder='monemail@gmail.com'
+              onChange={e => handleEmail(e.target.value)}
+            />
           </div>
         </div>
         <input
           type='submit'
           className='submitButton'
           value='Envoyer ma demande'
+          onClick={e => handleSubmit(e, message, email)}
         />
       </form>
       <p className='info'>
