@@ -1,8 +1,10 @@
+import './CityCard.css'
+
 const CityCard = props => {
   return (
     <div>
-      <img src={props.city_photo} alt={props.city_name} />
-      <h3>{props.city_name}</h3>
+      <img className='city-img' src={props.city_photo} alt={props.city_name} />
+      <h3 className='city-name'>{props.city_name}</h3>
     </div>
   )
 }

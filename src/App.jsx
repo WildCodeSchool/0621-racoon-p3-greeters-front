@@ -7,7 +7,7 @@ import './App.css'
 
 function App() {
   return (
-    <div className='App'>
+    <div>
       <BrowserRouter>
         <Navbar />
         <Route path='/' exact>
