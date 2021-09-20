@@ -1,0 +1,14 @@
+.MapComponent {
+  width: 100vw;
+  height: 100vh;
+  margin-top: 1vh;
+}
+
+.MapComponent .map {
+  margin: 0 auto;
+  width: 80%;
+  min-height: 50vh;
+  border-radius: 25px;
+  border: 1px solid black;
+  box-shadow: 0px 5px 5px #E5E5E5;
+}
