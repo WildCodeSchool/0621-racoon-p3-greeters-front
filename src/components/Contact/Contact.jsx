@@ -21,7 +21,11 @@ const Contact = () => {
   const handleSubmit = (e, message, email) => {
     e.preventDefault()
     setFullMessage({ message: message, email: email })
-    Swal.fire('Message bien envoyé')
+    Swal.fire({
+      icon: 'success',
+      title: 'Message bien envoyé',
+      confirmButtonColor: 'red'
+    })
   }
 
   console.log(fullMessage)
