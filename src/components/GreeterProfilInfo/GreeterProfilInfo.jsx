@@ -1,15 +1,17 @@
 import React from 'react'
 
+import './GreeterProfilInfo.css'
+
 const GreeterProfilInfo = props => {
   return (
     <div className='greeter-profil-bloc-info'>
-      <div>
+      <div className='greeter-profil-bloc-info-bloc1'>
         <h2 className='greeter-profil-bloc-info-name'>{props.greeter_name}</h2>
         <h3 className='greeter-profil-bloc-info-catchphrase'>
           {props.greeter_catch_phrase}
         </h3>
       </div>
-      <div>
+      <div className='greeter-profil-bloc-info-bloc2'>
         <section className='greeter-profil-bloc-info-description'>
           <h4>Description</h4>
           <p>{props.greeter_description}</p>

@@ -9,14 +9,9 @@ const GreeterProfil = () => {
   return (
     <div className='greeter-profil'>
       <div className='greeter-profil-left'>
-        <div className='greeter-profil-left-container'>
-          {GreetersProfilData.map((g, index) => (
-            <GreeterProfilCard key={index} {...g} />
-          ))}
-        </div>
-        <button className='greeter-profil-bloc-card-btn'>
-          Réservez votre greeter
-        </button>
+        {GreetersProfilData.map((g, index) => (
+          <GreeterProfilCard key={index} {...g} />
+        ))}
       </div>
       <div className='greeter-profil-right'>
         {GreetersProfilData.map((g, index) => (
