@@ -1,0 +1,56 @@
+.banner-img {
+  width: 90vw;
+  height: 70vh;
+  position: relative;
+  left: 5%;
+  border-radius: 25px;
+}
+
+.banner-text {
+  font-family: 'cursive', 'Titillium Web', sans-serif;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  font-weight: 900;
+  position: absolute;
+  top: 25%;
+  bottom: 35%;
+  left: 12%;
+  width: 40vw;
+  z-index: 10;
+}
+
+.banner-button {
+  font-family: 'Titillium Web', sans-serif;
+  background-color: transparent;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+  border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 66px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.alice-carousel__prev-btn, .alice-carousel__next-btn{
+  display: none;
+}
+
+.alice-carousel__dots {
+  position: absolute;
+  bottom: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 12;
+}
+
+.alice-carousel__dots-item:not(.__custom):hover, 
+.alice-carousel__dots-item:not(.__custom).__active {
+  background-color: #ff0d0d;
+}
