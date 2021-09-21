@@ -38,3 +38,18 @@ export const GreetersData = [
       'https://images.pexels.com/photos/3779770/pexels-photo-3779770.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
   }
 ]
+
+export const GreetersProfilData = [
+  {
+    greeter_name: 'Pierrette',
+    greeter_photo:
+      'https://images.pexels.com/photos/3779770/pexels-photo-3779770.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+    greeter_catch_phrase: `“Tourangelle d'adoption, j'habite cette ville depuis une dizaine d'années après avoir longuement vécu à l'étranger.”`,
+    greeter_description:
+      "J'adore rencontrer de nouvelles personnalités et échanger des idées (en français, en anglais ou en italien), refaire le monde tout en me baladant à travers les ruelles de la ville, sur les sentiers des jolis parcs, ou assise sur un banc sur les rives de l'incomparable Loire en contemplant la douce lumière tourangelle. J'aime également pouvoir partager les plaisirs de bouche qu'offre la ville et les richesses cinématographiques données à profusion par not d'art et d'essai. Et si le coeur - et les jambes - vous disent, pourquoi ne pas envisager une balade à vélo pour aller jeter un oeil sur les châteaux, remonter jusqu'au confluent de la Loire et du Cher, rêver au Moyen-Age en allant à la découverte de Chinon, se recueillir sur les côteaux qui ont inspiré Balzac, Rabelais ou Ronsard, célèbres écrivains tourangeaux... N'hésitez pas à me contacter et nous pourrons partager des moments ou les prolonger, en fonction de vos désirs ! ",
+    greeter_city: 'Tours',
+    greeter_thematic:
+      'Histoire - Patrimoine - Littérature - Ecrivains - Cuisine - Marché - Gastronomie',
+    greeter_language: 'Français - Italien - Anglais'
+  }
+]

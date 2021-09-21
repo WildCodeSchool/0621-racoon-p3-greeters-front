@@ -5,25 +5,27 @@ const GreeterProfilInfo = props => {
     <div className='greeter-profil-bloc-info'>
       <div>
         <h2 className='greeter-profil-bloc-info-name'>{props.greeter_name}</h2>
-        <h3 className='greeter-profil-bloc-info-catchphrase'></h3>
+        <h3 className='greeter-profil-bloc-info-catchphrase'>
+          {props.greeter_catch_phrase}
+        </h3>
       </div>
       <div>
         <section className='greeter-profil-bloc-info-description'>
-          <h4></h4>
-          <p></p>
+          <h4>Description</h4>
+          <p>{props.greeter_description}</p>
         </section>
         <section className='greeter-profil-bloc-info-infos'>
           <article className='greeter-profil-bloc-info-city'>
-            <h4></h4>
-            <p></p>
+            <h4>Ville</h4>
+            <p>{props.greeter_city}</p>
           </article>
           <article className='greeter-profil-bloc-info-thematic'>
-            <h4></h4>
-            <p></p>
+            <h4>Thématiques</h4>
+            <p>{props.greeter_thematic}</p>
           </article>
           <article className='greeter-profil-bloc-info-language'>
-            <h4></h4>
-            <p></p>
+            <h4>Langues parlées</h4>
+            <p>{props.greeter_language}</p>
           </article>
         </section>
       </div>
