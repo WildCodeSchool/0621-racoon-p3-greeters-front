@@ -24,12 +24,12 @@
 }
 
 
-.Contact .emailContainer {
+.Contact .infoContainer {
   margin-top: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.5)
 }
 
-.Contact .messageContent, .Contact .emailContent {
+.Contact .messageElement, .Contact .infoElement {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -46,11 +46,12 @@
   width: 30vw;
 }
 
-.Contact .messageContent textarea, .Contact .emailContent input {
+.messageElement textarea, .messageElement input, .infoElement input {
   width: 60vw;
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.5);
   padding: 10px;
+  margin: 10px;
 }
 
 .Contact .messageContent textarea {
