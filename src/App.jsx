@@ -1,4 +1,4 @@
-import './App.css'
+import MeetGreeter from './screens/MeetGreeter/MeetGreeter'
 import Navbar from './components/Navbar/Navbar'
 import Home from './screens/Home/Home'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
@@ -12,6 +12,9 @@ function App() {
         <Navbar />
         <Route path='/' exact>
           <Home />
+        </Route>
+        <Route path='/meetgreeter' exact>
+          <MeetGreeter />
         </Route>
       </BrowserRouter>
     </div>

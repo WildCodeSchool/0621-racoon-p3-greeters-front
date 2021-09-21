@@ -1,0 +1,51 @@
+.navbar {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meet-greeter-btn{
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+}
+
+.navbar-logo {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 10rem;
+}
+
+.nav-items {
+  display: flex;
+  list-style: none;
+  text-align: center;
+  width: 70vw;
+  justify-content: space-evenly;
+}
+
+.nav-item {
+  display: flex;
+  background: #FDF7F0;
+  align-items: center;
+  height: 7vh;
+  width: 10rem;
+  border-radius: 7vh;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 1.1rem;
+  margin-right: 2rem;
+  padding: 6px 16px;
+  border-radius: 5px;
+}
+
+
+
