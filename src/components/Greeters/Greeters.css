@@ -1,0 +1,30 @@
+.greeters-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.greeters-title {
+  text-align: center;
+  padding: 70px;
+}
+
+.greeters-btn {
+  font-family: 'Titillium Web', sans-serif;
+  background-color: #F4E7E7;
+  position: relative;
+  top: 99%;
+  left: 50%;
+  padding-left: 10%;
+  padding-right: 10%;
+  transform: translateX(-50%);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 66px;
+  color: black;
+  cursor: pointer;
+}
