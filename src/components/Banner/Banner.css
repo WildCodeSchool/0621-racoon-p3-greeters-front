@@ -22,7 +22,7 @@
 
 .banner-button {
   font-family: 'Titillium Web', sans-serif;
-  background-color: transparent;
+  background-color: rgba(0,0,0,0.5);
   position: absolute;
   top: 85%;
   left: 50%;
