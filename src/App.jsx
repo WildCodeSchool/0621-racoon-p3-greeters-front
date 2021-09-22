@@ -12,15 +12,17 @@ function App() {
     <div>
       <BrowserRouter>
         <Navbar />
-        <Route path='/' exact>
-          <Home />
-        </Route>
-        <Route path='/contact' exact>
-          <Contact />
-        </Route>
-        <Route path='/greeter' exact>
-          <Greeter />
-        </Route>
+        <Switch>
+          <Route path='/' exact>
+            <Home />
+          </Route>
+          <Route path='/contact' exact>
+            <Contact />
+          </Route>
+          <Route path='/greeters/1' exact>
+            <Greeter />
+          </Route>
+        </Switch>
       </BrowserRouter>
     </div>
   )
