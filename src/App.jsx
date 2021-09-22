@@ -17,6 +17,7 @@ function App() {
         </Route>
         <Route path='/contact' exact>
           <Contact />
+        </Route>
         <Route path='/greeter' exact>
           <Greeter />
         </Route>
