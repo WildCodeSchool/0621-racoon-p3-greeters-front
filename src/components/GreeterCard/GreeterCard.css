@@ -1,0 +1,21 @@
+.greeter-card {
+  /* display: flex; */
+}
+
+.greeter-img {
+  width: 30vw;
+  height: 30vw;
+  border-radius: 20px;
+}
+
+.greeter-name {
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  position: relative;
+  bottom: 28%;
+  z-index: 10;
+}
