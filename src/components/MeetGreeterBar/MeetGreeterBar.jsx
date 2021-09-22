@@ -1,41 +1,95 @@
 import React, { useState } from 'react'
-import Dropdown from '../Dropdown/Dropdown'
+import Select from 'react-select'
+import makeAnimated from 'react-select/animated'
+import { themeDropdown, cityDropdown, languageDropdown } from '../DropItems'
 
 import './MeetGreeterBar.css'
 
+const animatedComponents = makeAnimated()
+
+const customStyles = {
+  option: provided => ({
+    ...provided,
+    borderBottom: '1px dotted red',
+
+    padding: 10
+  }),
+  valueContainer: provided => ({
+    ...provided,
+    justifyContent: 'center'
+  }),
+  indicatorSeparator: provided => ({
+    ...provided,
+    display: 'none'
+  }),
+  multiValue: provided => ({
+    ...provided,
+    backgroundColor: 'none'
+  }),
+  control: (_, { selectProps: { width } }) => ({
+    // none of react-select's styles are passed to <Control />
+    display: 'flex',
+    height: '3rem',
+    width: width
+  }),
+  singleValue: (provided, state) => {
+    const opacity = state.isDisabled ? 0.5 : 1
+    const transition = 'opacity 300ms'
+
+    return { ...provided, opacity, transition }
+  }
+}
+
 const MeetGreeterBar = () => {
-  const [themeDropdown, setThemeDropdown] = useState(false)
-  const [cityDropdown, setCityDropdown] = useState(false)
-  const [languageDropdown, setLanguageDropdown] = useState(false)
+  const [theme, setTheme] = useState([])
+  const [city, setCity] = useState([])
+  const [langue, setLangue] = useState([])
 
   return (
     <>
-      <nav className='navbar'>
-        <ul className='nav-items'>
-          <li
-            className='nav-item'
-            onClick={() => setThemeDropdown(!themeDropdown)}
-          >
-            <a href='#'>Thématiques</a>
-            {themeDropdown && <Dropdown type='theme' />}
-          </li>
-          <li
-            className='nav-item'
-            onClick={() => setCityDropdown(!cityDropdown)}
-          >
-            <a href='#'>Villes</a>
-            {cityDropdown && <Dropdown type='city' />}
-          </li>
-          <li
-            className='nav-item'
-            onClick={() => setLanguageDropdown(!languageDropdown)}
-          >
-            <a href='#'>Langues</a>
-            {languageDropdown && <Dropdown type='language' />}
-          </li>
-        </ul>
-        <button className='meet-greeter-btn'>Voir les (?) résultats</button>
+      <nav className='meetbar'>
+        <div className='meet-items'>
+          <Select
+            styles={customStyles}
+            components={animatedComponents}
+            onChange={setTheme}
+            options={themeDropdown}
+            className='meet-select'
+            placeholder='Thématiques'
+            isMulti
+            autoFocus
+            isSearchable
+            noOptionsMessage={() => 'tous les thèmes sont déja sélectionnés'}
+          />
+          <Select
+            styles={customStyles}
+            components={animatedComponents}
+            onChange={setCity}
+            options={cityDropdown}
+            className='meet-select'
+            placeholder='Villes'
+            isMulti
+            autoFocus
+            isSearchable
+            noOptionsMessage={() => 'toutes les villes sont déja sélectionnées'}
+          />
+          <Select
+            styles={customStyles}
+            components={animatedComponents}
+            onChange={setLangue}
+            options={languageDropdown}
+            className='meet-select'
+            placeholder='Langues'
+            isMulti
+            autoFocus
+            isSearchable
+            noOptionsMessage={() =>
+              'toutes les langues sont déja sélectionnées'
+            }
+          />
+        </div>
       </nav>
+      <button className='meet-greeter-btn'>Voir les (?) résultats</button>
     </>
   )
 }

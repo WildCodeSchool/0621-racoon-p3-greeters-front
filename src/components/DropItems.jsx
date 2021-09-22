@@ -1,79 +1,57 @@
 export const themeDropdown = [
   {
     id: 1,
-    title: 'thématique 1',
-    path: '/',
-    cName: 'theme-submenu-item'
+    value: 'thématique 1',
+    label: 'thématique 1'
   },
   {
     id: 2,
-    title: 'thématique 2',
-    path: '/',
-    cName: 'theme-submenu-item'
+    value: 'thématique 2',
+    label: 'thématique 2'
   },
   {
     id: 3,
-    title: 'thématique 3',
-    path: '/',
-    cName: 'theme-submenu-item'
+    value: 'thématique 3',
+    label: 'thématique 3'
   },
   {
     id: 4,
-    title: 'thématique 4',
-    path: '/',
-    cName: 'theme-submenu-item'
+    value: 'thématique 4',
+    label: 'thématique 4'
   }
 ]
 
 export const cityDropdown = [
   {
     id: 5,
-    title: 'city 1',
-    path: '/',
-    cName: 'city-submenu-item'
+    value: 'city 1',
+    label: 'city 1'
   },
   {
     id: 6,
-    title: 'city 2',
-    path: '/',
-    cName: 'city-submenu-item'
+    value: 'city 2',
+    label: 'city 2'
   },
   {
     id: 7,
-    title: 'city 3',
-    path: '/',
-    cName: 'city-submenu-item'
+    value: 'city 3',
+    label: 'city 3'
   },
   {
     id: 8,
-    title: 'city 4',
-    path: '/',
-    cName: 'city-submenu-item'
+    value: 'city 4',
+    label: 'city 4'
   }
 ]
 export const languageDropdown = [
   {
     id: 9,
-    title: 'language 1',
-    path: '/',
-    cName: 'language-submenu-item '
+    value: 'language 1',
+    label: 'language 1'
   },
   {
     id: 10,
-    title: 'language 2',
-    path: '/',
-    cName: 'language-submenu-item'
-  },
-  {
-    id: 11,
-    title: 'language 3',
-    path: '/',
-    cName: 'language-submenu-item'
-  },
-  {
-    id: 12,
-    title: 'language 4',
-    path: '/',
-    cName: 'language-submenu-item'
+    value: 'language 2',
+    label: 'language 2'
   }
 ]
