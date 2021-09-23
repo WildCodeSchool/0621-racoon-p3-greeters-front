@@ -1,0 +1,29 @@
+.ConceptBanner-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.ConceptBanner-image {
+ margin: auto;
+  border-radius: 20px;
+  display: flex;
+}
+
+.ConceptBanner-title {
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  position: relative;
+  bottom: 28%;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+  
+
