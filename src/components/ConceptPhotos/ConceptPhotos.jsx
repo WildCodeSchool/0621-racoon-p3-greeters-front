@@ -11,8 +11,12 @@ const ConceptPhotos = () => {
   return (
     <div className='ConceptPhotos-Container'>
       {showResults ? <Results /> : null}
-      <div className='ConceptPhotos-Image1'>
-        <img src={image2} alt='Image bas gauche' />
+      <div className='ConceptPhotos-Block-Image1'>
+        <img
+          className='ConceptPhotos-img'
+          src={image2}
+          alt='Image bas gauche'
+        />
         <button
           onClick={() => setShowResults(!showResults)}
           className='ConceptPhotos-btn-left'
@@ -23,8 +27,8 @@ const ConceptPhotos = () => {
 
       {/* Créer une fonction au dessus du return et dans cette fonction la fonction va appeler mon setShowResult handleResult */}
 
-      <div className='ConceptPhotos-Image2'>
-        <img src={image3} alt='Image bas droit' />
+      <div className='ConceptPhotos-Block-Image2'>
+        <img className='ConceptPhotos-img' src={image3} alt='Image bas droit' />
         <button className='ConceptPhotos-btn-right'>Nos valeurs</button>
       </div>
     </div>

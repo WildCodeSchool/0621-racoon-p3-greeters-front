@@ -4,6 +4,7 @@ import Contact from './components/Contact/Contact'
 import Navbar from './components/Navbar/Navbar'
 import Home from './screens/Home/Home'
 import Greeter from './screens/Greeter/Greeter'
+import Concept from './screens/Concept/Concept'
 
 import './App.css'
 
@@ -22,9 +23,11 @@ function App() {
           <Route path='/greeters/1' exact>
             <Greeter />
           </Route>
+          <Route path='/concept' exact>
+            <Concept />
+          </Route>
         </Switch>
       </BrowserRouter>
-
     </div>
   )
 }
