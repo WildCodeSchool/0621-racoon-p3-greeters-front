@@ -1,7 +1,7 @@
 .MapComponent {
   width: 100vw;
-  height: 100vh;
-  margin-top: 1vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
 }
 
 .MapComponent .map {

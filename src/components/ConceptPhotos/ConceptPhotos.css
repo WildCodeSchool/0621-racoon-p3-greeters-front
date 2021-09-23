@@ -1,6 +1,22 @@
-.ConceptPhotos-Container{
-  display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
+.ConceptPhotos-Container {
+  margin: 10px;
+  padding: auto;
+   border-radius: 20px;
+   display: flex;
+ width: 1700px;
+ height: 400px;
+ }
+
+ .ConceptPhotos-Image1 {
+width: 150px; 
+height: 150px; 
+object-fit: cover; 
 border-radius: 20px;
-}
+ }
+
+ .ConceptPhotos-Image2 {
+  width: 150px; 
+  height: 150px; 
+  object-fit: cover; 
+  border-radius: 20px;
+ }
