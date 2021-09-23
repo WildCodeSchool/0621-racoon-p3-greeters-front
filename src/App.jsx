@@ -20,9 +20,6 @@ function App() {
           <Route path='/meetgreeter' exact>
             <MeetGreeter />
           </Route>
-          <Route path='/' exact>
-            <Home />
-          </Route>
           <Route path='/contact' exact>
             <Contact />
           </Route>

@@ -1,0 +1,36 @@
+.home-greeters-container {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 50rem;
+  height: 35rem;
+  overflow: hidden;
+}
+
+.home-greeters-title {
+  text-align: center;
+  padding: 70px;
+}
+
+.home-greeters-btn {
+  font-family: 'Titillium Web', sans-serif;
+  background-color: #F4E7E7;
+  position: relative;
+  top: 99%;
+  left: 50%;
+  margin-top: 2rem;
+  padding-left: 10%;
+  padding-right: 10%;
+  
+  transform: translateX(-50%);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 66px;
+  color: black;
+  cursor: pointer;
+}

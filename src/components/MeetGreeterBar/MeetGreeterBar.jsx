@@ -18,10 +18,15 @@ const customStyles = {
     ...provided,
     justifyContent: 'center'
   }),
+  placeholder: provided => ({
+    ...provided,
+    color: 'black'
+  }),
   indicatorSeparator: provided => ({
     ...provided,
     display: 'none'
   }),
+
   multiValue: provided => ({
     ...provided,
     backgroundColor: 'none'
