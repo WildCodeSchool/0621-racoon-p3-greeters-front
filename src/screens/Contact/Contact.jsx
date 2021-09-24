@@ -1,16 +1,28 @@
+import { useEffect } from 'react'
 import { useState } from 'react/cjs/react.development'
 
+import axios from 'axios'
 import Swal from 'sweetalert2'
 
 import './Contact.css'
 
 const Contact = () => {
+  const [description, setDescription] = useState([])
+  useEffect(() => {
+    const recupData = async () => {
+      const results = await axios.get('http://localhost:3000/description')
+      console.log(results)
+      setDescription(results.data)
+    }
+    recupData()
+  }, [])
+
   const [object, setObject] = useState('')
   const [message, setMessage] = useState('')
+  const [civility, setCivility] = useState('')
   const [lastName, setLastName] = useState('')
   const [firstName, setFirstName] = useState('')
   const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState('')
 
   const [fullMessage, setFullMessage] = useState({})
 
@@ -20,6 +32,10 @@ const Contact = () => {
 
   const handleMessage = message => {
     setMessage(message)
+  }
+
+  const handleCivility = civility => {
+    setCivility(civility)
   }
 
   const handleLastName = lastName => {
@@ -34,25 +50,27 @@ const Contact = () => {
     setEmail(email)
   }
 
-  const handlePhone = phone => {
-    setPhone(phone)
-  }
-
-  const handleSubmit = (e, message, email) => {
+  const handleSubmit = e => {
     e.preventDefault()
-    setFullMessage({ message: message, email: email })
+    setFullMessage({
+      object: object,
+      message: message,
+      civility: civility,
+      lastName: lastName,
+      firstName: firstName,
+      email: email
+    })
     Swal.fire({
       icon: 'success',
       title: 'Message bien envoyé',
       confirmButtonColor: 'red'
     })
   }
-
-  console.log(fullMessage)
-
+  console.log(description)
   return (
     <div className='Contact'>
       <h1>Contactez-nous</h1>
+      {/* <p>{description[0].description_title1_fr}</p> */}
       <p>
         Les champs obligatoires sont indiqués par un astérisque{' '}
         <span style={{ color: 'red' }}>*</span>
@@ -77,6 +95,16 @@ const Contact = () => {
         </div>
         <div className='infoContainer'>
           <h3>Mes coordonnées</h3>
+
+          <div className='infoElement civilityContent'>
+            <h4>
+              Civilité <span style={{ color: 'red' }}>*</span>
+            </h4>
+            <select>
+              <option value='madame'>Madame</option>
+              <option value='monsieur'>Monsieur</option>
+            </select>
+          </div>
 
           <div className='infoElement lastNameContent'>
             <h4>
@@ -110,18 +138,13 @@ const Contact = () => {
               onChange={e => handleEmail(e.target.value)}
             />
           </div>
-
-          <div className='infoElement phoneContent'>
-            <h4>Téléphone</h4>
-            <input type='phone' onChange={e => handlePhone(e.target.value)} />
-          </div>
         </div>
 
         <input
           type='submit'
           className='submitButton'
           value='Envoyer ma demande'
-          onClick={e => handleSubmit(e, message, email)}
+          onClick={e => handleSubmit(e)}
         />
       </form>
       <p className='info'>
