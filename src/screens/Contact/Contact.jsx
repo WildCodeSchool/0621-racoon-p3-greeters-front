@@ -8,6 +8,7 @@ import './Contact.css'
 
 const Contact = () => {
   const [description, setDescription] = useState([])
+  /*
   useEffect(() => {
     const recupData = async () => {
       const results = await axios.get('http://localhost:3000/description')
@@ -16,13 +17,14 @@ const Contact = () => {
     }
     recupData()
   }, [])
+  */
 
   const [object, setObject] = useState('')
   const [message, setMessage] = useState('')
   const [civility, setCivility] = useState('')
   const [lastName, setLastName] = useState('')
   const [firstName, setFirstName] = useState('')
-  const [email, setEmail] = useState('')
+  const [mail, setMail] = useState('')
 
   const [fullMessage, setFullMessage] = useState({})
 
@@ -46,8 +48,20 @@ const Contact = () => {
     setFirstName(firstName)
   }
 
-  const handleEmail = email => {
-    setEmail(email)
+  const handleMail = mail => {
+    setMail(mail)
+  }
+
+  const postData = async () => {
+    const results = await axios.post('http://localhost:3000/contact', {
+      data: {
+        firstname: firstName,
+        lastname: lastName,
+        mail: mail,
+        object: object,
+        message: message
+      }
+    })
   }
 
   const handleSubmit = e => {
@@ -58,8 +72,10 @@ const Contact = () => {
       civility: civility,
       lastName: lastName,
       firstName: firstName,
-      email: email
+      mail: mail
     })
+    postData()
+
     Swal.fire({
       icon: 'success',
       title: 'Message bien envoyé',
@@ -135,7 +151,7 @@ const Contact = () => {
             <input
               type='email'
               placeholder='monemail@gmail.com'
-              onChange={e => handleEmail(e.target.value)}
+              onChange={e => handleMail(e.target.value)}
             />
           </div>
         </div>
