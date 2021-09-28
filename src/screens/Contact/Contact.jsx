@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useState } from 'react/cjs/react.development'
 
 import axios from 'axios'
@@ -7,7 +6,6 @@ import Swal from 'sweetalert2'
 import './Contact.css'
 
 const Contact = () => {
-  const [description, setDescription] = useState([])
   /*
   useEffect(() => {
     const recupData = async () => {
@@ -19,14 +17,18 @@ const Contact = () => {
   }, [])
   */
 
+  // DONE civilité sur la route du back
+  // DONE civilité dans la BDD
+  // AJOUTER tests JS des données avant axios
+  // AJOUTER réponse de l'axios si bon message OK sinon erreur
+
   const [object, setObject] = useState('')
   const [message, setMessage] = useState('')
-  const [civility, setCivility] = useState('')
+  const [civility, setCivility] = useState('female')
   const [lastName, setLastName] = useState('')
   const [firstName, setFirstName] = useState('')
   const [mail, setMail] = useState('')
-
-  const [fullMessage, setFullMessage] = useState({})
+  const [postResult, setPostResult] = useState()
 
   const handleObject = object => {
     setObject(object)
@@ -53,27 +55,30 @@ const Contact = () => {
   }
 
   const postData = async () => {
-    const results = await axios.post('http://localhost:3000/contact', {
-      data: {
-        firstname: firstName,
-        lastname: lastName,
-        mail: mail,
-        object: object,
-        message: message
-      }
-    })
+    const results = await axios
+      .post('http://localhost:3000/contact', {
+        data: {
+          firstname: firstName,
+          lastname: lastName,
+          civility: civility,
+          mail: mail,
+          object: object,
+          message: message
+        }
+      })
+      .then(setPostResult(results))
+  }
+
+  const resetFields = () => {
+    setObject('')
+    setMessage('')
+    setLastName('')
+    setFirstName('')
+    setMail('')
   }
 
   const handleSubmit = e => {
     e.preventDefault()
-    setFullMessage({
-      object: object,
-      message: message,
-      civility: civility,
-      lastName: lastName,
-      firstName: firstName,
-      mail: mail
-    })
     postData()
 
     Swal.fire({
@@ -81,12 +86,15 @@ const Contact = () => {
       title: 'Message bien envoyé',
       confirmButtonColor: 'red'
     })
+    console.log(postData)
+    resetFields()
   }
-  console.log(description)
+
+  console.log(typeof civility, civility)
+
   return (
     <div className='Contact'>
       <h1>Contactez-nous</h1>
-      {/* <p>{description[0].description_title1_fr}</p> */}
       <p>
         Les champs obligatoires sont indiqués par un astérisque{' '}
         <span style={{ color: 'red' }}>*</span>
@@ -99,14 +107,21 @@ const Contact = () => {
             <h4>
               Objet du message <span style={{ color: 'red' }}>*</span>
             </h4>
-            <input type='text' onChange={e => handleObject(e.target.value)} />
+            <input
+              type='text'
+              value={object}
+              onChange={e => handleObject(e.target.value)}
+            />
           </div>
 
           <div className='messageElement messageContent'>
             <h4>
               Contenu du message <span style={{ color: 'red' }}>*</span>
             </h4>
-            <textarea onChange={e => handleMessage(e.target.value)}></textarea>
+            <textarea
+              value={message}
+              onChange={e => handleMessage(e.target.value)}
+            ></textarea>
           </div>
         </div>
         <div className='infoContainer'>
@@ -116,9 +131,11 @@ const Contact = () => {
             <h4>
               Civilité <span style={{ color: 'red' }}>*</span>
             </h4>
-            <select>
-              <option value='madame'>Madame</option>
-              <option value='monsieur'>Monsieur</option>
+            <select onChange={e => handleCivility(e.target.value)}>
+              <option value='female' selected>
+                Madame
+              </option>
+              <option value='male'>Monsieur</option>
             </select>
           </div>
 
@@ -130,6 +147,7 @@ const Contact = () => {
               type='text'
               placeholder='Dupont'
               onChange={e => handleLastName(e.target.value)}
+              value={lastName}
             />
           </div>
 
@@ -141,6 +159,7 @@ const Contact = () => {
               type='text'
               placeholder='Nicolas'
               onChange={e => handleFirstName(e.target.value)}
+              value={firstName}
             />
           </div>
 
@@ -152,6 +171,7 @@ const Contact = () => {
               type='email'
               placeholder='monemail@gmail.com'
               onChange={e => handleMail(e.target.value)}
+              value={mail}
             />
           </div>
         </div>
