@@ -6,16 +6,15 @@ import Swal from 'sweetalert2'
 import './Contact.css'
 
 const Contact = () => {
-  /*
-  useEffect(() => {
-    const recupData = async () => {
-      const results = await axios.get('http://localhost:3000/description')
-      console.log(results)
-      setDescription(results.data)
-    }
-    recupData()
-  }, [])
-  */
+  // useEffect(() => {
+  //   const recupData = async () => {
+  //     const results = await axios.get('http://localhost:3000/description')
+  //     console.log(results)
+  //     setDescription(results.data)
+  //   }
+
+  //   recupData()
+  // }, [])
 
   // DONE civilité sur la route du back
   // DONE civilité dans la BDD
