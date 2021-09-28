@@ -1,7 +1,9 @@
-import './App.css'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
+import Contact from './components/Contact/Contact'
 import Navbar from './components/Navbar/Navbar'
 import Home from './screens/Home/Home'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Greeter from './screens/Greeter/Greeter'
 
 import './App.css'
 
@@ -10,9 +12,17 @@ function App() {
     <div>
       <BrowserRouter>
         <Navbar />
-        <Route path='/' exact>
-          <Home />
-        </Route>
+        <Switch>
+          <Route path='/' exact>
+            <Home />
+          </Route>
+          <Route path='/contact' exact>
+            <Contact />
+          </Route>
+          <Route path='/greeters/1' exact>
+            <Greeter />
+          </Route>
+        </Switch>
       </BrowserRouter>
     </div>
   )

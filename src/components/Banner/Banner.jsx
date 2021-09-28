@@ -26,7 +26,12 @@ const Banner = () => {
 
   return (
     <div>
-      <AliceCarousel mouseTracking items={item} />
+      <AliceCarousel
+        mouseTracking
+        items={item}
+        autoPlay
+        autoPlayInterval='3500'
+      />
     </div>
   )
 }

@@ -1,0 +1,32 @@
+.greeter-profil-bloc-card {
+  display: block;
+  align-content: center;
+}
+
+.greeter-profil-bloc-card-img {
+  margin-bottom: 50px;
+  width:22vw;
+  border-radius: 20px;
+  margin-top: 23px;
+  box-shadow: 0px 0px 5px black;
+}
+
+.greeter-profil-bloc-card-btn {
+  font-family: 'Titillium Web', sans-serif;
+  background-color: #F4E7E7;
+  position: relative;
+  top: 99%;
+  left: 50%;
+  padding-left: 10%;
+  padding-right: 10%;
+  transform: translateX(-50%);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 66px;
+  color: black;
+  cursor: pointer;
+}
