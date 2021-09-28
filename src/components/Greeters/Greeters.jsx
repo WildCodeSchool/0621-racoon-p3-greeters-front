@@ -10,7 +10,7 @@ const Greeters = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const resData = await axios.get('http://localhost:3000/person/limit')
+      const resData = await axios.get('http://localhost:3000/person?limit=true')
       setGreeters(resData.data.result)
     }
     getData()
