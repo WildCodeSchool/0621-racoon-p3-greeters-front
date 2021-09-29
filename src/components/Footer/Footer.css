@@ -1,0 +1,68 @@
+.row {
+  background: #faf0e6;
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  
+}
+.contact {
+  display: flex;
+  margin: 70px 40px 70px 70px;
+
+}
+.social {
+margin:16px;
+}
+.button{
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: noir;
+  border-radius: 25px;
+  box-shadow: 0 9px #999;
+  box-sizing: border-box;
+  background-color: #faf0e6;
+  margin: 1px 110px;
+  padding: 10px 45px;
+  font-size: 18px;
+
+
+}
+.button:hover{
+  background-color: #ef003f;
+  transform: translateY(4px);
+  box-shadow: 0 5px #666;
+}
+.Titre{
+  /* padding: 80px;
+  column-count: 3;
+  display: flex;
+  gap: 10px;
+  gap: 10px 20px; /* row-gap column gap */
+  /* row-gap: 10px;
+  column-gap: 30px;
+  list-style-type: disc; */ 
+
+}
+.globalCollon{
+display:flex ;
+margin: 0px 40px 70px 70px;
+
+
+}
+ul{
+  list-style-type: none;
+  margin:20px;
+  padding:0px;
+}
+.sousTitre{
+margin: 20px;
+
+}
+.Info li a{
+
+  text-decoration: none;
+  color: black;
+
+}
