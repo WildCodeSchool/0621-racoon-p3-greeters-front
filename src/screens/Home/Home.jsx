@@ -1,6 +1,6 @@
 import Banner from '../../components/Banner/Banner'
 import Cities from '../../components/Cities/Cities'
-import HomeGreeters from '../../components/HomeGreeters/HomeGreeters'
+import Greeters from '../../components/Greeters/Greeters'
 import Map from '../../components/Map/Map'
 
 import './Home.css'
@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <HomeGreeters />
+      <Greeters />
       <Cities />
       <Map />
     </div>

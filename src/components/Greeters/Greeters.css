@@ -1,12 +1,11 @@
 .greeters-container {
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 70%;
+  width: 50rem;
   height: 35rem;
-  margin: 0 auto;
   overflow: hidden;
-  padding-bottom: 2rem;
 }
 
 .greeters-title {
@@ -20,8 +19,10 @@
   position: relative;
   top: 99%;
   left: 50%;
+  margin-top: 2rem;
   padding-left: 10%;
   padding-right: 10%;
+  
   transform: translateX(-50%);
   font-style: normal;
   font-weight: bold;
@@ -33,47 +34,3 @@
   color: black;
   cursor: pointer;
 }
-
-.paginationBttns {
-  width: 100%;
-  height: 5rem;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 2rem 0;
-  margin-bottom: 5rem;
-  background-color: rgb(255, 211, 211);
-}
-
-.paginationBttns a {
-  padding:2rem 4rem;
-  margin: 10px;
-  border-radius: 15px;
-  /* border: 1px solid #2b2eff; */
-  color: #000000;
-  cursor: pointer;
-}
-
-.paginationBttns a:hover {
-  color: white;
-  background-color: #ff3232;
-
-}
-
-.paginationActive a {
-  border: 1px solid #ff3232
-}
-
-.paginationDisabled a {
- 
-  cursor: not-allowed;
-}
-.paginationDisabled a:hover {
- background: transparent;
-  cursor: not-allowed;
-}
-
-/* .previousBttn{
-  height: 10rem;
-} */
