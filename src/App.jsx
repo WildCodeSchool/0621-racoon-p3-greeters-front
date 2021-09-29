@@ -1,5 +1,6 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
+import Admin from './admin/screen/Admin'
 import Contact from './screens/Contact/Contact'
 import Navbar from './components/Navbar/Navbar'
 import Home from './screens/Home/Home'
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route path='/greeters/1' exact>
             <Greeter />
+          </Route>
+          <Route path='/admin' exact>
+            <Admin />
           </Route>
         </Switch>
       </BrowserRouter>
