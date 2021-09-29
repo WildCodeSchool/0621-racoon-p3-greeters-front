@@ -1,10 +1,11 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import MeetGreeter from './screens/MeetGreeter/MeetGreeter'
+import Admin from './admin/screens/Admin'
 import Contact from './screens/Contact/Contact'
-import Navbar from './components/Navbar/Navbar'
-import Home from './screens/Home/Home'
 import Greeter from './screens/Greeter/Greeter'
+import Home from './screens/Home/Home'
+import MeetGreeter from './screens/MeetGreeter/MeetGreeter'
+import Navbar from './components/Navbar/Navbar'
 
 import './App.css'
 
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path='/greeters/1' exact>
             <Greeter />
+          </Route>
+          <Route path='/admin' exact>
+            <Admin />
           </Route>
         </Switch>
       </BrowserRouter>
