@@ -1,6 +1,6 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Admin from './admin/screen/Admin'
+import Admin from './admin/screens/Admin'
 import Contact from './screens/Contact/Contact'
 import Navbar from './components/Navbar/Navbar'
 import Home from './screens/Home/Home'
