@@ -1,28 +1,24 @@
-import { Editor } from '@tinymce/tinymce-react'
+import { Modal, Button } from 'react-bootstrap'
 
 import './AdminEditor.css'
 
 const AdminEditor = () => {
   return (
     <div className='AdminEditor'>
-      <Editor
-        initialValue='<p>Initial content</p>'
-        apiKey='1jt2b7lqqvq3tmf0mkmeh5wuaphsb10o682j7wzo0zfqbn5h'
-        init={{
-          height: 500,
-          menubar: false,
-          plugins: [
-            'advlist autolink lists link image',
-            'charmap print preview anchor help',
-            'searchreplace visualblocks code',
-            'insertdatetime media table paste wordcount'
-          ],
-          toolbar:
-            'undo redo | formatselect | bold italic | \
-          alignleft aligncenter alignright | \
-          bullist numlist outdent indent | help'
-        }}
-      />
+      <Modal.Dialog>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal title</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <p>Modal body text goes here.</p>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant='secondary'>Close</Button>
+          <Button variant='primary'>Save changes</Button>
+        </Modal.Footer>
+      </Modal.Dialog>
     </div>
   )
 }
