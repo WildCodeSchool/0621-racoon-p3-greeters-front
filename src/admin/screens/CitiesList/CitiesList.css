@@ -1,0 +1,44 @@
+.cities-list-container{
+  position: absolute;
+  width: 70%;
+  left: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cities-list-title{
+  margin:0 2vw;
+  padding: 20px 0;
+  text-align: center;
+  color : rgba(0, 0, 0, 0.582);
+  font-size: 35px;
+}
+
+.cities-table {
+  margin: 2vh 2vw
+}
+
+.cities-row{
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.582);
+  color:white;
+  width: 35vw;
+  font-size: 22px;
+}
+
+.cities-item{
+  padding: 20px 0;
+  width: 35vw;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.397);
+  color: white;
+  font-size: 18px;
+}
+
+.cities-item:hover {
+  background-color: #ddd;
+}

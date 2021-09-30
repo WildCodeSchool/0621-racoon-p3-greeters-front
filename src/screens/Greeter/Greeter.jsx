@@ -1,12 +1,12 @@
 import React from 'react'
 
-import Footer from '../../components/Footer/Footer'
-import Greeters from '../../components/Greeters/Greeters'
+import GreetersPagination from '../../components/GreetersPagination/GreetersPagination'
 import GreeterProfil from '../../components/GreeterProfil/GreeterProfil'
 import Map from '../../components/Map/Map'
-import Navbar from '../../components/Navbar/Navbar'
 
 import './Greeter.css'
+import Navbar from '../../components/Navbar/Navbar'
+import Footer from '../../components/Footer/Footer'
 
 const Greeter = () => {
   return (
@@ -14,7 +14,7 @@ const Greeter = () => {
       <Navbar />
       <GreeterProfil />
       <Map />
-      <Greeters />
+      <GreetersPagination />
       <Footer />
     </div>
   )

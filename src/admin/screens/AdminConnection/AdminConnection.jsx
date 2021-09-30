@@ -1,7 +1,7 @@
 import { useState } from 'react/cjs/react.development'
-import Menu from '../../components/AdminMenu/AdminMenu'
 
 import Swal from 'sweetalert2'
+import Navbar from '../../../components/Navbar/Navbar'
 
 import './AdminConnection.css'
 
@@ -33,7 +33,7 @@ const AdminConnection = () => {
   console.log(userName, password)
   return (
     <>
-      <Menu />
+      <Navbar />
       <div className='AdminConnection'>
         <form>
           <fieldset>
@@ -68,4 +68,5 @@ const AdminConnection = () => {
     </>
   )
 }
+
 export default AdminConnection

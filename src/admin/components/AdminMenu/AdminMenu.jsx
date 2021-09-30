@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import './AdminMenu.css'
 
-function Menu() {
+function AdminMenu() {
   return (
     <div className='sidebar'>
       <ul className='nav-links'>
@@ -17,13 +17,13 @@ function Menu() {
         </li>
         <li>
           <div className='icon_link'>
-            <NavLink to='#'>
-              <span className='link_name'>Membres</span>
+            <NavLink to='/admin/list-greeters'>
+              <span className='link_name'>Greeters</span>
             </NavLink>
           </div>
         </li>
         <li>
-          <NavLink to='#'>
+          <NavLink to='/admin/list-cities'>
             <span className='link_name'>Villes</span>
           </NavLink>
         </li>
@@ -36,4 +36,4 @@ function Menu() {
     </div>
   )
 }
-export default Menu
+export default AdminMenu

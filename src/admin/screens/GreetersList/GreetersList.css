@@ -1,0 +1,45 @@
+.greeters-list-container{
+  position: absolute;
+  width: 70%;
+  left: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.greeters-list-title{
+  margin:0 2vw;
+  padding: 20px 0;
+  text-align: center;
+  color : rgba(0, 0, 0, 0.582);
+  font-size: 35px;
+}
+
+.greeters-table {
+  margin: 2vh 2vw;
+}
+
+.greeters-row{
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.582);
+  color:white;
+  width: 20vw;
+  font-size: 22px;
+}
+
+.greeters-item{
+  padding: 20px 0;
+  width: 20vw;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.397);
+  color: white;
+  font-size: 18px;
+}
+
+
+.greeters-item:hover {
+  background-color: #ddd;
+}
