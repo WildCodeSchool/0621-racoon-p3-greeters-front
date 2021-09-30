@@ -8,6 +8,7 @@ import Home from './screens/Home/Home'
 import Greeter from './screens/Greeter/Greeter'
 import Concept from './screens/Concept/Concept'
 import AdminContent from './admin/screens/AdminContent/AdminContent'
+import AdminContentPage from './admin/screens/AdminContent/AdminContentPage'
 
 import './App.css'
 
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path='/admin/connection' exact>
             <AdminConnection />
+          </Route>
+          <Route path='/admin/content/page' exact>
+            <AdminContentPage />
           </Route>
         </Switch>
       </BrowserRouter>
