@@ -23,7 +23,7 @@ const AdminConnection = () => {
     if (err) {
       Swal.fire({
         icon: 'error',
-        title: "Nom d'utilisateur ou mot de passe inccorect",
+        title: "Nom d'utilisateur ou mot de passe incorrect",
         confirmButtonColor: 'red'
       })
     }
