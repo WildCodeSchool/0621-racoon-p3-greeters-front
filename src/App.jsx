@@ -1,6 +1,7 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Admin from './admin/screens/Admin'
+import AdminConnection from './screens/AdminConnection/AdminConnection'
 import Contact from './screens/Contact/Contact'
 import Greeter from './screens/Greeter/Greeter'
 import Home from './screens/Home/Home'
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path='/admin' exact>
             <Admin />
+          </Route>
+          <Route path='/admin/connection' exact>
+            <AdminConnection />
           </Route>
         </Switch>
       </BrowserRouter>
