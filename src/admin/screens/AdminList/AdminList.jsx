@@ -1,5 +1,11 @@
+import GreetersList from '../../components/GreetersList/GreetersList'
+
 const AdminList = () => {
-  return <></>
+  return (
+    <>
+      <GreetersList />
+    </>
+  )
 }
 
 export default AdminList
