@@ -7,4 +7,5 @@
 .AdminContent-Container li{
 padding: 20px;
 border: 2px solid black;
+cursor: pointer;
 }

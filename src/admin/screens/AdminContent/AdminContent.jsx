@@ -1,4 +1,7 @@
 import { NavLink } from 'react-router-dom'
+
+import AdminEditor from '../../components/Editor/AdminEditor'
+
 import './AdminContent.css'
 
 const AdminContent = () => {
