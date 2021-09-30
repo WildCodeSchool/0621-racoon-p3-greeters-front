@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const GreetersList = () => {
   const [greeters, setGreeters] = useState([])
-
+  //Get greeters from database
   useEffect(() => {
     const getData = async () => {
       const resData = await axios.get('http://localhost:3000/person')
@@ -26,6 +26,7 @@ const GreetersList = () => {
             <th colSpan='2'>Ville</th>
           </tr>
         </thead>
+        {/* Map into data to create a row for each greeter */}
         <tbody>
           {greeters[1]
             ? greeters.map(g => (

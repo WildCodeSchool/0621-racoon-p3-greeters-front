@@ -2,8 +2,9 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Admin from './admin/screens/Admin'
 import AdminConnection from './admin/screens/AdminConnection/AdminConnection'
-import AdminList from './admin/screens/AdminList/AdminList'
+import CitiesList from './admin/screens/CitiesList/CitiesList'
 import Contact from './screens/Contact/Contact'
+import GreetersList from './admin/screens/GreetersList/GreetersList'
 import MeetGreeter from './screens/MeetGreeter/MeetGreeter'
 import Home from './screens/Home/Home'
 import Greeter from './screens/Greeter/Greeter'
@@ -33,8 +34,11 @@ function App() {
           <Route path='/admin/connection' exact>
             <AdminConnection />
           </Route>
-          <Route path='/admin/list' exact>
-            <AdminList />
+          <Route path='/admin/list/greeters' exact>
+            <GreetersList />
+          </Route>
+          <Route path='/admin/list/cities' exact>
+            <CitiesList />
           </Route>
         </Switch>
       </BrowserRouter>
