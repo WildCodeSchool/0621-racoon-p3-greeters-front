@@ -29,27 +29,27 @@ const AdminDetailsCity = () => {
           <ul className='admin-details-city-list'>
             <li className='admin-details-city-item'>
               Nom : {city[0].city_name}
-              <a href='#' className='linkAdmin'>
+              <button href='#' className='linkAdmin'>
                 <box-icon name='edit-alt' />
-              </a>
+              </button>
             </li>
             <li className='admin-details-city-item'>
               Description : {city[0].city_description_fr}
-              <a href='#' className='linkAdmin'>
+              <button href='#' className='linkAdmin'>
                 <box-icon name='edit-alt' />
-              </a>
+              </button>
             </li>
             <li className='admin-details-city-item'>
               Titre : {city[0].city_title_fr}
-              <a href='#' className='linkAdmin'>
+              <button href='#' className='linkAdmin'>
                 <box-icon name='edit-alt' />
-              </a>
+              </button>
             </li>
             <li className='admin-details-city-item'>
               Photo : {city[0].city_photo}
-              <a href='#' className='linkAdmin'>
+              <button href='#' className='linkAdmin'>
                 <box-icon name='edit-alt' />
-              </a>
+              </button>
             </li>
           </ul>
         </div>
