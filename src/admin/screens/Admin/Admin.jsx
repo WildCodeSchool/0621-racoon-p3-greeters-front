@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
+import AdminMenu from '../../components/AdminMenu/AdminMenu'
 import './Admin.css'
 
 const Admin = () => {
   return (
     <>
+      <AdminMenu />
       <div className='AdminHome-container'>
         <h1 className='AdminHome-big-title'>Vue d'ensemble</h1>
         <Link to='#'>
@@ -16,7 +18,7 @@ const Admin = () => {
         </Link>
         <Link to='./admin/details/greeter'>
           <section className='AdminHome-section2'>
-            <h2 className='AdminHome-title'>Greeters</h2>
+            <h2 className='AdminHome-title'>Membres</h2>
             <h3 className='AdminHome-litle-title'>
               Gestion des profils des Greeters
             </h3>

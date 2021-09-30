@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import './Menu.css'
+import './AdminMenu.css'
 
 function Menu() {
   return (
@@ -10,25 +10,25 @@ function Menu() {
         </li>
         <li>
           <div className='icon_link'>
-            <NavLink to=
+            <NavLink to='#'>
               <span className='link_name'>Contenu</span>
             </NavLink>
           </div>
         </li>
         <li>
           <div className='icon_link'>
-            <NavLink to=
+            <NavLink to='#'>
               <span className='link_name'>Membres</span>
             </NavLink>
           </div>
         </li>
         <li>
-          <NavLink to=
+          <NavLink to='#'>
             <span className='link_name'>Villes</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to=
+          <NavLink to='#'>
             <span className='link_name'>Administration</span>
           </NavLink>
         </li>

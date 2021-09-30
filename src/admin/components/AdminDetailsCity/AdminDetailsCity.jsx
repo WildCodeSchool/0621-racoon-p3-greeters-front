@@ -1,8 +1,12 @@
+import AdminMenu from '../../components/AdminMenu/AdminMenu'
+
 import './AdminDetailsCity.css'
 
 const AdminDetailsCity = () => {
   return (
     <>
+      <AdminMenu />
+
       <div className='admin-details-city-container'>
         <h1 className='admin-details-city-title'>Villes</h1>
         <ul className='admin-details-city-list'>

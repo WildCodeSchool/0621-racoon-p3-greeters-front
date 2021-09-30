@@ -1,8 +1,11 @@
+import AdminMenu from '../../components/AdminMenu/AdminMenu'
+
 import './AdminDetailsGreeter.css'
 
 const AdminDetailsGreeter = () => {
   return (
     <>
+      <AdminMenu />
       <div className='admin-details-greeter-container'>
         <h1 className='admin-details-greeter-title'>Greeter</h1>
         <ul className='admin-details-greeter-list'>

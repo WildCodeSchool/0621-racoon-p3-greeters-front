@@ -1,5 +1,5 @@
 import { useState } from 'react/cjs/react.development'
-import Menu from '../../components/Menu/Menu'
+import Menu from '../../components/AdminMenu/AdminMenu'
 
 import Swal from 'sweetalert2'
 
