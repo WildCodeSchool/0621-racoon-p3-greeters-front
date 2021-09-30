@@ -1,22 +1,30 @@
 import { Modal, Button } from 'react-bootstrap'
+import { useState } from 'react/cjs/react.development'
 
 import './AdminEditor.css'
 
-const AdminEditor = () => {
+const AdminEditor = ({ page, type, status, data }) => {
+  const [changeValue, setChangeValue] = useState('')
+
   return (
     <div className='AdminEditor'>
       <Modal.Dialog>
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>{data.title}</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
-          <p>Modal body text goes here.</p>
+          {type === 'input' ? (
+            <input type='text' value={data.description} />
+          ) : (
+            <textarea value={data.description}></textarea>
+          )}
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant='secondary'>Close</Button>
-          <Button variant='primary'>Save changes</Button>
+          <Button variant='secondary' onClick={status()}>
+            Close
+          </Button>
         </Modal.Footer>
       </Modal.Dialog>
     </div>

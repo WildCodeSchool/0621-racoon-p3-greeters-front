@@ -7,6 +7,8 @@ import Contact from './screens/Contact/Contact'
 import Navbar from './components/Navbar/Navbar'
 import Home from './screens/Home/Home'
 import Greeter from './screens/Greeter/Greeter'
+import Concept from './screens/Concept/Concept'
+import AdminContent from './admin/screens/AdminContent/AdminContent'
 
 import './App.css'
 
@@ -19,11 +21,17 @@ function App() {
           <Route path='/' exact>
             <Home />
           </Route>
+          <Route path='/admin/content'>
+            <AdminContent />
+          </Route>
           <Route path='/contact' exact>
             <Contact />
           </Route>
           <Route path='/greeters/1' exact>
             <Greeter />
+          </Route>
+          <Route path='/concept' exact>
+            <Concept />
           </Route>
           <Route path='/admin' exact>
             <Admin />
