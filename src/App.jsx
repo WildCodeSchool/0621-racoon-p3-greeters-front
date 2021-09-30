@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/Navbar'
 import Home from './screens/Home/Home'
 import Greeter from './screens/Greeter/Greeter'
 import Concept from './screens/Concept/Concept'
+import AdminContent from './admin/screens/AdminContent/AdminContent'
 
 import './App.css'
 
@@ -18,6 +19,9 @@ function App() {
         <Switch>
           <Route path='/' exact>
             <Home />
+          </Route>
+          <Route path='/admin/content'>
+            <AdminContent />
           </Route>
           <Route path='/contact' exact>
             <Contact />
