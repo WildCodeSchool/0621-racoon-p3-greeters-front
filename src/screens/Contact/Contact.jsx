@@ -1,18 +1,33 @@
 import { useState } from 'react/cjs/react.development'
 
+import axios from 'axios'
 import Swal from 'sweetalert2'
 
 import './Contact.css'
 
 const Contact = () => {
+  // useEffect(() => {
+  //   const recupData = async () => {
+  //     const results = await axios.get('http://localhost:3000/description')
+  //     console.log(results)
+  //     setDescription(results.data)
+  //   }
+
+  //   recupData()
+  // }, [])
+
+  // DONE civilité sur la route du back
+  // DONE civilité dans la BDD
+  // AJOUTER tests JS des données avant axios
+  // AJOUTER réponse de l'axios si bon message OK sinon erreur
+
   const [object, setObject] = useState('')
   const [message, setMessage] = useState('')
+  const [civility, setCivility] = useState('female')
   const [lastName, setLastName] = useState('')
   const [firstName, setFirstName] = useState('')
-  const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState('')
-
-  const [fullMessage, setFullMessage] = useState({})
+  const [mail, setMail] = useState('')
+  const [postResult, setPostResult] = useState()
 
   const handleObject = object => {
     setObject(object)
@@ -20,6 +35,10 @@ const Contact = () => {
 
   const handleMessage = message => {
     setMessage(message)
+  }
+
+  const handleCivility = civility => {
+    setCivility(civility)
   }
 
   const handleLastName = lastName => {
@@ -30,25 +49,47 @@ const Contact = () => {
     setFirstName(firstName)
   }
 
-  const handleEmail = email => {
-    setEmail(email)
+  const handleMail = mail => {
+    setMail(mail)
   }
 
-  const handlePhone = phone => {
-    setPhone(phone)
+  const postData = async () => {
+    const results = await axios
+      .post('http://localhost:3000/contact', {
+        data: {
+          firstname: firstName,
+          lastname: lastName,
+          civility: civility,
+          mail: mail,
+          object: object,
+          message: message
+        }
+      })
+      .then(setPostResult(results))
   }
 
-  const handleSubmit = (e, message, email) => {
+  const resetFields = () => {
+    setObject('')
+    setMessage('')
+    setLastName('')
+    setFirstName('')
+    setMail('')
+  }
+
+  const handleSubmit = e => {
     e.preventDefault()
-    setFullMessage({ message: message, email: email })
+    postData()
+
     Swal.fire({
       icon: 'success',
       title: 'Message bien envoyé',
       confirmButtonColor: 'red'
     })
+    console.log(postData)
+    resetFields()
   }
 
-  console.log(fullMessage)
+  console.log(typeof civility, civility)
 
   return (
     <div className='Contact'>
@@ -65,18 +106,37 @@ const Contact = () => {
             <h4>
               Objet du message <span style={{ color: 'red' }}>*</span>
             </h4>
-            <input type='text' onChange={e => handleObject(e.target.value)} />
+            <input
+              type='text'
+              value={object}
+              onChange={e => handleObject(e.target.value)}
+            />
           </div>
 
           <div className='messageElement messageContent'>
             <h4>
               Contenu du message <span style={{ color: 'red' }}>*</span>
             </h4>
-            <textarea onChange={e => handleMessage(e.target.value)}></textarea>
+            <textarea
+              value={message}
+              onChange={e => handleMessage(e.target.value)}
+            ></textarea>
           </div>
         </div>
         <div className='infoContainer'>
           <h3>Mes coordonnées</h3>
+
+          <div className='infoElement civilityContent'>
+            <h4>
+              Civilité <span style={{ color: 'red' }}>*</span>
+            </h4>
+            <select onChange={e => handleCivility(e.target.value)}>
+              <option value='female' selected>
+                Madame
+              </option>
+              <option value='male'>Monsieur</option>
+            </select>
+          </div>
 
           <div className='infoElement lastNameContent'>
             <h4>
@@ -86,6 +146,7 @@ const Contact = () => {
               type='text'
               placeholder='Dupont'
               onChange={e => handleLastName(e.target.value)}
+              value={lastName}
             />
           </div>
 
@@ -97,6 +158,7 @@ const Contact = () => {
               type='text'
               placeholder='Nicolas'
               onChange={e => handleFirstName(e.target.value)}
+              value={firstName}
             />
           </div>
 
@@ -107,13 +169,9 @@ const Contact = () => {
             <input
               type='email'
               placeholder='monemail@gmail.com'
-              onChange={e => handleEmail(e.target.value)}
+              onChange={e => handleMail(e.target.value)}
+              value={mail}
             />
-          </div>
-
-          <div className='infoElement phoneContent'>
-            <h4>Téléphone</h4>
-            <input type='phone' onChange={e => handlePhone(e.target.value)} />
           </div>
         </div>
 
@@ -121,7 +179,7 @@ const Contact = () => {
           type='submit'
           className='submitButton'
           value='Envoyer ma demande'
-          onClick={e => handleSubmit(e, message, email)}
+          onClick={e => handleSubmit(e)}
         />
       </form>
       <p className='info'>

@@ -6,12 +6,12 @@ const GreeterCard = props => {
     <div className='greeter-card'>
       <NavLink to='/greeters/1'>
         <img
-          src={props.greeter_photo}
-          alt={props.greeter_name}
+          src={props.person_photo}
+          alt={props.person_name}
           className='greeter-img'
         />
       </NavLink>
-      <h2 className='greeter-name'>{props.greeter_name}</h2>
+      <h2 className='greeter-name'>{props.person_name}</h2>
     </div>
   )
 }
