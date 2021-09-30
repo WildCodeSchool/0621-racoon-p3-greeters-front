@@ -1,4 +1,5 @@
 import Navbar from '../../components/Navbar/Navbar'
+import Footer from '../../components/Footer/Footer'
 
 import { useState } from 'react/cjs/react.development'
 
@@ -197,6 +198,7 @@ const Contact = () => {
           exercer ce droit, merci de le préciser dans le formulaire ci-dessus.
         </p>
       </div>
+      <Footer />
     </>
   )
 }

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import './AdminHome.css'
+import './Admin.css'
 
-const AdminHome = () => {
+const Admin = () => {
   return (
     <>
       <div className='AdminHome-container'>
@@ -14,7 +14,7 @@ const AdminHome = () => {
             </h3>
           </section>
         </Link>
-        <Link to='#'>
+        <Link to='./admin/details/greeter'>
           <section className='AdminHome-section2'>
             <h2 className='AdminHome-title'>Greeters</h2>
             <h3 className='AdminHome-litle-title'>
@@ -22,8 +22,16 @@ const AdminHome = () => {
             </h3>
           </section>
         </Link>
-        <Link to='#'>
+        <Link to='./admin/details/city'>
           <section className='AdminHome-section'>
+            <h2 className='AdminHome-title'>Villes</h2>
+            <h3 className='AdminHome-litle-title'>
+              Gestion des villes des Greeters
+            </h3>
+          </section>
+        </Link>
+        <Link to='#'>
+          <section className='AdminHome-section2'>
             <h2 className='AdminHome-title'>Administration</h2>
             <h3 className='AdminHome-litle-title'>
               Gestion des comptes et droits administrateurs
@@ -35,4 +43,4 @@ const AdminHome = () => {
   )
 }
 
-export default AdminHome
+export default Admin

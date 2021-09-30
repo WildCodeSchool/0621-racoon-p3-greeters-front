@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react/cjs/react.development'
-import { GreetersData } from '../../data'
 import ReactPaginate from 'react-paginate'
 import axios from 'axios'
 
@@ -7,7 +6,7 @@ import GreeterCard from '../GreeterCard/GreeterCard'
 
 import './GreetersPagination.css'
 
-const Greeters = () => {
+const GreetersPagination = () => {
   const [pageNumber, setPageNumber] = useState(0)
   const [greeters, setGreeters] = useState([])
 
@@ -51,4 +50,4 @@ const Greeters = () => {
   )
 }
 
-export default Greeters
+export default GreetersPagination

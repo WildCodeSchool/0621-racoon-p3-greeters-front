@@ -1,6 +1,5 @@
 .AdminHome-container{
   position: absolute;
-  margin-top: 50px;
   width: 70%;
   left: 30%;
   text-align: center;
@@ -12,15 +11,15 @@
 }
 
 .AdminHome-section{
-  background: rgb(233, 233, 233);
-  height: 200px;
+  background: rgba(0, 0, 0, 0.1);
+  height: 140px;
 
 }
 .AdminHome-section2{
-  height: 200px;
+  height: 140px;
 }
 
 .AdminHome-title{
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
