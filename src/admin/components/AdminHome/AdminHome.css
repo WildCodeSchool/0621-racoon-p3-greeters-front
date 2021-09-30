@@ -1,6 +1,7 @@
 .AdminHome-container{
-  width: 70%;
   position: absolute;
+  margin-top: 50px;
+  width: 70%;
   left: 30%;
   text-align: center;
 }
