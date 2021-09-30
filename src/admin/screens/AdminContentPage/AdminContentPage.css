@@ -1,0 +1,15 @@
+.AdminContentPage {
+  width: 70%;
+  margin-left: 30%;
+}
+
+.AdminContentPage .page-table {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.AdminContentPage table {
+  width: 50%;
+  background-color: salmon;
+}

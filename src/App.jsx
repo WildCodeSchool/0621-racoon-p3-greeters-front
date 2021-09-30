@@ -22,9 +22,6 @@ function App() {
           <Route path='/' exact>
             <Home />
           </Route>
-          <Route path='/admin/content'>
-            <AdminContent />
-          </Route>
           <Route path='/contact' exact>
             <Contact />
           </Route>
@@ -39,6 +36,9 @@ function App() {
           </Route>
           <Route path='/admin/connection' exact>
             <AdminConnection />
+          </Route>
+          <Route path='/admin/content' exact>
+            <AdminContent />
           </Route>
           <Route path='/admin/content/page' exact>
             <AdminContentPage />

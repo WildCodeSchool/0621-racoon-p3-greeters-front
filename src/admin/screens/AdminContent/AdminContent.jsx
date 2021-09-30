@@ -7,7 +7,7 @@ import './AdminContent.css'
 const AdminContent = () => {
   return (
     <div className='AdminContent-Container'>
-      <h2 AdminContent-Title>Contenu</h2>
+      <h2 className='AdminContent-Title'>Contenu</h2>
       <nav>
         <ul>
           <li>
