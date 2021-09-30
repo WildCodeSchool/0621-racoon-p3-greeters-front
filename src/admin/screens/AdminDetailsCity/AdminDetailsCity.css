@@ -1,19 +1,23 @@
-.admin-details-greeter-container{
+.admin-details-city-container{
   position: absolute;
   width: 70%;
   left: 30%;
 }
 
-.admin-details-greeter-title{
+.admin-details-city-title{
   padding: 20px 0;
   text-align: center;
   background: rgba(0, 0, 0, 0.1);
 }
 
-.admin-details-greeter-list{
+.admin-details-city-list{
   padding-top: 20px;
+  margin-right: 30px;
+
 }
 
-.admin-details-greeter-item{
+.admin-details-city-item{
   padding-top: 20px;
+  border-bottom: 1px solid;
+
 }

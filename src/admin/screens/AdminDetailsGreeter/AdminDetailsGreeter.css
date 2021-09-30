@@ -1,0 +1,27 @@
+.admin-details-greeter-container{
+  position: absolute;
+  width: 70%;
+  left: 30%;
+}
+
+.admin-details-greeter-title{
+  padding: 20px 0;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.admin-details-greeter-list{
+  padding-top: 20px ;
+  margin-right: 30px;
+}
+
+.admin-details-greeter-item{
+  padding-top: 20px;
+  border-bottom: 1px solid;
+}
+
+.linkAdmin{
+  text-decoration: none;
+  position: absolute;
+  right: 0px;
+}

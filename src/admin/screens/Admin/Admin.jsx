@@ -16,7 +16,7 @@ const Admin = () => {
             </h3>
           </section>
         </Link>
-        <Link to='./admin/details/greeter'>
+        <Link to='./admin/details-greeter'>
           <section className='AdminHome-section2'>
             <h2 className='AdminHome-title'>Membres</h2>
             <h3 className='AdminHome-litle-title'>
@@ -24,7 +24,7 @@ const Admin = () => {
             </h3>
           </section>
         </Link>
-        <Link to='./admin/details/city'>
+        <Link to='./admin/details-city'>
           <section className='AdminHome-section'>
             <h2 className='AdminHome-title'>Villes</h2>
             <h3 className='AdminHome-litle-title'>
