@@ -2,6 +2,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Admin from './admin/screens/Admin'
 import AdminConnection from './admin/screens/AdminConnection/AdminConnection'
+import AdminEditor from './admin/components/Editor/AdminEditor'
 import Contact from './screens/Contact/Contact'
 import Navbar from './components/Navbar/Navbar'
 import Home from './screens/Home/Home'
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path='/admin/connection' exact>
             <AdminConnection />
+          </Route>
+          <Route path='/admin/editor' exact>
+            <AdminEditor />
           </Route>
         </Switch>
       </BrowserRouter>
