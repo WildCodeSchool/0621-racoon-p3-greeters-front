@@ -41,7 +41,7 @@ const CitiesList = () => {
                     </td>
                     <td>
                       <NavLink to={`/admin/details-city/${c.city_id}`}>
-                        <button>
+                        <button className='admin-icon-btn'>
                           <box-icon
                             type='solid'
                             name='edit-alt'

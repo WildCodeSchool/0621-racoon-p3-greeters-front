@@ -45,7 +45,7 @@ const GreetersList = () => {
                     </td>
                     <td>
                       <NavLink to={`/admin/details-greeter/${g.person_id}`}>
-                        <button>
+                        <button className='admin-icon-btn'>
                           <box-icon type='solid' name='edit-alt'></box-icon>
                         </button>
                       </NavLink>

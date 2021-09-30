@@ -14,7 +14,9 @@ const AdminDetailsGreeter = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const resData = await axios.get(`http://localhost:3000/person/10`)
+      const resData = await axios.get(
+        `http://localhost:3000/person/${greeterId}`
+      )
       setGreeters(resData.data.result)
     }
 
@@ -30,36 +32,36 @@ const AdminDetailsGreeter = () => {
           <ul className='admin-details-greeter-list'>
             <li className='admin-details-greeter-item'>
               Prénom :{greeters[0].person_firstname}
-              <a href='#' className='linkAdmin'>
+              <button href='#' className='admin-details-icon-btn'>
                 <box-icon name='edit-alt' />
-              </a>
+              </button>
             </li>
 
             <li className='admin-details-greeter-item'>
               Ville :{greeters[0].city_name}
-              <a href='#' className='linkAdmin'>
+              <button href='#' className='admin-details-icon-btn'>
                 <box-icon name='edit-alt' />
-              </a>
+              </button>
             </li>
             <li className='admin-details-greeter-item'>Langues : </li>
             <li className='admin-details-greeter-item'>
               Phrase d'accroche :{greeters[0].person_catch_phrase_fr}
-              <a href='#' className='linkAdmin'>
+              <button href='#' className='admin-details-icon-btn'>
                 <box-icon name='edit-alt' />
-              </a>
+              </button>
             </li>
             <li className='admin-details-greeter-item'>Thématiques : </li>
             <li className='admin-details-greeter-item'>
               Descriptif :{greeters[0].person_description_fr}
-              <a href='#' className='linkAdmin'>
+              <button href='#' className='admin-details-icon-btn'>
                 <box-icon name='edit-alt' />
-              </a>
+              </button>
             </li>
             <li className='admin-details-greeter-item'>
               Photo :{greeters[0].person_photo}
-              <a href='#' className='linkAdmin'>
+              <button href='#' className='admin-details-icon-btn'>
                 <box-icon name='edit-alt'>modifier</box-icon>
-              </a>
+              </button>
             </li>
           </ul>
         </div>

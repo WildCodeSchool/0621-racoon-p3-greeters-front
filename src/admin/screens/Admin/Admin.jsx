@@ -16,15 +16,15 @@ const Admin = () => {
             </h3>
           </section>
         </Link>
-        <Link to='./admin/details-greeter'>
+        <Link to='/admin/list-greeters'>
           <section className='AdminHome-section2'>
-            <h2 className='AdminHome-title'>Membres</h2>
+            <h2 className='AdminHome-title'>Greeters</h2>
             <h3 className='AdminHome-litle-title'>
               Gestion des profils des Greeters
             </h3>
           </section>
         </Link>
-        <Link to='./admin/details-city'>
+        <Link to='/admin/list-cities'>
           <section className='AdminHome-section'>
             <h2 className='AdminHome-title'>Villes</h2>
             <h3 className='AdminHome-litle-title'>

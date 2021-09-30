@@ -10,11 +10,11 @@ import './AdminDetailsCity.css'
 const AdminDetailsCity = () => {
   const [city, setCity] = useState([])
 
-  let { greeterId } = useParams()
+  let { cityId } = useParams()
 
   useEffect(() => {
     const getData = async () => {
-      const resData = await axios.get(`http://localhost:3000/city/3`)
+      const resData = await axios.get(`http://localhost:3000/city/${cityId}`)
       setCity(resData.data)
     }
     getData()
@@ -29,25 +29,25 @@ const AdminDetailsCity = () => {
           <ul className='admin-details-city-list'>
             <li className='admin-details-city-item'>
               Nom : {city[0].city_name}
-              <button href='#' className='linkAdmin'>
+              <button href='#' className='admin-details-icon-btn'>
                 <box-icon name='edit-alt' />
               </button>
             </li>
             <li className='admin-details-city-item'>
               Description : {city[0].city_description_fr}
-              <button href='#' className='linkAdmin'>
+              <button href='#' className='admin-details-icon-btn'>
                 <box-icon name='edit-alt' />
               </button>
             </li>
             <li className='admin-details-city-item'>
               Titre : {city[0].city_title_fr}
-              <button href='#' className='linkAdmin'>
+              <button href='#' className='admin-details-icon-btn'>
                 <box-icon name='edit-alt' />
               </button>
             </li>
             <li className='admin-details-city-item'>
               Photo : {city[0].city_photo}
-              <button href='#' className='linkAdmin'>
+              <button href='#' className='admin-details-icon-btn'>
                 <box-icon name='edit-alt' />
               </button>
             </li>

@@ -6,7 +6,9 @@ function AdminMenu() {
     <div className='sidebar'>
       <ul className='nav-links'>
         <li>
-          <span className='link_name'>Vue d'ensemble</span>
+          <NavLink to='/admin'>
+            <span className='link_name'>Vue d'ensemble</span>
+          </NavLink>
         </li>
         <li>
           <div className='icon_link'>

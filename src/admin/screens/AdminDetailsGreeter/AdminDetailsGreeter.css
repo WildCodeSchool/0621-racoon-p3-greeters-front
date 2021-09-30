@@ -20,12 +20,15 @@
 .admin-details-greeter-item{
   padding-top: 20px;
   border-bottom: 1px solid;
+  list-style: none;
 }
 
-.linkAdmin{
+.admin-details-icon-btn{
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   text-decoration: none;
   position: absolute;
   right: 5px;
+  cursor: pointer;
+  padding: 0 1px;
 }

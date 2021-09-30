@@ -1,5 +1,6 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
+import Admin from './admin/screens/Admin/Admin'
 import AdminDetailsCity from './admin/screens/AdminDetailsCity/AdminDetailsCity'
 import AdminDetailsGreeter from './admin/screens/AdminDetailsGreeter/AdminDetailsGreeter'
 import AdminConnection from './admin/screens/AdminConnection/AdminConnection'
@@ -38,11 +39,14 @@ function App() {
           <Route path='/admin/list-cities' exact>
             <CitiesList />
           </Route>
-          <Route path='/admin/details-greeter' exact>
+          <Route path='/admin/details-greeter/:greeterId' exact>
             <AdminDetailsGreeter />
           </Route>
-          <Route path='/admin/details-city' exact>
+          <Route path='/admin/details-city/:cityId' exact>
             <AdminDetailsCity />
+          </Route>
+          <Route path='/admin' exact>
+            <Admin />
           </Route>
         </Switch>
       </BrowserRouter>

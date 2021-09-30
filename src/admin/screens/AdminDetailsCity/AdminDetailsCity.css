@@ -9,14 +9,12 @@
   text-align: center;
   background: rgba(0, 0, 0, 0.1);
   margin: 0 50px;
-  border-left: 1px solid ;
 
 }
 
 .admin-details-city-list{
   padding-top: 20px;
   margin: 0 50px;
-  border-left: 1px solid ;
 
 
 }
@@ -24,5 +22,6 @@
 .admin-details-city-item{
   padding-top: 20px;
   border-bottom: 1px solid;
+  list-style: none;
 
 }
