@@ -1,5 +1,3 @@
-import React from 'react'
-
 import Footer from '../../components/Footer/Footer'
 import GreetersPagination from '../../components/GreetersPagination/GreetersPagination'
 import MeetGreeterBar from '../../components/MeetGreeterBar/MeetGreeterBar'

@@ -1,4 +1,4 @@
-.cities-list-container{
+.greeters-list-container{
   position: absolute;
   width: 70%;
   left: 30%;
@@ -8,7 +8,7 @@
   justify-content: center;
 }
 
-.cities-list-title{
+.greeters-list-title{
   margin:0 2vw;
   padding: 20px 0;
   text-align: center;
@@ -16,21 +16,21 @@
   font-size: 35px;
 }
 
-.cities-table {
-  margin: 2vh 2vw
+.greeters-table {
+  margin: 2vh 2vw;
 }
 
-.cities-row{
+.greeters-row{
   text-align: center;
   background-color: rgba(0, 0, 0, 0.582);
   color:white;
-  width: 35vw;
+  width: 20vw;
   font-size: 22px;
 }
 
-.cities-item{
+.greeters-item{
   padding: 20px 0;
-  width: 35vw;
+  width: 20vw;
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
@@ -39,6 +39,7 @@
   font-size: 18px;
 }
 
-.cities-item:hover {
+
+.greeters-item:hover {
   background-color: #ddd;
 }

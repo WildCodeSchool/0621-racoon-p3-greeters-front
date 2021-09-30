@@ -1,0 +1,25 @@
+.AdminHome-container{
+  position: absolute;
+  width: 70%;
+  left: 30%;
+  text-align: center;
+}
+
+.AdminHome-container a{
+  text-decoration: none;
+  color: #000;
+}
+
+.AdminHome-section{
+  background: rgba(0, 0, 0, 0.1);
+  height: 140px;
+
+}
+.AdminHome-section2{
+  height: 140px;
+}
+
+.AdminHome-title{
+  padding-top: 20px;
+}
+

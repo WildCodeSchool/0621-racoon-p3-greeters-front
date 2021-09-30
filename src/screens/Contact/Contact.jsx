@@ -1,7 +1,7 @@
-import { useState } from 'react/cjs/react.development'
-
-import Footer from '../../components/Footer/Footer'
 import Navbar from '../../components/Navbar/Navbar'
+import Footer from '../../components/Footer/Footer'
+
+import { useState } from 'react/cjs/react.development'
 
 import axios from 'axios'
 import Swal from 'sweetalert2'

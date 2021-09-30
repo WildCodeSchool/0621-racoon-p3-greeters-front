@@ -1,13 +1,14 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Admin from './admin/screens/Admin'
 import AdminConnection from './admin/screens/AdminConnection/AdminConnection'
+import AdminDetailsCity from './admin/screens/AdminDetailsCity/AdminDetailsCity'
+import AdminDetailsGreeter from './admin/screens/AdminDetailsGreeter/AdminDetailsGreeter'
 import CitiesList from './admin/screens/CitiesList/CitiesList'
 import Contact from './screens/Contact/Contact'
-import GreetersList from './admin/screens/GreetersList/GreetersList'
-import MeetGreeter from './screens/MeetGreeter/MeetGreeter'
-import Home from './screens/Home/Home'
 import Greeter from './screens/Greeter/Greeter'
+import GreetersList from './admin/screens/GreetersList/GreetersList'
+import Home from './screens/Home/Home'
+import MeetGreeter from './screens/MeetGreeter/MeetGreeter'
 
 import './App.css'
 
@@ -28,17 +29,20 @@ function App() {
           <Route path='/greeters/1' exact>
             <Greeter />
           </Route>
-          <Route path='/admin' exact>
-            <Admin />
-          </Route>
           <Route path='/admin/connection' exact>
             <AdminConnection />
           </Route>
-          <Route path='/admin/list/greeters' exact>
+          <Route path='/admin/list-greeters' exact>
             <GreetersList />
           </Route>
-          <Route path='/admin/list/cities' exact>
+          <Route path='/admin/list-cities' exact>
             <CitiesList />
+          </Route>
+          <Route path='/admin/details-greeter' exact>
+            <AdminDetailsGreeter />
+          </Route>
+          <Route path='/admin/details-city' exact>
+            <AdminDetailsCity />
           </Route>
         </Switch>
       </BrowserRouter>
