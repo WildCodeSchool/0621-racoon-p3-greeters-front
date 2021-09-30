@@ -1,4 +1,5 @@
 import { useState } from 'react/cjs/react.development'
+import Menu from '../../components/Menu/Menu'
 
 import Swal from 'sweetalert2'
 
@@ -31,38 +32,40 @@ const AdminConnection = () => {
 
   console.log(userName, password)
   return (
-    <div className='AdminConnection'>
-      <form>
-        <fieldset>
-          <label htmlFor='userName'>
-            Nom d'utilisateur <span className='connection-required'>*</span>
-          </label>
-          <input
-            type='text'
-            id='userName'
-            onChange={e => handleUserName(e.target.value)}
-          />
-          <caption>
-            Saississez votre nom d'utilisateur pour Greeters Loire Valley
-          </caption>
-        </fieldset>
-        <fieldset>
-          <label htmlFor='password'>
-            Mot de passe <span className='connection-required'>*</span>
-          </label>
-          <input
-            type='password'
-            id='password'
-            onChange={e => handlePassword(e.target.value)}
-          />
-          <caption>
-            Saississez le mot de passe correspondant à votre nom d'utilisateur
-          </caption>
-        </fieldset>
-        <button onClick={handleSubmit}>Se connecter</button>
-      </form>
-    </div>
+    <>
+      <Menu />
+      <div className='AdminConnection'>
+        <form>
+          <fieldset>
+            <label htmlFor='userName'>
+              Nom d'utilisateur <span className='connection-required'>*</span>
+            </label>
+            <input
+              type='text'
+              id='userName'
+              onChange={e => handleUserName(e.target.value)}
+            />
+            <caption>
+              Saississez votre nom d'utilisateur pour Greeters Loire Valley
+            </caption>
+          </fieldset>
+          <fieldset>
+            <label htmlFor='password'>
+              Mot de passe <span className='connection-required'>*</span>
+            </label>
+            <input
+              type='password'
+              id='password'
+              onChange={e => handlePassword(e.target.value)}
+            />
+            <caption>
+              Saississez le mot de passe correspondant à votre nom d'utilisateur
+            </caption>
+          </fieldset>
+          <button onClick={handleSubmit}>Se connecter</button>
+        </form>
+      </div>
+    </>
   )
 }
-
 export default AdminConnection
