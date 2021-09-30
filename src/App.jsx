@@ -1,13 +1,17 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Admin from './admin/screens/Admin/Admin'
 import AdminDetailsCity from './admin/screens/AdminDetailsCity/AdminDetailsCity'
 import AdminDetailsGreeter from './admin/screens/AdminDetailsGreeter/AdminDetailsGreeter'
 import AdminConnection from './admin/screens/AdminConnection/AdminConnection'
+import Admin from './admin/screens/Admin'
+import AdminEditor from './admin/components/Editor/AdminEditor'
 import Contact from './screens/Contact/Contact'
 import Greeter from './screens/Greeter/Greeter'
 import Home from './screens/Home/Home'
 import MeetGreeter from './screens/MeetGreeter/MeetGreeter'
+import Concept from './screens/Concept/Concept'
+import AdminContent from './admin/screens/AdminContent/AdminContent'
+import AdminContentPage from './admin/screens/AdminContentPage/AdminContentPage'
 
 import './App.css'
 
@@ -22,11 +26,17 @@ function App() {
           <Route path='/meetgreeter' exact>
             <MeetGreeter />
           </Route>
+          <Route path='/admin/content'>
+            <AdminContent />
+          </Route>
           <Route path='/contact' exact>
             <Contact />
           </Route>
           <Route path='/greeters/1' exact>
             <Greeter />
+          </Route>
+          <Route path='/concept' exact>
+            <Concept />
           </Route>
           <Route path='/admin' exact>
             <Admin />
@@ -39,6 +49,12 @@ function App() {
           </Route>
           <Route path='/admin/details-city' exact>
             <AdminDetailsCity />
+          </Route>
+          <Route path='/admin/content/page' exact>
+            <AdminContentPage />
+          </Route>
+          <Route path='/admin/editor' exact>
+            <AdminEditor />
           </Route>
         </Switch>
       </BrowserRouter>
