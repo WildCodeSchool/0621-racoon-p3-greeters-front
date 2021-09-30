@@ -1,7 +1,11 @@
 .greeters-container {
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  width: 50rem;
+  height: 35rem;
+  overflow: hidden;
 }
 
 .greeters-title {
@@ -15,8 +19,10 @@
   position: relative;
   top: 99%;
   left: 50%;
+  margin-top: 2rem;
   padding-left: 10%;
   padding-right: 10%;
+  
   transform: translateX(-50%);
   font-style: normal;
   font-weight: bold;

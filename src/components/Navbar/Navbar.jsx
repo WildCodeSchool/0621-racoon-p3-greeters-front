@@ -90,7 +90,7 @@ const Navbar = () => {
           <h3>Nos valeurs</h3>
         </NavLink>
 
-        <NavLink to='/meet-greeter'>
+        <NavLink to='/meetgreeter'>
           <h3>Rencontrer un greeter</h3>
         </NavLink>
 

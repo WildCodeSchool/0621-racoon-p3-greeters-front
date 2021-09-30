@@ -1,0 +1,42 @@
+.meetbar {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meet-items {
+  display: flex;
+  text-align: center;
+  width: 90vw;
+  justify-content: space-evenly;
+  height: 10vh;
+  align-items: center;
+  
+}
+
+
+
+.meet-select{
+  background-color: #ffe0e0;
+  width: 20rem;
+  height: 3rem;
+  border-radius: 10rem;
+}
+
+
+
+
+
+.meet-greeter-btn{
+  margin-top: 2rem;
+  transform: translateX(-50%);
+  position: relative;
+  left: 50%;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: white;
+  text-align: center;
+  width: 15rem;
+
+}

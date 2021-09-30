@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Admin from './admin/screens/Admin'
 import AdminConnection from './admin/screens/AdminConnection/AdminConnection'
 import Contact from './screens/Contact/Contact'
+import MeetGreeter from './screens/MeetGreeter/MeetGreeter'
 import Navbar from './components/Navbar/Navbar'
 import Home from './screens/Home/Home'
 import Greeter from './screens/Greeter/Greeter'
@@ -13,10 +14,12 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Navbar />
+        <Route path='/' exact>
+          <Home />
+        </Route>
         <Switch>
-          <Route path='/' exact>
-            <Home />
+          <Route path='/meetgreeter' exact>
+            <MeetGreeter />
           </Route>
           <Route path='/contact' exact>
             <Contact />
