@@ -45,17 +45,29 @@ const AdminDetailsCity = () => {
 
   // state for send new data to bdd
 
-  const [cityName, setCityName] = useState([])
+  const [cityName, setCityName] = useState('')
   const [cityDesc, setCityDesc] = useState([])
   const [cityDescEn, setCityDescEn] = useState([])
   const [cityTitle, setCitytitle] = useState([])
   const [cityTitleEn, setCitytitleEn] = useState([])
   const [cityPhoto, setCityPhoto] = useState([])
 
+  const putNameData = async () => {
+    const results = await axios.put(`http://localhost:3000/city/${cityId}`, {
+      city_name: cityName
+    })
+    console.log(results)
+  }
+
+  const handleSubmit = () => {
+    toggleCityNameForm()
+    putNameData()
+  }
+
   return (
     <>
       <AdminMenu />
-      {city[0] && (
+      {city[0] ? (
         <div className='admin-details-city-container'>
           <h1 className='admin-details-city-title'>Villes</h1>
           <ul className='admin-details-city-list'>
@@ -122,7 +134,7 @@ const AdminDetailsCity = () => {
             </li>
           </ul>
         </div>
-      )}
+      ) : null}
       <Modal
         isShowing={isCityNameFormShowed}
         hide={toggleCityNameForm}
@@ -134,14 +146,11 @@ const AdminDetailsCity = () => {
               type='text'
               placeholder='modifier ici'
               onChange={e => setCityName(e.target.value)}
+              value={cityName}
             />
           </div>
           <div className='form-group'>
-            <input
-              type='submit'
-              value='Envoyer'
-              onClick={console.log(cityName)}
-            />
+            <input type='submit' value='Envoyer' onClick={handleSubmit} />
           </div>
         </form>
       </Modal>
