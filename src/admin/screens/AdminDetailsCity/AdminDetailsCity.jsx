@@ -10,9 +10,25 @@ import { useParams } from 'react-router'
 import './AdminDetailsCity.css'
 
 const AdminDetailsCity = () => {
+  // state for send city id
+
   const [city, setCity] = useState([])
 
-  //
+  // params for recup city id from url
+
+  let { cityId } = useParams()
+
+  // fetch data from backend
+
+  useEffect(() => {
+    const getData = async () => {
+      const resData = await axios.get(`http://localhost:3000/city/${cityId}`)
+      setCity(resData.data)
+    }
+    getData()
+  }, [])
+
+  // import modal for city
 
   const { isShowing: isCityNameFormShowed, toggle: toggleCityNameForm } =
     useModal()
@@ -27,15 +43,14 @@ const AdminDetailsCity = () => {
   const { isShowing: isCityPhotoFormShowed, toggle: toggleCityPhotoForm } =
     useModal()
 
-  let { cityId } = useParams()
+  // state for send new data to bdd
 
-  useEffect(() => {
-    const getData = async () => {
-      const resData = await axios.get(`http://localhost:3000/city/${cityId}`)
-      setCity(resData.data)
-    }
-    getData()
-  }, [])
+  const [cityName, setCityName] = useState([])
+  const [cityDesc, setCityDesc] = useState([])
+  const [cityDescEn, setCityDescEn] = useState([])
+  const [cityTitle, setCitytitle] = useState([])
+  const [cityTitleEn, setCitytitleEn] = useState([])
+  const [cityPhoto, setCityPhoto] = useState([])
 
   return (
     <>
@@ -118,11 +133,15 @@ const AdminDetailsCity = () => {
             <input
               type='text'
               placeholder='modifier ici'
-              onChange={e => console.log(e.target.value)}
+              onChange={e => setCityName(e.target.value)}
             />
           </div>
           <div className='form-group'>
-            <input type='submit' value='Envoyer' />
+            <input
+              type='submit'
+              value='Envoyer'
+              onClick={console.log(cityName)}
+            />
           </div>
         </form>
       </Modal>
