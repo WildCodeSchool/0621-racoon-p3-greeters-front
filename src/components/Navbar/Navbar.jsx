@@ -86,20 +86,12 @@ const Navbar = () => {
           <h3>Qu'est ce qu'un greeter ?</h3>
         </NavLink>
 
-        <NavLink to='/our-values'>
-          <h3>Nos valeurs</h3>
-        </NavLink>
-
         <NavLink to='/meet-greeter'>
           <h3>Rencontrer un greeter</h3>
         </NavLink>
 
-        <NavLink to='/opinions'>
-          <h3>Avis</h3>
-        </NavLink>
-
         <NavLink to='/booking'>
-          <h3>Réserver un greeter</h3>
+          <h3>Réserver une balade</h3>
         </NavLink>
 
         <NavLink to='/contact'>

@@ -11,7 +11,7 @@ const Home = () => {
       <Banner />
       <Greeters />
       <Cities />
-      <Map />
+      <Map coordinates={null} />
       <Footer />
     </div>
   )

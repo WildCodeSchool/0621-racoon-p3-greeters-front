@@ -25,7 +25,7 @@ function App() {
           <Route path='/contact' exact>
             <Contact />
           </Route>
-          <Route path='/greeters/1' exact>
+          <Route path='/greeters/:id' exact>
             <Greeter />
           </Route>
           <Route path='/concept' exact>

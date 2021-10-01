@@ -11,7 +11,7 @@ const AdminContent = () => {
       <nav>
         <ul>
           <li>
-            <NavLink exact to='/admin/content/page?page=concept'>
+            <NavLink exact to='/admin/content/page?page=description'>
               Qu'est ce qu'un Greeter
             </NavLink>
           </li>

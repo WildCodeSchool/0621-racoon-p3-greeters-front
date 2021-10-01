@@ -1,95 +1,40 @@
-import { useState } from 'react/cjs/react.development'
+import React from 'react'
+import emailjs from 'emailjs-com'
 
-import axios from 'axios'
 import Swal from 'sweetalert2'
 
 import './Contact.css'
 
 const Contact = () => {
-  // useEffect(() => {
-  //   const recupData = async () => {
-  //     const results = await axios.get('http://localhost:3000/description')
-  //     console.log(results)
-  //     setDescription(results.data)
-  //   }
-
-  //   recupData()
-  // }, [])
-
-  // DONE civilité sur la route du back
-  // DONE civilité dans la BDD
-  // AJOUTER tests JS des données avant axios
-  // AJOUTER réponse de l'axios si bon message OK sinon erreur
-
-  const [object, setObject] = useState('')
-  const [message, setMessage] = useState('')
-  const [civility, setCivility] = useState('female')
-  const [lastName, setLastName] = useState('')
-  const [firstName, setFirstName] = useState('')
-  const [mail, setMail] = useState('')
-  const [postResult, setPostResult] = useState()
-
-  const handleObject = object => {
-    setObject(object)
-  }
-
-  const handleMessage = message => {
-    setMessage(message)
-  }
-
-  const handleCivility = civility => {
-    setCivility(civility)
-  }
-
-  const handleLastName = lastName => {
-    setLastName(lastName)
-  }
-
-  const handleFirstName = firstName => {
-    setFirstName(firstName)
-  }
-
-  const handleMail = mail => {
-    setMail(mail)
-  }
-
-  const postData = async () => {
-    const results = await axios
-      .post('http://localhost:3000/contact', {
-        data: {
-          firstname: firstName,
-          lastname: lastName,
-          civility: civility,
-          mail: mail,
-          object: object,
-          message: message
-        }
-      })
-      .then(setPostResult(results))
-  }
-
-  const resetFields = () => {
-    setObject('')
-    setMessage('')
-    setLastName('')
-    setFirstName('')
-    setMail('')
-  }
-
-  const handleSubmit = e => {
+  const sendEmail = e => {
     e.preventDefault()
-    postData()
 
-    Swal.fire({
-      icon: 'success',
-      title: 'Message bien envoyé',
-      confirmButtonColor: 'red'
-    })
-    console.log(postData)
-    resetFields()
+    emailjs
+      .sendForm(
+        'service_me1i1xh',
+        'template_88diors',
+        e.target,
+        'user_0L8nH4eKnHmmnaXaH2YLq'
+      )
+      .then(
+        result => {
+          console.log(result.text)
+          Swal.fire({
+            icon: 'success',
+            title: 'Votre message a bien été envoyé',
+            timer: 1500
+          })
+        },
+        error => {
+          console.log(error.text)
+          Swal.fire({
+            icon: 'error',
+            title: "Une erreur s'est produite lors de l'envoi du message",
+            timer: 1500
+          })
+        }
+      )
   }
-
-  console.log(typeof civility, civility)
 
   return (
     <div className='Contact'>
@@ -98,7 +43,7 @@ const Contact = () => {
         Les champs obligatoires sont indiqués par un astérisque{' '}
         <span style={{ color: 'red' }}>*</span>
       </p>
-      <form className='contactForm'>
+      <form className='contactForm' onSubmit={sendEmail}>
         <div className='messageContainer'>
           <h3>Ma demande</h3>
 
@@ -106,21 +51,14 @@ const Contact = () => {
             <h4>
               Objet du message <span style={{ color: 'red' }}>*</span>
             </h4>
-            <input
-              type='text'
-              value={object}
-              onChange={e => handleObject(e.target.value)}
-            />
+            <input type='text' name='user_object' />
           </div>
 
           <div className='messageElement messageContent'>
             <h4>
               Contenu du message <span style={{ color: 'red' }}>*</span>
             </h4>
-            <textarea
-              value={message}
-              onChange={e => handleMessage(e.target.value)}
-            ></textarea>
+            <textarea name='user_message'></textarea>
           </div>
         </div>
         <div className='infoContainer'>
@@ -130,11 +68,11 @@ const Contact = () => {
             <h4>
               Civilité <span style={{ color: 'red' }}>*</span>
             </h4>
-            <select onChange={e => handleCivility(e.target.value)}>
-              <option value='female' selected>
+            <select name='user_civility'>
+              <option value='Madame' defaultValue>
                 Madame
               </option>
-              <option value='male'>Monsieur</option>
+              <option value='Monsieur'>Monsieur</option>
             </select>
           </div>
 
@@ -142,24 +80,14 @@ const Contact = () => {
             <h4>
               Nom <span style={{ color: 'red' }}>*</span>
             </h4>
-            <input
-              type='text'
-              placeholder='Dupont'
-              onChange={e => handleLastName(e.target.value)}
-              value={lastName}
-            />
+            <input type='text' placeholder='Dupont' name='user_lastname' />
           </div>
 
           <div className='infoElement firstNameContent'>
             <h4>
               Prénom <span style={{ color: 'red' }}>*</span>
             </h4>
-            <input
-              type='text'
-              placeholder='Nicolas'
-              onChange={e => handleFirstName(e.target.value)}
-              value={firstName}
-            />
+            <input type='text' placeholder='Nicolas' name='user_firstname' />
           </div>
 
           <div className='infoElement emailContent'>
@@ -169,8 +97,7 @@ const Contact = () => {
             <input
               type='email'
               placeholder='monemail@gmail.com'
-              onChange={e => handleMail(e.target.value)}
-              value={mail}
+              name='user_email'
             />
           </div>
         </div>
@@ -179,7 +106,6 @@ const Contact = () => {
           type='submit'
           className='submitButton'
           value='Envoyer ma demande'
-          onClick={e => handleSubmit(e)}
         />
       </form>
       <p className='info'>

@@ -7,18 +7,26 @@ import { Link, useLocation, BrowserRouter as Router } from 'react-router-dom'
 import './AdminContentPage.css'
 
 const AdminContentPage = () => {
-  // const { page } = useQuery()
+  function useQuery() {
+    return new URLSearchParams(useLocation().search)
+  }
+
+  const query = useQuery()
+
+  const pageReq = query.get('page')
 
   const [pageData, setPageData] = useState('')
 
   useEffect(() => {
     const getData = async () => {
-      const resultData = await axios.get('http://localhost:3000/description')
+      const resultData = await axios.get(`http://localhost:3000/${pageReq}`)
       setPageData(resultData.data)
       console.log(resultData.data)
     }
     getData()
   }, [])
+
+  console.log(query.get('page'))
 
   return (
     <div className='AdminContentPage'>
