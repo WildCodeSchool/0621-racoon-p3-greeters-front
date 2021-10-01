@@ -14,20 +14,12 @@ const AdminDetailsCity = () => {
 
   const [city, setCity] = useState([])
 
-  // params for recup city id from url
-
-  let { cityId } = useParams()
-
-  // fetch data from backend
-
-  useEffect(() => {
-    const getData = async () => {
-      const resData = await axios.get(`http://localhost:3000/city/${cityId}`)
-      setCity(resData.data)
-    }
-    getData()
-  }, [])
-
+  const [cityName, setCityName] = useState('')
+  const [cityDesc, setCityDesc] = useState([])
+  const [cityDescEn, setCityDescEn] = useState([])
+  const [cityTitle, setCitytitle] = useState([])
+  const [cityTitleEn, setCitytitleEn] = useState([])
+  const [cityPhoto, setCityPhoto] = useState([])
   // import modal for city
 
   const { isShowing: isCityNameFormShowed, toggle: toggleCityNameForm } =
@@ -42,31 +34,61 @@ const AdminDetailsCity = () => {
     useModal()
   const { isShowing: isCityPhotoFormShowed, toggle: toggleCityPhotoForm } =
     useModal()
+  // params for recup city id from url
 
-  // state for send new data to bdd
+  let { cityId } = useParams()
 
-  const [cityName, setCityName] = useState('')
-  const [cityDesc, setCityDesc] = useState([])
-  const [cityDescEn, setCityDescEn] = useState([])
-  const [cityTitle, setCitytitle] = useState([])
-  const [cityTitleEn, setCitytitleEn] = useState([])
-  const [cityPhoto, setCityPhoto] = useState([])
+  //Get data from back
+  const getData = async () => {
+    const resData = await axios.get(`http://localhost:3000/city/${cityId}`)
+    setCity(resData.data)
+  }
+  useEffect(() => {
+    getData()
+  }, [])
 
   const putNameData = async () => {
     const results = await axios.put(`http://localhost:3000/city/${cityId}`, {
       city_name: cityName
     })
-    console.log(results)
+    getData()
   }
 
-  const handleSubmit = () => {
-    toggleCityNameForm()
+  const putDescData = async () => {
+    const results = await axios.put(`http://localhost:3000/city/${cityId}`, {
+      city_description_fr: cityDesc
+    })
+    getData()
+  }
+
+  const putDescEnData = async () => {
+    const results = await axios.put(`http://localhost:3000/city/${cityId}`, {
+      city_description_en: cityDescEn
+    })
+    getData()
+  }
+
+  const handleSubmitName = e => {
+    e.preventDefault()
     putNameData()
+    toggleCityNameForm()
+  }
+
+  const handleSubmitDesc = e => {
+    e.preventDefault()
+    putDescData()
+    toggleCityDescForm()
+  }
+
+  const handleSubmitDescEn = e => {
+    e.preventDefault()
+    putDescEnData()
+    toggleCityDescEnForm()
   }
 
   return (
     <>
-      <AdminMenu />
+      <AdminMenu />(
       {city[0] ? (
         <div className='admin-details-city-container'>
           <h1 className='admin-details-city-title'>Villes</h1>
@@ -90,16 +112,9 @@ const AdminDetailsCity = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Description en anglais</span> :{' '}
+              <span>Description en anglais</span> :{city[0].city_description_en}
               <button
                 onClick={toggleCityDescEnForm}
-                className='admin-details-icon-btn'
-              >
-                <box-icon name='edit-alt' />
-              </button>
-              {city[0].city_description_en}
-              <button
-                // onClick={toggleCityForm}
                 className='admin-details-icon-btn'
               >
                 <box-icon name='edit-alt' />
@@ -135,12 +150,13 @@ const AdminDetailsCity = () => {
           </ul>
         </div>
       ) : null}
+      )
       <Modal
         isShowing={isCityNameFormShowed}
         hide={toggleCityNameForm}
         title='Modifier le nom'
       >
-        <form>
+        <form onSubmit={handleSubmitName}>
           <div className='form-group'>
             <input
               type='text'
@@ -150,7 +166,9 @@ const AdminDetailsCity = () => {
             />
           </div>
           <div className='form-group'>
-            <input type='submit' value='Envoyer' onClick={handleSubmit} />
+            <button type='submit' value='Envoyer'>
+              Envoyer
+            </button>
           </div>
         </form>
       </Modal>
@@ -159,12 +177,19 @@ const AdminDetailsCity = () => {
         hide={toggleCityDescForm}
         title='Modifier la description'
       >
-        <form>
+        <form onSubmit={handleSubmitDesc}>
           <div className='form-group'>
-            <input type='text' placeholder='modifier ici' />
+            <textarea
+              type='text'
+              placeholder='modifier ici'
+              onChange={e => setCityDesc(e.target.value)}
+              value={cityDesc}
+            />
           </div>
           <div className='form-group'>
-            <input type='submit' value='Envoyer' />
+            <button type='submit' value='Envoyer'>
+              Envoyer
+            </button>
           </div>
         </form>
       </Modal>
@@ -173,12 +198,19 @@ const AdminDetailsCity = () => {
         hide={toggleCityDescEnForm}
         title='Modifier la description en anglais'
       >
-        <form>
+        <form onSubmit={handleSubmitDescEn}>
           <div className='form-group'>
-            <input type='text' placeholder='modifier ici' />
+            <textarea
+              type='text'
+              placeholder='modifier ici'
+              onChange={e => setCityDescEn(e.target.value)}
+              value={cityDescEn}
+            />
           </div>
           <div className='form-group'>
-            <input type='submit' value='Envoyer' />
+            <button type='submit' value='Envoyer'>
+              Envoyer
+            </button>
           </div>
         </form>
       </Modal>
