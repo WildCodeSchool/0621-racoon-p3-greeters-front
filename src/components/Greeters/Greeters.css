@@ -15,8 +15,10 @@
   position: relative;
   top: 99%;
   left: 50%;
+  margin-top: 2rem;
   padding-left: 10%;
   padding-right: 10%;
+  
   transform: translateX(-50%);
   font-style: normal;
   font-weight: bold;
