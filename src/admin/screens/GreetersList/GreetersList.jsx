@@ -18,7 +18,7 @@ const GreetersList = () => {
     getData()
   }, [])
 
-  console.log(greeters)
+  // console.log(greeters)
 
   return (
     <>

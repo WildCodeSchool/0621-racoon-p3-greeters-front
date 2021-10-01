@@ -88,11 +88,11 @@ const Contact = () => {
       title: 'Message bien envoyé',
       confirmButtonColor: 'red'
     })
-    console.log(postData)
+    // console.log(postData)
     resetFields()
   }
 
-  console.log(typeof civility, civility)
+  // console.log(typeof civility, civility)
 
   return (
     <>

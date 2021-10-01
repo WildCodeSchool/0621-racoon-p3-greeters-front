@@ -19,7 +19,7 @@ const CitiesList = () => {
     getData()
   }, [])
 
-  console.log(cities)
+  // console.log(cities)
 
   return (
     <>

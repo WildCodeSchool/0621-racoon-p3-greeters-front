@@ -13,7 +13,8 @@
   padding: 20px 0;
   text-align: center;
   color : rgba(0, 0, 0, 0.6);
-  font-size: 35px;
+  font-size: 2.5rem;
+
 }
 
 .cities-table {
@@ -42,6 +43,14 @@
 .cities-item:hover {
   background-color: #ddd;
   color: rgba(0, 0, 0, 0.6);
+}
+
+.admin-icon-btn {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 2px;
+  margin-left: 5px;
 }
 
 .admin-icon-btn:hover {

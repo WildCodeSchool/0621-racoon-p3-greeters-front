@@ -23,5 +23,11 @@
 
 .AdminHome-title{
   padding-top: 20px;
+  text-decoration: underline;
+}
+
+.AdminHome-big-title{
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 2.5rem;
 }
 

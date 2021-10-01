@@ -7,8 +7,11 @@
 .admin-details-city-title{
   padding: 20px 0;
   text-align: center;
-  background: rgba(0, 0, 0, 0.1);
   margin: 0 50px;
+  font-size: 2.5rem;
+  color : rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid black;
+
 
 }
 
@@ -20,8 +23,19 @@
 }
 
 .admin-details-city-item{
-  padding-top: 20px;
+  padding: 20px 0;
+
   border-bottom: 1px solid;
   list-style: none;
+}
+
+.admin-details-city-item span{
+  text-decoration: underline;
+  font-weight: bold;
+  color : rgba(0, 0, 0, 0.8);
 
 }
+
+/* .form-group input{
+  width: 70%;
+} */

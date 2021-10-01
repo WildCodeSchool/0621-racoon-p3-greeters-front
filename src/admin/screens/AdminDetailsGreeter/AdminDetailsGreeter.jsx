@@ -31,36 +31,49 @@ const AdminDetailsGreeter = () => {
           <h1 className='admin-details-greeter-title'>Greeter</h1>
           <ul className='admin-details-greeter-list'>
             <li className='admin-details-greeter-item'>
-              Prénom :{greeters[0].person_firstname}
+              <span>Prénom</span> : {greeters[0].person_firstname}
               <button href='#' className='admin-details-icon-btn'>
-                <box-icon name='edit-alt' />
+                <box-icon type='solid' name='edit-alt' />
               </button>
             </li>
 
             <li className='admin-details-greeter-item'>
-              Ville :{greeters[0].city_name}
+              <span>Ville</span> : {greeters[0].city_name}
               <button href='#' className='admin-details-icon-btn'>
-                <box-icon name='edit-alt' />
-              </button>
-            </li>
-            <li className='admin-details-greeter-item'>Langues : </li>
-            <li className='admin-details-greeter-item'>
-              Phrase d'accroche :{greeters[0].person_catch_phrase_fr}
-              <button href='#' className='admin-details-icon-btn'>
-                <box-icon name='edit-alt' />
-              </button>
-            </li>
-            <li className='admin-details-greeter-item'>Thématiques : </li>
-            <li className='admin-details-greeter-item'>
-              Descriptif :{greeters[0].person_description_fr}
-              <button href='#' className='admin-details-icon-btn'>
-                <box-icon name='edit-alt' />
+                <box-icon type='solid' name='edit-alt' />
               </button>
             </li>
             <li className='admin-details-greeter-item'>
-              Photo :{greeters[0].person_photo}
+              {' '}
+              <span>Langues</span> :{' '}
               <button href='#' className='admin-details-icon-btn'>
-                <box-icon name='edit-alt'>modifier</box-icon>
+                <box-icon type='solid' name='edit-alt' />
+              </button>
+            </li>
+            <li className='admin-details-greeter-item'>
+              <span>Phrase d'accroche</span> :{' '}
+              {greeters[0].person_catch_phrase_fr}
+              <button href='#' className='admin-details-icon-btn'>
+                <box-icon type='solid' name='edit-alt' />
+              </button>
+            </li>
+            <li className='admin-details-greeter-item'>
+              {' '}
+              <span>Thématiques</span> :{' '}
+              <button href='#' className='admin-details-icon-btn'>
+                <box-icon type='solid' name='edit-alt' />
+              </button>
+            </li>
+            <li className='admin-details-greeter-item'>
+              <span>Descriptif</span> : {greeters[0].person_description_fr}
+              <button href='#' className='admin-details-icon-btn'>
+                <box-icon type='solid' name='edit-alt' />
+              </button>
+            </li>
+            <li className='admin-details-greeter-item'>
+              <span>Photo</span> : {greeters[0].person_photo}
+              <button href='#' className='admin-details-icon-btn'>
+                <box-icon type='solid' name='edit-alt' />
               </button>
             </li>
           </ul>
