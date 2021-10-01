@@ -14,22 +14,17 @@ const AdminDetailsGreeter = () => {
 
   const [greeters, setGreeters] = useState([])
 
-  // params for recup greeter id from url
+  // states for modal
 
-  let { greeterId } = useParams()
-
-  // fetch data from backend
-
-  useEffect(() => {
-    const getData = async () => {
-      const resData = await axios.get(
-        `http://localhost:3000/person/${greeterId}`
-      )
-      setGreeters(resData.data.result)
-    }
-
-    getData()
-  }, [])
+  const [greeterName, setGreeterName] = useState('')
+  const [greeterCatch, setGreeterCatch] = useState([])
+  const [greeterCatchEn, setGreeterCatchEn] = useState([])
+  const [greeterDesc, setGreeterDesc] = useState([])
+  const [greeterDescEn, setGreeterDescEn] = useState([])
+  const [greeterCity, setGreeterCity] = useState([])
+  const [greeterLang, setGreeterLang] = useState([])
+  const [greeterThem, setGreeterThem] = useState([])
+  const [greeterPhoto, setGreeterPhoto] = useState([])
 
   // import modal for city
 
@@ -59,6 +54,96 @@ const AdminDetailsGreeter = () => {
     isShowing: isGreeterPhotoFormShowed,
     toggle: toggleGreeterPhotoForm
   } = useModal()
+
+  // params for recup greeter id from url
+
+  let { greeterId } = useParams()
+
+  // fetch data from backend
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+  const getData = async () => {
+    const resData = await axios.get(`http://localhost:3000/person/${greeterId}`)
+    setGreeters(resData.data.result)
+  }
+
+  // function to send modified entriezzz for name
+
+  const putGreeterNameData = async () => {
+    await axios.put(`http://localhost:3000/person/${greeterId}`, {
+      person_firstname: greeterName
+    })
+    getData()
+  }
+
+  const handleSubmitGreeterName = e => {
+    e.preventDefault()
+    putGreeterNameData()
+    toggleGreeterNameForm()
+  }
+
+  // function to send modified entriezzz for catch phrase
+
+  const putGreeterCatchData = async () => {
+    await axios.put(`http://localhost:3000/person/${greeterId}`, {
+      person_catch_phrase_fr: greeterCatch
+    })
+    getData()
+  }
+
+  const handleSubmitGreeterCatch = e => {
+    e.preventDefault()
+    putGreeterCatchData()
+    toggleGreeterCatchForm()
+  }
+
+  // function to send modified entriezzz for catch phrase in english
+
+  const putGreeterCatchEnData = async () => {
+    await axios.put(`http://localhost:3000/person/${greeterId}`, {
+      person_catch_phrase_en: greeterCatchEn
+    })
+    getData()
+  }
+
+  const handleSubmitGreeterCatchEn = e => {
+    e.preventDefault()
+    putGreeterCatchEnData()
+    toggleGreeterCatchEnForm()
+  }
+
+  // function to send modified entriezzz for description
+
+  const putGreeterDescData = async () => {
+    await axios.put(`http://localhost:3000/person/${greeterId}`, {
+      person_description_fr: greeterDesc
+    })
+    getData()
+  }
+
+  const handleSubmitGreeterDesc = e => {
+    e.preventDefault()
+    putGreeterDescData()
+    toggleGreeterDescForm()
+  }
+
+  // function to send modified entriezzz for description in english
+
+  const putGreeterDescEnData = async () => {
+    await axios.put(`http://localhost:3000/person/${greeterId}`, {
+      person_description_en: greeterDescEn
+    })
+    getData()
+  }
+
+  const handleSubmitGreeterDescEn = e => {
+    e.preventDefault()
+    putGreeterDescEnData()
+    toggleGreeterDescEnForm()
+  }
 
   return (
     <>
@@ -159,17 +244,25 @@ const AdminDetailsGreeter = () => {
           </ul>
         </div>
       )}
+
       <Modal
         isShowing={isGreeterNameFormShowed}
         hide={toggleGreeterNameForm}
         title='Modifier le nom'
       >
-        <form>
+        <form onSubmit={handleSubmitGreeterName}>
           <div className='form-group'>
-            <input type='text' placeholder='modifier ici' />
+            <input
+              placeholder='modifier'
+              type='text'
+              placeholder={greeters[0].person_firstname}
+              onChange={e => setGreeterName(e.target.value)}
+            />
           </div>
           <div className='form-group'>
-            <input type='submit' value='Envoyer' />
+            <button type='submit' value='Envoyer'>
+              Envoyer
+            </button>
           </div>
         </form>
       </Modal>
@@ -178,12 +271,19 @@ const AdminDetailsGreeter = () => {
         hide={toggleGreeterCatchForm}
         title="Modifier la phrase d'accroche"
       >
-        <form>
+        <form onSubmit={handleSubmitGreeterCatch}>
           <div className='form-group'>
-            <input type='text' placeholder='modifier ici' />
+            <textarea
+              type='text'
+              cols='55'
+              placeholder={greeters[0].person_catch_phrase_fr}
+              onChange={e => setGreeterCatch(e.target.value)}
+            />
           </div>
           <div className='form-group'>
-            <input type='submit' value='Envoyer' />
+            <button type='submit' value='Envoyer'>
+              Envoyer
+            </button>
           </div>
         </form>
       </Modal>
@@ -192,12 +292,19 @@ const AdminDetailsGreeter = () => {
         hide={toggleGreeterCatchEnForm}
         title="Modifier la phrase d'accroche en anglais"
       >
-        <form>
+        <form onSubmit={handleSubmitGreeterCatchEn}>
           <div className='form-group'>
-            <input type='text' placeholder='modifier ici' />
+            <textarea
+              type='text'
+              cols='55'
+              placeholder={greeters[0].person_catch_phrase_en}
+              onChange={e => setGreeterCatchEn(e.target.value)}
+            />
           </div>
           <div className='form-group'>
-            <input type='submit' value='Envoyer' />
+            <button type='submit' value='Envoyer'>
+              Envoyer
+            </button>
           </div>
         </form>
       </Modal>
@@ -206,9 +313,14 @@ const AdminDetailsGreeter = () => {
         hide={toggleGreeterDescForm}
         title='Modifier la description'
       >
-        <form>
+        <form onSubmit={handleSubmitGreeterDesc}>
           <div className='form-group'>
-            <textarea type='text' placeholder='modifier ici' cols='55' />
+            <textarea
+              type='text'
+              placeholder={greeters[0].person_description_fr}
+              onChange={e => setGreeterDesc(e.target.value)}
+              cols='55'
+            />
           </div>
           <div className='form-group'>
             <input type='submit' value='Envoyer' />
@@ -220,9 +332,14 @@ const AdminDetailsGreeter = () => {
         hide={toggleGreeterDescEnForm}
         title='Modifier la description en anglais'
       >
-        <form>
+        <form onSubmit={handleSubmitGreeterDescEn}>
           <div className='form-group'>
-            <textarea type='text' placeholder='modifier ici' cols='55' />
+            <textarea
+              type='text'
+              placeholder={greeters[0].person_description_en}
+              onChange={e => setGreeterDescEn(e.target.value)}
+              cols='55'
+            />
           </div>
           <div className='form-group'>
             <input type='submit' value='Envoyer' />
