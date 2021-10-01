@@ -13,7 +13,7 @@ const MapComponent = ({ coordinates }) => {
     name: 'Tours'
   }
   */
-
+  console.log(coordinates)
   // Static data for home map
   const city = [
     {
@@ -55,7 +55,7 @@ const MapComponent = ({ coordinates }) => {
       {/* Using the map module */}
       <MapContainer
         className='map'
-        center={coordinates ? coordinates : city[0].cordonates}
+        center={city[0].cordonates} //coordinates ? coordinates :
         zoom={8}
         scrollWheelZoom={false}
       >
@@ -63,14 +63,15 @@ const MapComponent = ({ coordinates }) => {
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         />
-        {coordinates ? (
+        {
+          /*coordinates ? (
           <Marker
             position={[coordinates.position[0], coordinates.position[1]]}
             icon={redIcon}
           >
             <Popup>{coordinates.name}</Popup>
           </Marker>
-        ) : (
+        ) : (*/
           city.map((element, index) => (
             <Marker
               key={index}
@@ -80,7 +81,8 @@ const MapComponent = ({ coordinates }) => {
               <Popup>{element.name}</Popup>
             </Marker>
           ))
-        )}
+          // )}
+        }
       </MapContainer>
     </div>
   )
