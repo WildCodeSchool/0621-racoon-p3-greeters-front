@@ -60,22 +60,24 @@ const AdminDetailsCity = () => {
           <h1 className='admin-details-city-title'>Villes</h1>
           <ul className='admin-details-city-list'>
             <li className='admin-details-city-item'>
-              <span>Nom</span> : {city[0].city_name}
+              <span>Nom</span> :
               <button
                 onClick={toggleCityNameForm}
                 className='admin-details-icon-btn'
               >
                 <box-icon name='edit-alt' />
               </button>
+              {city[0].city_name}
             </li>
             <li className='admin-details-city-item'>
-              <span>Description</span> : {city[0].city_description_fr}
+              <span>Description</span> :
               <button
                 onClick={toggleCityDescForm}
                 className='admin-details-icon-btn'
               >
                 <box-icon name='edit-alt' />
               </button>
+              {city[0].city_description_fr}
             </li>
             <li className='admin-details-city-item'>
               <span>Description en anglais</span> :{' '}
@@ -86,39 +88,36 @@ const AdminDetailsCity = () => {
                 <box-icon name='edit-alt' />
               </button>
               {city[0].city_description_en}
-              <button
-                // onClick={toggleCityForm}
-                className='admin-details-icon-btn'
-              >
-                <box-icon name='edit-alt' />
-              </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Titre</span> : {city[0].city_title_fr}
+              <span>Titre</span> :
               <button
                 onClick={toggleCityTitleForm}
                 className='admin-details-icon-btn'
               >
                 <box-icon name='edit-alt' />
               </button>
+              {city[0].city_title_fr}
             </li>
             <li className='admin-details-city-item'>
-              <span>Titre en anglais</span> : {city[0].city_title_en}
+              <span>Titre en anglais</span> :
               <button
                 onClick={toggleCityTitleEnForm}
                 className='admin-details-icon-btn'
               >
                 <box-icon name='edit-alt' />
               </button>
+              {city[0].city_title_en}
             </li>
             <li className='admin-details-city-item'>
-              <span>Photo</span> : {city[0].city_photo}
+              <span>Photo</span> :
               <button
                 onClick={toggleCityPhotoForm}
                 className='admin-details-icon-btn'
               >
                 <box-icon name='edit-alt' />
               </button>
+              {city[0].city_photo}
             </li>
           </ul>
         </div>
@@ -152,7 +151,7 @@ const AdminDetailsCity = () => {
       >
         <form>
           <div className='form-group'>
-            <input type='text' placeholder='modifier ici' />
+            <textarea type='text' placeholder='modifier ici' cols='55' />
           </div>
           <div className='form-group'>
             <input type='submit' value='Envoyer' />
@@ -166,7 +165,7 @@ const AdminDetailsCity = () => {
       >
         <form>
           <div className='form-group'>
-            <input type='text' placeholder='modifier ici' />
+            <textarea type='text' placeholder='modifier ici' cols='55' />
           </div>
           <div className='form-group'>
             <input type='submit' value='Envoyer' />
