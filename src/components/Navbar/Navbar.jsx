@@ -33,7 +33,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='Navbar'>
+    <div className='Navbar navbar-animation'>
       {/* Fixed Menu */}
       <div className='nav-close'>
         <div className='logo-element'>

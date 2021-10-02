@@ -2,3 +2,60 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: 0.3s linear;
+}
+
+.navbar-animation {
+  animation: nav-load 1s ease-out;
+}
+
+.banner-animation {
+  animation: animation-load 1s ease-out;
+}
+
+.greeters-animation {
+  animation: greeters-animation 1s ease-out forwards;
+}
+
+@keyframes nav-load {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes animation-load {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes greeters-animation {
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

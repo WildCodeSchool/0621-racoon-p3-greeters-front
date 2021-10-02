@@ -1,3 +1,7 @@
+.Banner {
+  margin-top: 50px;
+  height: 100vh;
+}
 .banner-img {
   width: 90vw;
   height: 70vh;
