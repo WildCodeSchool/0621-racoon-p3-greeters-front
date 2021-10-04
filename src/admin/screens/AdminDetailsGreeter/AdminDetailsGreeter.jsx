@@ -68,81 +68,33 @@ const AdminDetailsGreeter = () => {
   const getData = async () => {
     const resData = await axios.get(`http://localhost:3000/person/${greeterId}`)
     setGreeters(resData.data.result)
+    // console.log(greeters)
   }
 
-  // function to send modified entriezzz for name
+  // function to send modified entriezzz dinamicallyy
 
-  const putGreeterNameData = async () => {
+  const putData = async (name, value) => {
     await axios.put(`http://localhost:3000/person/${greeterId}`, {
-      person_firstname: greeterName
+      [name]: value
     })
     getData()
   }
 
-  const handleSubmitGreeterName = e => {
+  // on click submit with all modalzz
+
+  const handleSubmit = e => {
     e.preventDefault()
-    putGreeterNameData()
-    toggleGreeterNameForm()
-  }
-
-  // function to send modified entriezzz for catch phrase
-
-  const putGreeterCatchData = async () => {
-    await axios.put(`http://localhost:3000/person/${greeterId}`, {
-      person_catch_phrase_fr: greeterCatch
-    })
-    getData()
-  }
-
-  const handleSubmitGreeterCatch = e => {
-    e.preventDefault()
-    putGreeterCatchData()
-    toggleGreeterCatchForm()
-  }
-
-  // function to send modified entriezzz for catch phrase in english
-
-  const putGreeterCatchEnData = async () => {
-    await axios.put(`http://localhost:3000/person/${greeterId}`, {
-      person_catch_phrase_en: greeterCatchEn
-    })
-    getData()
-  }
-
-  const handleSubmitGreeterCatchEn = e => {
-    e.preventDefault()
-    putGreeterCatchEnData()
-    toggleGreeterCatchEnForm()
-  }
-
-  // function to send modified entriezzz for description
-
-  const putGreeterDescData = async () => {
-    await axios.put(`http://localhost:3000/person/${greeterId}`, {
-      person_description_fr: greeterDesc
-    })
-    getData()
-  }
-
-  const handleSubmitGreeterDesc = e => {
-    e.preventDefault()
-    putGreeterDescData()
-    toggleGreeterDescForm()
-  }
-
-  // function to send modified entriezzz for description in english
-
-  const putGreeterDescEnData = async () => {
-    await axios.put(`http://localhost:3000/person/${greeterId}`, {
-      person_description_en: greeterDescEn
-    })
-    getData()
-  }
-
-  const handleSubmitGreeterDescEn = e => {
-    e.preventDefault()
-    putGreeterDescEnData()
-    toggleGreeterDescEnForm()
+    putData(e.target[0].name, e.target[0].value)
+    if (e.target[0].name === 'person_firstname') toggleGreeterNameForm()
+    if (e.target[0].name === 'person_catch_phrase_fr') toggleGreeterCatchForm()
+    if (e.target[0].name === 'person_catch_phrase_en')
+      toggleGreeterCatchEnForm()
+    if (e.target[0].name === 'person_description_fr') toggleGreeterDescForm()
+    if (e.target[0].name === 'person_description_en') toggleGreeterDescEnForm()
+    if (e.target[0].name === 'city_name') toggleGreeterCityForm()
+    if (e.target[0].name === 'person_them?') toggleGreeterThemForm()
+    if (e.target[0].name === 'person_lang?') toggleGreeterLangForm()
+    if (e.target[0].name === 'person_photo') toggleGreeterPhotoForm()
   }
 
   return (
@@ -250,12 +202,13 @@ const AdminDetailsGreeter = () => {
         hide={toggleGreeterNameForm}
         title='Modifier le nom'
       >
-        <form onSubmit={handleSubmitGreeterName}>
+        <form onSubmit={handleSubmit}>
           <div className='form-group'>
             <input
+              value={greeterName}
               placeholder='modifier'
               type='text'
-              placeholder={greeters[0].person_firstname}
+              name='person_firstname'
               onChange={e => setGreeterName(e.target.value)}
             />
           </div>
@@ -271,12 +224,13 @@ const AdminDetailsGreeter = () => {
         hide={toggleGreeterCatchForm}
         title="Modifier la phrase d'accroche"
       >
-        <form onSubmit={handleSubmitGreeterCatch}>
+        <form onSubmit={handleSubmit}>
           <div className='form-group'>
             <textarea
+              value={greeterCatch}
               type='text'
               cols='55'
-              placeholder={greeters[0].person_catch_phrase_fr}
+              name='person_catch_phrase_fr'
               onChange={e => setGreeterCatch(e.target.value)}
             />
           </div>
@@ -292,12 +246,13 @@ const AdminDetailsGreeter = () => {
         hide={toggleGreeterCatchEnForm}
         title="Modifier la phrase d'accroche en anglais"
       >
-        <form onSubmit={handleSubmitGreeterCatchEn}>
+        <form onSubmit={handleSubmit}>
           <div className='form-group'>
             <textarea
+              value={greeterCatchEn}
               type='text'
               cols='55'
-              placeholder={greeters[0].person_catch_phrase_en}
+              name='person_catch_phrase_en'
               onChange={e => setGreeterCatchEn(e.target.value)}
             />
           </div>
@@ -313,11 +268,12 @@ const AdminDetailsGreeter = () => {
         hide={toggleGreeterDescForm}
         title='Modifier la description'
       >
-        <form onSubmit={handleSubmitGreeterDesc}>
+        <form onSubmit={handleSubmit}>
           <div className='form-group'>
             <textarea
+              value={greeterDesc}
               type='text'
-              placeholder={greeters[0].person_description_fr}
+              name='person_description_fr'
               onChange={e => setGreeterDesc(e.target.value)}
               cols='55'
             />
@@ -332,11 +288,12 @@ const AdminDetailsGreeter = () => {
         hide={toggleGreeterDescEnForm}
         title='Modifier la description en anglais'
       >
-        <form onSubmit={handleSubmitGreeterDescEn}>
+        <form onSubmit={handleSubmit}>
           <div className='form-group'>
             <textarea
+              value={greeterDescEn}
               type='text'
-              placeholder={greeters[0].person_description_en}
+              name='person_description_en'
               onChange={e => setGreeterDescEn(e.target.value)}
               cols='55'
             />
@@ -351,12 +308,17 @@ const AdminDetailsGreeter = () => {
         hide={toggleGreeterCityForm}
         title='Modifier la ville'
       >
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className='form-group'>
-            <input type='text' placeholder='modifier ici' />
+            <input
+              value={greeterCity}
+              type='text'
+              placeholder='modifier ici'
+              onChange={e => setGreeterCity(e.target.value)}
+            />
           </div>
           <div className='form-group'>
-            <input type='submit' value='Envoyer' />
+            <input type='submit' value='Envoyer' name='city_name' />
           </div>
         </form>
       </Modal>
@@ -365,9 +327,14 @@ const AdminDetailsGreeter = () => {
         hide={toggleGreeterLangForm}
         title='Modifier la langue'
       >
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className='form-group'>
-            <input type='text' placeholder='modifier ici' />
+            <input
+              value={greeterLang}
+              name='person_lang?'
+              type='text'
+              onChange={e => setGreeterLang(e.target.value)}
+            />
           </div>
           <div className='form-group'>
             <input type='submit' value='Envoyer' />
@@ -379,9 +346,15 @@ const AdminDetailsGreeter = () => {
         hide={toggleGreeterThemForm}
         title='Modifier les thématiques'
       >
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className='form-group'>
-            <input type='text' placeholder='modifier ici' />
+            <textarea
+              value={greeterThem}
+              name='person_them?'
+              type='text'
+              onChange={e => setGreeterThem(e.target.value)}
+              cols='55'
+            />
           </div>
           <div className='form-group'>
             <input type='submit' value='Envoyer' />
@@ -393,9 +366,14 @@ const AdminDetailsGreeter = () => {
         hide={toggleGreeterPhotoForm}
         title='Modifier la photo'
       >
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className='form-group'>
-            <input type='text' placeholder='modifier ici' />
+            <input
+              name='person_photo'
+              type='text'
+              value={greeterPhoto}
+              onChange={e => setGreeterPhoto(e.target.value)}
+            />
           </div>
           <div className='form-group'>
             <input type='submit' value='Envoyer' />
