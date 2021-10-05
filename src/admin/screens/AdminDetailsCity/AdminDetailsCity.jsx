@@ -66,7 +66,7 @@ const AdminDetailsCity = () => {
   }, [])
 
   const putData = async (name, value) => {
-    console.log(name, value)
+    console.log(value)
     const results = await axios.put(`http://localhost:3000/city/${cityId}`, {
       [name]: value
     })

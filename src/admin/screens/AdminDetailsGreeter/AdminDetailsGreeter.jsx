@@ -315,10 +315,11 @@ const AdminDetailsGreeter = () => {
               type='text'
               placeholder='modifier ici'
               onChange={e => setGreeterCity(e.target.value)}
+              name='person_city_id'
             />
           </div>
           <div className='form-group'>
-            <input type='submit' value='Envoyer' name='city_name' />
+            <input type='submit' value='Envoyer' />
           </div>
         </form>
       </Modal>
