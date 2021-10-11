@@ -34,20 +34,10 @@ margin:16px;
   transform: translateY(4px);
   box-shadow: 0 5px #666;
 }
-.Titre{
-  /* padding: 80px;
-  column-count: 3;
-  display: flex;
-  gap: 10px;
-  gap: 10px 20px; /* row-gap column gap */
-  /* row-gap: 10px;
-  column-gap: 30px;
-  list-style-type: disc; */ 
 
-}
 .globalCollon{
 display:flex ;
-margin: 0px 40px 70px 70px;
+margin: 0px 3px 10px 70px;
 
 
 }
@@ -70,4 +60,14 @@ margin: 20px;
   width: auto;
 	height: 100px;
 
+}
+.photo{
+  height: 90px;
+  display:inline-flex;
+  margin: right;
+  border-right: 6px ;
+  width: 30px;
+  
+  
+  
 }

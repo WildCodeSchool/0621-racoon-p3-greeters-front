@@ -1,0 +1,99 @@
+.Contact {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.Contact h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.Contact p {
+  font-style: italic;
+  font-size: 0.5rem;
+}
+
+.Contact .contactForm {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+
+.Contact .infoContainer {
+  margin-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.5)
+}
+
+.Contact .messageElement, .Contact .infoElement {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.Contact .civilityContent {
+  justify-content: flex-start;
+}
+
+.Contact .civilityContent select {
+  border-radius: 20px;
+  padding: 5px;
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  width: 100px;
+  margin-left: -55px;
+  height: 40px;
+}
+
+.Contact h3 {
+  font-weight: bold;
+  width: 30vw;
+  color: var(--text-color);
+}
+
+.Contact h4 {
+  font-weight: bold;
+  width: 30vw;
+}
+
+.messageElement textarea, .messageElement input, .infoElement input {
+  width: 60vw;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  margin: 10px;
+}
+
+.Contact .messageContent textarea {
+  height: 15vh;
+}
+
+.Contact .emailContent input {
+  height: 5vh;
+}
+
+.Contact .submitButton {
+  cursor: pointer;
+  margin: 30px auto;
+  padding: 10px;
+  min-width: 11vw;
+  border-radius: 20px;
+  font-weight: bold;
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
+  background-color: white;
+  transition: 0.2s linear;
+}
+
+.Contact .submitButton:hover {
+  background-color: var(--text-color);
+  color: white;
+}
+
+.Contact .info {
+  font-size: 0.7rem;
+}
+
+
