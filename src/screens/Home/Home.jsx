@@ -8,13 +8,17 @@ import Navbar from '../../components/Navbar/Navbar'
 import './Home.css'
 
 const Home = () => {
+  // window.addEventListener('scroll', () => {
+  //   console.log(window.scrollY)
+  // })
+
   return (
     <div>
       <Navbar />
       <Banner />
       <Greeters />
       <Cities />
-      <Map />
+      <Map coordinates={null} />
       <Footer />
     </div>
   )

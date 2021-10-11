@@ -1,0 +1,10 @@
+.AdminEditor {
+  width: 70vw;
+  margin-left: 30vw;
+  border: 1px solid black;
+  background-color: salmon;
+}
+
+.AdminEditor Editor {
+  margin-right: 10vw;
+}

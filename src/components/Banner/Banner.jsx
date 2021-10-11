@@ -25,7 +25,7 @@ const Banner = () => {
   })
 
   return (
-    <div>
+    <div className='Banner banner-animation'>
       <AliceCarousel
         mouseTracking
         items={item}

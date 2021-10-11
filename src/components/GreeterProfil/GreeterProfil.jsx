@@ -1,23 +1,50 @@
-import { GreetersProfilData } from '../../data'
+import { useParams } from 'react-router'
+import { useState, useEffect } from 'react'
+
+import axios from 'axios'
 
 import GreeterProfilCard from '../GreeterProfilCard/GreeterProfilCard'
 import GreeterProfilInfo from '../GreeterProfilInfo/GreeterProfilInfo'
 
 import './GreeterProfil.css'
 
-const GreeterProfil = () => {
+const GreeterProfil = ({ getCoordinates }) => {
+  const { id } = useParams()
+  const [greeterData, setGreeterData] = useState('')
+
+  console.log(id)
+
+  useEffect(() => {
+    const getData = async () => {
+      const resultData = await axios.get(`http://localhost:3000/person/${id}`)
+      setGreeterData(resultData.data)
+      console.log(resultData)
+
+      const mapData = {
+        position: [
+          resultData.data.result[0].city_latitude,
+          resultData.data.result[0].city_longitude
+        ],
+        name: resultData.data.result[0].city_name
+      }
+      getCoordinates(mapData)
+      console.log(resultData.data)
+    }
+    getData()
+  }, [])
+
   return (
     <div className='greeter-profil'>
-      <div className='greeter-profil-left'>
-        {GreetersProfilData.map((g, index) => (
-          <GreeterProfilCard key={index} {...g} />
-        ))}
-      </div>
-      <div className='greeter-profil-right'>
-        {GreetersProfilData.map((g, index) => (
-          <GreeterProfilInfo key={index} {...g} />
-        ))}
-      </div>
+      {greeterData && (
+        <>
+          <div className='greeter-profil-left'>
+            <GreeterProfilCard {...greeterData} />
+          </div>
+          <div className='greeter-profil-right'>
+            <GreeterProfilInfo {...greeterData} />
+          </div>
+        </>
+      )}
     </div>
   )
 }

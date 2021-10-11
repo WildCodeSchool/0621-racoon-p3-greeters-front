@@ -6,8 +6,8 @@ const GreeterProfilCard = props => {
   return (
     <div className='greeter-profil-bloc-card'>
       <img
-        src={props.greeter_photo}
-        alt={props.greeter_name}
+        src={props.result[0].person_photo}
+        alt={props.result[0].person_firstname}
         className='greeter-profil-bloc-card-img'
       />
       <button className='greeter-profil-bloc-card-btn'>
