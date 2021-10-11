@@ -10,7 +10,9 @@ import Contact from './screens/Contact/Contact'
 import Greeter from './screens/Greeter/Greeter'
 import Concept from './screens/Concept/Concept'
 import AdminContent from './admin/screens/AdminContent/AdminContent'
-import AdminContentPage from './admin/screens/AdminContentPage/AdminContentPage'
+import AdminContentDescription from './admin/screens/AdminContentDescription/AdminContentDescription'
+import AdminContentValues from './admin/screens/AdminContentValues/AdminContentValues'
+import AdminContentConcept from './admin/screens/AdminContentConcept/AdminContentConcept'
 import GreetersList from './admin/screens/GreetersList/GreetersList'
 import Home from './screens/Home/Home'
 import MeetGreeter from './screens/MeetGreeter/MeetGreeter'
@@ -47,8 +49,14 @@ function App() {
           <Route path='/admin/content' exact>
             <AdminContent />
           </Route>
-          <Route path='/admin/content/page' exact>
-            <AdminContentPage />
+          <Route path='/admin/content/description' exact>
+            <AdminContentDescription />
+          </Route>
+          <Route path='/admin/content/values' exact>
+            <AdminContentValues />
+          </Route>
+          <Route path='/admin/content/concept' exact>
+            <AdminContentConcept />
           </Route>
           <Route path='/admin/editor' exact>
             <AdminEditor />

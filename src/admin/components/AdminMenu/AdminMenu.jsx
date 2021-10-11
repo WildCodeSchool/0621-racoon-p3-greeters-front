@@ -8,7 +8,7 @@ function AdminMenu() {
         <NavLink to='/admin'>
           <li>Vue d'ensemble</li>
         </NavLink>
-        <NavLink to='#'>
+        <NavLink to='/admin/content'>
           <li>Contenu</li>
         </NavLink>
         <NavLink to='/admin/list-greeters'>
