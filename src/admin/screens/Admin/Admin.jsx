@@ -8,7 +8,7 @@ const Admin = () => {
       <AdminMenu />
       <div className='AdminHome-container'>
         <h1 className='AdminHome-big-title'>Vue d'ensemble</h1>
-        <Link to='#'>
+        <Link to='/admin/content'>
           <section className='AdminHome-section up-section'>
             <h2 className='AdminHome-title'>Contenu</h2>
             <h3 className='AdminHome-litle-title'>
