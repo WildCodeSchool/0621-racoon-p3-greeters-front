@@ -1,24 +1,32 @@
-import { useState } from 'react/cjs/react.development'
-import { GreetersData } from '../../data'
+import { useState, useEffect } from 'react/cjs/react.development'
 import ReactPaginate from 'react-paginate'
+import axios from 'axios'
 
 import GreeterCard from '../GreeterCard/GreeterCard'
 
 import './GreetersPagination.css'
 
-const Greeters = () => {
+const GreetersPagination = () => {
   const [pageNumber, setPageNumber] = useState(0)
+  const [greeters, setGreeters] = useState([])
+
+  useEffect(() => {
+    const getData = async () => {
+      const resData = await axios.get('http://localhost:3000/person')
+      setGreeters(resData.data.result)
+    }
+    getData()
+  }, [])
 
   //number of greeters per page
-  const greetersPerPage = 4
+  const greetersPerPage = 9
   const pagesVisited = pageNumber * greetersPerPage
 
-  const displayGreeters = GreetersData.slice(
-    pagesVisited,
-    pagesVisited + greetersPerPage
-  ).map((g, index) => <GreeterCard key={index} {...g} />)
+  const displayGreeters = greeters
+    .slice(pagesVisited, pagesVisited + greetersPerPage)
+    .map((g, index) => <GreeterCard key={index} {...g} />)
 
-  const pageCount = Math.ceil(GreetersData.length / greetersPerPage)
+  const pageCount = Math.ceil(greeters.length / greetersPerPage)
   const changePage = ({ selected }) => {
     setPageNumber(selected)
   }
@@ -42,4 +50,4 @@ const Greeters = () => {
   )
 }
 
-export default Greeters
+export default GreetersPagination

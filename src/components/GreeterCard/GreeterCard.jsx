@@ -7,11 +7,11 @@ const GreeterCard = props => {
       <NavLink to='/greeters/1'>
         <img
           src={props.person_photo}
-          alt={props.person_name}
+          alt={props.person_firstname}
           className='greeter-img'
         />
       </NavLink>
-      <h2 className='greeter-name'>{props.person_name}</h2>
+      <h2 className='greeter-name'>{props.person_firstname}</h2>
     </div>
   )
 }
