@@ -26,7 +26,7 @@ const AdminDetailsGreeter = () => {
   const [greeterThem, setGreeterThem] = useState([])
   const [greeterPhoto, setGreeterPhoto] = useState([])
 
-  // import modal for city
+  // import modal for greeter
 
   const { isShowing: isGreeterNameFormShowed, toggle: toggleGreeterNameForm } =
     useModal()
@@ -320,7 +320,7 @@ const AdminDetailsGreeter = () => {
               <option value='1'>Ambroise</option>
               <option value='2'>Loches</option>
               <option value='3'>Tours </option>
-              <option value='4'>Sainte-Maure de Touraine's</option>
+              <option value='4'>Sainte-Maure de Touraine</option>
               <option value='5'>Chinon</option>
               <option value='6'>Rochecorbon</option>
               <option value='7'>Ligre</option>
