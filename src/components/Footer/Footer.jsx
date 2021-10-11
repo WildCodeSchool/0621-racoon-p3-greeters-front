@@ -6,6 +6,7 @@ import '../../components/Footer/Footer.css'
 import 'boxicons'
 import photo1 from '../../assets/logo-FFG-250-Transp.png'
 import photo2 from '../../assets/IGA-Logo-landscape_528x200px_72dpi.jpeg'
+import photo3 from '../../assets/IMG-0281.PNG'
 
 const Footer = () => {
   return (
@@ -161,6 +162,7 @@ const Footer = () => {
         <div className='photo'>
         <img src={photo1}/>
         <img src={photo2}/>
+        <img src={photo3}/>
         </div>
       </div>
      
