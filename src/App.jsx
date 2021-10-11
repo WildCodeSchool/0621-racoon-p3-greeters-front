@@ -5,13 +5,14 @@ import AdminDetailsGreeter from './admin/screens/AdminDetailsGreeter/AdminDetail
 import AdminConnection from './admin/screens/AdminConnection/AdminConnection'
 import Admin from './admin/screens/Admin'
 import AdminEditor from './admin/components/Editor/AdminEditor'
+import AdminContent from './admin/screens/AdminContent/AdminContent'
+import AdminContentPage from './admin/screens/AdminContentPage/AdminContentPage'
+import Concept from './screens/Concept/Concept'
 import Contact from './screens/Contact/Contact'
 import Greeter from './screens/Greeter/Greeter'
 import Home from './screens/Home/Home'
+import InfoCity from './screens/InfoCity/InfoCity'
 import MeetGreeter from './screens/MeetGreeter/MeetGreeter'
-import Concept from './screens/Concept/Concept'
-import AdminContent from './admin/screens/AdminContent/AdminContent'
-import AdminContentPage from './admin/screens/AdminContentPage/AdminContentPage'
 
 import './App.css'
 
@@ -25,6 +26,9 @@ function App() {
         <Switch>
           <Route path='/meetgreeter' exact>
             <MeetGreeter />
+          </Route>
+          <Route path='/infoCity' exact>
+            <InfoCity />
           </Route>
           <Route path='/admin/content'>
             <AdminContent />
