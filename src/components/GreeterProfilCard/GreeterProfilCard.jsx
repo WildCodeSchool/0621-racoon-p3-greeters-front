@@ -10,9 +10,15 @@ const GreeterProfilCard = props => {
         alt={props.result[0].person_firstname}
         className='greeter-profil-bloc-card-img'
       />
-      <button className='greeter-profil-bloc-card-btn'>
-        Réservez votre greeter
-      </button>
+      <a
+        href='https://gestion.greeters.fr/visits/new'
+        target='_blank'
+        rel='noreferrer'
+      >
+        <button className='greeter-profil-bloc-card-btn'>
+          Réservez votre balade
+        </button>
+      </a>
     </div>
   )
 }

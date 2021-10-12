@@ -2,6 +2,7 @@
   width: 20rem;
   height: 15rem;
   margin: 1rem 0;
+  cursor: pointer;
 }
 
 .greeter-img {
