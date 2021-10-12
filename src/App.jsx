@@ -27,7 +27,7 @@ function App() {
           <Route path='/meetgreeter' exact>
             <MeetGreeter />
           </Route>
-          <Route path='/infoCity' exact>
+          <Route path='/infoCity/:id' exact>
             <InfoCity />
           </Route>
           <Route path='/admin/content'>
