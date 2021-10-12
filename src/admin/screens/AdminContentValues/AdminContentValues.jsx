@@ -150,7 +150,7 @@ const AdminContentPage = () => {
 
   return (
     <>
-      <AdminMenu />(
+      <AdminMenu />
       {values[0] ? (
         <div className='admin-details-city-container'>
           <h1 className='admin-details-city-title'>Page values</h1>
@@ -222,7 +222,6 @@ const AdminContentPage = () => {
           </ul>
         </div>
       ) : null}
-      )
       <Modal
         isShowing={isValuesTitle1FrFormShowed}
         hide={toggleValuesTitle1FrForm}

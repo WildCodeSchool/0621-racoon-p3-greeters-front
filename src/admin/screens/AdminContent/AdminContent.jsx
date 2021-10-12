@@ -19,7 +19,7 @@ const AdminContent = () => {
           </section>
         </Link>
         <Link to='/admin/content/values'>
-          <section className='AdminContent-section middle-section'>
+          <section className='AdminContent-section layer3-section'>
             <h2 className='AdminContent-title'>Nos valeurs</h2>
             <h3 className='AdminHome-litle-title'>
               Page de description des valeurs d'un Greeter
@@ -27,25 +27,17 @@ const AdminContent = () => {
           </section>
         </Link>
         <Link to='/admin/content/concept'>
-          <section className='AdminContent-section middle-section'>
+          <section className='AdminContent-section layer2-section'>
             <h2 className='AdminContent-title'>Concept des Greeters</h2>
             <h3 className='AdminHome-litle-title'>
               Page de description du concept des Greeters
             </h3>
           </section>
         </Link>
-        <Link to='/admin/content/page?page=rencontre'>
-          <section className='AdminHome-section middle-section'>
-            <h2 className='AdminHome-title'>Rencontrer un Greeter</h2>
-            <h3 className='AdminHome-litle-title'>
-              Page de rencontre d'un Greeter
-            </h3>
-          </section>
-        </Link>
         <Link to='/admin/list-greeters'>
-          <section className='AdminHome-section down-section'>
-            <h2 className='AdminHome-title'>Profil d'un Greeter</h2>
-            <h3 className='AdminHome-litle-title'>
+          <section className='AdminContent-section down-section'>
+            <h2 className='AdminContent-title'>Profil d'un Greeter</h2>
+            <h3 className='AdminContent-litle-title'>
               Page d'information personnelle d'un Greeter
             </h3>
           </section>

@@ -31,9 +31,24 @@
   z-index: 100;
 }
 
-.AdminContent-container .middle-section {
+.AdminContent-container .layer5-section {
   position: relative;
-  z-index: 50;
+  z-index: 40;
+}
+
+.AdminContent-container .layer4-section {
+  position: relative;
+  z-index: 30;
+}
+
+.AdminContent-container .layer3-section {
+  position: relative;
+  z-index: 20;
+}
+
+.AdminContent-container .layer2-section {
+  position: relative;
+  z-index: 10;
 }
 
 .AdminContent-container .down-section {

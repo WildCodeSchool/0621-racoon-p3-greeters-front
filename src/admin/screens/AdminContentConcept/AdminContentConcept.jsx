@@ -188,7 +188,7 @@ const AdminContentConcept = () => {
 
   return (
     <>
-      <AdminMenu />(
+      <AdminMenu />
       {concept[0] ? (
         <div className='admin-details-city-container'>
           <h1 className='admin-details-city-title'>Page concept</h1>
@@ -283,7 +283,6 @@ const AdminContentConcept = () => {
           </ul>
         </div>
       ) : null}
-      )
       <Modal
         isShowing={isconceptTitle1FrFormShowed}
         hide={toggleconceptTitle1FrForm}

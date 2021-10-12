@@ -17,7 +17,7 @@ const Admin = () => {
           </section>
         </Link>
         <Link to='/admin/list-greeters'>
-          <section className='AdminHome-section middle-section'>
+          <section className='AdminHome-section layer3-section'>
             <h2 className='AdminHome-title'>Greeters</h2>
             <h3 className='AdminHome-litle-title'>
               Gestion des profils des Greeters
@@ -25,7 +25,7 @@ const Admin = () => {
           </section>
         </Link>
         <Link to='/admin/list-cities'>
-          <section className='AdminHome-section down-section'>
+          <section className='AdminHome-section layer2-section'>
             <h2 className='AdminHome-title'>Villes</h2>
             <h3 className='AdminHome-litle-title'>
               Gestion des villes des Greeters
@@ -33,7 +33,7 @@ const Admin = () => {
           </section>
         </Link>
         <Link to='#'>
-          <section className='AdminHome-section'>
+          <section className='AdminHome-section down-section'>
             <h2 className='AdminHome-title'>Administration</h2>
             <h3 className='AdminHome-litle-title'>
               Gestion des comptes et droits administrateurs
