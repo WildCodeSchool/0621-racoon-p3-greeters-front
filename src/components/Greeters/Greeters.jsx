@@ -34,7 +34,11 @@ const Greeters = () => {
   })
 
   return (
-    <div className={show ? 'Greeters greeters-animation' : 'Greeters'}>
+    <div
+      className={show ? 'Greeters' : 'Greeters'}
+      data-aos='fade-right'
+      data-aos-anchor-placement='top-center'
+    >
       <h2 className='greeters-title'>Les Greeters</h2>
 
       <div className='greeters-container'>

@@ -51,7 +51,7 @@ const MapComponent = ({ coordinates }) => {
   })
 
   return (
-    <div className='MapComponent'>
+    <div className='MapComponent' data-aos='fade-down'>
       {/* Using the map module */}
       <MapContainer
         className='map'

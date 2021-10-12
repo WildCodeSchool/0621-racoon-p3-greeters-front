@@ -33,7 +33,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='Navbar navbar-animation'>
+    <div className='Navbar' data-aos='fade-down'>
       {/* Fixed Menu */}
       <div className='nav-close'>
         <div className='logo-element'>
@@ -86,9 +86,11 @@ const Navbar = () => {
           <h3>Qu'est ce qu'un greeter ?</h3>
         </NavLink>
 
-        <NavLink to='/our-values'>
+        {/*
+       <NavLink to='/our-values'>
           <h3>Nos valeurs</h3>
         </NavLink>
+      */}
 
         <NavLink to='/meetgreeter'>
           <h3>Rencontrer un greeter</h3>

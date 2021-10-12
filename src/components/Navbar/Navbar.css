@@ -120,6 +120,7 @@
 
 .Navbar .nav-open {
   margin-top: -8px;
+  position: relative;
   z-index: 10000;
   flex-direction: row;
   justify-content: space-evenly;

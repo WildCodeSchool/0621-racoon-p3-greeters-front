@@ -4,6 +4,7 @@ import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 
 import './Banner.css'
+import { useEffect } from 'react'
 
 const Banner = () => {
   const handleDragStart = e => e.preventDefault()
@@ -25,7 +26,7 @@ const Banner = () => {
   })
 
   return (
-    <div className='Banner banner-animation'>
+    <div className='Banner' data-aos='fade-zoom-in'>
       <AliceCarousel
         mouseTracking
         items={item}
