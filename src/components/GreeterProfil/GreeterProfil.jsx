@@ -12,13 +12,10 @@ const GreeterProfil = ({ getCoordinates }) => {
   const { id } = useParams()
   const [greeterData, setGreeterData] = useState('')
 
-  console.log(id)
-
   useEffect(() => {
     const getData = async () => {
       const resultData = await axios.get(`http://localhost:3000/person/${id}`)
       setGreeterData(resultData.data)
-      console.log(resultData)
 
       const mapData = {
         position: [
@@ -28,7 +25,6 @@ const GreeterProfil = ({ getCoordinates }) => {
         name: resultData.data.result[0].city_name
       }
       getCoordinates(mapData)
-      console.log(resultData.data)
     }
     getData()
   }, [])

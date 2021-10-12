@@ -13,7 +13,6 @@ const MapComponent = ({ coordinates }) => {
     name: 'Tours'
   }
   */
-  console.log(coordinates)
   // Static data for home map
   const city = [
     {
