@@ -4,9 +4,21 @@ import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 
 import './Banner.css'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+
+import axios from 'axios'
 
 const Banner = () => {
+  const [bannerCity, setBannerCity] = useState([])
+
+  useEffect(() => {
+    const getData = async () => {
+      const resData = await axios.get('http://localhost:3000/city')
+      setBannerCity(resData.data)
+    }
+    getData()
+  }, [])
+
   const handleDragStart = e => e.preventDefault()
 
   const item = []

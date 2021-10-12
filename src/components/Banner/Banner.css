@@ -2,7 +2,7 @@
   position: relative;
   margin-top: 50px;
   height: 100vh;
-  z-index: 100;
+  z-index: 10;
 }
 .banner-img {
   width: 90vw;
