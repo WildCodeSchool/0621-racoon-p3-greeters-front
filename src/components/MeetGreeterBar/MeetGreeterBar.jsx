@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated'
-import { themeDropdown, cityDropdown, languageDropdown } from '../DropItems'
+import axios from 'axios'
+import GreetersPagination from '../../components/GreetersPagination/GreetersPagination'
 
 import './MeetGreeterBar.css'
 
@@ -20,7 +21,7 @@ const customStyles = {
   }),
   placeholder: provided => ({
     ...provided,
-    color: 'black'
+    color: 'rgba(0, 0, 0, 0.5)'
   }),
   indicatorSeparator: provided => ({
     ...provided,
@@ -50,6 +51,43 @@ const MeetGreeterBar = () => {
   const [city, setCity] = useState([])
   const [langue, setLangue] = useState([])
 
+  const [filters, setFilters] = useState({})
+
+  useEffect(() => {
+    const getData = async () => {
+      const resData = await axios.get('http://localhost:3000/thematic')
+      setTheme(resData.data)
+    }
+    getData()
+  }, [])
+
+  useEffect(() => {
+    const getData = async () => {
+      const resData = await axios.get('http://localhost:3000/languages')
+      setLangue(resData.data)
+    }
+    getData()
+  }, [])
+
+  useEffect(() => {
+    const getData = async () => {
+      const resData = await axios.get('http://localhost:3000/city')
+      setCity(resData.data)
+    }
+    getData()
+  }, [])
+
+  // const handleFilters = e => {
+  //   const value = e[0]
+  //   setFilters({
+  //     ...filters,
+  //     [e[0].label]: value
+  //   })
+  // }
+
+  // console.log(filters)
+  // console.log(theme)
+
   return (
     <>
       <nav className='meetbar'>
@@ -57,20 +95,22 @@ const MeetGreeterBar = () => {
           <Select
             styles={customStyles}
             components={animatedComponents}
-            onChange={setTheme}
-            options={themeDropdown}
+            // onChange={handleFilters}
+            options={theme.map(({ thematic_name_fr }) => ({
+              label: thematic_name_fr
+            }))}
             className='meet-select'
             placeholder='Thématiques'
             isMulti
-            autoFocus
+            // autoFocus
             isSearchable
-            noOptionsMessage={() => 'tous les thèmes sont déja sélectionnés'}
+            // noOptionsMessage={() => 'tous les thèmes sont déja sélectionnés'}
           />
           <Select
             styles={customStyles}
             components={animatedComponents}
-            onChange={setCity}
-            options={cityDropdown}
+            // onChange={handleFilters}
+            options={city.map(({ city_name }) => ({ label: city_name }))}
             className='meet-select'
             placeholder='Villes'
             isMulti
@@ -81,8 +121,10 @@ const MeetGreeterBar = () => {
           <Select
             styles={customStyles}
             components={animatedComponents}
-            onChange={setLangue}
-            options={languageDropdown}
+            // onChange={handleFilters}
+            options={langue.map(({ language_name_fr }) => ({
+              label: language_name_fr
+            }))}
             className='meet-select'
             placeholder='Langues'
             isMulti
@@ -95,6 +137,7 @@ const MeetGreeterBar = () => {
         </div>
       </nav>
       <button className='meet-greeter-btn'>Voir les (?) résultats</button>
+      <GreetersPagination filters={filters} />
     </>
   )
 }
