@@ -7,7 +7,7 @@
   object-fit: cover;
 }
 .banner-city-container {
-  height: 100vh;
+  height: 80vh;
 }
 .alice-carousel__prev-btn, .alice-carousel__next-btn {
   display: none;
@@ -26,14 +26,16 @@
   background-color: #ff0d0d;
 }
 .banner-city-text {
-  font-family: 'cursive', 'Titillium Web', sans-serif;
-  color: white;
-  text-shadow: 2px 2px 2px black;
-  font-weight: 900;
+  font-family: 'Titillium Web', sans-serif;
+  background-color: rgba(102, 56, 56, 0.35);
   position: absolute;
-  top: 25%;
-  bottom: 35%;
-  left: 12%;
-  width: 40vw;
-  z-index: 10;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+  color: #FFFFFF;
 }

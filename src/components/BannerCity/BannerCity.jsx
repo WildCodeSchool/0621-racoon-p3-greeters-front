@@ -15,7 +15,6 @@ const BannerCity = () => {
     const getData = async () => {
       const resData = await axios.get(`http://localhost:3000/photos/${id}`)
       setBannerCity(resData.data)
-      console.log(resData.data)
     }
     getData()
   }, [id])

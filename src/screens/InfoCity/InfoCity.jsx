@@ -13,10 +13,10 @@ const InfoCity = () => {
   const [infoCity, setInfoCity] = useState([])
 
   useEffect(() => {
-    let { id } = useParams
     const getData = async () => {
-      const resData = await axios.get(`http://localhost:3000/city/${id}`)
-      setInfoCity(resData.data.result)
+      const resultData = await axios.get(`http://localhost:3000/photos/${id}`)
+      setInfoCity(resultData.data)
+      console.log(resultData.data)
     }
     getData()
   }, [id])
@@ -24,9 +24,13 @@ const InfoCity = () => {
     <>
       <Navbar />
       <BannerCity />
-      <div className="city-content">
-        
+      <div className='city-content'>
+        {infoCity &&
+          infoCity.map(l => {
+            return <section>{l.city_description_fr}</section>
+          })}
       </div>
+      <Footer />
     </>
   )
 }
