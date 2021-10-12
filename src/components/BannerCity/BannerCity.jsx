@@ -17,7 +17,18 @@ const BannerCity = () => {
   }, [])
 
   const item = []
-  return <></>
+  banneCity.map(r => {
+    let photo = (
+      <div>
+        <img
+          src={r.city_banner}
+          onDragStart={handleDragStart}
+          className='bannerCity'
+        />
+      </div>
+    )
+  })
+  return
 }
 
 export default BannerCity
