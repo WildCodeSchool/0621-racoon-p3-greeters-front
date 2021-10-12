@@ -58,7 +58,9 @@ const AdminDetailsCity = () => {
     setCity(resData.data)
   }
   const getPhotosData = async () => {
-    const resData = await axios.get(`http://localhost:3000/photos/${cityId}`)
+    const resData = await axios.get(
+      `http://localhost:3000/photos/admin/${cityId}`
+    )
     setPhotos(resData.data)
   }
   useEffect(() => {
@@ -149,33 +151,6 @@ const AdminDetailsCity = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Photo</span> : {<img src={photos[0].photos_img} />}
-              <button
-                onClick={toggleCityPhotoForm}
-                className='admin-details-icon-btn'
-              >
-                <box-icon name='edit-alt' />
-              </button>
-            </li>
-            <li className='admin-details-city-item'>
-              <span>Légende Photo</span> : {photos[0].photos_leg_fr}
-              <button
-                onClick={toggleCityLegPhotoForm}
-                className='admin-details-icon-btn'
-              >
-                <box-icon name='edit-alt' />
-              </button>
-            </li>
-            <li className='admin-details-city-item'>
-              <span>Légende Photo Anglais</span> : {photos[0].photos_leg_en}
-              <button
-                onClick={toggleCityLegEnPhotoForm}
-                className='admin-details-icon-btn'
-              >
-                <box-icon name='edit-alt' />
-              </button>
-            </li>
-            <li className='admin-details-city-item'>
               <span>Lien</span> : {city[0].city_lien}
               <button
                 onClick={toggleCityLienForm}
@@ -202,6 +177,44 @@ const AdminDetailsCity = () => {
                 <box-icon name='edit-alt' />
               </button>
             </li>
+            <h3>Photo : </h3>
+            {photos.map((p, index) => (
+              <>
+                <li className='admin-details-city-item'>
+                  {
+                    <img
+                      className='admin-photo-city'
+                      src={photos[index].photos_img}
+                    />
+                  }
+                  <button
+                    onClick={toggleCityPhotoForm}
+                    className='admin-details-icon-btn'
+                  >
+                    <box-icon name='edit-alt' />
+                  </button>
+                </li>
+                <li className='admin-details-city-item'>
+                  <span>Légende Photo</span> : {photos[index].photos_leg_fr}
+                  <button
+                    onClick={toggleCityLegPhotoForm}
+                    className='admin-details-icon-btn'
+                  >
+                    <box-icon name='edit-alt' />
+                  </button>
+                </li>
+                <li className='admin-details-city-item'>
+                  <span>Légende Photo Anglais</span> :{' '}
+                  {photos[index].photos_leg_en}
+                  <button
+                    onClick={toggleCityLegEnPhotoForm}
+                    className='admin-details-icon-btn'
+                  >
+                    <box-icon name='edit-alt' />
+                  </button>
+                </li>
+              </>
+            ))}
           </ul>
         </div>
       ) : null}
