@@ -16,10 +16,29 @@ const Greeters = () => {
     getData()
   }, [])
 
-  console.log(greeters)
+  // console.log(greeters)
+
+  /* Animation */
+  const [show, setShow] = useState(false)
+
+  const handleShow = e => {
+    setShow()
+  }
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 250) {
+      handleShow(true)
+    } else {
+      handleShow(false)
+    }
+  })
 
   return (
-    <>
+    <div
+      className={show ? 'Greeters' : 'Greeters'}
+      data-aos='fade-right'
+      data-aos-anchor-placement='top-center'
+    >
       <h2 className='greeters-title'>Les Greeters</h2>
 
       <div className='greeters-container'>
@@ -28,7 +47,7 @@ const Greeters = () => {
           : null}
       </div>
       <button className='greeters-btn'>Tout Voir</button>
-    </>
+    </div>
   )
 }
 

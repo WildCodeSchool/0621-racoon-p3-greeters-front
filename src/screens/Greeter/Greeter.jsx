@@ -1,20 +1,23 @@
 import React from 'react'
+import { useState } from 'react/cjs/react.development'
 
-import Footer from '../../components/Footer/Footer'
-import Greeters from '../../components/Greeters/Greeters'
+import GreetersPagination from '../../components/GreetersPagination/GreetersPagination'
 import GreeterProfil from '../../components/GreeterProfil/GreeterProfil'
 import Map from '../../components/Map/Map'
-import Navbar from '../../components/Navbar/Navbar'
 
 import './Greeter.css'
+import Navbar from '../../components/Navbar/Navbar'
+import Footer from '../../components/Footer/Footer'
 
 const Greeter = () => {
+  const [greeterCoordinates, setGreeterCoordinates] = useState(null)
+
   return (
     <div className='greeter'>
       <Navbar />
-      <GreeterProfil />
-      <Map />
-      <Greeters />
+      <GreeterProfil getCoordinates={setGreeterCoordinates} />
+      <Map coordinates={greeterCoordinates} />
+      <GreetersPagination />
       <Footer />
     </div>
   )

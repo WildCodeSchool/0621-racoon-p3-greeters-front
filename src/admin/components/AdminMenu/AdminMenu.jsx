@@ -1,39 +1,32 @@
 import { NavLink } from 'react-router-dom'
 import './AdminMenu.css'
 
-function Menu() {
+function AdminMenu() {
   return (
     <div className='sidebar'>
       <ul className='nav-links'>
-        <li>
-          <span className='link_name'>Vue d'ensemble</span>
-        </li>
-        <li>
-          <div className='icon_link'>
-            <NavLink to='#'>
-              <span className='link_name'>Contenu</span>
-            </NavLink>
+        <NavLink to='/'>
+          <div className='returnButton'>
+            <span>&#11013;</span>
           </div>
-        </li>
-        <li>
-          <div className='icon_link'>
-            <NavLink to='#'>
-              <span className='link_name'>Membres</span>
-            </NavLink>
-          </div>
-        </li>
-        <li>
-          <NavLink to='#'>
-            <span className='link_name'>Villes</span>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='#'>
-            <span className='link_name'>Administration</span>
-          </NavLink>
-        </li>
+        </NavLink>
+        <NavLink to='/admin'>
+          <li>Vue d'ensemble</li>
+        </NavLink>
+        <NavLink to='/admin/content'>
+          <li>Contenu</li>
+        </NavLink>
+        <NavLink to='/admin/list-greeters'>
+          <li>Greeters</li>
+        </NavLink>
+        <NavLink to='/admin/list-cities'>
+          <li>Villes</li>
+        </NavLink>
+        <NavLink to='#'>
+          <li>Administration</li>
+        </NavLink>
       </ul>
     </div>
   )
 }
-export default Menu
+export default AdminMenu
