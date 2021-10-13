@@ -1,33 +1,35 @@
 .greeter-profil-bloc-info {
   padding:0 80px 0 0;
+  display: flex;
 }
 
-.greeter-profil-bloc-info-catchphrase {
-  font-style : italic;
-  width:40vw;
+.greeter-profil-bloc-info-bloc1 {
+margin: 0 2vw 0 0;
 }
 
-.greeter-profil-bloc-info-bloc2 {
-  display:flex;
+.greeter-profil-bloc-info-city {
+  font-size:18px;
+  padding:10px 0;
 }
+
 
 .greeter-profil-bloc-info-description {
   text-align:justify;
   width:35vw;
-  padding: 0 1vw;
   /* background: rgba(231, 26, 28, 0.05);
   border: 1px solid rgba(231, 26, 28, 0.5); */
   box-sizing: border-box;
   border-radius: 10px;
+  font-size: 20px;
 }
 
 .greeter-profil-bloc-info-infos {
   padding: 0 1vw;
-  width:16vw;
-  background: rgba(231, 26, 28, 0.05);
-  border: 1px solid rgba(231, 26, 28, 0.5);
+  width:13vw;
+  background: rgb(255, 237, 237);
+  border: 3px solid rgba(255,0,0);
   box-sizing: border-box;
-  border-radius: 10px;
-  margin: 0 0 0 2vw;
+  border-radius: 20px 0;
+  text-align: center;
 }
 
