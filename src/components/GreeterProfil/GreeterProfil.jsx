@@ -8,7 +8,14 @@ import GreeterProfilInfo from '../GreeterProfilInfo/GreeterProfilInfo'
 
 import './GreeterProfil.css'
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
 const GreeterProfil = ({ getCoordinates }) => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 })
+  }, [])
+
   const { id } = useParams()
   const [greeterData, setGreeterData] = useState('')
 
@@ -30,7 +37,7 @@ const GreeterProfil = ({ getCoordinates }) => {
   }, [])
 
   return (
-    <div className='greeter-profil'>
+    <div className='greeter-profil' data-aos='fade-in'>
       {greeterData && (
         <>
           <div className='greeter-profil-left'>

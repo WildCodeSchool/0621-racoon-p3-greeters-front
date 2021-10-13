@@ -4,7 +4,7 @@ import './GreeterProfilInfo.css'
 
 const GreeterProfilInfo = props => {
   return (
-    <div className='greeter-profil-bloc-info'>
+    <div className='greeter-profil-bloc-info' aos-data='fade-down'>
       <div className='greeter-profil-bloc-info-bloc1'>
         <h2 className='greeter-profil-bloc-info-name'>
           {props.result[0].person_firstname}

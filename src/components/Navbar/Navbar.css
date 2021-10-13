@@ -4,7 +4,7 @@
   height: 10vh;
   background-color: white;
   position: relative;
-  z-index: 50;
+  z-index: 1000;
 }
 
 /**** Navbar static ****/

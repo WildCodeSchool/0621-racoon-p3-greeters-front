@@ -4,7 +4,7 @@ import './GreeterProfilCard.css'
 
 const GreeterProfilCard = props => {
   return (
-    <div className='greeter-profil-bloc-card'>
+    <div className='greeter-profil-bloc-card' aos-data='fade-right'>
       <img
         src={props.result[0].person_photo}
         alt={props.result[0].person_firstname}
