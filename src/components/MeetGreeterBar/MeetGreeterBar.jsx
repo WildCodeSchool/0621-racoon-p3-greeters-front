@@ -51,9 +51,9 @@ const MeetGreeterBar = () => {
   const [city, setCity] = useState([])
   const [langue, setLangue] = useState([])
 
-  const [selectedOptionsCity, setSelectedOptionsCity] = useState({}) // abdou
-  const [selectedOptionsThem, setSelectedOptionsThem] = useState({}) // abdou
-  const [selectedOptionsLang, setSelectedOptionsLang] = useState({}) // abdou
+  const [selectedOptionsCity, setSelectedOptionsCity] = useState([]) // abdou
+  const [selectedOptionsThem, setSelectedOptionsThem] = useState([]) // abdou
+  const [selectedOptionsLang, setSelectedOptionsLang] = useState([]) // abdou
 
   // fetch all thematics from data
 
@@ -97,9 +97,9 @@ const MeetGreeterBar = () => {
 
   return (
     <>
-      {console.log('log city', selectedOptionsCity)}
+      {/* {console.log('log city', selectedOptionsCity)}
       {console.log('log thematic', selectedOptionsThem)}
-      {console.log('log language', selectedOptionsLang)}
+      {console.log('log language', selectedOptionsLang)} */}
       <nav className='meetbar'>
         <div className='meet-items'>
           <Select

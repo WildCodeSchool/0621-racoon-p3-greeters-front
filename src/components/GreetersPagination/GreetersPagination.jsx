@@ -18,6 +18,7 @@ const GreetersPagination = ({
   const [greetersLang, setGreetersLang] = useState([])
 
   const [filteredGreeters, setFilteredGreeters] = useState([])
+  const [filteredGreetersById, setFilteredGreetersById] = useState([])
 
   // fetch all greeters, from all tables...
 
@@ -32,10 +33,47 @@ const GreetersPagination = ({
     getData()
   }, [])
 
-  // filter on all greeters with filters props from MeetGreeterBar
+  // filter on all greeters with all props from MeetGreeterBar
 
   useEffect(() => {
-    setFilteredGreeters(greeters.filter(g => g))
+    if (selectedOptionsCity === []) return
+
+    const greetersFilteredByCity = greeters.filter(item =>
+      item.city_name.match(selectedOptionsCity.map(c => c.value))
+    )
+
+
+
+
+    
+
+    const greetersFilteredByThemById = greeters.filter(item =>
+      item.person_id.match(greetersFilteredByThem.map(c => c.person_person_id))
+    )
+
+    const greetersFilteredByThem = greetersThem.filter(item =>
+      item.thematic_name_fr.match(selectedOptionsThem.map(t => t.value))
+    )
+
+
+
+
+
+    const greetersFilteredByLang = greetersLang.filter(item =>
+      item.language_name_fr.match(selectedOptionsThem.map(t => t.value))
+    )
+
+    // console.log('greeters filtrés par city', greetersFilteredByCity)
+    console.log('greeters filtrés par thematiques', greetersFilteredByThem)
+    console.log(
+      'greeters filtrés par thematiques par id',
+      greetersFilteredByThemById
+    )
+    // console.log('greeters filtrés par langages', greetersFilteredByLang)
+
+    // setFilteredGreeters(
+    //   greetersFilteredByCity + greetersFilteredByThem + greetersFilteredByLang
+    // )
   }, [greeters, selectedOptionsCity, selectedOptionsThem, selectedOptionsLang])
 
   //number of greeters per page
@@ -51,16 +89,13 @@ const GreetersPagination = ({
   const changePage = ({ selected }) => {
     setPageNumber(selected)
   }
-
+  // console.log('filtre city', selectedOptionsCity)
+  // console.log('greeters filtrés', { filteredGreeters })
+  console.log('filtre thematic', selectedOptionsThem)
+  // console.log('filtre langue', selectedOptionsLang)
   console.log('log greeters', greeters)
-  console.log(
-    'log greetersThem',
-    greetersThem.map(g => g.person_person_id + g.thematic_name_fr)
-  )
-  console.log(
-    'log greetersLang',
-    greetersLang.map(g => g.person_person_id + g.language_name_fr)
-  )
+  console.log('log greetersThem', greetersThem)
+  // console.log('log greetersLang', greetersLang)
 
   return (
     <>
