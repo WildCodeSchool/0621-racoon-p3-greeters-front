@@ -4,7 +4,6 @@ import Admin from './admin/screens/Admin/Admin'
 import AdminDetailsCity from './admin/screens/AdminDetailsCity/AdminDetailsCity'
 import AdminDetailsGreeter from './admin/screens/AdminDetailsGreeter/AdminDetailsGreeter'
 import AdminConnection from './admin/screens/AdminConnection/AdminConnection'
-import AdminEditor from './admin/components/Editor/AdminEditor'
 import CitiesList from './admin/screens/CitiesList/CitiesList'
 import Contact from './screens/Contact/Contact'
 import Greeter from './screens/Greeter/Greeter'
@@ -57,9 +56,6 @@ function App() {
           </Route>
           <Route path='/admin/content/concept' exact>
             <AdminContentConcept />
-          </Route>
-          <Route path='/admin/editor' exact>
-            <AdminEditor />
           </Route>
           <Route path='/admin/connection' exact>
             <AdminConnection />
