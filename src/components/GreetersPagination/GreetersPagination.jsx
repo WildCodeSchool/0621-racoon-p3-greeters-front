@@ -6,47 +6,44 @@ import GreeterCard from '../GreeterCard/GreeterCard'
 
 import './GreetersPagination.css'
 
-const GreetersPagination = ({ filters }) => {
+const GreetersPagination = ({
+  selectedOptionsCity,
+  selectedOptionsThem,
+  selectedOptionsLang
+}) => {
   const [pageNumber, setPageNumber] = useState(0)
+
   const [greeters, setGreeters] = useState([])
+  const [greetersThem, setGreetersThem] = useState([])
+  const [greetersLang, setGreetersLang] = useState([])
 
   const [filteredGreeters, setFilteredGreeters] = useState([])
 
-  // fetch all greeters
+  // fetch all greeters, from all tables...
 
   useEffect(() => {
     const getData = async () => {
       const resData = await axios.get('http://localhost:3000/person')
       setGreeters(resData.data.result)
+      setGreetersThem(resData.data.result2)
+      setGreetersLang(resData.data.result3)
       // console.log(resData.data)
     }
-
     getData()
   }, [])
 
   // filter on all greeters with filters props from MeetGreeterBar
 
-  // useEffect(() => {
-  //   setFilteredGreeters(
-  //     greeters.filter(item =>
-  //       Object.entries(filters).every(
-  //         ([key, value]) => item[key]
-  //         // .includes(value)
-  //       )
-  //     )
-  //   )
-  // }, [greeters, filters])
-
   useEffect(() => {
     setFilteredGreeters(greeters.filter(g => g))
-  }, [greeters, filters])
+  }, [greeters, selectedOptionsCity, selectedOptionsThem, selectedOptionsLang])
 
   //number of greeters per page
 
   const greetersPerPage = 9
   const pagesVisited = pageNumber * greetersPerPage
 
-  const displayGreeters = greeters
+  const displayGreeters = filteredGreeters
     .slice(pagesVisited, pagesVisited + greetersPerPage)
     .map((g, index) => <GreeterCard key={index} {...g} />)
 
@@ -55,10 +52,15 @@ const GreetersPagination = ({ filters }) => {
     setPageNumber(selected)
   }
 
-  // console.log(filters)
-  // console.log(filteredGreeters)
-  // console.log(greeters)
-  // console.log(greeters.filter(g => g.city_name === filters))
+  console.log('log greeters', greeters)
+  console.log(
+    'log greetersThem',
+    greetersThem.map(g => g.person_person_id + g.thematic_name_fr)
+  )
+  console.log(
+    'log greetersLang',
+    greetersLang.map(g => g.person_person_id + g.language_name_fr)
+  )
 
   return (
     <>
