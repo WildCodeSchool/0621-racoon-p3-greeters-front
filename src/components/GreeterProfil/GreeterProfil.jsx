@@ -8,17 +8,21 @@ import GreeterProfilInfo from '../GreeterProfilInfo/GreeterProfilInfo'
 
 import './GreeterProfil.css'
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
 const GreeterProfil = ({ getCoordinates }) => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 })
+  }, [])
+
   const { id } = useParams()
   const [greeterData, setGreeterData] = useState('')
-
-  console.log(id)
 
   useEffect(() => {
     const getData = async () => {
       const resultData = await axios.get(`http://localhost:3000/person/${id}`)
       setGreeterData(resultData.data)
-      console.log(resultData)
 
       const mapData = {
         position: [
@@ -28,13 +32,12 @@ const GreeterProfil = ({ getCoordinates }) => {
         name: resultData.data.result[0].city_name
       }
       getCoordinates(mapData)
-      console.log(resultData.data)
     }
     getData()
   }, [])
 
   return (
-    <div className='greeter-profil'>
+    <div className='greeter-profil' data-aos='fade-in'>
       {greeterData && (
         <>
           <div className='greeter-profil-left'>

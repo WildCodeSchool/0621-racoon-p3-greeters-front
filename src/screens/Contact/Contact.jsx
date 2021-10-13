@@ -1,13 +1,22 @@
 import React from 'react'
 import emailjs from 'emailjs-com'
 
+import { useEffect } from 'react'
+
 import Swal from 'sweetalert2'
+
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 import './Contact.css'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 
 const Contact = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 })
+  }, [])
+
   const sendEmail = e => {
     e.preventDefault()
 
@@ -41,7 +50,7 @@ const Contact = () => {
   return (
     <>
       <Navbar />
-      <div className='Contact'>
+      <div className='Contact' data-aos='fade-in'>
         <h1>Contactez-nous</h1>
         <p>
           Les champs obligatoires sont indiqués par un astérisque{' '}

@@ -31,9 +31,24 @@
   z-index: 100;
 }
 
-.AdminHome-container .middle-section {
+.AdminHome-container .layer5-section {
   position: relative;
-  z-index: 50;
+  z-index: 40;
+}
+
+.AdminHome-container .layer4-section {
+  position: relative;
+  z-index: 30;
+}
+
+.AdminHome-container .layer3-section {
+  position: relative;
+  z-index: 20;
+}
+
+.AdminHome-container .layer2-section {
+  position: relative;
+  z-index: 10;
 }
 
 .AdminHome-container .down-section {

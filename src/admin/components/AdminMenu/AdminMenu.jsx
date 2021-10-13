@@ -5,10 +5,15 @@ function AdminMenu() {
   return (
     <div className='sidebar'>
       <ul className='nav-links'>
+        <NavLink to='/'>
+          <div className='returnButton'>
+            <span>&#11013;</span>
+          </div>
+        </NavLink>
         <NavLink to='/admin'>
           <li>Vue d'ensemble</li>
         </NavLink>
-        <NavLink to='#'>
+        <NavLink to='/admin/content'>
           <li>Contenu</li>
         </NavLink>
         <NavLink to='/admin/list-greeters'>

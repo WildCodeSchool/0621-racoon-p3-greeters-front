@@ -4,10 +4,10 @@ import './GreeterProfilInfo.css'
 
 const GreeterProfilInfo = props => {
   return (
-    <div className='greeter-profil-bloc-info'>
+    <div className='greeter-profil-bloc-info' aos-data='fade-down'>
       <div className='greeter-profil-bloc-info-bloc1'>
         <h2 className='greeter-profil-bloc-info-name'>
-          {props.result[0].firstname}
+          {props.result[0].person_firstname}
         </h2>
         <h3 className='greeter-profil-bloc-info-catchphrase'>
           {props.result[0].person_catch_phrase_fr}
@@ -25,11 +25,15 @@ const GreeterProfilInfo = props => {
           </article>
           <article className='greeter-profil-bloc-info-thematic'>
             <h4>Thématiques</h4>
-            {/* <p>{props.result[0].person_thematic}</p> */}
+            {props.result2.map((resthem, index) => (
+              <p key={index}>{resthem.thematic_name_fr}</p>
+            ))}
           </article>
           <article className='greeter-profil-bloc-info-language'>
             <h4>Langues parlées</h4>
-            {/* <p>{props.result[0].person_language}</p> */}
+            {props.result3.map((reslang, index) => (
+              <p key={index}>{reslang.language_name_fr}</p>
+            ))}
           </article>
         </section>
       </div>

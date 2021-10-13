@@ -13,7 +13,6 @@ const MapComponent = ({ coordinates }) => {
     name: 'Tours'
   }
   */
-  console.log(coordinates)
   // Static data for home map
   const city = [
     {
@@ -51,7 +50,7 @@ const MapComponent = ({ coordinates }) => {
   })
 
   return (
-    <div className='MapComponent'>
+    <div className='MapComponent' data-aos='fade-down'>
       {/* Using the map module */}
       <MapContainer
         className='map'
