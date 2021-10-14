@@ -20,26 +20,31 @@ const AdminConnection = () => {
   const handleSubmit = async e => {
     e.preventDefault()
 
-    //let err = true
-
-    // const postCo = async () => {
-    const resCo = await axios.post('http://localhost:3000/auth', {
-      log: userName,
-      password: password
-    })
-    console.log('Salut', resCo)
-    // }
-    // postCo()
-    // if (err) {
-    //   Swal.fire({
-    //     icon: 'error',
-    //     title: "Nom d'utilisateur ou mot de passe incorrect",
-    //     confirmButtonColor: 'red'
-    //   })
-    // }
+    const resCo = await axios
+      .post('http://localhost:3000/auth', {
+        log: userName,
+        password: password
+      })
+      .then(result => {
+        if (result.data != 'Invalid') {
+          localStorage['admin_session'] = JSON.stringify(result.data)
+          Swal.fire({
+            icon: 'success',
+            title: 'Bienvenue',
+            confirmButtonColor: 'green'
+          }).then(
+            () => (window.location = 'http://localhost:3001/admin/content')
+          )
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: "Nom d'utilisateur ou mot de passe incorrect",
+            confirmButtonColor: 'red'
+          })
+        }
+      })
   }
 
-  console.log(userName, password)
   return (
     <>
       <Navbar />
