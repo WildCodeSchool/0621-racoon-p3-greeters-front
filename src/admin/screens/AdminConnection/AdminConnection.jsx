@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { useState } from 'react/cjs/react.development'
 
 import Swal from 'sweetalert2'
@@ -16,18 +17,26 @@ const AdminConnection = () => {
     setPassword(e)
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
 
-    let err = true
+    //let err = true
 
-    if (err) {
-      Swal.fire({
-        icon: 'error',
-        title: "Nom d'utilisateur ou mot de passe incorrect",
-        confirmButtonColor: 'red'
-      })
-    }
+    // const postCo = async () => {
+    const resCo = await axios.post('http://localhost:3000/auth', {
+      log: userName,
+      password: password
+    })
+    console.log('Salut', resCo)
+    // }
+    // postCo()
+    // if (err) {
+    //   Swal.fire({
+    //     icon: 'error',
+    //     title: "Nom d'utilisateur ou mot de passe incorrect",
+    //     confirmButtonColor: 'red'
+    //   })
+    // }
   }
 
   console.log(userName, password)
