@@ -14,21 +14,15 @@ const GreetersPagination = ({
   const [pageNumber, setPageNumber] = useState(0)
 
   const [greeters, setGreeters] = useState([])
-  const [greetersThem, setGreetersThem] = useState([])
-  const [greetersLang, setGreetersLang] = useState([])
 
   const [filteredGreeters, setFilteredGreeters] = useState([])
-  const [filteredGreetersById, setFilteredGreetersById] = useState([])
 
-  // fetch all greeters, from all tables...
+  // fetch all greeters on the route created to display each greeter with its theme, city and language
 
   useEffect(() => {
     const getData = async () => {
-      const resData = await axios.get('http://localhost:3000/person')
-      setGreeters(resData.data.result)
-      setGreetersThem(resData.data.result2)
-      setGreetersLang(resData.data.result3)
-      // console.log(resData.data)
+      const resData = await axios.get('http://localhost:3000/person/filter')
+      setGreeters(resData.data)
     }
     getData()
   }, [])
@@ -36,44 +30,47 @@ const GreetersPagination = ({
   // filter on all greeters with all props from MeetGreeterBar
 
   useEffect(() => {
-    if (selectedOptionsCity === []) return
+    // condition so that if no filter is activated all greeters are displayed
+
+    if (
+      selectedOptionsCity &&
+      selectedOptionsThem &&
+      selectedOptionsLang === []
+    )
+      return
+
+    // declaration of variables for each filter
+
+    const greetersFilteredByThem = greeters.filter(item =>
+      item.person_thematic_fr.match(selectedOptionsThem.map(t => t.value))
+    )
 
     const greetersFilteredByCity = greeters.filter(item =>
-      item.city_name.match(selectedOptionsCity.map(c => c.value))
+      item.person_city_name.match(selectedOptionsCity.map(c => c.value))
     )
 
-
-
-
-    
-
-    const greetersFilteredByThemById = greeters.filter(item =>
-      item.person_id.match(greetersFilteredByThem.map(c => c.person_person_id))
+    const greetersFilteredByLang = greeters.filter(item =>
+      item.person_language_fr.match(selectedOptionsLang.map(l => l.value))
     )
 
-    const greetersFilteredByThem = greetersThem.filter(item =>
-      item.thematic_name_fr.match(selectedOptionsThem.map(t => t.value))
-    )
+    // declaration of the variable (a array empty) which retrieves the result of the matches between the 3 filters above
 
+    let filtre = []
 
+    // iterations in the 3 arrays of greeters filtered to find the matches
 
+    for (let i of greetersFilteredByCity) {
+      if (
+        greetersFilteredByThem.includes(i) &&
+        greetersFilteredByLang.includes(i)
+      ) {
+        filtre.push(i)
+      }
+    }
 
+    // pass as argument of the state which displays the filtered greeters the result
 
-    const greetersFilteredByLang = greetersLang.filter(item =>
-      item.language_name_fr.match(selectedOptionsThem.map(t => t.value))
-    )
-
-    // console.log('greeters filtrés par city', greetersFilteredByCity)
-    console.log('greeters filtrés par thematiques', greetersFilteredByThem)
-    console.log(
-      'greeters filtrés par thematiques par id',
-      greetersFilteredByThemById
-    )
-    // console.log('greeters filtrés par langages', greetersFilteredByLang)
-
-    // setFilteredGreeters(
-    //   greetersFilteredByCity + greetersFilteredByThem + greetersFilteredByLang
-    // )
+    setFilteredGreeters(filtre)
   }, [greeters, selectedOptionsCity, selectedOptionsThem, selectedOptionsLang])
 
   //number of greeters per page
@@ -81,21 +78,18 @@ const GreetersPagination = ({
   const greetersPerPage = 9
   const pagesVisited = pageNumber * greetersPerPage
 
+  // constant to display the result of filtered greeters
+
   const displayGreeters = filteredGreeters
     .slice(pagesVisited, pagesVisited + greetersPerPage)
     .map((g, index) => <GreeterCard key={index} {...g} />)
+
+  // constant to display the number of pages
 
   const pageCount = Math.ceil(filteredGreeters.length / greetersPerPage)
   const changePage = ({ selected }) => {
     setPageNumber(selected)
   }
-  // console.log('filtre city', selectedOptionsCity)
-  // console.log('greeters filtrés', { filteredGreeters })
-  console.log('filtre thematic', selectedOptionsThem)
-  // console.log('filtre langue', selectedOptionsLang)
-  console.log('log greeters', greeters)
-  console.log('log greetersThem', greetersThem)
-  // console.log('log greetersLang', greetersLang)
 
   return (
     <>

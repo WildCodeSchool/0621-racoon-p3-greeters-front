@@ -12,12 +12,12 @@ const customStyles = {
   option: provided => ({
     ...provided,
     borderBottom: '1px dotted red',
-
     padding: 10
   }),
   valueContainer: provided => ({
     ...provided,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginTop: '5px'
   }),
   placeholder: provided => ({
     ...provided,
@@ -27,7 +27,6 @@ const customStyles = {
     ...provided,
     display: 'none'
   }),
-
   multiValue: provided => ({
     ...provided,
     backgroundColor: 'none'
@@ -41,7 +40,6 @@ const customStyles = {
   singleValue: (provided, state) => {
     const opacity = state.isDisabled ? 0.5 : 1
     const transition = 'opacity 300ms'
-
     return { ...provided, opacity, transition }
   }
 }
@@ -51,9 +49,9 @@ const MeetGreeterBar = () => {
   const [city, setCity] = useState([])
   const [langue, setLangue] = useState([])
 
-  const [selectedOptionsCity, setSelectedOptionsCity] = useState([]) // abdou
-  const [selectedOptionsThem, setSelectedOptionsThem] = useState([]) // abdou
-  const [selectedOptionsLang, setSelectedOptionsLang] = useState([]) // abdou
+  const [selectedOptionsCity, setSelectedOptionsCity] = useState([])
+  const [selectedOptionsThem, setSelectedOptionsThem] = useState([])
+  const [selectedOptionsLang, setSelectedOptionsLang] = useState([])
 
   // fetch all thematics from data
 
@@ -97,19 +95,20 @@ const MeetGreeterBar = () => {
 
   return (
     <>
-      {/* {console.log('log city', selectedOptionsCity)}
-      {console.log('log thematic', selectedOptionsThem)}
-      {console.log('log language', selectedOptionsLang)} */}
       <nav className='meetbar'>
         <div className='meet-items'>
           <Select
             styles={customStyles}
             components={animatedComponents}
             onChange={handleFiltersThem}
-            options={theme.map(({ thematic_name_fr }) => ({
-              value: thematic_name_fr,
-              label: thematic_name_fr
-            }))}
+            options={theme
+              .sort((a, b) =>
+                a.thematic_name_fr.localeCompare(b.thematic_name_fr)
+              )
+              .map(({ thematic_name_fr }) => ({
+                value: thematic_name_fr,
+                label: thematic_name_fr
+              }))}
             className='meet-select'
             placeholder='Thématiques'
             isMulti
@@ -151,7 +150,6 @@ const MeetGreeterBar = () => {
           />
         </div>
       </nav>
-      {/* <button className='meet-greeter-btn'>Voir les (?) résultats</button> */}
       <GreetersPagination
         selectedOptionsCity={selectedOptionsCity}
         selectedOptionsThem={selectedOptionsThem}
