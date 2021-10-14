@@ -1,5 +1,5 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-
+import React from 'react'
 import Admin from './admin/screens/Admin/Admin'
 import AdminDetailsCity from './admin/screens/AdminDetailsCity/AdminDetailsCity'
 import AdminDetailsGreeter from './admin/screens/AdminDetailsGreeter/AdminDetailsGreeter'
@@ -15,6 +15,7 @@ import AdminContentConcept from './admin/screens/AdminContentConcept/AdminConten
 import GreetersList from './admin/screens/GreetersList/GreetersList'
 import Home from './screens/Home/Home'
 import InfoCity from './screens/InfoCity/InfoCity'
+import LanguageContextProvider from './LanguageContext'
 import MeetGreeter from './screens/MeetGreeter/MeetGreeter'
 
 import './App.css'
@@ -23,63 +24,64 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Route path='/' exact>
-          <Home />
-        </Route>
-        <Switch>
-          <Route path='/meetgreeter' exact>
-            <MeetGreeter />
+        <LanguageContextProvider>
+          <Route path='/' exact>
+            <Home />
           </Route>
-          <Route path='/infoCity/:id' exact>
-            <InfoCity />
-          </Route>
-          <Route path='/admin/content'>
-            <AdminContent />
-          </Route>
-          <Route path='/contact' exact>
-            <Contact />
-          </Route>
-          <Route path='/greeters/:id' exact>
-            <Greeter />
-          </Route>
-          <Route path='/concept' exact>
-            <Concept />
-          </Route>
-
-          <Route path='/admin' exact>
-            <Admin />
-          </Route>
-          <Route path='/admin/connection' exact>
-            <AdminConnection />
-          </Route>
-          <Route path='/admin/content' exact>
-            <AdminContent />
-          </Route>
-          <Route path='/admin/content/description' exact>
-            <AdminContentDescription />
-          </Route>
-          <Route path='/admin/content/values' exact>
-            <AdminContentValues />
-          </Route>
-          <Route path='/admin/content/concept' exact>
-            <AdminContentConcept />
-          </Route>
-          <Route path='/admin/connection' exact>
-            <AdminConnection />
-          </Route>
-          <Route path='/admin/list-greeters' exact>
-            <GreetersList />
-          </Route>
-          <Route path='/admin/list-cities' exact>
-            <CitiesList />
-          </Route>
-          <Route path='/admin/details-greeter/:greeterId' exact>
-            <AdminDetailsGreeter />
-          </Route>
-          <Route path='/admin/details-city/:cityId' exact>
-            <AdminDetailsCity />
-          </Route>
-        </Switch>
+          <Switch>
+            <Route path='/meetgreeter' exact>
+              <MeetGreeter />
+            </Route>
+            <Route path='/infoCity/:id' exact>
+              <InfoCity />
+            </Route>
+            <Route path='/admin/content'>
+              <AdminContent />
+            </Route>
+            <Route path='/contact' exact>
+              <Contact />
+            </Route>
+            <Route path='/greeters/:id' exact>
+              <Greeter />
+            </Route>
+            <Route path='/concept' exact>
+              <Concept />
+            </Route>
+            <Route path='/admin' exact>
+              <Admin />
+            </Route>
+            <Route path='/admin/connection' exact>
+              <AdminConnection />
+            </Route>
+            <Route path='/admin/content' exact>
+              <AdminContent />
+            </Route>
+            <Route path='/admin/content/description' exact>
+              <AdminContentDescription />
+            </Route>
+            <Route path='/admin/content/values' exact>
+              <AdminContentValues />
+            </Route>
+            <Route path='/admin/content/concept' exact>
+              <AdminContentConcept />
+            </Route>
+            <Route path='/admin/connection' exact>
+              <AdminConnection />
+            </Route>
+            <Route path='/admin/list-greeters' exact>
+              <GreetersList />
+            </Route>
+            <Route path='/admin/list-cities' exact>
+              <CitiesList />
+            </Route>
+            <Route path='/admin/details-greeter/:greeterId' exact>
+              <AdminDetailsGreeter />
+            </Route>
+            <Route path='/admin/details-city/:cityId' exact>
+              <AdminDetailsCity />
+            </Route>
+          </Switch>
+        </LanguageContextProvider>
       </BrowserRouter>
     </div>
   )
