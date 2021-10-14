@@ -1,11 +1,12 @@
 .greeter-profil-bloc-card {
   display: block;
   align-content: center;
+  width:20vw;
 }
 
 .greeter-profil-bloc-card-img {
-  margin-bottom: 50px;
-  width:22vw;
+  /* margin-bottom: 50px; */
+  width:20vw;
   border-radius: 20px;
   margin-top: 23px;
   box-shadow: 0px 0px 5px black;
@@ -13,12 +14,11 @@
 
 .greeter-profil-bloc-card-btn {
   font-family: 'Titillium Web', sans-serif;
-  background-color: #F4E7E7;
-  position: relative;
+  background-color: #faf0e6;
+  position: absolute;
   top: 99%;
   left: 50%;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding: 0 30px;
   transform: translateX(-50%);
   font-style: normal;
   font-weight: bold;
@@ -29,4 +29,17 @@
   border-radius: 66px;
   color: black;
   cursor: pointer;
+  transition: 0.4s linear;
+  line-height: 50px;
+}
+
+.greeter-profil-bloc-card-btn:hover {
+  color: white;
+  background: black;
+}
+
+.greeter-profil-bloc-info-catchphrase {
+  font-style : italic;
+  text-align: left;
+  font-size: 17px;
 }

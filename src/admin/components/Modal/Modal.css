@@ -32,19 +32,41 @@
   max-width: 500px;
   width: 80%;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  height: 2rem;
 }
 
 .modal-close-button {
+  display: flex;
+  justify-content: flex-end;
   font-size: 1.4rem;
   font-weight: 700;
   color: #000;
   cursor: pointer;
   border: none;
   background: transparent;
+}
+
+.modal-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.form-group{
+  margin: 10px 0;
+}
+
+.form-group textarea{
+    max-width: 400px;
+    min-width: 200px;
+    min-height: 20px;
 }

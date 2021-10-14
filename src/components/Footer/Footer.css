@@ -14,37 +14,27 @@
 margin:16px;
 }
 .button{
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: noir;
-  border-radius: 25px;
-  box-shadow: 0 9px #999;
-  box-sizing: border-box;
+  font-family: 'Titillium Web', sans-serif;
   background-color: #faf0e6;
-  margin: 1px 110px;
-  padding: 10px 45px;
+  padding: 0 30px;
+  font-style: normal;
+  font-weight: bold;
   font-size: 18px;
-
+  line-height: 27px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 66px;
+  color: black;
+  cursor: pointer;
+  transition: 0.4s linear;
+  line-height: 50px;
 
 }
 .button:hover{
-  background-color: #ef003f;
-  transform: translateY(4px);
-  box-shadow: 0 5px #666;
+  color: white;
+  background: black;
 }
-.Titre{
-  /* padding: 80px;
-  column-count: 3;
-  display: flex;
-  gap: 10px;
-  gap: 10px 20px; /* row-gap column gap */
-  /* row-gap: 10px;
-  column-gap: 30px;
-  list-style-type: disc; */ 
 
-}
 .globalCollon{
 display:flex ;
 margin: 0px 40px 70px 70px;
