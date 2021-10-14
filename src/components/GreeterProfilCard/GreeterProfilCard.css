@@ -14,12 +14,11 @@
 
 .greeter-profil-bloc-card-btn {
   font-family: 'Titillium Web', sans-serif;
-  background-color: #F4E7E7;
+  background-color: #faf0e6;
   position: absolute;
   top: 99%;
   left: 50%;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 0 30px;
   transform: translateX(-50%);
   font-style: normal;
   font-weight: bold;
@@ -30,6 +29,13 @@
   border-radius: 66px;
   color: black;
   cursor: pointer;
+  transition: 0.4s linear;
+  line-height: 50px;
+}
+
+.greeter-profil-bloc-card-btn:hover {
+  color: white;
+  background: black;
 }
 
 .greeter-profil-bloc-info-catchphrase {
