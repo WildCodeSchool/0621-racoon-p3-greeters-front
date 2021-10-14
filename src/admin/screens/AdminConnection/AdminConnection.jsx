@@ -23,10 +23,13 @@ const AdminConnection = () => {
     //let err = true
 
     // const postCo = async () => {
-    const resCo = await axios.post('http://localhost:3000/auth', {
-      log: userName,
-      password: password
-    })
+    const resCo = await axios.post(
+      'http://localhost:3000/api/auth/checkCredentials',
+      {
+        log: userName,
+        password: password
+      }
+    )
     console.log('Salut', resCo)
     // }
     // postCo()

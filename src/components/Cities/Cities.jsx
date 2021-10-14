@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react'
 
 import axios from 'axios'
 
-import { City } from '../../data'
 import CityCard from '../CityCard/CityCard'
 
 import './Cities.css'
 
 const Cities = () => {
   const [cityList, setCityList] = useState('')
+  const cityNameList = []
 
   useEffect(() => {
     const getCity = async () => {
@@ -29,9 +29,12 @@ const Cities = () => {
         ))}
       </div> */}
       <div className='cities-container'>
-        {cityList.map((c, index) => (
-          <CityCard key={index} {...c} />
-        ))}
+        {/* {cityList.map((c, index) => {
+          if (!cityNameList.includes(c.city_name)) {
+            cityNameList.push(c.city_name)
+            <CityCard key={index} {...c} />
+          }
+        })} */}
       </div>
       <button className='cities-btn'>Tout Voir</button>
     </div>
