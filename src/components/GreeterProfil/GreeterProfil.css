@@ -1,13 +1,14 @@
 .greeter-profil {
   display: flex;
-  padding: 6vh 8vw;
+ justify-content: center;
   font-family: 'Titillium Web', sans-serif;
+  margin-top:1vh;
 }
 
 .greeter-profil-left {
-  padding: 0 2vw 0vh 2vw;
+  padding: 0 2vw 0vh 0vw;
 }
 
 .greeter-profil-right {
-  padding: 0 0vw 6vh 0;
+  padding: 0 0vw 2vh 0;
 } 

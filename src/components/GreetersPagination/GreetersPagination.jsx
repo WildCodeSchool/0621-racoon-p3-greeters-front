@@ -96,8 +96,8 @@ const GreetersPagination = ({
       <h2 className='greeters-pagination-title'>Les Greeters</h2>
       <div className='greeters-pagination-container'>{displayGreeters}</div>
       <ReactPaginate
-        previousLabel={'<- Page Précédente'}
-        nextLabel={'Page Suivante ->'}
+        previousLabel={<span className='arrowleft'>&#8678;</span>}
+        nextLabel={<span className='arrowright'>&#8680;</span>}
         pageCount={pageCount}
         onPageChange={changePage}
         containerClassName={'paginationBttns'}

@@ -8,7 +8,6 @@ import AdminContentDescription from './admin/screens/AdminContentDescription/Adm
 import AdminContentValues from './admin/screens/AdminContentValues/AdminContentValues'
 import AdminDetailsCity from './admin/screens/AdminDetailsCity/AdminDetailsCity'
 import AdminDetailsGreeter from './admin/screens/AdminDetailsGreeter/AdminDetailsGreeter'
-import AdminEditor from './admin/components/Editor/AdminEditor'
 import CitiesList from './admin/screens/CitiesList/CitiesList'
 import Concept from './screens/Concept/Concept'
 import Contact from './screens/Contact/Contact'
@@ -65,9 +64,6 @@ function App() {
           <Route path='/admin/content/concept' exact>
             <AdminContentConcept />
           </Route>
-          <Route path='/admin/editor' exact>
-            <AdminEditor />
-          </Route>
           <Route path='/admin/connection' exact>
             <AdminConnection />
           </Route>
@@ -82,10 +78,6 @@ function App() {
           </Route>
           <Route path='/admin/details-city/:cityId' exact>
             <AdminDetailsCity />
-          </Route>
-
-          <Route path='/admin/editor' exact>
-            <AdminEditor />
           </Route>
         </Switch>
       </BrowserRouter>
