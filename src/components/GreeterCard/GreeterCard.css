@@ -1,6 +1,5 @@
 .greeter-card {
   position: relative;
-
   width: 400px;
   height: 300px;
   margin: 1rem 0;
@@ -85,10 +84,8 @@
     border-radius: 15px;
     margin: 0 auto;
   }
-  .greeter-card {
-  
+  .greeter-card {  
     width: 300px;
-    height: 200px;
-   
+    height: 200px;   
   }
 }
