@@ -1,71 +1,135 @@
 .ConceptPhotos-Container {
-  /* margin: 0 auto; */
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  object-fit: cover;
   
-  /* justify-content: space-around;
-  width: 50rem;
-  height: 35rem;
-  overflow: hidden;
-  border-radius: 20px; */
-
-  /* padding: auto;
-   border-radius: 20px;
-   /* display: flex; */
-   /* flex-direction: row; */
- /* width: 1700px;
- height: 400px;
- justify-content: space-around;
- flex-wrap: wrap; */ 
  }
 
  .ConceptPhotos-Block-Image1 {
   display: block;
-    margin: 2vh 5vw;
+    /* margin: 2vh 5vw; */
     text-align: center;
-  
-  /* justify-content: space-around;
-  width: 40rem;
-  height: 20rem;
-  overflow: hidden;
-  border-radius: 20px;
-  float: left;
-  text-align: center; */
-
-/* width: 150px; 
-height: 150px; 
-object-fit: cover; 
-border-radius: 20px; */
+    width: 40vw;
  }
 
  .ConceptPhotos-Block-Image2 {
-  /* margin: 0 auto; */
   display: block;
-    margin: 2vh 5vw;
+    /* margin: 2vh 5vw; */
     text-align: center;
-  /* justify-content: space-around;
-  width: 40rem;
-  height: 20rem;
-  overflow: hidden;
-  border-radius: 20px;
-  float: right;
-  text-align: center; */
-
-  /* width: 150px; 
-  height: 150px; 
-  object-fit: cover; 
-  border-radius: 20px; */
+    width: 40vw;
  }
 
- .ConceptPhotos-img{
-width: 600px;
+ /* .ConceptPhotos-Block-Image2 .ConceptPhotos-img{
+  width: 120%;
+ } */
 
+ .ConceptPhotos-img{
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 1px 1px 1px #a2a2a2;
  }
 
  .ConceptPhotos-btn-right{
-text-align: center;
- }
+  font-family: 'Titillium Web', sans-serif;
+  background-color: #faf0e6;
+  padding: 0 30px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 27px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 66px;
+  color: black;
+  cursor: pointer;
+  transition: 0.4s linear;
+  line-height: 20px;
+  margin: 10px;
+  /* position: relative;
+  border-radius: 66px;
+  border: 2px solid;
+  text-align: center;
+  width: fit-content;
+  font-family: Titillium Web;
+  font-weight: 700;
+  font-size: 18px;
+  height: fit-content;
+  cursor: pointer; */
+/* text-align: center;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #ff0d0d;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  width: 200px;
+  height: 10%; */
+}
 
  .ConceptPhotos-btn-left{
-text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  background-color: #faf0e6;
+  padding: 0 30px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 27px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 66px;
+  color: black;
+  cursor: pointer;
+  transition: 0.4s linear;
+  line-height: 20px;
+  margin: 10px;
+  /* position: relative; */
+  /* padding: 9px 20px;
+  line-height: 27.38px; */
+  /* border-radius: 66px;
+  border: 2px solid;
+  text-align: center;
+  width: fit-content;
+  font-family: Titillium Web;
+  font-weight: 700;
+  font-size: 18px;
+  height: fit-content;
+  cursor: pointer;
+  padding: 0 30px; */
+/* text-align: center;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #ff0d0d;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  width: 200px;
+  height: 10%; */
  }
+
+ .Text-Concept{
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.Text-Valeurs{
+  padding: 1em;
+  width: 100%;
+  background: #f5f3f3;
+  border: 1px solid #333;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 0 0 0 2vw;
+  box-shadow: 1px 1px 1px black;
+}
