@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated'
 import axios from 'axios'
-import GreetersPagination from '../../components/GreetersPagination/GreetersPagination'
+import GreetersPaginationFiltered from '../../components/GreetersPaginationFiltered/GreetersPaginationFiltered'
 
 import './MeetGreeterBar.css'
 
@@ -153,7 +153,7 @@ const MeetGreeterBar = () => {
           />
         </div>
       </nav>
-      <GreetersPagination
+      <GreetersPaginationFiltered
         selectedOptionsCity={selectedOptionsCity}
         selectedOptionsThem={selectedOptionsThem}
         selectedOptionsLang={selectedOptionsLang}
