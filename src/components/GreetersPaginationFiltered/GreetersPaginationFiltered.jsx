@@ -42,15 +42,15 @@ const GreetersPaginationFiltered = ({
     // declaration of variables for each filter
 
     const greetersFilteredByThem = greeters.filter(item =>
-      item.person_thematic_fr.match(selectedOptionsThem.map(t => t.value))
+      item.person_thematic_fr.includes(selectedOptionsThem.map(t => t.value))
     )
 
     const greetersFilteredByCity = greeters.filter(item =>
-      item.person_city_name.match(selectedOptionsCity.map(c => c.value))
+      item.person_city_name.includes(selectedOptionsCity.map(c => c.value))
     )
 
     const greetersFilteredByLang = greeters.filter(item =>
-      item.person_language_fr.match(selectedOptionsLang.map(l => l.value))
+      item.person_language_fr.includes(selectedOptionsLang.map(l => l.value))
     )
 
     // declaration of the variable (a array empty) which retrieves the result of the matches between the 3 filters above

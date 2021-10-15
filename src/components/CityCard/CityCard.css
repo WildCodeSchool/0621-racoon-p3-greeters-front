@@ -1,8 +1,14 @@
 .city-img {
-  width: 30vw;
-  height: 30vw;
+  width: 400px;
+  height: 300px;
   border-radius: 20px;
   object-fit: cover;
+}
+
+.container-citycard{
+  height: 300px;
+  margin-top: 2rem;
+
 }
 
 .city-name {
@@ -15,4 +21,18 @@
   position: relative;
   bottom: 28%;
   z-index: 10;
+}
+
+@media (max-width: 500px) { 
+  
+  .city-img {
+    width: 300px;
+  height: 250px;
+  }
+
+  .container-citycard{
+    margin: 1rem 0;
+    width: 300px;
+  height: 250px;
+  }
 }

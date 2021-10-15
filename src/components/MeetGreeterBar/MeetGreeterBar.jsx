@@ -17,7 +17,12 @@ const customStyles = {
   valueContainer: provided => ({
     ...provided,
     justifyContent: 'center',
-    marginTop: '5px'
+    marginTop: '5px',
+    '@media only screen and (max-width: 500px)': {
+      ...provided['@media only screen and (max-width: 500px)'],
+      marginLeft: '10px',
+      fontSize: 'small'
+    }
   }),
   placeholder: provided => ({
     ...provided,

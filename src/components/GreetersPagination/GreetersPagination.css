@@ -58,3 +58,9 @@
 .arrowright{
   font-size:45px;
 }
+
+@media screen and (max-width:500px) {
+  .greeters-pagination-title {
+    padding: 20px;
+  }
+}
