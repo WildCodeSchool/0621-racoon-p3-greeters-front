@@ -5,7 +5,7 @@ import './Cities.css'
 
 const Cities = () => {
   return (
-    <>
+    <div data-aos='fade-right'>
       <h2 className='cities-title'>Les villes à découvrir</h2>
 
       <div className='cities-container'>
@@ -14,7 +14,7 @@ const Cities = () => {
         ))}
       </div>
       <button className='cities-btn'>Tout Voir</button>
-    </>
+    </div>
   )
 }
 

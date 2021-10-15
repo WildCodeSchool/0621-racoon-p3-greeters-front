@@ -36,6 +36,26 @@ export const GreetersData = [
     greeter_name: 'Claude',
     greeter_photo:
       'https://images.pexels.com/photos/3779770/pexels-photo-3779770.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
+  },
+  {
+    greeter_name: 'roger',
+    greeter_photo:
+      'https://images.pexels.com/photos/3779770/pexels-photo-3779770.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
+  },
+  {
+    greeter_name: 'louis',
+    greeter_photo:
+      'https://images.pexels.com/photos/3779770/pexels-photo-3779770.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
+  },
+  {
+    greeter_name: 'jeanluc',
+    greeter_photo:
+      'https://images.pexels.com/photos/3779770/pexels-photo-3779770.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
+  },
+  {
+    greeter_name: 'michel',
+    greeter_photo:
+      'https://images.pexels.com/photos/3779770/pexels-photo-3779770.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
   }
 ]
 
