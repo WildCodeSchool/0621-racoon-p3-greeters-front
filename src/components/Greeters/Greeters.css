@@ -1,3 +1,7 @@
+.Greeters {
+  height: 100vh;
+  margin-top: 50px;
+}
 .greeters-container {
   display: flex;
   flex-wrap: wrap;
@@ -6,17 +10,17 @@
 
 .greeters-title {
   text-align: center;
-  padding: 70px;
-  color: black;
+  padding-bottom: 30px;
+  padding-top: 0px;
 }
 
 .greeters-btn {
   font-family: 'Titillium Web', sans-serif;
   background-color: #F4E7E7;
   position: relative;
-  top: 99%;
+  
   left: 50%;
-  margin-top: 2rem;
+  margin-top: 5rem;
   padding-left: 10%;
   padding-right: 10%;
   

@@ -12,12 +12,12 @@ import './AdminDetailsCity.css'
 const AdminDetailsCity = () => {
   //State for send city id
   const [city, setCity] = useState([])
+  //State for photos
+  const [photos, setPhotos] = useState([])
   //States for city data
   const [cityName, setCityName] = useState('')
   const [cityDesc, setCityDesc] = useState([])
   const [cityDescEn, setCityDescEn] = useState([])
-  const [cityTitle, setCityTitle] = useState([])
-  const [cityTitleEn, setCitytitleEn] = useState([])
   const [cityPhoto, setCityPhoto] = useState([])
   const [cityLegPhoto, setCityLegPhoto] = useState([])
   const [cityLegPhotoEn, setCityLegPhotoEn] = useState([])
@@ -31,10 +31,6 @@ const AdminDetailsCity = () => {
   const { isShowing: isCityDescFormShowed, toggle: toggleCityDescForm } =
     useModal()
   const { isShowing: isCityDescEnFormShowed, toggle: toggleCityDescEnForm } =
-    useModal()
-  const { isShowing: isCityTitleFormShowed, toggle: toggleCityTitleForm } =
-    useModal()
-  const { isShowing: isCityTitleEnFormShowed, toggle: toggleCityTitleEnForm } =
     useModal()
   const { isShowing: isCityPhotoFormShowed, toggle: toggleCityPhotoForm } =
     useModal()
@@ -61,8 +57,15 @@ const AdminDetailsCity = () => {
     const resData = await axios.get(`http://localhost:3000/city/${cityId}`)
     setCity(resData.data)
   }
+  const getPhotosData = async () => {
+    const resData = await axios.get(
+      `http://localhost:3000/photos/admin/${cityId}`
+    )
+    setPhotos(resData.data)
+  }
   useEffect(() => {
     getData()
+    getPhotosData()
   }, [])
 
   const putData = async (name, value) => {
@@ -73,79 +76,73 @@ const AdminDetailsCity = () => {
     getData()
   }
 
-  const handleSubmit = e => {
+  const putPhotosData = async (name, value) => {
+    console.log(value)
+    const results = await axios.put(`http://localhost:3000/photos/${cityId}`, {
+      [name]: value
+    })
+    getData()
+  }
+
+  const handleSubmit = (e, table) => {
     e.preventDefault()
     console.log(e.target[0].value)
-    putData(e.target[0].name, e.target[0].value)
-
-    if (e.target[0].name === 'city_name') {
-      toggleCityNameForm()
-    }
-    if (e.target[0].name === 'city_description_fr') {
-      toggleCityDescForm()
-    }
-    if (e.target[0].name === 'city_description_en') {
-      toggleCityDescEnForm()
-    }
-    if (e.target[0].name === 'city_description_en') {
-      toggleCityDescEnForm()
-    }
-    if (e.target[0].name === 'city_title_fr') {
-      toggleCityTitleForm()
-    }
-    if (e.target[0].name === 'city_title_en') {
-      toggleCityTitleEnForm()
-    }
-    if (e.target[0].name === 'city_photo') {
-      toggleCityPhotoForm()
-    }
-    if (e.target[0].name === 'city_legende_photo_fr') {
-      toggleCityLegPhotoForm()
-    }
-    if (e.target[0].name === 'city_legende_photo_en') {
-      toggleCityLegEnPhotoForm()
-    }
-    if (e.target[0].name === 'city_lien') {
-      toggleCityLienForm()
-    }
-    if (e.target[0].name === 'city_longitude') {
-      toggleCityLongForm()
-    }
-    if (e.target[0].name === 'city_latitude') {
-      toggleCityLatForm()
+    if (table === 'noPh') {
+      putData(e.target[0].name, e.target[0].value)
+      if (e.target[0].name === 'city_name') {
+        toggleCityNameForm()
+      } else if (e.target[0].name === 'city_description_fr') {
+        toggleCityDescForm()
+      } else if (e.target[0].name === 'city_description_en') {
+        toggleCityDescEnForm()
+      } else if (e.target[0].name === 'city_lien') {
+        toggleCityLienForm()
+      } else if (e.target[0].name === 'city_longitude') {
+        toggleCityLongForm()
+      } else if (e.target[0].name === 'city_latitude') {
+        toggleCityLatForm()
+      }
+    } else if (table === 'Ph') {
+      putPhotosData(e.target[0].name, e.target[0].value)
+      if (e.target[0].name === 'photos_img') {
+        toggleCityPhotoForm()
+      } else if (e.target[0].name === 'photos_leg_fr') {
+        toggleCityLegPhotoForm()
+      } else if (e.target[0].name === 'photos_leg_en') {
+        toggleCityLegEnPhotoForm()
+      }
     }
   }
 
   return (
     <>
       <AdminMenu />(
-      {city[0] ? (
+      {city[0] && photos[0] ? (
         // Form
         <div className='admin-details-city-container'>
           <h1 className='admin-details-city-title'>Villes</h1>
           <ul className='admin-details-city-list'>
             <li className='admin-details-city-item'>
-              <span>Nom</span> :
+              <span>Nom</span> : {city[0].city_name}
               <button
                 onClick={toggleCityNameForm}
                 className='admin-details-icon-btn'
               >
                 <box-icon name='edit-alt' />
               </button>
-              {city[0].city_name}
             </li>
             <li className='admin-details-city-item'>
-              <span>Description</span> :
+              <span>Description</span> : {city[0].city_description_fr}
               <button
                 onClick={toggleCityDescForm}
                 className='admin-details-icon-btn'
               >
                 <box-icon name='edit-alt' />
               </button>
-              {city[0].city_description_fr}
             </li>
             <li className='admin-details-city-item'>
-              <span>Description en anglais</span> :{city[0].city_description_en}
+              <span>Description en anglais</span> :{' '}
+              {city[0].city_description_en}
               <button
                 onClick={toggleCityDescEnForm}
                 className='admin-details-icon-btn'
@@ -154,56 +151,7 @@ const AdminDetailsCity = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Titre</span> :
-              <button
-                onClick={toggleCityTitleForm}
-                className='admin-details-icon-btn'
-              >
-                <box-icon name='edit-alt' />
-              </button>
-              {city[0].city_title_fr}
-            </li>
-            <li className='admin-details-city-item'>
-              <span>Titre en anglais</span> :
-              <button
-                onClick={toggleCityTitleEnForm}
-                className='admin-details-icon-btn'
-              >
-                <box-icon name='edit-alt' />
-              </button>
-              {city[0].city_title_en}
-            </li>
-            <li className='admin-details-city-item'>
-              <span>Photo</span> :
-              <button
-                onClick={toggleCityPhotoForm}
-                className='admin-details-icon-btn'
-              >
-                <box-icon name='edit-alt' />
-              </button>
-              {city[0].city_photo}
-            </li>
-            <li className='admin-details-city-item'>
-              <span>Légende Photo</span> : {city[0].city_legende_photo_fr}
-              <button
-                onClick={toggleCityLegPhotoForm}
-                className='admin-details-icon-btn'
-              >
-                <box-icon name='edit-alt' />
-              </button>
-            </li>
-            <li className='admin-details-city-item'>
-              <span>Légende Photo Anglais</span> :
-              {city[0].city_legende_photo_en}
-              <button
-                onClick={toggleCityLegEnPhotoForm}
-                className='admin-details-icon-btn'
-              >
-                <box-icon name='edit-alt' />
-              </button>
-            </li>
-            <li className='admin-details-city-item'>
-              <span>Lien</span> :{city[0].city_lien}
+              <span>Lien</span> : {city[0].city_lien}
               <button
                 onClick={toggleCityLienForm}
                 className='admin-details-icon-btn'
@@ -212,7 +160,7 @@ const AdminDetailsCity = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Longitude</span> :{city[0].city_longitude}
+              <span>Longitude</span> : {city[0].city_longitude}
               <button
                 onClick={toggleCityLongForm}
                 className='admin-details-icon-btn'
@@ -221,7 +169,7 @@ const AdminDetailsCity = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Latitude</span> :{city[0].city_latitude}
+              <span>Latitude</span> : {city[0].city_latitude}
               <button
                 onClick={toggleCityLatForm}
                 className='admin-details-icon-btn'
@@ -229,6 +177,44 @@ const AdminDetailsCity = () => {
                 <box-icon name='edit-alt' />
               </button>
             </li>
+            <h3>Photo : </h3>
+            {photos.map((p, index) => (
+              <>
+                <li className='admin-details-city-item'>
+                  {
+                    <img
+                      className='admin-photo-city'
+                      src={photos[index].photos_img}
+                    />
+                  }
+                  <button
+                    onClick={toggleCityPhotoForm}
+                    className='admin-details-icon-btn'
+                  >
+                    <box-icon name='edit-alt' />
+                  </button>
+                </li>
+                <li className='admin-details-city-item'>
+                  <span>Légende Photo</span> : {photos[index].photos_leg_fr}
+                  <button
+                    onClick={toggleCityLegPhotoForm}
+                    className='admin-details-icon-btn'
+                  >
+                    <box-icon name='edit-alt' />
+                  </button>
+                </li>
+                <li className='admin-details-city-item'>
+                  <span>Légende Photo Anglais</span> :{' '}
+                  {photos[index].photos_leg_en}
+                  <button
+                    onClick={toggleCityLegEnPhotoForm}
+                    className='admin-details-icon-btn'
+                  >
+                    <box-icon name='edit-alt' />
+                  </button>
+                </li>
+              </>
+            ))}
           </ul>
         </div>
       ) : null}
@@ -238,7 +224,7 @@ const AdminDetailsCity = () => {
         hide={toggleCityNameForm}
         title='Modifier le nom'
       >
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={e => handleSubmit(e, 'noPh')}>
           <div className='form-group'>
             <input
               type='text'
@@ -261,7 +247,7 @@ const AdminDetailsCity = () => {
         hide={toggleCityDescForm}
         title='Modifier la description'
       >
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={e => handleSubmit(e, 'noPh')}>
           <div className='form-group'>
             <textarea
               type='text'
@@ -284,7 +270,7 @@ const AdminDetailsCity = () => {
         hide={toggleCityDescEnForm}
         title='Modifier la description en anglais'
       >
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={e => handleSubmit(e, 'noPh')}>
           <div className='form-group'>
             <textarea
               type='text'
@@ -301,64 +287,18 @@ const AdminDetailsCity = () => {
           </div>
         </form>
       </Modal>
-      {/* Modal for Title fr */}
-      <Modal
-        isShowing={isCityTitleFormShowed}
-        hide={toggleCityTitleForm}
-        title='Modifier le titre'
-      >
-        <form onSubmit={handleSubmit}>
-          <div className='form-group'>
-            <input
-              type='text'
-              placeholder='modifier ici'
-              name='city_title_fr'
-              onChange={e => setCityTitle(e.target.value)}
-              value={cityTitle}
-            />
-          </div>
-          <div className='form-group'>
-            <button type='submit' value='Envoyer'>
-              Envoyer
-            </button>
-          </div>
-        </form>
-      </Modal>
-      {/* Modal for Title en */}
-      <Modal
-        isShowing={isCityTitleEnFormShowed}
-        hide={toggleCityTitleEnForm}
-        title='Modifier le titre en anglais'
-      >
-        <form onSubmit={handleSubmit}>
-          <div className='form-group'>
-            <input
-              type='text'
-              placeholder='modifier ici'
-              name='city_title_en'
-              onChange={e => setCitytitleEn(e.target.value)}
-              value={cityTitleEn}
-            />
-          </div>
-          <div className='form-group'>
-            <button type='submit' value='Envoyer'>
-              Envoyer
-            </button>
-          </div>
-        </form>
-      </Modal>
       {/* Modal for Photo */}
       <Modal
         isShowing={isCityPhotoFormShowed}
         hide={toggleCityPhotoForm}
         title='Modifier la photo'
       >
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={e => handleSubmit(e, 'Ph')}>
           <div className='form-group'>
             <input
               type='text'
               placeholder='modifier ici'
-              name='city_photo'
+              name='photos_img'
               onChange={e => setCityPhoto(e.target.value)}
               value={cityPhoto}
             />
@@ -376,12 +316,12 @@ const AdminDetailsCity = () => {
         hide={toggleCityLegPhotoForm}
         title='Modifier la Légende de la photo'
       >
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={e => handleSubmit(e, 'Ph')}>
           <div className='form-group'>
             <input
               type='text'
               placeholder='modifier ici'
-              name='city_legende_photo_fr'
+              name='photos_leg_fr'
               onChange={e => setCityLegPhoto(e.target.value)}
               value={cityLegPhoto}
             />
@@ -399,12 +339,12 @@ const AdminDetailsCity = () => {
         hide={toggleCityLegEnPhotoForm}
         title='Modifier la Légende de la photo'
       >
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={e => handleSubmit(e, 'Ph')}>
           <div className='form-group'>
             <input
               type='text'
               placeholder='modifier ici'
-              name='city_legende_photo_en'
+              name='photos_leg_en'
               onChange={e => setCityLegPhotoEn(e.target.value)}
               value={cityLegPhotoEn}
             />
@@ -422,7 +362,7 @@ const AdminDetailsCity = () => {
         hide={toggleCityLienForm}
         title='Modifier lien'
       >
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={e => handleSubmit(e, 'noPh')}>
           <div className='form-group'>
             <input
               type='text'
@@ -445,7 +385,7 @@ const AdminDetailsCity = () => {
         hide={toggleCityLongForm}
         title='Modifier longitude'
       >
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={e => handleSubmit(e, 'noPh')}>
           <div className='form-group'>
             <input
               type='text'
@@ -468,7 +408,7 @@ const AdminDetailsCity = () => {
         hide={toggleCityLatForm}
         title='Modifier latitude'
       >
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={e => handleSubmit(e, 'noPh')}>
           <div className='form-group'>
             <input
               type='text'

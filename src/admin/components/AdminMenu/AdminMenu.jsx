@@ -5,35 +5,26 @@ function AdminMenu() {
   return (
     <div className='sidebar'>
       <ul className='nav-links'>
-        <li>
-          <NavLink to='/admin'>
-            <span className='link_name'>Vue d'ensemble</span>
-          </NavLink>
-        </li>
-        <li>
-          <div className='icon_link'>
-            <NavLink to='#'>
-              <span className='link_name'>Contenu</span>
-            </NavLink>
+        <NavLink to='/'>
+          <div className='returnButton'>
+            <span>&#11013;</span>
           </div>
-        </li>
-        <li>
-          <div className='icon_link'>
-            <NavLink to='/admin/list-greeters'>
-              <span className='link_name'>Greeters</span>
-            </NavLink>
-          </div>
-        </li>
-        <li>
-          <NavLink to='/admin/list-cities'>
-            <span className='link_name'>Villes</span>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='#'>
-            <span className='link_name'>Administration</span>
-          </NavLink>
-        </li>
+        </NavLink>
+        <NavLink to='/admin'>
+          <li>Vue d'ensemble</li>
+        </NavLink>
+        <NavLink to='/admin/content'>
+          <li>Contenu</li>
+        </NavLink>
+        <NavLink to='/admin/list-greeters'>
+          <li>Greeters</li>
+        </NavLink>
+        <NavLink to='/admin/list-cities'>
+          <li>Villes</li>
+        </NavLink>
+        <NavLink to='#'>
+          <li>Administration</li>
+        </NavLink>
       </ul>
     </div>
   )

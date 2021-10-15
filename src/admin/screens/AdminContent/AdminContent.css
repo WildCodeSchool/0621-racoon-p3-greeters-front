@@ -1,21 +1,21 @@
-.AdminHome-container{
+.AdminContent-container{
   position: absolute;
   width: 70%;
   left: 30%;
   text-align: center;
 }
 
-.AdminHome-container h2 {
+.AdminContent-container h2 {
   margin: 0;
 }
 
-.AdminHome-container a{
+.AdminContent-container a{
   position: relative;
   text-decoration: none;
   color: #000;
 }
 
-.AdminHome-section{
+.AdminContent-section{
   height: 140px;
   margin: 0 0px;
   background-color: white;
@@ -23,46 +23,46 @@
   box-shadow: 0px 2px 2px -2px black;
   transition: 0.2s linear;
 }
-.AdminHome-section:hover{
+.AdminContent-section:hover{
   background-color: rgba(0,0,0,0.1);
 }
-.AdminHome-container .up-section {
+.AdminContent-container .up-section {
   position: relative;
   z-index: 100;
 }
 
-.AdminHome-container .layer5-section {
+.AdminContent-container .layer5-section {
   position: relative;
   z-index: 40;
 }
 
-.AdminHome-container .layer4-section {
+.AdminContent-container .layer4-section {
   position: relative;
   z-index: 30;
 }
 
-.AdminHome-container .layer3-section {
+.AdminContent-container .layer3-section {
   position: relative;
   z-index: 20;
 }
 
-.AdminHome-container .layer2-section {
+.AdminContent-container .layer2-section {
   position: relative;
   z-index: 10;
 }
 
-.AdminHome-container .down-section {
+.AdminContent-container .down-section {
   position: relative;
   z-index: 1;
 }
 
-.AdminHome-title{
+.AdminContent-title{
   padding-top: 40px;
   text-decoration: underline;
   
 }
 
-.AdminHome-big-title{
+.AdminContent-big-title{
   position: relative;
   z-index: 110;
   background-color: rgba(0,0,0,0.1);

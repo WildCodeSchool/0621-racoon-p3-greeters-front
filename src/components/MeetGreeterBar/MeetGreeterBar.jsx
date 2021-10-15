@@ -45,9 +45,12 @@ const customStyles = {
 }
 
 const MeetGreeterBar = () => {
+  // states
+
   const [theme, setTheme] = useState([])
   const [city, setCity] = useState([])
   const [langue, setLangue] = useState([])
+  // states for inputs
 
   const [selectedOptionsCity, setSelectedOptionsCity] = useState([])
   const [selectedOptionsThem, setSelectedOptionsThem] = useState([])
