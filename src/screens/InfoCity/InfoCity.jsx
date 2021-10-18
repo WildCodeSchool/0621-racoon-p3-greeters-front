@@ -9,6 +9,7 @@ import axios from 'axios'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import './InfoCity.css'
+import '../../components/Navbar/Navbar.css'
 
 const InfoCity = () => {
   let { id } = useParams()
@@ -28,14 +29,14 @@ const InfoCity = () => {
       <Navbar />
       <BannerCity />
       {/*exemple useContext*/}
-      {language.map((b, index) => (
+      {/* {language.map((b, index) => (
         <p key={index}> {b.name}</p>
-      ))}
+      ))} */}
       
       <div className='city-content'>
         {infoCity &&
           infoCity.map((l, index) => {
-            return <section key={index}>{l.city_description_fr}</section>
+            return <section key={index}>{language ? l.city_description_fr : l.city_description_en}</section>
           })}
       </div>
       <Footer />

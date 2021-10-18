@@ -15,16 +15,18 @@ import AdminContentConcept from './admin/screens/AdminContentConcept/AdminConten
 import GreetersList from './admin/screens/GreetersList/GreetersList'
 import Home from './screens/Home/Home'
 import InfoCity from './screens/InfoCity/InfoCity'
-import LanguageContextProvider from './LanguageContext'
+
 import MeetGreeter from './screens/MeetGreeter/MeetGreeter'
 
 import './App.css'
+import { useState } from 'react'
 
 function App() {
+  const [languageEn, setLanguageEn] = useState(false)
   return (
     <div>
       <BrowserRouter>
-        <LanguageContextProvider>
+        
           <Route path='/' exact>
             <Home />
           </Route>
@@ -81,7 +83,7 @@ function App() {
               <AdminDetailsCity />
             </Route>
           </Switch>
-        </LanguageContextProvider>
+        
       </BrowserRouter>
     </div>
   )
