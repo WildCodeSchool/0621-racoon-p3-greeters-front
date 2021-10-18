@@ -23,7 +23,7 @@ const Home = () => {
       <Banner />
       <Greeters />
       <Cities />
-      <Map coordinates={null} />
+      <Map />
       <Footer />
     </div>
   )

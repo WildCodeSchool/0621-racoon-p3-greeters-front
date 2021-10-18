@@ -1,18 +1,43 @@
+import axios from 'axios'
 import L from 'leaflet'
+import { useEffect, useState } from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { useParams } from 'react-router'
 
 // Import icons
 import pointer2 from '../../assets/map/pointer2.png'
 
 import './Map.css'
 
-const MapComponent = ({ coordinates }) => {
-  /* Structure coordinates reçues: 
-  coordinates {
-    position: [lat, long],
-    name: 'Tours'
+const MapComponent = () => {
+  const { idGreeter } = useParams()
+
+  console.log(idGreeter)
+
+  const [cityDB, setCityDB] = useState()
+
+  const getGreeterData = async () => {
+    const resGreeterData = await axios.get('http://localhost:3000/city')
+    setCityDB(resGreeterData.data)
+    console.log('liste city :')
+    console.log(resGreeterData.data)
   }
-  */
+
+  const getCityData = async () => {
+    const resCityData = await axios.get('http://localhost:3000/city')
+    setCityDB(resCityData.data)
+    console.log('liste city :')
+    console.log(resCityData.data)
+  }
+
+  useEffect(() => {
+    if (idGreeter) {
+      getGreeterData()
+    } else {
+      getCityData()
+    }
+  }, [])
+
   // Static data for home map
   const city = [
     {
@@ -38,6 +63,14 @@ const MapComponent = ({ coordinates }) => {
         lat: 47.35,
         lng: 0.66
       }
+    },
+    {
+      name: 'Amboise',
+      cordonates: [47.4132, 0.986012],
+      icon: {
+        lat: 47.4132,
+        lng: 0.986012
+      }
     }
   ]
 
@@ -52,37 +85,41 @@ const MapComponent = ({ coordinates }) => {
   return (
     <div className='MapComponent' data-aos='fade-down'>
       {/* Using the map module */}
-      <MapContainer
-        className='map'
-        center={city[0].cordonates} //coordinates ? coordinates :
-        zoom={8}
-        scrollWheelZoom={false}
-      >
-        <TileLayer
-          attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-        />
-        {
-          /*coordinates ? (
+      {/*
+      {cityDB && (
+        <MapContainer
+          className='map'
+          center={[cityDB[0].city_longitude, cityDB[0].city_latitude]} //coordinates ? coordinates :
+          zoom={8}
+          scrollWheelZoom={false}
+        >
+          <TileLayer
+            attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+          />
+          {
+            /*coordinates ? (
           <Marker
             position={[coordinates.position[0], coordinates.position[1]]}
             icon={redIcon}
           >
             <Popup>{coordinates.name}</Popup>
           </Marker>
-        ) : (*/
-          city.map((element, index) => (
-            <Marker
-              key={index}
-              position={[element.icon.lat, element.icon.lng]}
-              icon={redIcon}
-            >
-              <Popup>{element.name}</Popup>
-            </Marker>
-          ))
-          // )}
-        }
-      </MapContainer>
+        ) : (* /
+            cityDB.map((element, index) => (
+              <Marker
+                key={index}
+                position={[element.city_longitude, element.city_latitude]}
+                icon={redIcon}
+              >
+                <Popup>{element.city_name}</Popup>
+              </Marker>
+            ))
+            // )}
+          }
+        </MapContainer>
+      )}
+        */}
     </div>
   )
 }
