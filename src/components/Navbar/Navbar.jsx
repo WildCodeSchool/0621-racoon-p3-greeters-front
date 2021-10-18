@@ -1,11 +1,16 @@
 import './Navbar.css'
 import logo from '../../assets/greeters-logo-red.PNG'
 import { NavLink } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Swal from 'sweetalert2'
 import SearchBar from '../SearchBar/SearchBar'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const Navbar = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 })
+  }, [])
   /***** Language selection */
   const [language, setLanguage] = useState('fr')
 
@@ -82,7 +87,7 @@ const Navbar = () => {
       <div
         className={showMenu ? 'nav-open toShow-menu' : 'nav-open toHide-menu'}
       >
-        <NavLink to='/greeters'>
+        <NavLink to='/concept'>
           <h3>Qu'est ce qu'un greeter ?</h3>
         </NavLink>
 
