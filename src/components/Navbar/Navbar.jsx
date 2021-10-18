@@ -78,9 +78,12 @@ const Navbar = () => {
 
             <button onClick={handleSearchBar}>&#128270;</button>
             <select
-              onClick={handleClick}
+              /* onClick={handleClick} */
               className='language-button'
-              onChange={e => handleLanguage(e.target.value)}
+              onChange={e => {
+                handleLanguage(e.target.value)
+                handleClick()
+              }}
             >
               <option value='fr'>🇫🇷</option>
               <option value='en'>🇬🇧</option>

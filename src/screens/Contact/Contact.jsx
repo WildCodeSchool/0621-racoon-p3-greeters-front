@@ -1,6 +1,7 @@
 import React from 'react'
 import emailjs from 'emailjs-com'
-
+import { LangueContext } from '../../context'
+import { useContext } from 'react'
 import { useEffect } from 'react'
 
 import Swal from 'sweetalert2'
@@ -13,6 +14,8 @@ import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 
 const Contact = () => {
+  const language = useContext(LangueContext)
+  const englishMode = language.state.englishMode
   useEffect(() => {
     Aos.init({ duration: 1500 })
   }, [])
@@ -51,25 +54,30 @@ const Contact = () => {
     <>
       <Navbar />
       <div className='Contact' data-aos='fade-in'>
-        <h1>Contactez-nous</h1>
+        <h1>{englishMode ? 'Contact us' : 'Contactez-nous'}</h1>
         <p>
-          Les champs obligatoires sont indiqués par un astérisque{' '}
+          {englishMode
+            ? 'Les champs obligatoires sont indiqués par un astérisque'
+            : 'Les champs obligatoires sont indiqués par un astérisque*'}
           <span style={{ color: 'red' }}>*</span>
         </p>
         <form className='contactForm' onSubmit={sendEmail}>
           <div className='messageContainer'>
-            <h3>Ma demande</h3>
+            <h3>{englishMode ? 'My request' : 'Ma demande'}</h3>
 
             <div className='messageElement objectContent'>
               <h4>
-                Objet du message <span style={{ color: 'red' }}>*</span>
+                {englishMode
+                  ? 'Purpose of the application'
+                  : 'Objet de la demande'}
+                <span style={{ color: 'red' }}>*</span>
               </h4>
               <input type='text' name='user_object' />
             </div>
 
             <div className='messageElement messageContent'>
-              <h4>
-                Contenu du message <span style={{ color: 'red' }}>*</span>
+              <h4>{englishMode ? 'Content of the message' : 'Contenu du message'}
+                 <span style={{ color: 'red' }}>*</span>
               </h4>
               <textarea name='user_message'></textarea>
             </div>
