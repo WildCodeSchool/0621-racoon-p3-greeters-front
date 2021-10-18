@@ -45,7 +45,6 @@ function App() {
           <Route path='/concept' exact>
             <Concept />
           </Route>
-
           <Route path='/admin' exact>
             <Admin />
           </Route>
