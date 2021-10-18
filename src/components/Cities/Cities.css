@@ -6,10 +6,12 @@
 
 .cities-title {
   text-align: center;
-  padding: 70px;
+  margin: 5rem 0 4rem 0;
+
 }
 
 .cities-btn {
+  margin-top: 5rem;
   font-family: 'Titillium Web', sans-serif;
   background-color: #F4E7E7;
   position: relative;
@@ -27,4 +29,15 @@
   border-radius: 66px;
   color: black;
   cursor: pointer;
+}
+
+@media screen and (max-width:500px) {
+  .cities-title {
+    text-align: center;
+    margin: 2rem;
+  }
+  .cities-btn {
+    margin-top: 1rem;
+    
+  }
 }

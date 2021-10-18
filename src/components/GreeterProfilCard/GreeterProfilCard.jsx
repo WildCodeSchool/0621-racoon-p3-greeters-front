@@ -10,6 +10,9 @@ const GreeterProfilCard = props => {
         alt={props.result[0].person_firstname}
         className='greeter-profil-bloc-card-img'
       />
+      <h3 className='greeter-profil-bloc-info-catchphrase'>
+        {props.result[0].person_catch_phrase_fr}
+      </h3>
       <a
         href='https://gestion.greeters.fr/visits/new'
         target='_blank'

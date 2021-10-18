@@ -69,7 +69,7 @@ const ConceptPhotos = () => {
         </div>
       </div>
       {showResults && (
-        <div>
+        <div className='text-container'>
           <h2 className='Text-Concept'>
             {showConceptValue === 'value'
               ? value.value_title2_fr

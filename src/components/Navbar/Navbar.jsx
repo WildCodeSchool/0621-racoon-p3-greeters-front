@@ -1,11 +1,14 @@
-import './Navbar.css'
-import logo from '../../assets/greeters-logo-red.PNG'
 import { NavLink } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { useContext } from 'react'
+import { LangueContext } from '../../context'
 import Swal from 'sweetalert2'
+import logo from '../../assets/greeters-logo-red.PNG'
 import SearchBar from '../SearchBar/SearchBar'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+
+import './Navbar.css'
 
 const Navbar = () => {
   useEffect(() => {
@@ -19,6 +22,14 @@ const Navbar = () => {
     language === 'fr'
       ? Swal.fire('Language changed to English')
       : Swal.fire('Langue changée en français')
+  }
+
+  /***** constants for toggle language fr to en */
+
+  const langue = useContext(LangueContext)
+
+  const handleClick = () => {
+    langue.dispatch({ type: 'TOGGLE' })
   }
 
   /***** Search bar */
@@ -72,8 +83,12 @@ const Navbar = () => {
 
             <button onClick={handleSearchBar}>&#128270;</button>
             <select
+              /* onClick={handleClick} */
               className='language-button'
-              onChange={e => handleLanguage(e.target.value)}
+              onChange={e => {
+                handleLanguage(e.target.value)
+                handleClick()
+              }}
             >
               <option value='fr'>🇫🇷</option>
               <option value='en'>🇬🇧</option>
