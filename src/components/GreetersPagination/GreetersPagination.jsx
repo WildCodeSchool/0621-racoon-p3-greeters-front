@@ -8,7 +8,10 @@ import './GreetersPagination.css'
 
 const GreetersPagination = () => {
   const [pageNumber, setPageNumber] = useState(0)
+
   const [greeters, setGreeters] = useState([])
+
+  // fetch all greeters
 
   useEffect(() => {
     const getData = async () => {
@@ -19,12 +22,17 @@ const GreetersPagination = () => {
   }, [])
 
   //number of greeters per page
+
   const greetersPerPage = 9
   const pagesVisited = pageNumber * greetersPerPage
+
+  // constant to display the result of filtered greeters
 
   const displayGreeters = greeters
     .slice(pagesVisited, pagesVisited + greetersPerPage)
     .map((g, index) => <GreeterCard key={index} {...g} />)
+
+  // constant to display the number of pages
 
   const pageCount = Math.ceil(greeters.length / greetersPerPage)
   const changePage = ({ selected }) => {
@@ -36,8 +44,8 @@ const GreetersPagination = () => {
       <h2 className='greeters-pagination-title'>Les Greeters</h2>
       <div className='greeters-pagination-container'>{displayGreeters}</div>
       <ReactPaginate
-        previousLabel={'<- Page Précédente'}
-        nextLabel={'Page Suivante ->'}
+        previousLabel={<span className='arrowleft'>&#8678;</span>}
+        nextLabel={<span className='arrowright'>&#8680;</span>}
         pageCount={pageCount}
         onPageChange={changePage}
         containerClassName={'paginationBttns'}

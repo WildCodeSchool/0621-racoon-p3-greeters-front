@@ -1,8 +1,10 @@
 .Greeters {
-  height: 100vh;
+
+  height: auto;
   margin-top: 50px;
 }
 .greeters-container {
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -34,4 +36,15 @@
   border-radius: 66px;
   color: black;
   cursor: pointer;
+}
+
+@media screen and (max-width:500px) {
+  .greeters-btn {
+  margin-top: 1rem;    
+  }
+  .greeters-title {
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 0px;
+  }
 }

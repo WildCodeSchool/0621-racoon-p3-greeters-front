@@ -1,8 +1,11 @@
-import React from 'react'
+import { useContext } from 'react'
+import { LangueContext } from '../../context'
 
 import './GreeterProfilInfo.css'
 
 const GreeterProfilInfo = props => {
+  const language = useContext(LangueContext)
+  const englishMode = language.state.englishMode
   return (
     <div className='greeter-profil-bloc-info' aos-data='fade-down'>
       <div className='greeter-profil-bloc-info-bloc1'>
@@ -17,7 +20,11 @@ const GreeterProfilInfo = props => {
         </article>
         <section className='greeter-profil-bloc-info-description'>
           <h4>Description</h4>
-          <p>{props.result[0].person_description_fr}</p>
+          <p>
+            {englishMode
+              ? props.result[0].person_description_en
+              : props.result[0].person_description_fr}
+          </p>
         </section>
       </div>
       <div className='greeter-profil-bloc-info-bloc2'>
@@ -25,13 +32,21 @@ const GreeterProfilInfo = props => {
           <article className='greeter-profil-bloc-info-thematic'>
             <h4>Thématiques</h4>
             {props.result2.map((resthem, index) => (
-              <p key={index}>{resthem.thematic_name_fr}</p>
+              <p key={index}>
+                {englishMode
+                  ? resthem.thematic_name_en
+                  : resthem.thematic_name_fr}
+              </p>
             ))}
           </article>
           <article className='greeter-profil-bloc-info-language'>
             <h4>Langues parlées</h4>
             {props.result3.map((reslang, index) => (
-              <p key={index}>{reslang.language_name_fr}</p>
+              <p key={index}>
+                {englishMode
+                  ? reslang.language_name_en
+                  : reslang.language_name_fr}
+              </p>
             ))}
           </article>
         </section>

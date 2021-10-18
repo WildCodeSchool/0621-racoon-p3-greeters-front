@@ -1,14 +1,15 @@
 .Banner {
   position: relative;
   margin-top: 50px;
-  height: 100vh;
+  height: auto;
   z-index: 10;
 }
 .banner-img {
-  width: 90vw;
+  width: 95vw;
   height: 70vh;
   position: relative;
-  left: 5%;
+  left: 50%;
+  transform: translateX(-50%);
   border-radius: 25px;
   object-fit: cover;
 }
@@ -60,4 +61,16 @@
 .alice-carousel__dots-item:not(.__custom):hover, 
 .alice-carousel__dots-item:not(.__custom).__active {
   background-color: #ff0d0d;
+}
+
+@media screen and (max-width:500px) {
+  .banner-img {
+    height: 40vh;
+  width: 80vw;
+    
+  }
+  .banner-button {    
+    top: 80%;
+    font-size: 15px;  
+  }
 }
