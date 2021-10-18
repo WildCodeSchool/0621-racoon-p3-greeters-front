@@ -82,7 +82,7 @@ const Navbar = () => {
       <div
         className={showMenu ? 'nav-open toShow-menu' : 'nav-open toHide-menu'}
       >
-        <NavLink to='/greeters'>
+        <NavLink to='/concept'>
           <h3>Qu'est ce qu'un greeter ?</h3>
         </NavLink>
 
