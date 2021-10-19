@@ -10,13 +10,13 @@ import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 
 const Greeter = () => {
-  const [greeterCoordinates, setGreeterCoordinates] = useState(null)
+  const [greeterCordinates, setGreeterCordinates] = useState(null)
 
   return (
     <div className='greeter'>
       <Navbar />
-      <GreeterProfil getCoordinates={setGreeterCoordinates} />
-      <Map coordinates={greeterCoordinates} />
+      <GreeterProfil setGetCordinates={setGreeterCordinates} />
+      <Map cordinates={greeterCordinates} />
       <GreetersPagination />
       <Footer />
     </div>
