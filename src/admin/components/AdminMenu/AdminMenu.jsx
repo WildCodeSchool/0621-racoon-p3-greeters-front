@@ -1,4 +1,8 @@
 import { NavLink } from 'react-router-dom'
+import { FaCity, FaBook } from 'react-icons/fa'
+import { ImProfile } from 'react-icons/im'
+import { RiComputerLine, RiAdminLine } from 'react-icons/ri'
+
 import './AdminMenu.css'
 
 function AdminMenu() {
@@ -11,19 +15,34 @@ function AdminMenu() {
           </div>
         </NavLink>
         <NavLink to='/admin'>
-          <li>Vue d'ensemble</li>
+          <li>
+            <RiComputerLine />
+            &nbsp;&nbsp;Vue d'ensemble
+          </li>
         </NavLink>
         <NavLink to='/admin/content'>
-          <li>Contenu</li>
+          <li>
+            <FaBook />
+            &nbsp;&nbsp;Contenu
+          </li>
         </NavLink>
         <NavLink to='/admin/list-greeters'>
-          <li>Greeters</li>
+          <li>
+            <ImProfile />
+            &nbsp;&nbsp;Greeters
+          </li>
         </NavLink>
         <NavLink to='/admin/list-cities'>
-          <li>Villes</li>
+          <li>
+            <FaCity />
+            &nbsp;&nbsp;Villes
+          </li>
         </NavLink>
         <NavLink to='#'>
-          <li>Administration</li>
+          <li>
+            <RiAdminLine />
+            &nbsp;&nbsp;Administration
+          </li>
         </NavLink>
       </ul>
     </div>

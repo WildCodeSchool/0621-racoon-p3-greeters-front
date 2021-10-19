@@ -3,6 +3,7 @@ import useModal from '../../components/CustomHooks/UseModal'
 import Modal from '../../components/Modal/Modal'
 import axios from 'axios'
 import 'boxicons'
+import { FaCity } from 'react-icons/fa'
 
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
@@ -120,7 +121,9 @@ const AdminDetailsCity = () => {
       {city[0] && photos[0] ? (
         // Form
         <div className='admin-details-city-container'>
-          <h1 className='admin-details-city-title'>Villes</h1>
+          <h1 className='admin-details-city-title'>
+            <FaCity /> Villes
+          </h1>
           <ul className='admin-details-city-list'>
             <li className='admin-details-city-item'>
               <span>Nom</span> : {city[0].city_name}

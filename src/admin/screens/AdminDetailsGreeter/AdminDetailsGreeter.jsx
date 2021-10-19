@@ -3,6 +3,7 @@ import useModal from '../../components/CustomHooks/UseModal'
 import Modal from '../../components/Modal/Modal'
 import axios from 'axios'
 import 'boxicons'
+import { ImProfile } from 'react-icons/im'
 
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
@@ -102,7 +103,9 @@ const AdminDetailsGreeter = () => {
       <AdminMenu />
       {greeters[0] && (
         <div className='admin-details-greeter-container'>
-          <h1 className='admin-details-greeter-title'>Greeter</h1>
+          <h1 className='admin-details-greeter-title'>
+            <ImProfile /> Greeter
+          </h1>
           <ul className='admin-details-greeter-list'>
             <li className='admin-details-greeter-item'>
               <span>Prénom</span> :

@@ -9,6 +9,7 @@ import './GreetersList.css'
 
 import axios from 'axios'
 import 'boxicons'
+import { ImProfile } from 'react-icons/im'
 
 const GreetersList = () => {
   const [greeters, setGreeters] = useState([])
@@ -53,7 +54,9 @@ const GreetersList = () => {
     <>
       <AdminMenu />
       <div className='greeters-list-container'>
-        <h1 className='greeters-list-title'>Greeters</h1>
+        <h1 className='greeters-list-title'>
+          <ImProfile /> Greeters
+        </h1>
         <button onClick={toggleNewGForm}>Ajouter un nouveau Greeter</button>
         <table className='greeters-table'>
           <thead>
