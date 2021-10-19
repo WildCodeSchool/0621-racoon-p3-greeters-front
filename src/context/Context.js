@@ -11,9 +11,11 @@ const I_STATE = {
 
 export const AdminProvider = props => {
   const [state, dispatch] = useReducer(Reducer, I_STATE)
+
   useEffect(() => {
     localStorage.setItem('admin_session', JSON.stringify(state.user))
   }, [state.user])
+
   return (
     <Context.Provider
       value={{
