@@ -1,8 +1,7 @@
 import axios from 'axios'
 import { useState, useContext } from 'react'
 import { Context } from '../../../context/Context'
-import { protectedRoute } from '../../../context/Context'
-
+import { useHistory } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import Navbar from '../../../components/Navbar/Navbar'
 
@@ -11,7 +10,9 @@ import './AdminConnection.css'
 const AdminConnection = () => {
   const [userName, setUserName] = useState()
   const [password, setPassword] = useState()
-  const setAdmin = useContext(Context)
+  const { dispatch } = useContext(Context)
+
+  let history = useHistory()
 
   const handleUserName = e => {
     setUserName(e)
@@ -19,23 +20,6 @@ const AdminConnection = () => {
   const handlePassword = e => {
     setPassword(e)
   }
-
-  // const handleAdmin = () => {
-  //   setAdmin.dispatch({ type: 'TOGGLE' })
-  // }
-
-  // const protectedRoute = () => {
-  //   const token = localStorage.getItem('admin_session')
-  //   axios({
-  //     method: 'POST',
-  //     url: 'http://localhost:3000/auth/protected',
-  //     headers: {
-  //       Authorization: `Bearer ${token}`
-  //     }
-  //   }).then(res => {
-
-  //   })
-  // }
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -46,20 +30,18 @@ const AdminConnection = () => {
       })
       .then(result => {
         if (result.data != 'Invalid') {
-          localStorage['admin_session'] = JSON.stringify(result.data)
-          // handleAdmin()
-          console.log('FOUUUUUU')
+          dispatch({
+            type: 'LOGIN_SUCCESS',
+            payload: result.data
+          })
+
           Swal.fire({
             icon: 'success',
             title: 'Bienvenue',
             confirmButtonColor: 'green'
           }).then(() => {
-            protectedRoute()
+            history.push('/admin')
           })
-          // .then(() => {})
-          // .then(
-          //   () => (window.location = 'http://localhost:3001/admin/content')
-          // )
         } else {
           Swal.fire({
             icon: 'error',

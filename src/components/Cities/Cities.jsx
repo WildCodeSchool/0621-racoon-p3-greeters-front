@@ -13,7 +13,6 @@ const Cities = () => {
     const getData = async () => {
       const resData = await axios.get('http://localhost:3000/photos')
       setCity(resData.data)
-      console.log(city)
     }
     getData()
   }, [])
@@ -21,9 +20,7 @@ const Cities = () => {
   const uniqueCityId = []
   const uniqueCity = []
   const cityFilter = city.map(c => {
-    if (uniqueCityId.includes(c.city_city_id)) {
-      console.log('déjà présent')
-    } else {
+    if (!uniqueCityId.includes(c.city_city_id)) {
       uniqueCityId.push(c.city_city_id)
       uniqueCity.push(c)
     }

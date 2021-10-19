@@ -1,44 +1,27 @@
 import axios from 'axios'
-import { createContext, useReducer } from 'react'
+import { createContext, useReducer, useEffect } from 'react'
+import Reducer from './Reducer'
 
 export const Context = createContext()
 
-let INITIAL_STATE = false
-//
-// const adminReducer = (state, action) => {
-//   switch (action.type) {
-//     case 'TOGGLE':
-//       return { admin: true }
-//     default:
-//       return state
-//   }
-// }
-
-// export const AdminProvider = props => {
-//   console.log('Connard')
-//   const [state, dispatch] = useReducer(adminReducer, INITIAL_STATE)
-// }
-
-export const protectedRoute = () => {
-  const token = localStorage.getItem('admin_session')
-  axios({
-    method: 'POST',
-    url: 'http://localhost:3000/auth/protected',
-    headers: {
-      Authorization: `Bearer ${token}`
-    }
-  }).then((err, result) => {
-    if (err) {
-      console.log(err)
-    } else {
-      INITIAL_STATE = true
-    }
-  })
+const I_STATE = {
+  user: JSON.parse(localStorage.getItem('admin_session')) || null,
+  error: null
 }
 
 export const AdminProvider = props => {
+  const [state, dispatch] = useReducer(Reducer, I_STATE)
+  useEffect(() => {
+    localStorage.setItem('admin_session', JSON.stringify(state.user))
+  }, [state.user])
   return (
-    <Context.Provider value={{ INITIAL_STATE }}>
+    <Context.Provider
+      value={{
+        user: state.user,
+        error: state.error,
+        dispatch
+      }}
+    >
       {props.children}
     </Context.Provider>
   )

@@ -4,6 +4,8 @@ import axios from 'axios'
 import { Context } from './context/Context'
 import { AdminProvider } from './context/Context'
 
+import { PrivateRoute } from './use/useSecureRoute'
+
 import Admin from './admin/screens/Admin/Admin'
 import AdminDetailsCity from './admin/screens/AdminDetailsCity/AdminDetailsCity'
 import AdminDetailsGreeter from './admin/screens/AdminDetailsGreeter/AdminDetailsGreeter'
@@ -24,10 +26,8 @@ import MeetGreeter from './screens/MeetGreeter/MeetGreeter'
 import './App.css'
 
 function App() {
-  const adminStatus = useContext(Context)
   return (
     <div>
-      {console.log(adminStatus)}
       <BrowserRouter>
         <Route path='/' exact>
           <Home />
@@ -48,38 +48,33 @@ function App() {
           <Route path='/admin/connection' exact>
             <AdminConnection />
           </Route>
-          {/* {adminStatus.INITIAL_STATE ? (
-            <> */}
-          <Route path='/admin' exact>
+          <PrivateRoute path='/admin' exact>
             <Admin />
-          </Route>
-          <Route path='/admin/content' exact>
+          </PrivateRoute>
+          <PrivateRoute path='/admin/content' exact>
             <AdminContent />
-          </Route>
-          <Route path='/admin/content/description' exact>
+          </PrivateRoute>
+          <PrivateRoute path='/admin/content/description' exact>
             <AdminContentDescription />
-          </Route>
-          <Route path='/admin/content/values' exact>
+          </PrivateRoute>
+          <PrivateRoute path='/admin/content/values' exact>
             <AdminContentValues />
-          </Route>
-          <Route path='/admin/content/concept' exact>
+          </PrivateRoute>
+          <PrivateRoute path='/admin/content/concept' exact>
             <AdminContentConcept />
-          </Route>
-          <Route path='/admin/details-greeter/:greeterId' exact>
+          </PrivateRoute>
+          <PrivateRoute path='/admin/details-greeter/:greeterId' exact>
             <AdminDetailsGreeter />
-          </Route>
-          <Route path='/admin/details-city/:cityId' exact>
+          </PrivateRoute>
+          <PrivateRoute path='/admin/details-city/:cityId' exact>
             <AdminDetailsCity />
-          </Route>
-          <Route path='/admin/list-greeters' exact>
+          </PrivateRoute>
+          <PrivateRoute path='/admin/list-greeters' exact>
             <GreetersList />
-          </Route>
-          <Route path='/admin/list-cities' exact>
+          </PrivateRoute>
+          <PrivateRoute path='/admin/list-cities' exact>
             <CitiesList />
-          </Route>
-          {/* </> */}
-          {/* // ) : ( // <AdminError />
-          // )} */}
+          </PrivateRoute>
         </Switch>
       </BrowserRouter>
     </div>
