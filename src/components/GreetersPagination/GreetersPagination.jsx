@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react/cjs/react.development'
+import { LangueContext } from '../../context'
+import { useContext } from 'react'
 import ReactPaginate from 'react-paginate'
 import axios from 'axios'
 
@@ -7,6 +9,8 @@ import GreeterCard from '../GreeterCard/GreeterCard'
 import './GreetersPagination.css'
 
 const GreetersPagination = () => {
+  const language = useContext(LangueContext)
+  const englishMode = language.state.englishMode
   const [pageNumber, setPageNumber] = useState(0)
 
   const [greeters, setGreeters] = useState([])
@@ -41,7 +45,9 @@ const GreetersPagination = () => {
 
   return (
     <>
-      <h2 className='greeters-pagination-title'>Les Greeters</h2>
+      <h2 className='greeters-pagination-title'>
+        {englishMode ? 'Greeters' : 'Les Greeters'}
+      </h2>
       <div className='greeters-pagination-container'>{displayGreeters}</div>
       <ReactPaginate
         previousLabel={<span className='arrowleft'>&#8678;</span>}

@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 
+
 import Banner from '../../components/Banner/Banner'
 import Cities from '../../components/Cities/Cities'
 import Footer from '../../components/Footer/Footer'
@@ -13,6 +14,7 @@ import 'aos/dist/aos.css'
 import './Home.css'
 
 const Home = () => {
+  
   useEffect(() => {
     Aos.init({ duration: 1000 })
   }, [])
@@ -22,7 +24,7 @@ const Home = () => {
       <Navbar />
       <Banner />
       <Greeters />
-      <Cities />
+        <Cities />
       <Map coordinates={null} />
       <Footer />
     </div>

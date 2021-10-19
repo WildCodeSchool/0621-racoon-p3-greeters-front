@@ -1,16 +1,24 @@
 import { useParams } from 'react-router'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import BannerCity from '../../components/BannerCity/BannerCity'
 import Footer from '../../components/Footer/Footer'
 import Navbar from '../../components/Navbar/Navbar'
-
-import AliceCarousel from 'react-alice-carousel'
+import { LangueContext } from '../../context'
 import axios from 'axios'
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 import './InfoCity.css'
+
 const InfoCity = () => {
   let { id } = useParams()
+  const language = useContext(LangueContext)
+  const englishMode = language.state.englishMode
   const [infoCity, setInfoCity] = useState([])
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 })
+  }, [])
 
   useEffect(() => {
     const getData = async () => {
@@ -26,8 +34,12 @@ const InfoCity = () => {
       <BannerCity />
       <div className='city-content'>
         {infoCity &&
-          infoCity.map(l => {
-            return <section>{l.city_description_fr}</section>
+          infoCity.map((l, index) => {
+            return (
+              <section key={index}>
+                {englishMode ? l.city_description_en : l.city_description_fr}
+              </section>
+            )
           })}
       </div>
       <Footer />
