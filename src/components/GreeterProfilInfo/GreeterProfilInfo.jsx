@@ -14,8 +14,7 @@ const GreeterProfilInfo = props => {
         </h2>
         <article className='greeter-profil-bloc-info-city'>
           <p>
-            <strong>Ville : </strong>
-            {props.result[0].city_name}
+            <strong>Ville :</strong> :{props.result[0].city_name}
           </p>
         </article>
         <section className='greeter-profil-bloc-info-description'>

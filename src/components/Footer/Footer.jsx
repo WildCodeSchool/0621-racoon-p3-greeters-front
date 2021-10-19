@@ -97,6 +97,13 @@ const Footer = () => {
             </li>
           </ul>
           <img src={logo3} alt='logo' />
+          <NavLink exact to='/legalinfo' className='legal-link'>
+            {englishMode ? (
+              'Legal informations'
+            ) : (
+              <strong>Mentions légales</strong>
+            )}
+          </NavLink>
         </div>
 
         {/* Column 2 */}

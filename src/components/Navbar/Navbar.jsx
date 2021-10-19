@@ -16,7 +16,7 @@ const Navbar = () => {
     setLanguage(choice)
     language === 'fr'
       ? Swal.fire('Language changed to English')
-      : Swal.fire('Langue changée en français')
+      : Swal.fire('Langue changée en Français')
   }
 
   /***** constants for toggle language fr to en */

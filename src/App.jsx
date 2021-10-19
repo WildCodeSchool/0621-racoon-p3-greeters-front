@@ -1,3 +1,4 @@
+import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Admin from './admin/screens/Admin/Admin'
@@ -15,12 +16,13 @@ import Greeter from './screens/Greeter/Greeter'
 import GreetersList from './admin/screens/GreetersList/GreetersList'
 import Home from './screens/Home/Home'
 import InfoCity from './screens/InfoCity/InfoCity'
+import LegalInfo from './screens/LegalInfo/LegalInfo'
 
 import MeetGreeter from './screens/MeetGreeter/MeetGreeter'
 
 import './App.css'
 
-function App() {
+const App = () => {
   return (
     <div>
       <BrowserRouter>
@@ -42,6 +44,9 @@ function App() {
           </Route>
           <Route path='/greeters/:id' exact>
             <Greeter />
+          </Route>
+          <Route path='/legalinfo' exact>
+            <LegalInfo />
           </Route>
           <Route path='/concept' exact>
             <Concept />
@@ -80,6 +85,7 @@ function App() {
       </BrowserRouter>
     </div>
   )
+  // }
 }
 
 export default App
