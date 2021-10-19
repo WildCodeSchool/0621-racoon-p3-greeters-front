@@ -1,32 +1,30 @@
-.ConceptBanner-container {
+.ConceptBanner-Container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  height: auto;
 }
 
 .ConceptBanner-image {
-
- margin: 70px;
   border-radius: 20px;
-  display: flex;
-width: 800px;
-height: 400px;
+  width: 95vw;
+  object-fit: cover;
 }
 
 .ConceptBanner-title {
   color: white;
+  width: 100%;
   text-shadow: 2px 2px 2px black;
   text-align: center;
   font-family: 'Titillium Web', sans-serif;
   font-style: normal;
   font-weight: 900;
-  position: relative;
-  bottom: 28%;
-  z-index: 10;
+  font-size: 5vw;
   position: absolute;
-  top: 50%;
+  top:20vh;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translatex(-50%);
 }
   
 

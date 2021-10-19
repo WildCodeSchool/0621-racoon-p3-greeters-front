@@ -1,0 +1,6 @@
+.city-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0px 100px 100px 100px;
+}

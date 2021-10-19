@@ -26,7 +26,7 @@ const AdminDetailsGreeter = () => {
   const [greeterThem, setGreeterThem] = useState([])
   const [greeterPhoto, setGreeterPhoto] = useState([])
 
-  // import modal for city
+  // import modal for greeter
 
   const { isShowing: isGreeterNameFormShowed, toggle: toggleGreeterNameForm } =
     useModal()
@@ -68,7 +68,7 @@ const AdminDetailsGreeter = () => {
   const getData = async () => {
     const resData = await axios.get(`http://localhost:3000/person/${greeterId}`)
     setGreeters(resData.data.result)
-    // console.log(greeters)
+    console.log(greeters)
   }
 
   // function to send modified entriezzz dinamicallyy
@@ -91,7 +91,7 @@ const AdminDetailsGreeter = () => {
       toggleGreeterCatchEnForm()
     if (e.target[0].name === 'person_description_fr') toggleGreeterDescForm()
     if (e.target[0].name === 'person_description_en') toggleGreeterDescEnForm()
-    if (e.target[0].name === 'city_name') toggleGreeterCityForm()
+    if (e.target[0].name === 'person_city_id') toggleGreeterCityForm()
     if (e.target[0].name === 'person_them?') toggleGreeterThemForm()
     if (e.target[0].name === 'person_lang?') toggleGreeterLangForm()
     if (e.target[0].name === 'person_photo') toggleGreeterPhotoForm()
@@ -310,13 +310,33 @@ const AdminDetailsGreeter = () => {
       >
         <form onSubmit={handleSubmit}>
           <div className='form-group'>
-            <input
+            <select
               value={greeterCity}
+              onChange={e => setGreeterCity(e.target.value)}
               type='text'
               placeholder='modifier ici'
-              onChange={e => setGreeterCity(e.target.value)}
               name='person_city_id'
-            />
+            >
+              <option value='1'>Ambroise</option>
+              <option value='2'>Loches</option>
+              <option value='3'>Tours </option>
+              <option value='4'>Sainte-Maure de Touraine</option>
+              <option value='5'>Chinon</option>
+              <option value='6'>Rochecorbon</option>
+              <option value='7'>Ligre</option>
+              <option value='8'>Pocé-sur-Cisse</option>
+              <option value='9'>La Roche Clermault</option>
+              <option value='10'>Huismes</option>
+              <option value='11'>Sainte-Catherine de Fierbois</option>
+              <option value='12'>Puissigny</option>
+              <option value='13'>Saint Hippolyte</option>
+              <option value='14'>Parçay sur Vienne</option>
+              <option value='15'>Anche</option>
+              <option value='16'>Saint-Cyr-sur-Loire</option>
+              <option value='17'>Perrusson</option>
+              <option value='18'>Lussault sur Loire</option>
+              <option value='19'>Nouâtre</option>
+            </select>
           </div>
           <div className='form-group'>
             <input type='submit' value='Envoyer' />
