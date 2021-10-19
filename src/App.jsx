@@ -1,3 +1,4 @@
+import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Admin from './admin/screens/Admin/Admin'
@@ -18,7 +19,7 @@ import MeetGreeter from './screens/MeetGreeter/MeetGreeter'
 
 import './App.css'
 
-function App() {
+const App = () => {
   return (
     <div>
       <BrowserRouter>
@@ -76,6 +77,7 @@ function App() {
       </BrowserRouter>
     </div>
   )
+  // }
 }
 
 export default App
