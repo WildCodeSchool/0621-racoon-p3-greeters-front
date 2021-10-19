@@ -14,7 +14,8 @@ const GreeterProfilInfo = props => {
         </h2>
         <article className='greeter-profil-bloc-info-city'>
           <p>
-            <strong>Ville :</strong> :{props.result[0].city_name}
+            <strong>{englishMode ? 'City : ' : 'Ville : '}</strong>{' '}
+            {props.result[0].city_name}
           </p>
         </article>
         <section className='greeter-profil-bloc-info-description'>
@@ -29,7 +30,7 @@ const GreeterProfilInfo = props => {
       <div className='greeter-profil-bloc-info-bloc2'>
         <section className='greeter-profil-bloc-info-infos'>
           <article className='greeter-profil-bloc-info-thematic'>
-            <h4>Thématiques</h4>
+            <h4>{englishMode ? 'Thematics' : 'Thématiques'}</h4>
             {props.result2.map((resthem, index) => (
               <p key={index}>
                 {englishMode
@@ -39,7 +40,7 @@ const GreeterProfilInfo = props => {
             ))}
           </article>
           <article className='greeter-profil-bloc-info-language'>
-            <h4>Langues parlées</h4>
+            <h4>{englishMode ? 'Spoken languages' : 'Langues parlées'}</h4>
             {props.result3.map((reslang, index) => (
               <p key={index}>
                 {englishMode

@@ -1,6 +1,6 @@
 .greeter-profil {
   display: flex;
- justify-content: center;
+  justify-content: center;
   font-family: 'Titillium Web', sans-serif;
   margin-top:1vh;
 }
@@ -12,3 +12,18 @@
 .greeter-profil-right {
   padding: 0 0vw 2vh 0;
 } 
+
+@media screen and (max-width: 1024px) {
+  .greeter-profil {
+    display: block;
+    text-align: center;
+    margin-top: 5vh;
+  }
+  .greeter-profil-left {
+    padding: 0;
+  }
+  
+  .greeter-profil-right {
+    padding: 0;
+  } 
+}
