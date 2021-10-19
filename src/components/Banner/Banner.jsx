@@ -9,18 +9,19 @@ import axios from 'axios'
 const Banner = () => {
   const [bannerCity, setBannerCity] = useState([])
 
+  //Get banner from the db
   useEffect(() => {
     const getData = async () => {
       const resData = await axios.get('http://localhost:3000/city')
       setBannerCity(resData.data)
     }
-    console.log(bannerCity)
     getData()
   }, [])
 
   const handleDragStart = e => e.preventDefault()
 
   const item = []
+  // Filter City with no banner
   const cityWithBan = bannerCity.filter(
     d => d.city_banner != null && d.city_banner != ''
   )
