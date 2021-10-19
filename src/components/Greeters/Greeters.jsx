@@ -4,6 +4,7 @@ import axios from 'axios'
 import GreeterCard from '../GreeterCard/GreeterCard'
 
 import './Greeters.css'
+import { Link } from 'react-router-dom'
 
 const Greeters = () => {
   const [greeters, setGreeters] = useState([])
@@ -16,7 +17,7 @@ const Greeters = () => {
     getData()
   }, [])
 
-  // console.log(greeters)
+  console.log(greeters)
 
   /* Animation */
   const [show, setShow] = useState(false)
@@ -46,7 +47,9 @@ const Greeters = () => {
           ? greeters.map((g, index) => <GreeterCard key={index} {...g} />)
           : null}
       </div>
-      <button className='greeters-btn'>Tout Voir</button>
+      <Link to='/meetgreeter'>
+        <button className='greeters-btn'>Tout Voir</button>
+      </Link>
     </div>
   )
 }

@@ -3,10 +3,11 @@ import 'aos/dist/aos.css'
 import ConceptBanner from '../../components/ConceptBanner/ConceptBanner'
 import ConceptDescription from '../../components/ConceptDescription/ConceptDescription'
 import ConceptPhoto from '../../components/ConceptPhotos/ConceptPhotos'
-import NavBar from '../../components/Navbar/Navbar'
+import Navbar from '../../components/Navbar/Navbar'
 import { useEffect } from 'react'
 
 import './Concept.css'
+import Footer from '../../components/Footer/Footer'
 
 const Concept = () => {
   useEffect(() => {
@@ -14,10 +15,11 @@ const Concept = () => {
   }, [])
   return (
     <div className='concept'>
-      <NavBar />
+      <Navbar />
       <ConceptBanner />
       <ConceptDescription />
       <ConceptPhoto />
+      <Footer />
     </div>
   )
 }

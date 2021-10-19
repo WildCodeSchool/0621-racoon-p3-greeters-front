@@ -43,7 +43,9 @@ const Banner = () => {
         mouseTracking
         items={item}
         autoPlay
-        autoPlayInterval='3500'
+        autoPlayInterval='4000'
+        infinite
+        animationDuration='2000'
       />
     </div>
   )

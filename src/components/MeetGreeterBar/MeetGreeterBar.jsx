@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated'
 import axios from 'axios'
-import GreetersPagination from '../../components/GreetersPagination/GreetersPagination'
+import GreetersPaginationFiltered from '../../components/GreetersPaginationFiltered/GreetersPaginationFiltered'
 
 import './MeetGreeterBar.css'
 
@@ -17,7 +17,12 @@ const customStyles = {
   valueContainer: provided => ({
     ...provided,
     justifyContent: 'center',
-    marginTop: '5px'
+    marginTop: '5px',
+    '@media only screen and (max-width: 500px)': {
+      ...provided['@media only screen and (max-width: 500px)'],
+      marginLeft: '10px',
+      fontSize: 'small'
+    }
   }),
   placeholder: provided => ({
     ...provided,
@@ -45,9 +50,12 @@ const customStyles = {
 }
 
 const MeetGreeterBar = () => {
+  // states
+
   const [theme, setTheme] = useState([])
   const [city, setCity] = useState([])
   const [langue, setLangue] = useState([])
+  // states for inputs
 
   const [selectedOptionsCity, setSelectedOptionsCity] = useState([])
   const [selectedOptionsThem, setSelectedOptionsThem] = useState([])
@@ -150,7 +158,7 @@ const MeetGreeterBar = () => {
           />
         </div>
       </nav>
-      <GreetersPagination
+      <GreetersPaginationFiltered
         selectedOptionsCity={selectedOptionsCity}
         selectedOptionsThem={selectedOptionsThem}
         selectedOptionsLang={selectedOptionsLang}
