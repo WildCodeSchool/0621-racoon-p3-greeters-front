@@ -19,8 +19,6 @@ const GreeterProfil = ({ setGetCordinates }) => {
   const { id } = useParams()
   const [greeterData, setGreeterData] = useState('')
 
-  const setGetNewCordinates = setGetCordinates
-
   useEffect(() => {
     const getData = async () => {
       const resultData = await axios.get(`http://localhost:3000/person/${id}`)
