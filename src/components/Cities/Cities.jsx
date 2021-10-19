@@ -35,7 +35,6 @@ const Cities = () => {
           <CityCard key={index} {...c} />
         ))}
       </div>
-      <button className='cities-btn'>Tout Voir</button>
     </div>
   )
 }
