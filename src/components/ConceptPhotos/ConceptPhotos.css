@@ -12,7 +12,6 @@
 
  .ConceptPhotos-Block-Image2 {
   display: block;
-    /* margin: 2vh 5vw; */
     text-align: center;
     width: 40vw;
  }
@@ -60,6 +59,7 @@
   transition: 0.4s linear;
   line-height: 20px;
   margin: 10px;  
+  margin-bottom: 50px;
  }
 
  .Text-Concept{
@@ -81,6 +81,7 @@
   box-sizing: border-box;
   border-radius: 10px;
   margin: 0 auto;
+  margin-bottom: 50px;
   box-shadow: 1px 1px 1px black;
 }
 
