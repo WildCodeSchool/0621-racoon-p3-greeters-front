@@ -1,10 +1,14 @@
+import { useContext, createContext, useState } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import axios from 'axios'
+import { Context } from './context/Context'
+import { AdminProvider } from './context/Context'
 
 import Admin from './admin/screens/Admin/Admin'
 import AdminDetailsCity from './admin/screens/AdminDetailsCity/AdminDetailsCity'
 import AdminDetailsGreeter from './admin/screens/AdminDetailsGreeter/AdminDetailsGreeter'
+import AdminError from './admin/screens/AdminError/AdminError'
 import AdminConnection from './admin/screens/AdminConnection/AdminConnection'
-import AdminEditor from './admin/components/Editor/AdminEditor'
 import CitiesList from './admin/screens/CitiesList/CitiesList'
 import Contact from './screens/Contact/Contact'
 import Greeter from './screens/Greeter/Greeter'
@@ -20,8 +24,10 @@ import MeetGreeter from './screens/MeetGreeter/MeetGreeter'
 import './App.css'
 
 function App() {
+  const adminStatus = useContext(Context)
   return (
     <div>
+      {console.log(adminStatus)}
       <BrowserRouter>
         <Route path='/' exact>
           <Home />
@@ -39,12 +45,13 @@ function App() {
           <Route path='/concept' exact>
             <Concept />
           </Route>
-
-          <Route path='/admin' exact>
-            <Admin />
-          </Route>
           <Route path='/admin/connection' exact>
             <AdminConnection />
+          </Route>
+          {/* {adminStatus.INITIAL_STATE ? (
+            <> */}
+          <Route path='/admin' exact>
+            <Admin />
           </Route>
           <Route path='/admin/content' exact>
             <AdminContent />
@@ -58,11 +65,11 @@ function App() {
           <Route path='/admin/content/concept' exact>
             <AdminContentConcept />
           </Route>
-          <Route path='/admin/editor' exact>
-            <AdminEditor />
+          <Route path='/admin/details-greeter/:greeterId' exact>
+            <AdminDetailsGreeter />
           </Route>
-          <Route path='/admin/connection' exact>
-            <AdminConnection />
+          <Route path='/admin/details-city/:cityId' exact>
+            <AdminDetailsCity />
           </Route>
           <Route path='/admin/list-greeters' exact>
             <GreetersList />
@@ -70,12 +77,9 @@ function App() {
           <Route path='/admin/list-cities' exact>
             <CitiesList />
           </Route>
-          <Route path='/admin/details-greeter/:greeterId' exact>
-            <AdminDetailsGreeter />
-          </Route>
-          <Route path='/admin/details-city/:cityId' exact>
-            <AdminDetailsCity />
-          </Route>
+          {/* </> */}
+          {/* // ) : ( // <AdminError />
+          // )} */}
         </Switch>
       </BrowserRouter>
     </div>

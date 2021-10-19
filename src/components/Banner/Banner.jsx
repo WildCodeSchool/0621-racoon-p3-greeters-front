@@ -1,5 +1,3 @@
-import { City } from '../../data'
-
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 
@@ -16,26 +14,34 @@ const Banner = () => {
       const resData = await axios.get('http://localhost:3000/city')
       setBannerCity(resData.data)
     }
+    console.log(bannerCity)
     getData()
   }, [])
 
   const handleDragStart = e => e.preventDefault()
 
   const item = []
-  City.map(d => {
-    let photo = (
-      <div>
-        <img
-          src={d.city_banner}
-          onDragStart={handleDragStart}
-          className='banner-img'
-        />
-        <button className='banner-button'>Réserver Votre Balade</button>
-        <h2 className='banner-text'>Découvrir {d.city_name}</h2>
-      </div>
-    )
-    item.push(photo)
-  })
+  const cityWithBan = bannerCity.filter(
+    d => d.city_banner != null && d.city_banner != ''
+  )
+  {
+    bannerCity
+      ? cityWithBan.map(d => {
+          let photo = (
+            <div>
+              <img
+                src={d.city_banner}
+                onDragStart={handleDragStart}
+                className='banner-img'
+              />
+              <button className='banner-button'>Réserver Votre Balade</button>
+              <h2 className='banner-text'>Découvrir {d.city_name}</h2>
+            </div>
+          )
+          item.push(photo)
+        })
+      : null
+  }
 
   return (
     <div className='Banner' data-aos='fade-zoom-in'>
