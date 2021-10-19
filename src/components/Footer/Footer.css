@@ -45,7 +45,10 @@ margin: 20px;
   display:flex ;
   justify-content: center;
   width: 50px;
-
+}
+.Titre img {
+  padding-top: 35px;
+  width: 200px;
 }
 
 .Info {
@@ -62,6 +65,15 @@ margin: 20px;
   text-decoration: none;
   color: black;
 
+}
+.footer-logo-content {
+  margin-left:200px;
+  
+}
+.footer-logo-content img {
+  display: flex;
+  width: 300px;
+  padding: 20px;
 }
 
 @media (max-width: 500px) { 

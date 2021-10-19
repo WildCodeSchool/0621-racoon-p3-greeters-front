@@ -52,9 +52,6 @@ function App() {
           <Route path='/admin/connection' exact>
             <AdminConnection />
           </Route>
-          <Route path='/admin/content' exact>
-            <AdminContent />
-          </Route>
           <Route path='/admin/content/description' exact>
             <AdminContentDescription />
           </Route>

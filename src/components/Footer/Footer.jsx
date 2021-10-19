@@ -1,10 +1,16 @@
+import { LangueContext } from '../../context'
+import { useContext } from 'react'
 import React from 'react'
 
 import { NavLink } from 'react-router-dom'
-
-import '../../components/Footer/Footer.css'
+import logo1 from '../../assets/logo-greeters-france.png'
+import logo2 from '../../assets/Logo-greeters-internationnal.png'
+import logo3 from '../../assets/Logo-greeters2.png'
+import './Footer.css'
 
 const Footer = () => {
+  const language = useContext(LangueContext)
+  const englishMode = language.state.englishMode
   return (
     <div className='row'>
       <div className='contact'>
@@ -57,14 +63,18 @@ const Footer = () => {
           </a>
         </div>
         <NavLink to='/contact'>
-          <button className='button'>Contactez-nous</button>
+          <button className='button'>
+            {englishMode ? 'Contact Us' : 'Contactez-nous'}
+          </button>
         </NavLink>
       </div>
 
       <div className='globalCollon'>
         {/* Column1 */}
         <div className='Titre'>
-          <h4 className='sousTitre'>Office de tourisme</h4>
+          <h4 className='sousTitre'>
+            {englishMode ? 'Tourist Office' : 'Office de tourisme'}
+          </h4>
           <ul className='Info'>
             <li>
               <a
@@ -86,21 +96,26 @@ const Footer = () => {
               </a>
             </li>
           </ul>
+          <img src={logo3} alt='logo' />
         </div>
 
         {/* Column 2 */}
         <div className='Titre'>
-          <h4 className='sousTitre'>Accès rapides</h4>
+          <h4 className='sousTitre'>
+            {englishMode ? 'Quick access' : 'Accès rapides'}
+          </h4>
           <ul className='Info 2'>
-            <li>Accueil</li>
-            <li>Rencontrer un Greeters</li>
-            <li>Réservation</li>
+            <li>{englishMode ? 'home' : 'Accueil'}</li>
+            <li>{englishMode ? 'Meet a greeter' : 'Rencontrer un Greeters'}</li>
+            <li>{englishMode ? 'Reservation' : 'Réservation'}</li>
           </ul>
         </div>
 
         {/*Column 3 */}
         <div className='Titre'>
-          <h4 className='sousTitre'>Liens pratiques</h4>
+          <h4 className='sousTitre'>
+            {englishMode ? 'Pratical links' : 'Liens pratiques'}
+          </h4>
           <ul className='Info 3'>
             <li>
               <a
@@ -126,7 +141,9 @@ const Footer = () => {
                 target='_blank'
                 rel='noreferrer'
               >
-                L'Agence Départementale du Tourisme
+                {englishMode
+                  ? 'Departmental Tourism Agency'
+                  : "L'Agence Départementale du Tourisme"}
               </a>
             </li>
             <li>
@@ -135,7 +152,9 @@ const Footer = () => {
                 target='_blank'
                 rel='noreferrer'
               >
-                L'Aéroport Tours Val de Loire
+                {englishMode
+                  ? "Tours Val de loire's airport"
+                  : "L'Aéroport Tours Val de Loire"}
               </a>
             </li>
             <li>
@@ -144,7 +163,7 @@ const Footer = () => {
                 target='_blank'
                 rel='noreferrer'
               >
-                Gare SCNCF
+                {englishMode ? 'train station' : 'Gare SNCF'}
               </a>
             </li>
             <li>
@@ -153,7 +172,7 @@ const Footer = () => {
                 target='_blank'
                 rel='noreferrer'
               >
-                Bureau de change
+                {englishMode ? 'exchange office' : 'Bureau de change'}
               </a>
             </li>
             <li>
@@ -166,6 +185,11 @@ const Footer = () => {
               </a>
             </li>
           </ul>
+        </div>
+        <div className='footer-logo-content'>
+          <img src={logo1} alt='logo' />
+
+          <img src={logo2} alt='logo' />
         </div>
       </div>
     </div>

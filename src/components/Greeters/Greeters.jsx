@@ -1,3 +1,5 @@
+import { LangueContext } from '../../context'
+import { useContext } from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
@@ -7,6 +9,8 @@ import './Greeters.css'
 import { Link } from 'react-router-dom'
 
 const Greeters = () => {
+  const language = useContext(LangueContext)
+  const englishMode = language.state.englishMode
   const [greeters, setGreeters] = useState([])
 
   useEffect(() => {
@@ -40,7 +44,9 @@ const Greeters = () => {
       data-aos='fade-right'
       data-aos-anchor-placement='top-center'
     >
-      <h2 className='greeters-title'>Les Greeters</h2>
+      <h2 className='greeters-title'>
+        {englishMode ? 'Greeters' : 'Les Greeters'}
+      </h2>
 
       <div className='greeters-container'>
         {greeters
@@ -48,7 +54,9 @@ const Greeters = () => {
           : null}
       </div>
       <Link to='/meetgreeter'>
-        <button className='greeters-btn'>Tout Voir</button>
+        <button className='greeters-btn'>
+          {englishMode ? 'See All' : 'Tout Voir'}
+        </button>
       </Link>
     </div>
   )

@@ -24,7 +24,6 @@ const InfoCity = () => {
     const getData = async () => {
       const resultData = await axios.get(`http://localhost:3000/photos/${id}`)
       setInfoCity(resultData.data)
-      console.log(resultData.data)
     }
     getData()
   }, [id])
