@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 
 import './AdminContentValues.css'
 
-const AdminContentPage = () => {
+const AdminContentValues = () => {
   const [values, setValues] = useState([])
 
   const [valuesTitle1Fr, setValuesTitle1Fr] = useState('')
@@ -49,8 +49,9 @@ const AdminContentPage = () => {
 
   //Get data from back
   const getData = async () => {
-    const resData = await axios.get(`http://localhost:3000/values`)
+    const resData = await axios.get(`http://localhost:3000/value`)
     setValues(resData.data)
+    console.log(resData.data)
   }
   useEffect(() => {
     getData()
@@ -58,35 +59,35 @@ const AdminContentPage = () => {
 
   // Put routes
   const putTitle1FrData = async () => {
-    const results = await axios.put(`http://localhost:3000/values`, {
+    const results = await axios.put(`http://localhost:3000/value`, {
       values_title1_fr: valuesTitle1Fr
     })
     getData()
   }
 
   const putTitle1EnData = async () => {
-    const results = await axios.put(`http://localhost:3000/values`, {
+    const results = await axios.put(`http://localhost:3000/value`, {
       values_title1_en: valuesTitle1En
     })
     getData()
   }
 
   const putTitle2FrData = async () => {
-    const results = await axios.put(`http://localhost:3000/values`, {
+    const results = await axios.put(`http://localhost:3000/value`, {
       values_title2_fr: valuesTitle2Fr
     })
     getData()
   }
 
   const putTitle2EnData = async () => {
-    const results = await axios.put(`http://localhost:3000/values`, {
+    const results = await axios.put(`http://localhost:3000/value`, {
       values_title2_en: valuesTitle2En
     })
     getData()
   }
 
   const putContentFrData = async () => {
-    const results = await axios.put(`http://localhost:3000/values`, {
+    const results = await axios.put(`http://localhost:3000/value`, {
       values_content_fr: valuesContentFr
     })
     getData()
@@ -100,7 +101,7 @@ const AdminContentPage = () => {
   }
 
   const putPhotoData = async () => {
-    const results = await axios.put(`http://localhost:3000/values`, {
+    const results = await axios.put(`http://localhost:3000/value`, {
       values_photo: valuesPhoto
     })
     getData()
@@ -153,10 +154,10 @@ const AdminContentPage = () => {
       <AdminMenu />
       {values[0] ? (
         <div className='admin-details-city-container'>
-          <h1 className='admin-details-city-title'>Page values</h1>
+          <h1 className='admin-details-city-title'>Page valeurs</h1>
           <ul className='admin-details-city-list'>
             <li className='admin-details-city-item'>
-              <span>Titre en français</span> : {values[0].values_title1_fr}
+              <span>Titre en français</span> : {values[0].value_title1_fr}
               <button
                 onClick={toggleValuesTitle1FrForm}
                 className='admin-details-icon-btn'
@@ -165,7 +166,7 @@ const AdminContentPage = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Titre en anglais</span> : {values[0].values_title1_en}
+              <span>Titre en anglais</span> : {values[0].value_title1_en}
               <button
                 onClick={toggleValuesTitle1EnForm}
                 className='admin-details-icon-btn'
@@ -174,7 +175,7 @@ const AdminContentPage = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Sous-titre en français</span> : {values[0].values_title2_fr}
+              <span>Sous-titre en français</span> : {values[0].value_title2_fr}
               <button
                 onClick={toggleValuesTitle2FrForm}
                 className='admin-details-icon-btn'
@@ -183,7 +184,7 @@ const AdminContentPage = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Sous-titre en anglais</span> : {values[0].values_title2_en}
+              <span>Sous-titre en anglais</span> : {values[0].value_title2_en}
               <button
                 onClick={toggleValuesTitle2EnForm}
                 className='admin-details-icon-btn'
@@ -192,8 +193,7 @@ const AdminContentPage = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Paragraphe en français</span> :{' '}
-              {values[0].values_content_fr}
+              <span>Paragraphe en français</span> : {values[0].value_content_fr}
               <button
                 onClick={toggleValuesContentFrForm}
                 className='admin-details-icon-btn'
@@ -202,7 +202,7 @@ const AdminContentPage = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Paragraphe en anglais</span> : {values[0].values_content_en}
+              <span>Paragraphe en anglais</span> : {values[0].value_content_en}
               <button
                 onClick={toggleValuesContentEnForm}
                 className='admin-details-icon-btn'
@@ -211,7 +211,7 @@ const AdminContentPage = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Photo</span> : {values[0].values_photo}
+              <span>Photo</span> : {values[0].value_photo}
               <button
                 onClick={toggleValuesPhotoForm}
                 className='admin-details-icon-btn'
@@ -373,4 +373,4 @@ const AdminContentPage = () => {
   )
 }
 
-export default AdminContentPage
+export default AdminContentValues

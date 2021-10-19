@@ -34,9 +34,6 @@ function App() {
           <Route path='/infoCity/:id' exact>
             <InfoCity />
           </Route>
-          <Route path='/admin/content'>
-            <AdminContent />
-          </Route>
           <Route path='/contact' exact>
             <Contact />
           </Route>

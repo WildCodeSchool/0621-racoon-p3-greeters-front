@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 
 import './AdminContentDescription.css'
 
-const AdminContentPage = () => {
+const AdminContentDescription = () => {
   const [description, setDescription] = useState([])
 
   const [descriptionTitle1Fr, setDescriptionTitle1Fr] = useState('')
@@ -152,6 +152,7 @@ const AdminContentPage = () => {
 
   return (
     <>
+      {console.log('LAAAAA')}
       <AdminMenu />
       {description[0] ? (
         <div className='admin-details-city-container'>
@@ -380,4 +381,4 @@ const AdminContentPage = () => {
   )
 }
 
-export default AdminContentPage
+export default AdminContentDescription
