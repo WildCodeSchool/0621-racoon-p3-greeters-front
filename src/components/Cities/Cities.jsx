@@ -28,14 +28,14 @@ const Cities = () => {
           <CityCard key={index} {...c} />
         ))}
       </div> */}
-      <div className='cities-container'>
-        {/* {cityList.map((c, index) => {
+      {/* <div className='cities-container'>
+        {cityList.map((c, index) => {
           if (!cityNameList.includes(c.city_name)) {
             cityNameList.push(c.city_name)
-            <CityCard key={index} {...c} />
+            ;<CityCard key={index} {...c} />
           }
-        })} */}
-      </div>
+        })}
+      </div> */}
       <button className='cities-btn'>Tout Voir</button>
     </div>
   )

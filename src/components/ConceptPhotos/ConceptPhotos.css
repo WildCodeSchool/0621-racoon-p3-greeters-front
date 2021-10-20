@@ -1,34 +1,43 @@
 .ConceptPhotos-Container {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
   object-fit: cover;
+  width: 100vw;
+  scroll-behavior: smooth;
  }
 
  .ConceptPhotos-Block-Image1 {
-  display: block;
+  display: flex;
+  flex-direction: column;
     text-align: center;
-    width: 40vw;
+    width: 400px;
  }
 
  .ConceptPhotos-Block-Image2 {
-  display: block;
+   display: flex;
+   flex-direction: column;
     text-align: center;
-    width: 40vw;
+    width: 400px;
+ }
+
+ .ConceptPhotos-image {
+   width: 100%;
  }
 
 
-
  .ConceptPhotos-img{
-
   width: 100%;
   border-radius: 20px;
   box-shadow: 1px 1px 1px #a2a2a2;
  }
 
- .ConceptPhotos-btn-right{
+ .ConceptPhotos-btn{
+  width: 60%;
   font-family: 'Titillium Web', sans-serif;
   background-color: #faf0e6;
-  padding: 0 30px;
+  padding: 10px 30px;
   font-style: normal;
   font-weight: bold;
   font-size: 15px;
@@ -40,37 +49,25 @@
   cursor: pointer;
   transition: 0.4s linear;
   line-height: 20px;
-  margin: 10px;
+  margin: 20px auto 40px auto;  
   }
 
- .ConceptPhotos-btn-left{
-  font-family: 'Titillium Web', sans-serif;
-  background-color: #faf0e6;
-  padding: 0 30px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 27px;
-  border: 2px solid black;
-  box-sizing: border-box;
-  border-radius: 66px;
-  color: black;
-  cursor: pointer;
-  transition: 0.4s linear;
-  line-height: 20px;
-  margin: 10px;  
-  margin-bottom: 50px;
- }
+  .ConceptPhotos-btn:hover {
+    background-color: black;
+    color: white;
+  }
 
  .Text-Concept{
   text-align: center;
   font-family: 'Titillium Web', sans-serif;
 }
 
-.text-container{
+.text-container-desktop{
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 .Text-Valeurs{
@@ -83,17 +80,4 @@
   margin: 0 auto;
   margin-bottom: 50px;
   box-shadow: 1px 1px 1px black;
-}
-
-@media (max-width: 500px) { 
-  
-  .ConceptPhotos-btn-right{
-  padding: 0 20px;
-    
-    }
-  
-   .ConceptPhotos-btn-left{
-  padding: 0 20px;
-      
-   }
 }
