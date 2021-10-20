@@ -22,7 +22,9 @@ const InfoCity = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const resultData = await axios.get(`http://localhost:3000/photos/${id}`)
+      const resultData = await axios.get(
+        `${process.env.REACT_APP_API_ROUTE}/photos/${id}`
+      )
       setInfoCity(resultData.data)
       console.log(resultData.data[0].city_description_en)
     }
