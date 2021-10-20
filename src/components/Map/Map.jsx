@@ -20,7 +20,9 @@ const MapComponent = ({ cordinates }) => {
 
   // Axios to fetch all the cities info
   const getCityData = async () => {
-    const resCityData = await axios.get('http://localhost:3000/city')
+    const resCityData = await axios.get(
+      `${process.env.REACT_APP_API_ROUTE}/city`
+    )
     setCityDB(resCityData.data)
   }
 

@@ -25,8 +25,8 @@ const InfoCity = () => {
       const resultData = await axios.get(
         `${process.env.REACT_APP_API_ROUTE}/photos/${id}`
       )
-      setInfoCity(resultData.data)
-      console.log(resultData.data[0].city_description_en)
+      setInfoCity(resultData.data[0])
+      console.log(resultData.data[0].city_description_fr)
     }
     getData()
   }, [id])
@@ -35,18 +35,11 @@ const InfoCity = () => {
       <Navbar />
       <BannerCity />
       <div className='city-content'>
-        {/* {infoCity && (
-          <section>
-            {englishMode
-              ? infoCity.city_description_en
-              : infoCity.city_description_fr}
-          </section>
-        )} */}
         {infoCity && (
           <section>
-            {englishMode
-              ? infoCity[0].city_description_en
-              : infoCity[0].city_description_fr}
+            {englishMode && infoCity
+              ? infoCity.city_description_en
+              : infoCity.city_description_fr}
           </section>
         )}
       </div>

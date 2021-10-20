@@ -6,8 +6,18 @@
   border-radius: 25px;
   object-fit: cover;
 }
+
 .banner-city-container {
   height: 80vh;
+}
+
+.banner-city-main-container{
+  width: 100vw;
+} 
+h1 {
+  width: 50vw;
+  margin: 0 auto;
+  text-align: center;
 }
 .alice-carousel__prev-btn, .alice-carousel__next-btn {
   display: none;
