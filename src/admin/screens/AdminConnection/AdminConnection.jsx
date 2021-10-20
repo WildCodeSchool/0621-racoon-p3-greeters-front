@@ -1,6 +1,7 @@
 import axios from 'axios'
-import { useState } from 'react/cjs/react.development'
-
+import { useState, useContext } from 'react'
+import { Context } from '../../../context/Context'
+import { useHistory } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 import './AdminConnection.css'
@@ -8,6 +9,9 @@ import './AdminConnection.css'
 const AdminConnection = () => {
   const [userName, setUserName] = useState()
   const [password, setPassword] = useState()
+  const { dispatch } = useContext(Context)
+
+  let history = useHistory()
 
   const handleUserName = e => {
     setUserName(e)
@@ -18,7 +22,6 @@ const AdminConnection = () => {
 
   const handleSubmit = async e => {
     e.preventDefault()
-
     const resCo = await axios
       .post('http://localhost:3000/auth', {
         log: userName,
@@ -26,14 +29,18 @@ const AdminConnection = () => {
       })
       .then(result => {
         if (result.data != 'Invalid') {
-          localStorage['admin_session'] = JSON.stringify(result.data)
+          dispatch({
+            type: 'LOGIN_SUCCESS',
+            payload: result.data
+          })
+
           Swal.fire({
             icon: 'success',
             title: 'Bienvenue',
             confirmButtonColor: 'green'
-          }).then(
-            () => (window.location = 'http://localhost:3001/admin/content')
-          )
+          }).then(() => {
+            history.push('/admin')
+          })
         } else {
           Swal.fire({
             icon: 'error',

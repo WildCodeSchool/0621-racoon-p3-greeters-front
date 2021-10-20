@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom'
 import 'leaflet/dist/leaflet.css'
 import './index.css'
 import App from './App'
+import { AdminProvider } from './context/Context'
 import reportWebVitals from './reportWebVitals'
 import { LanguageProvider } from './context'
 
 ReactDOM.render(
   <React.StrictMode>
-    <LanguageProvider>
+    <AdminProvider>
       <App />
-    </LanguageProvider>
+    </AdminProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )

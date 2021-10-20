@@ -94,7 +94,7 @@ const AdminContentValues = () => {
   }
 
   const putContentEnData = async () => {
-    const results = await axios.put(`http://localhost:3000/values`, {
+    const results = await axios.put(`http://localhost:3000/value`, {
       values_content_en: valuesContentEn
     })
     getData()

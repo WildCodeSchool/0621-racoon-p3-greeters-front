@@ -1,18 +1,17 @@
-import { NavLink, useParams } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './CityCard.css'
 
 const CityCard = props => {
-  let { id } = useParams()
   return (
-    <div className='container-citycard'>
-      <NavLink to={`/infoCity/${id}`}>
+    <div>
+      <NavLink to={`/infoCity/${props.city_city_id}`}>
         <img
           className='city-img'
-          src={props.city_photo}
+          src={props.photos_img}
           alt={props.city_name}
         />
+        <h3 className='city-name'>{props.city_name}</h3>
       </NavLink>
-      <h3 className='city-name'>{props.city_name}</h3>
     </div>
   )
 }
