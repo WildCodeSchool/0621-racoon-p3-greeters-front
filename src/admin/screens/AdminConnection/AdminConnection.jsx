@@ -23,7 +23,7 @@ const AdminConnection = () => {
   const handleSubmit = async e => {
     e.preventDefault()
     const resCo = await axios
-      .post('http://localhost:3000/auth', {
+      .post(`${process.env.REACT_APP_API_ROUTE}/auth`, {
         log: userName,
         password: password
       })

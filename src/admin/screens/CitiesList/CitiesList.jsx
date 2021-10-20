@@ -14,7 +14,7 @@ const CitiesList = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const resData = await axios.get('http://localhost:3000/city')
+      const resData = await axios.get(`${process.env.REACT_APP_API_ROUTE}/city`)
       setCities(resData.data)
     }
     getData()

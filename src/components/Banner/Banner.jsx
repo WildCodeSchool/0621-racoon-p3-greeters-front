@@ -12,7 +12,7 @@ const Banner = () => {
   //Get banner from the db
   useEffect(() => {
     const getData = async () => {
-      const resData = await axios.get('http://localhost:3000/city')
+      const resData = await axios.get(`${process.env.REACT_APP_API_ROUTE}/city`)
       setBannerCity(resData.data)
     }
     getData()
