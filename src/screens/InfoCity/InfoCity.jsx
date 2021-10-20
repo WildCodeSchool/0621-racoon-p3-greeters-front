@@ -24,7 +24,7 @@ const InfoCity = () => {
     const getData = async () => {
       const resultData = await axios.get(`http://localhost:3000/photos/${id}`)
       setInfoCity(resultData.data)
-      console.log(resultData.data)
+      console.log(resultData.data[0].city_description_en)
     }
     getData()
   }, [id])
@@ -33,14 +33,20 @@ const InfoCity = () => {
       <Navbar />
       <BannerCity />
       <div className='city-content'>
-        {infoCity &&
-          infoCity.map((l, index) => {
-            return (
-              <section key={index}>
-                {englishMode ? l.city_description_en : l.city_description_fr}
-              </section>
-            )
-          })}
+        {/* {infoCity && (
+          <section>
+            {englishMode
+              ? infoCity.city_description_en
+              : infoCity.city_description_fr}
+          </section>
+        )} */}
+        {infoCity && (
+          <section>
+            {englishMode
+              ? infoCity[0].city_description_en
+              : infoCity[0].city_description_fr}
+          </section>
+        )}
       </div>
       <Footer />
     </>
