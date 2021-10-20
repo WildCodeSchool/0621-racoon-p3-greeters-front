@@ -49,7 +49,7 @@ const AdminContentPage = () => {
 
   //Get data from back
   const getData = async () => {
-    const resData = await axios.get(`http://localhost:3000/value`)
+    const resData = await axios.get(`${process.env.REACT_APP_API_ROUTE}/value`)
     setValues(resData.data)
   }
   useEffect(() => {
@@ -58,51 +58,72 @@ const AdminContentPage = () => {
 
   // Put routes
   const putTitle1FrData = async () => {
-    const results = await axios.put(`http://localhost:3000/value`, {
-      values_title1_fr: valuesTitle1Fr
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/value`,
+      {
+        values_title1_fr: valuesTitle1Fr
+      }
+    )
     getData()
   }
 
   const putTitle1EnData = async () => {
-    const results = await axios.put(`http://localhost:3000/value`, {
-      values_title1_en: valuesTitle1En
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/value`,
+      {
+        values_title1_en: valuesTitle1En
+      }
+    )
     getData()
   }
 
   const putTitle2FrData = async () => {
-    const results = await axios.put(`http://localhost:3000/value`, {
-      values_title2_fr: valuesTitle2Fr
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/value`,
+      {
+        values_title2_fr: valuesTitle2Fr
+      }
+    )
     getData()
   }
 
   const putTitle2EnData = async () => {
-    const results = await axios.put(`http://localhost:3000/value`, {
-      values_title2_en: valuesTitle2En
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/value`,
+      {
+        values_title2_en: valuesTitle2En
+      }
+    )
     getData()
   }
 
   const putContentFrData = async () => {
-    const results = await axios.put(`http://localhost:3000/value`, {
-      values_content_fr: valuesContentFr
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/value`,
+      {
+        values_content_fr: valuesContentFr
+      }
+    )
     getData()
   }
 
   const putContentEnData = async () => {
-    const results = await axios.put(`http://localhost:3000/value`, {
-      values_content_en: valuesContentEn
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/value`,
+      {
+        values_content_en: valuesContentEn
+      }
+    )
     getData()
   }
 
   const putPhotoData = async () => {
-    const results = await axios.put(`http://localhost:3000/value`, {
-      values_photo: valuesPhoto
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/value`,
+      {
+        values_photo: valuesPhoto
+      }
+    )
     getData()
   }
 
