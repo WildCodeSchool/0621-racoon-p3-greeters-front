@@ -12,7 +12,7 @@ export const PrivateRoute = ({ children, ...rest }) => {
 
   const testAuth = async () => {
     try {
-      await axios.post(`http://localhost:3000/auth/protected`)
+      await axios.post(`${process.env.REACT_APP_API_ROUTE}/auth/protected`)
     } catch (error) {
       dispatch({ type: 'LOGIN_FAILURE' })
       localStorage.removeItem('admin_session')

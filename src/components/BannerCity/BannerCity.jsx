@@ -14,7 +14,9 @@ const BannerCity = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const resData = await axios.get(`http://localhost:3000/photos/${id}`)
+      const resData = await axios.get(
+        `${process.env.REACT_APP_API_ROUTE}/photos/${id}`
+      )
       setBannerCity(resData.data)
       console.log(resData.data)
     }
