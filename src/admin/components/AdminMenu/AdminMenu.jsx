@@ -1,4 +1,8 @@
-import { NavLink } from 'react-router-dom'
+import { useContext } from 'react'
+import { Context } from '../../../context/Context'
+import Swal from 'sweetalert2'
+
+import { NavLink, useHistory } from 'react-router-dom'
 import { FaCity, FaBook } from 'react-icons/fa'
 import { ImProfile } from 'react-icons/im'
 import { RiComputerLine, RiAdminLine } from 'react-icons/ri'
@@ -7,14 +11,31 @@ import { HiOutlineLogin } from 'react-icons/hi'
 import './AdminMenu.css'
 
 function AdminMenu() {
+  const { dispatch } = useContext(Context)
+  let history = useHistory()
+
+  const handleLogOut = async e => {
+    e.preventDefault()
+    dispatch({
+      type: 'LOGOUT'
+    })
+    Swal.fire({
+      icon: 'warning',
+      title: 'Déconnexion',
+      confirmButtonColor: 'purple'
+    }).then(() => {
+      history.push('/')
+    })
+  }
+
   return (
     <div className='sidebar'>
       <ul className='nav-links'>
         <li>
-          <span className='returnButton'>
+          <span onClick={handleLogOut} className='returnButton'>
             <HiOutlineLogin />
           </span>
-          <span className='adminTitle'>Partie Administration</span>
+          Administration
         </li>
         <NavLink to='/admin'>
           <li>
