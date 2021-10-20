@@ -2,7 +2,7 @@ import './CityCard.css'
 
 const CityCard = props => {
   return (
-    <div>
+    <div className='CityCard'>
       <a href={`/infoCity/${props.city_city_id}`}>
         <img
           className='city-img'
