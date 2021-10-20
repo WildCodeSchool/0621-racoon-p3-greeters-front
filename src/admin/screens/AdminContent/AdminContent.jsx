@@ -11,7 +11,7 @@ const AdminContent = () => {
 
       <div className='AdminContent-container'>
         <h1 className='AdminContent-big-title'>
-          <FaBook /> Contenu
+          <FaBook /> <span className='h1-title'>Contenu</span>
         </h1>
         <Link to='/admin/content/description'>
           <section className='AdminContent-section up-section'>

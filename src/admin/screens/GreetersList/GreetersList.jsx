@@ -58,7 +58,7 @@ const GreetersList = () => {
       <AdminMenu />
       <div className='greeters-list-container'>
         <h1 className='greeters-list-title'>
-          <ImProfile /> Greeters
+          <ImProfile /> <span className='h1-title'>Greeters</span>
         </h1>
         <button onClick={toggleNewGForm}>Ajouter un nouveau Greeter</button>
         <table className='greeters-table'>

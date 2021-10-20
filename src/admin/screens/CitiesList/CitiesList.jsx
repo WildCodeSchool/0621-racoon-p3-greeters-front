@@ -27,7 +27,7 @@ const CitiesList = () => {
       <AdminMenu />
       <div className='cities-list-container'>
         <h1 className='cities-list-title'>
-          <FaCity /> Villes
+          <FaCity /> <span className='h1-title'>Villes</span>
         </h1>
         <table className='cities-table'>
           <thead>

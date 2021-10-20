@@ -14,7 +14,11 @@
   text-align: center;
   color : rgba(0, 0, 0, 0.6);
   font-size: 2.5rem;
+}
 
+.cities-list-title .h1-title {
+  font-size: 3.7rem;
+  margin-left: 25px;
 }
 
 .cities-table {

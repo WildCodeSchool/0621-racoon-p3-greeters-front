@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom'
 import { FaCity, FaBook } from 'react-icons/fa'
 import { ImProfile } from 'react-icons/im'
 import { RiComputerLine, RiAdminLine } from 'react-icons/ri'
+import { HiOutlineLogin } from 'react-icons/hi'
 
 import './AdminMenu.css'
 
@@ -9,11 +10,12 @@ function AdminMenu() {
   return (
     <div className='sidebar'>
       <ul className='nav-links'>
-        <NavLink to='/'>
-          <div className='returnButton'>
-            <span>&#11013;</span>
-          </div>
-        </NavLink>
+        <li>
+          <span className='returnButton'>
+            <HiOutlineLogin />
+          </span>
+          <span className='adminTitle'>Partie Administration</span>
+        </li>
         <NavLink to='/admin'>
           <li>
             <RiComputerLine />

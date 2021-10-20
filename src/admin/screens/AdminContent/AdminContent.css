@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+.AdminContent-container .h1-title {
+  font-size: 3.7rem;
+  margin-left: 25px;
+}
+
 .AdminContent-container h2 {
   margin: 0;
 }
