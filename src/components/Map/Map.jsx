@@ -48,7 +48,6 @@ const MapComponent = ({ cordinates }) => {
     iconAnchor: [10, 30],
     popupAnchor: [10, -35]
   })
-  console.log(cityDB)
   return (
     <div className='MapComponent' data-aos='fade-down'>
       {/* Using the map module */}
