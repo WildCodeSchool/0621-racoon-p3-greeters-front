@@ -2,13 +2,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  /* font-family: var(--font-typo); */
 }
 
 .cities-title {
   text-align: center;
   margin: 5rem 0 4rem 0;
-font-size: xx-large;
+  font-size: xxx-large;
 }
 
 .cities-btn {

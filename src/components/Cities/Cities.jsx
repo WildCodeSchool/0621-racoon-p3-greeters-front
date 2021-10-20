@@ -29,7 +29,7 @@ const Cities = () => {
   })
 
   return (
-    <div data-aos='fade-right'>
+    <div className='Cities' data-aos='fade-right'>
       <h2 className='cities-title'>Les villes à découvrir</h2>
 
       <div className='cities-container'>

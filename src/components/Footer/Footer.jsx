@@ -60,9 +60,9 @@ const Footer = () => {
             </svg>
           </a>
         </div>
-        <NavLink to='/contact'>
+        <a href='/contact'>
           <button className='button'>Contactez-nous</button>
-        </NavLink>
+        </a>
       </div>
 
       <div className='globalCollon'>
