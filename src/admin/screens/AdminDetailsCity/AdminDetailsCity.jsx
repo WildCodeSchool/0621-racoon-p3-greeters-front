@@ -54,12 +54,14 @@ const AdminDetailsCity = () => {
 
   //Get data from back
   const getData = async () => {
-    const resData = await axios.get(`http://localhost:3000/city/${cityId}`)
+    const resData = await axios.get(
+      `${process.env.REACT_APP_API_ROUTE}/city/${cityId}`
+    )
     setCity(resData.data)
   }
   const getPhotosData = async () => {
     const resData = await axios.get(
-      `http://localhost:3000/photos/admin/${cityId}`
+      `${process.env.REACT_APP_API_ROUTE}/photos/admin/${cityId}`
     )
     setPhotos(resData.data)
   }
@@ -70,17 +72,23 @@ const AdminDetailsCity = () => {
 
   const putData = async (name, value) => {
     console.log(value)
-    const results = await axios.put(`http://localhost:3000/city/${cityId}`, {
-      [name]: value
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/city/${cityId}`,
+      {
+        [name]: value
+      }
+    )
     getData()
   }
 
   const putPhotosData = async (name, value) => {
     console.log(value)
-    const results = await axios.put(`http://localhost:3000/photos/${cityId}`, {
-      [name]: value
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/photos/${cityId}`,
+      {
+        [name]: value
+      }
+    )
     getData()
   }
 

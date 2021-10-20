@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated'
-import { themeDropdown, cityDropdown, languageDropdown } from '../DropItems'
 
 import './MeetGreeterBar.css'
 
@@ -58,7 +57,7 @@ const MeetGreeterBar = () => {
             styles={customStyles}
             components={animatedComponents}
             onChange={setTheme}
-            options={themeDropdown}
+            // options={themeDropdown}
             className='meet-select'
             placeholder='Thématiques'
             isMulti
@@ -70,7 +69,7 @@ const MeetGreeterBar = () => {
             styles={customStyles}
             components={animatedComponents}
             onChange={setCity}
-            options={cityDropdown}
+            // options={cityDropdown}
             className='meet-select'
             placeholder='Villes'
             isMulti
@@ -82,7 +81,7 @@ const MeetGreeterBar = () => {
             styles={customStyles}
             components={animatedComponents}
             onChange={setLangue}
-            options={languageDropdown}
+            // options={languageDropdown}
             className='meet-select'
             placeholder='Langues'
             isMulti

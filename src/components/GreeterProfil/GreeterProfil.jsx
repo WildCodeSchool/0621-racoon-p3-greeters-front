@@ -21,7 +21,9 @@ const GreeterProfil = ({ getCoordinates }) => {
 
   useEffect(() => {
     const getData = async () => {
-      const resultData = await axios.get(`http://localhost:3000/person/${id}`)
+      const resultData = await axios.get(
+        `${process.env.REACT_APP_API_ROUTE}/person/${id}`
+      )
       setGreeterData(resultData.data)
 
       const mapData = {

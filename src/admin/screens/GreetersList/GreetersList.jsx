@@ -26,7 +26,7 @@ const GreetersList = () => {
   const { isShowing: isNewGFormShowed, toggle: toggleNewGForm } = useModal()
   //Get greeters from database
   const getData = async () => {
-    const resData = await axios.get('http://localhost:3000/person')
+    const resData = await axios.get(`${process.env.REACT_APP_API_ROUTE}/person`)
     setGreeters(resData.data.result)
   }
   useEffect(() => {
@@ -38,7 +38,10 @@ const GreetersList = () => {
   }
 
   const postData = async () => {
-    const result = await axios.post('http://localhost:3000/person', data)
+    const result = await axios.post(
+      `${process.env.REACT_APP_API_ROUTE}/person`,
+      data
+    )
     console.log(result)
     getData()
   }

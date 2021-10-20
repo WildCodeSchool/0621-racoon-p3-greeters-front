@@ -66,7 +66,9 @@ const AdminDetailsGreeter = () => {
   }, [])
 
   const getData = async () => {
-    const resData = await axios.get(`http://localhost:3000/person/${greeterId}`)
+    const resData = await axios.get(
+      `${process.env.REACT_APP_API_ROUTE}/person/${greeterId}`
+    )
     setGreeters(resData.data.result)
     // console.log(greeters)
   }
@@ -74,7 +76,7 @@ const AdminDetailsGreeter = () => {
   // function to send modified entriezzz dinamicallyy
 
   const putData = async (name, value) => {
-    await axios.put(`http://localhost:3000/person/${greeterId}`, {
+    await axios.put(`${process.env.REACT_APP_API_ROUTE}/person/${greeterId}`, {
       [name]: value
     })
     getData()

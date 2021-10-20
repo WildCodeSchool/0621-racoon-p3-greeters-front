@@ -10,7 +10,9 @@ const Greeters = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const resData = await axios.get('http://localhost:3000/person?limit=true')
+      const resData = await axios.get(
+        `${process.env.REACT_APP_API_ROUTE}/person?limit=true`
+      )
       setGreeters(resData.data.result)
     }
     getData()
