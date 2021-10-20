@@ -21,6 +21,7 @@ const BannerCity = () => {
         `${process.env.REACT_APP_API_ROUTE}/photos/${id}`
       )
       setBannerCity(resData.data)
+      console.log(resData.data[0].city_name)
     }
     getData()
   }, [id])
@@ -44,8 +45,7 @@ const BannerCity = () => {
   }
   return (
     <div className='banner-city-main-container'>
-      <h1>{englishMode ? 'Discover' : 'Découvrir'}</h1>
-      <h2>{bannerCity && bannerCity.city_name}</h2>
+      {bannerCity[0] && <h1>{bannerCity[0].city_name}</h1>}
       <div className='banner-city-container'>
         <AliceCarousel
           mouseTracking
