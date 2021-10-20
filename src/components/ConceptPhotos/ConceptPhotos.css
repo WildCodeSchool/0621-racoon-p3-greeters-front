@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-around;
   object-fit: cover;
-  font-family: var(--font-typo);
  }
 
  .ConceptPhotos-Block-Image1 {
@@ -18,7 +17,10 @@
     width: 40vw;
  }
 
-
+.Text-Valeurs {
+  font-family: var(--font-typo-text);
+  justify-content:justify;
+}
 
  .ConceptPhotos-img{
 
@@ -28,7 +30,7 @@
  }
 
  .ConceptPhotos-btn-right{
-  font-family: 'Titillium Web', sans-serif;
+  font-family: var(--font-typo-text);
   background-color: #faf0e6;
   padding: 0 30px;
   font-style: normal;
@@ -46,7 +48,7 @@
   }
 
  .ConceptPhotos-btn-left{
-  font-family: 'Titillium Web', sans-serif;
+  font-family: var(--font-typo-text);
   background-color: #faf0e6;
   padding: 0 30px;
   font-style: normal;
@@ -65,7 +67,7 @@
 
  .Text-Concept{
   text-align: center;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: var(--font-typo-subtitle);
 }
 
 .text-container{

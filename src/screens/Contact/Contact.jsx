@@ -76,14 +76,15 @@ const Contact = () => {
             </div>
 
             <div className='messageElement messageContent'>
-              <h4>{englishMode ? 'Content of the message' : 'Contenu du message'}
-                 <span style={{ color: 'red' }}>*</span>
+              <h4>
+                {englishMode ? 'Content of the message' : 'Contenu du message'}
+                <span style={{ color: 'red' }}>*</span>
               </h4>
               <textarea name='user_message'></textarea>
             </div>
           </div>
           <div className='infoContainer'>
-            <h3>Mes coordonnées</h3>
+            <h3>{englishMode ? 'My coordinates' : 'Mes coordonnées'}</h3>
 
             <div className='infoElement civilityContent'>
               <h4>

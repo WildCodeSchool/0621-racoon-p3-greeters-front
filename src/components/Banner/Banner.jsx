@@ -30,7 +30,7 @@ const Banner = () => {
           onDragStart={handleDragStart}
           className='banner-img'
         />
-        <button className='banner-button'>Réserver Votre Balade</button>
+        <button className='banner-button'>Réserver votre balade</button>
         <h2 className='banner-text'>Découvrir {d.city_name}</h2>
       </div>
     )
