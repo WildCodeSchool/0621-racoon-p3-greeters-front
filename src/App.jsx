@@ -1,15 +1,10 @@
-import { useContext, createContext, useState } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import axios from 'axios'
-import { Context } from './context/Context'
-import { AdminProvider } from './context/Context'
 
 import { PrivateRoute } from './use/useSecureRoute'
 
 import Admin from './admin/screens/Admin/Admin'
 import AdminDetailsCity from './admin/screens/AdminDetailsCity/AdminDetailsCity'
 import AdminDetailsGreeter from './admin/screens/AdminDetailsGreeter/AdminDetailsGreeter'
-import AdminError from './admin/screens/AdminError/AdminError'
 import AdminConnection from './admin/screens/AdminConnection/AdminConnection'
 import CitiesList from './admin/screens/CitiesList/CitiesList'
 import Contact from './screens/Contact/Contact'
