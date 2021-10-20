@@ -59,11 +59,11 @@
 .AdminContent-title{
   padding-top: 40px;
   text-decoration: underline;
-  
 }
 
 .AdminContent-big-title{
   position: relative;
+  width: 70vw;
   z-index: 110;
   background-color: rgba(0,0,0,0.1);
   font-size: 2.5rem;

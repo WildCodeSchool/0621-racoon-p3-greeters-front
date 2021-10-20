@@ -5,7 +5,7 @@
   left: 5%;
   border-radius: 25px;
   object-fit: cover;
-  font-family: var(--font-typo);
+  
 }
 
 .banner-city-container {
@@ -21,6 +21,7 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   margin: 40px auto;
+  font-family: var(--font-typo);
 }
 
 .alice-carousel__prev-btn, .alice-carousel__next-btn {

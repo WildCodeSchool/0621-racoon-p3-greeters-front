@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { LangueContext } from '../../context'
+import { LangueContext } from '../../context/langueContext'
 
 import Footer from '../../components/Footer/Footer'
 import Navbar from '../../components/Navbar/Navbar'

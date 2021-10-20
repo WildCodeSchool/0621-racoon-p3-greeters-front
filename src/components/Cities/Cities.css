@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  font-family: var(--font-typo);
+  /* font-family: var(--font-typo); */
 }
 
 .cities-title {
