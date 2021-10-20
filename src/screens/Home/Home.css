@@ -4,6 +4,7 @@ ul {
 }
 *{
   box-sizing: border-box;
+  font-family: var(--font-typo);
 }
 
 .reveal {

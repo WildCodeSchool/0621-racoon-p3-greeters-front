@@ -4,6 +4,7 @@
   height: 300px;
   margin: 1rem 0;
   cursor: pointer;
+  font-family: var(--font-typo);
 }
 
 .greeter-img { 

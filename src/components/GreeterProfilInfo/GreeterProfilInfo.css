@@ -23,7 +23,7 @@ margin: 0 2vw 0 0;
 .greeter-profil-bloc-info-infos {
   padding: 1vh 1vw;
   width:13vw;
-  background: #faf0e6;
+  background: var(--bg-color-beige);
   box-shadow: 0px 0px 5px -2px black;
   box-sizing: border-box;
   border-radius: 20px 0;

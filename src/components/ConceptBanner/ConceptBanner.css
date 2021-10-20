@@ -4,6 +4,7 @@
   margin-bottom: 20px;
   margin-top: 50px;
   height: auto;
+  font-family: var(--font-typo);
 }
 
 .ConceptBanner-image {

@@ -13,8 +13,7 @@
 }
 
 .greeter-profil-bloc-card-btn {
-  font-family: 'Titillium Web', sans-serif;
-  background-color: #faf0e6;
+  background-color: var(--bg-color-beige);
   position: absolute;
   top: 99%;
   left: 50%;

@@ -1,5 +1,7 @@
+* {
+  font-family: var(--font-typo);
+}
 .Greeters {
-
   height: auto;
   margin-top: 50px;
 }
@@ -14,6 +16,7 @@
   text-align: center;
   padding-bottom: 30px;
   padding-top: 0px;
+  font-size: xx-large;
 }
 
 .greeters-btn {
@@ -46,5 +49,6 @@
     text-align: center;
     padding-bottom: 20px;
     padding-top: 0px;
+    font-size: 26px;
   }
 }

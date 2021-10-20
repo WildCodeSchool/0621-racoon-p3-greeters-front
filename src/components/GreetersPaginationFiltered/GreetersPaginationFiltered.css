@@ -1,4 +1,3 @@
-.greeter {
-  width: 100vw;
+*{
   font-family: var(--font-typo);
 }

@@ -4,6 +4,7 @@
   text-align: justify;
   margin: 0 20vw 4vh 20vw;
   padding: 2vh 2vw;
+  font-family: var(--font-typo);
 }
 
 .title1 {
