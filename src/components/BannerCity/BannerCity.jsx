@@ -8,6 +8,7 @@ import './BannerCity.css'
 
 const BannerCity = () => {
   let { id } = useParams()
+  console.log('Id in params : ' + id)
   const handleDragStart = e => e.preventDefault()
   const [bannerCity, setBannerCity] = useState([])
 
@@ -15,6 +16,7 @@ const BannerCity = () => {
     const getData = async () => {
       const resData = await axios.get(`http://localhost:3000/photos/${id}`)
       setBannerCity(resData.data)
+      console.log(resData.data)
     }
     getData()
   }, [id])
@@ -26,7 +28,7 @@ const BannerCity = () => {
         let photo = (
           <div>
             <img
-              src={r.city_banner}
+              src={r.photos_img}
               onDragStart={handleDragStart}
               className='banner-city'
             />
