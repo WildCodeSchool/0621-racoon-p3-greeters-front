@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { LangueContext } from '../../context'
 
 import { NavLink } from 'react-router-dom'
 
-import '../../components/Footer/Footer.css'
+import './Footer.css'
 
 const Footer = () => {
+  const language = useContext(LangueContext)
+  const englishMode = language.state.englishMode
+
   return (
     <div className='row'>
       <div className='contact'>
@@ -165,6 +169,9 @@ const Footer = () => {
                 Consignes
               </a>
             </li>
+            <NavLink exact to='/legalinfo' className='legal-link'>
+              {englishMode ? 'Legal informations' : 'Mentions légales'}
+            </NavLink>
           </ul>
         </div>
       </div>

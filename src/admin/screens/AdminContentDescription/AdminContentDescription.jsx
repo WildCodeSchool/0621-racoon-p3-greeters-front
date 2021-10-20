@@ -182,7 +182,7 @@ const AdminContentDescription = () => {
           <h1 className='admin-details-city-title'>Page Description</h1>
           <ul className='admin-details-city-list'>
             <li className='admin-details-city-item'>
-              <span>Titre en français</span> :{' '}
+              <span>Titre en français</span> :
               {description[0].description_title1_fr}
               <button
                 onClick={toggleDescriptionTitle1FrForm}
@@ -192,7 +192,7 @@ const AdminContentDescription = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Titre en anglais</span> :{' '}
+              <span>Titre en anglais</span> :
               {description[0].description_title1_en}
               <button
                 onClick={toggleDescriptionTitle1EnForm}
@@ -202,7 +202,7 @@ const AdminContentDescription = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Sous-titre en français</span> :{' '}
+              <span>Sous-titre en français</span> :
               {description[0].description_title2_fr}
               <button
                 onClick={toggleDescriptionTitle2FrForm}
@@ -212,7 +212,7 @@ const AdminContentDescription = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Sous-titre en anglais</span> :{' '}
+              <span>Sous-titre en anglais</span> :
               {description[0].description_title2_en}
               <button
                 onClick={toggleDescriptionTitle2EnForm}
@@ -222,7 +222,7 @@ const AdminContentDescription = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Paragraphe en français</span> :{' '}
+              <span>Paragraphe en français</span> :
               {description[0].description_content_fr}
               <button
                 onClick={toggleDescriptionContentFrForm}
@@ -232,7 +232,7 @@ const AdminContentDescription = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Paragraphe en anglais</span> :{' '}
+              <span>Paragraphe en anglais</span> :
               {description[0].description_content_en}
               <button
                 onClick={toggleDescriptionContentEnForm}

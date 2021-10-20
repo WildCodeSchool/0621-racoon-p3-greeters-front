@@ -5,6 +5,7 @@
   left: 5%;
   border-radius: 25px;
   object-fit: cover;
+  font-family: var(--font-typo);
 }
 
 .banner-city-container {
@@ -47,8 +48,14 @@ h1 {
   transform: translate(-50%);
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
   line-height: 27px;
   text-align: center;
   color: #FFFFFF;
+  font-size: xx-large;
+}
+
+@media screen and (max-width:500px){
+  .banner-city-text {
+    font-size: 20px;
+  }
 }

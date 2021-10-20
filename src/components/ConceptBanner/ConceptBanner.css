@@ -5,6 +5,7 @@
   height: auto;
   width: 95vw;
   margin: 30px auto;
+  font-family: var(--font-typo);
 }
 
 .ConceptBanner-image {

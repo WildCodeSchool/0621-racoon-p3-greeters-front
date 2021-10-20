@@ -5,6 +5,7 @@
   background-color: white;
   position: relative;
   z-index: 1000;
+  font-family: var(--font-typo);
 }
 
 /**** Navbar static ****/
@@ -76,7 +77,7 @@
 
 .Navbar .logo-element {
   position: absolute;
-  width: 100px;
+  width: 140px;
   cursor: pointer;
   left: 50%;
   top: 0;
@@ -162,5 +163,10 @@
   .Navbar .nav-open a:hover {
     font-size: 1.3rem;
     color: #ff0d0d;
+  }
+}
+@media screen and (max-width:700px) {
+  .Navbar .logo-element {
+    width: 100px;
   }
 }

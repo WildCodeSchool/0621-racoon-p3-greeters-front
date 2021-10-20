@@ -12,4 +12,5 @@ text-align: center;
   margin: 0 auto;
   margin-bottom: 70px;
   box-shadow: 1px 1px 1px black;
+font-family: var(--font-typo);
 }

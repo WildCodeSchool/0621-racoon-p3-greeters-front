@@ -1,0 +1,33 @@
+.legal-info {
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  text-align: justify;
+  margin: 0 20vw 4vh 20vw;
+  padding: 2vh 2vw;
+  font-family: var(--font-typo);
+}
+
+.title1 {
+  text-align: center;
+  font-size: 4em;
+  padding: 2vh 0;
+  color: #faf0e6;
+  text-shadow:black 0.1em 0.1em 0.2em;
+}
+
+.title2 {
+  text-align: center;
+  font-size: 2em;
+  padding: 2vh 0;
+  color: #faf0e6;
+  text-shadow:black 0.1em 0.1em 0.2em;
+}
+
+.legal-info-list {
+  list-style-type: none;
+  font-size:1.2rem;
+}
+
+p {
+  font-size:1.2rem;
+}

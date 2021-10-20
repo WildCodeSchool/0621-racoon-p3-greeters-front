@@ -3,4 +3,14 @@
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 0px 100px 100px 100px;
+  font-family: var(--font-typo);
+  font-size: 20px;
+  text-align: justify;
+}
+
+@media screen and (max-width:700px) {
+  .city-content {
+    font-size: 16px;
+    padding: 0 39px 39px 39px;
+  }
 }
