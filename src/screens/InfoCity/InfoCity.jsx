@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from 'react'
 import BannerCity from '../../components/BannerCity/BannerCity'
 import Footer from '../../components/Footer/Footer'
 import Navbar from '../../components/Navbar/Navbar'
-import { LangueContext } from '../../context'
+import { LangueContext } from '../../context/langueContext'
 import axios from 'axios'
 
 import Aos from 'aos'

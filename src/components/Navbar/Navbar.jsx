@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { useState, useEffect, useContext } from 'react'
-import { LangueContext } from '../../context'
+import { LangueContext } from '../../context/langueContext'
 import Swal from 'sweetalert2'
 import logo from '../../assets/greeters-logo-red.PNG'
 import SearchBar from '../SearchBar/SearchBar'

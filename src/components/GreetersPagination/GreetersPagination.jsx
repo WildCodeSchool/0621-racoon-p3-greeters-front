@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react/cjs/react.development'
-import { LangueContext } from '../../context'
+import { LangueContext } from '../../context/langueContext'
 import { useContext } from 'react'
 import ReactPaginate from 'react-paginate'
 import axios from 'axios'

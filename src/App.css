@@ -1,3 +1,7 @@
 :root {
   --text-color: #ff0d0d;
 }
+
+a {
+  text-decoration: none;
+}

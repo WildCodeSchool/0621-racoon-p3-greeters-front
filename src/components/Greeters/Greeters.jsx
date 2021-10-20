@@ -6,6 +6,9 @@ import GreeterCard from '../GreeterCard/GreeterCard'
 import './Greeters.css'
 import { Link } from 'react-router-dom'
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
 const Greeters = () => {
   const [greeters, setGreeters] = useState([])
 
@@ -14,10 +17,9 @@ const Greeters = () => {
       const resData = await axios.get('http://localhost:3000/person?limit=true')
       setGreeters(resData.data.result)
     }
+    Aos.init({ duration: 1000 })
     getData()
   }, [])
-
-  console.log(greeters)
 
   /* Animation */
   const [show, setShow] = useState(false)
@@ -35,11 +37,7 @@ const Greeters = () => {
   })
 
   return (
-    <div
-      className={show ? 'Greeters' : 'Greeters'}
-      data-aos='fade-right'
-      data-aos-anchor-placement='top-center'
-    >
+    <div className={'Greeters'} data-aos='fade-right'>
       <h2 className='greeters-title'>Les Greeters</h2>
 
       <div className='greeters-container'>

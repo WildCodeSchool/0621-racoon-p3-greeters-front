@@ -5,12 +5,14 @@ import './index.css'
 import App from './App'
 import { AdminProvider } from './context/Context'
 import reportWebVitals from './reportWebVitals'
-import { LanguageProvider } from './context'
+import { LanguageProvider } from './context/langueContext'
 
 ReactDOM.render(
   <React.StrictMode>
     <AdminProvider>
-      <App />
+      <LanguageProvider>
+        <App />
+      </LanguageProvider>
     </AdminProvider>
   </React.StrictMode>,
   document.getElementById('root')

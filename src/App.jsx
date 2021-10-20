@@ -1,7 +1,7 @@
 import { useContext, createContext, useState } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import axios from 'axios'
-import { Context } from './context/Context'
+import Context from './context/Context'
 import { AdminProvider } from './context/Context'
 
 import { PrivateRoute } from './use/useSecureRoute'

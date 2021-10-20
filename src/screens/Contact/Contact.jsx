@@ -1,6 +1,6 @@
 import React from 'react'
 import emailjs from 'emailjs-com'
-import { LangueContext } from '../../context'
+import { LangueContext } from '../../context/langueContext'
 import { useContext } from 'react'
 import { useEffect } from 'react'
 
@@ -76,8 +76,9 @@ const Contact = () => {
             </div>
 
             <div className='messageElement messageContent'>
-              <h4>{englishMode ? 'Content of the message' : 'Contenu du message'}
-                 <span style={{ color: 'red' }}>*</span>
+              <h4>
+                {englishMode ? 'Content of the message' : 'Contenu du message'}
+                <span style={{ color: 'red' }}>*</span>
               </h4>
               <textarea name='user_message'></textarea>
             </div>
