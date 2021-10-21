@@ -101,27 +101,33 @@ const Navbar = () => {
       <div
         className={showMenu ? 'nav-open toShow-menu' : 'nav-open toHide-menu'}
       >
-        <NavLink to='/concept'>
+        <a href='/concept' alt=''>
           <h3>Qu'est ce qu'un greeter ?</h3>
-        </NavLink>
+        </a>
 
         {/*
-       <NavLink to='/our-values'>
+       <a href='/our-values'>
           <h3>Nos valeurs</h3>
-        </NavLink>
+        </a>
       */}
 
-        <NavLink to='/meetgreeter'>
+        <a href='/meetgreeter' alt=''>
           <h3>Rencontrer un greeter</h3>
-        </NavLink>
+        </a>
 
-        <NavLink to='/booking'>
+        <a
+          href='https://gestion.greeters.fr/visits/new'
+          alt=''
+          target='_blank'
+          rel='noreferrer'
+          noreferrer
+        >
           <h3>Réserver une balade</h3>
-        </NavLink>
+        </a>
 
-        <NavLink to='/contact'>
+        <a href='/contact' alt=''>
           <h3>Nous contacter</h3>
-        </NavLink>
+        </a>
       </div>
     </div>
   )

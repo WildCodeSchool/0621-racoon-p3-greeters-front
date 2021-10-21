@@ -196,13 +196,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          {/* <div className='mention-legal-content'>
-            <h4 className='mention-legal-tittle'>
-              <NavLink exact to='/legalinfo' className='legal-link'>
-                {englishMode ? 'Legal informations' : <p>Mentions légales</p>}
-              </NavLink>
-            </h4>
-          </div> */}
           <div className='footer-logo-content'>
             <a
               href='https://greeters.fr/destinations'

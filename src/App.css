@@ -5,3 +5,7 @@
   --font-typo-subtitle: 'Titillium Web 400', sans-serif;
   --font-typo-text: 'Titillium Web 200', sans-serif;
 }
+
+a {
+  text-decoration: none;
+}

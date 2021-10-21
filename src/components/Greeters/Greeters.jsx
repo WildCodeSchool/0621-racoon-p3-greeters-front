@@ -53,11 +53,11 @@ const Greeters = () => {
           ? greeters.map((g, index) => <GreeterCard key={index} {...g} />)
           : null}
       </div>
-      <Link to='/meetgreeter'>
+      <a href='/meetgreeter' alt=''>
         <button className='greeters-btn'>
           {englishMode ? 'See All' : 'Tout Voir'}
         </button>
-      </Link>
+      </a>
     </div>
   )
 }

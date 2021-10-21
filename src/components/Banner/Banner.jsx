@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
-import { LangueContext } from '../../context'
+import { LangueContext } from '../../context/langueContext'
 
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
@@ -41,11 +41,11 @@ const Banner = () => {
                 onDragStart={handleDragStart}
                 className='banner-img'
               />
-              <Link to='/meetgreeter'>
+              <a href='/meetgreeter' alt=''>
                 <button className='banner-button'>
                   {englishMode ? 'Book your journey' : 'Réserver votre balade'}
                 </button>
-              </Link>
+              </a>
               <h2 className='banner-text'>Découvrir {d.city_name}</h2>
             </div>
           )
