@@ -16,13 +16,12 @@
 }
 
 
-
 .meet-select{
-  background-color: #ffe0e0;
   width: 20rem;
   height: 3rem;
   border-radius: 10rem;
   font-family: var(--font-typo-text);
+  background:var(  --bg-color-beige);
 }
 
 .meet-greeter-btn{
