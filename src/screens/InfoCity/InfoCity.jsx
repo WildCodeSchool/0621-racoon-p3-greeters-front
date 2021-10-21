@@ -26,7 +26,6 @@ const InfoCity = () => {
         `${process.env.REACT_APP_API_ROUTE}/photos/${id}`
       )
       setInfoCity(resultData.data[0])
-      console.log(resultData.data[0].city_description_fr)
     }
     getData()
   }, [id])

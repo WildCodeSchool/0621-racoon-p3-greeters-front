@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
-import { LangueContext } from '../../context/langueContext'
-
+import { LangueContext } from '../../context'
+import { useContext } from 'react'
 import './GreeterProfilCard.css'
 
 const GreeterProfilCard = props => {

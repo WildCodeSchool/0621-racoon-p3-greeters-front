@@ -11,7 +11,6 @@ const BannerCity = () => {
   const language = useContext(LangueContext)
   const englishMode = language.state.englishMode
   let { id } = useParams()
-  console.log('Id in params : ' + id)
   const handleDragStart = e => e.preventDefault()
   const [bannerCity, setBannerCity] = useState([])
 
@@ -37,7 +36,9 @@ const BannerCity = () => {
               onDragStart={handleDragStart}
               className='banner-city'
             />
-            <h2 className='banner-city-text'>{r.photos_leg_fr}</h2>
+            <h3 className='banner-city-text'>
+              {englishMode ? r.photos_leg_en : r.photos_leg_fr}
+            </h3>
           </div>
         )
         item.push(photo)

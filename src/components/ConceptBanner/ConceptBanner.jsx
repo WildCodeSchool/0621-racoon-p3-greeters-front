@@ -1,13 +1,19 @@
+import { LangueContext } from '../../context'
+import { useContext } from 'react'
 import image1 from '../../assets/concept-accueil.jpeg'
 
 import './ConceptBanner.css'
 
 const ConceptBanner = props => {
+  const language = useContext(LangueContext)
+  const englishMode = language.state.englishMode
   return (
     <div className='ConceptBanner-Container' data-aos='fade-right'>
       <>
         <h2 className='ConceptBanner-title'>
-          {props.data.description_title1_fr}
+          {englishMode
+            ? props.data.description_title1_en
+            : props.data.description_title1_fr}
         </h2>
         <img
           className='ConceptBanner-image'

@@ -177,7 +177,7 @@ const AdminContentDescription = () => {
     <>
       {console.log('LAAAAA')}
       <AdminMenu />
-      {description[0] ? (
+      {description ? (
         <div className='admin-details-city-container'>
           <h1 className='admin-details-city-title'>Page Description</h1>
           <ul className='admin-details-city-list'>

@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 
 import CityCard from '../CityCard/CityCard'
-
+import { LangueContext } from '../../context/langueContext'
 import axios from 'axios'
+
+const language = useContext(LangueContext)
+const englishMode = language.state.englishMode
 
 import './Cities.css'
 
@@ -37,6 +40,9 @@ const Cities = () => {
           <CityCard key={index} {...c} />
         ))}
       </div>
+      <button className='cities-btn'>
+        {englishMode ? 'See All' : 'Tout Voir'}
+      </button>
     </div>
   )
 }

@@ -32,7 +32,6 @@ const Contact = () => {
       )
       .then(
         result => {
-          console.log(result.text)
           Swal.fire({
             icon: 'success',
             title: 'Votre message a bien été envoyé',
@@ -40,7 +39,6 @@ const Contact = () => {
           })
         },
         error => {
-          console.log(error.text)
           Swal.fire({
             icon: 'error',
             title: "Une erreur s'est produite lors de l'envoi du message",
@@ -57,7 +55,7 @@ const Contact = () => {
         <h1>{englishMode ? 'Contact us' : 'Contactez-nous'}</h1>
         <p>
           {englishMode
-            ? 'Les champs obligatoires sont indiqués par un astérisque'
+            ? 'Required fields are indicated by an asterisk*'
             : 'Les champs obligatoires sont indiqués par un astérisque*'}
           <span style={{ color: 'red' }}>*</span>
         </p>
@@ -84,30 +82,35 @@ const Contact = () => {
             </div>
           </div>
           <div className='infoContainer'>
-            <h3>Mes coordonnées</h3>
+            <h3>{englishMode ? 'My contact details' : 'Mes coordonnées'}</h3>
 
             <div className='infoElement civilityContent'>
               <h4>
-                Civilité <span style={{ color: 'red' }}>*</span>
+                {englishMode ? 'Civility' : 'Civilité'}
+                <span style={{ color: 'red' }}>*</span>
               </h4>
               <select name='user_civility'>
                 <option value='Madame' defaultValue>
                   Madame
                 </option>
-                <option value='Monsieur'>Monsieur</option>
+                <option value='Monsieur'>
+                  {englishMode ? 'Mister' : 'Mr'}
+                </option>
               </select>
             </div>
 
             <div className='infoElement lastNameContent'>
               <h4>
-                Nom <span style={{ color: 'red' }}>*</span>
+                {englishMode ? 'Name' : 'Nom'}
+                <span style={{ color: 'red' }}>*</span>
               </h4>
               <input type='text' placeholder='Dupont' name='user_lastname' />
             </div>
 
             <div className='infoElement firstNameContent'>
               <h4>
-                Prénom <span style={{ color: 'red' }}>*</span>
+                {englishMode ? 'Lastname' : 'Prénom'}
+                <span style={{ color: 'red' }}>*</span>
               </h4>
               <input type='text' placeholder='Nicolas' name='user_firstname' />
             </div>
@@ -131,14 +134,22 @@ const Contact = () => {
           />
         </form>
         <p className='info'>
-          Selon la Loi n° 78-17 du 06 janvier 1978 de la Commission Nationale de
+          {englishMode
+            ? `According to the Law n° 78-17 of January 6, 1978 of the (CNIL), relating to information
+          files and freedoms (Article 36), the holder of the right of access
+          may demand that information concerning him or her be rectified, completed, clarified, updated
+          be rectified, completed, clarified, updated or deleted if the information concerning him/her is inaccurate
+          inaccurate, incomplete, ambiguous, outdated or whose collection or
+          use, communication or storage is prohibited. To
+          exercise this right, please specify it in the form above.`
+            : `Selon la Loi n° 78-17 du 06 janvier 1978 de la Commission Nationale de
           l'Informatique et des Libertés (CNIL), relative à l'informatique, aux
           fichiers et aux libertés (article 36), le titulaire du droit d'accès
           peut exiger que soient rectifiées, complétées, clarifiées, mises à
           jour ou effacées les informations le concernant qui sont inexactes,
           incomplètes, équivoques, périmées ou dont la collecte ou
           l'utilisation, la communication ou la conservation est interdite. Pour
-          exercer ce droit, merci de le préciser dans le formulaire ci-dessus.
+          exercer ce droit, merci de le préciser dans le formulaire ci-dessus.`}
         </p>
       </div>
       <Footer />
