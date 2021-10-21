@@ -1,24 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+
 import { useState } from 'react/cjs/react.development'
 
+import Footer from '../../components/Footer/Footer'
 import GreetersPagination from '../../components/GreetersPagination/GreetersPagination'
 import GreeterProfil from '../../components/GreeterProfil/GreeterProfil'
 import Map from '../../components/Map/Map'
+import Navbar from '../../components/Navbar/Navbar'
 
-import './Greeter.css'
 import '../../components/GreetersPagination/GreetersPagination.css'
 
-import Navbar from '../../components/Navbar/Navbar'
-import Footer from '../../components/Footer/Footer'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const Greeter = () => {
-  const [greeterCoordinates, setGreeterCoordinates] = useState(null)
+  const [greeterCordinates, setGreeterCordinates] = useState(null)
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 })
+  }, [])
 
   return (
     <div className='greeter'>
       <Navbar />
-      <GreeterProfil getCoordinates={setGreeterCoordinates} />
-      <Map coordinates={greeterCoordinates} />
+      <GreeterProfil setGetCordinates={setGreeterCordinates} />
+      <Map cordinates={greeterCordinates} />
       <GreetersPagination />
       <Footer />
     </div>

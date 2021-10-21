@@ -6,81 +6,84 @@ import image3 from '../../assets/concept-droit.jpeg'
 
 import './ConceptPhotos.css'
 
-const ConceptPhotos = () => {
-  const [concept, setConcept] = useState([])
-  const [value, setValue] = useState([])
+const ConceptPhotos = ({ dataC, dataV }) => {
+  const [okData, setOkData] = useState(false)
+
+  useEffect(() => {
+    if (dataC) {
+      setOkData(true)
+    }
+  }, [])
+
   const [showResults, setShowResults] = useState(false)
 
   const [showConceptValue, setShowConceptValue] = useState('')
 
-  useEffect(() => {
-    const getDataConcept = async () => {
-      const resData = await axios.get('http://localhost:3000/concept')
-      console.log(resData)
-      setConcept(resData.data[0])
-    }
-    getDataConcept()
-
-    const getDataValue = async () => {
-      const resData = await axios.get('http://localhost:3000/value')
-      console.log(resData)
-      setValue(resData.data[0])
-    }
-    getDataValue()
-  }, [])
-  // console.log(concept, value, description)
-
   function handleShowResultsClick(choice) {
-    console.log(choice)
     setShowResults(true)
     setShowConceptValue(choice)
   }
 
-  console.log(showConceptValue)
-
   return (
     <>
-      <div className='ConceptPhotos-Container'>
+      <div className='ConceptPhotos-Container' data-aos='fade-right'>
         <div className='ConceptPhotos-Block-Image1'>
-          <img
-            className='ConceptPhotos-img'
-            src={image2}
-            alt='Image bas gauche'
-          />
-          <button
-            onClick={() => handleShowResultsClick('concept')}
-            className='ConceptPhotos-btn-left'
-          >
-            {concept && concept.concept_title1_fr}
-          </button>
+          <div className='ConceptPhotos-image'>
+            <img
+              className='ConceptPhotos-img'
+              src={dataC.concept_photo}
+              alt='Image bas gauche'
+            />
+          </div>
+          <a href='#text-container'>
+            <button
+              onClick={() => handleShowResultsClick('concept')}
+              className='ConceptPhotos-btn-left ConceptPhotos-btn'
+            >
+              {dataC.concept_title1_fr}
+            </button>
+          </a>
         </div>
         <div className='ConceptPhotos-Block-Image2'>
-          <img
-            className='ConceptPhotos-img'
-            src={image3}
-            alt='Image bas droit'
-          />
-          <button
-            onClick={() => handleShowResultsClick('value')}
-            className='ConceptPhotos-btn-right'
-          >
-            {value && value.value_title1_fr}
-          </button>
+          <div className='ConceptPhotos-image'>
+            <img
+              className='ConceptPhotos-img'
+              src={dataV.value_photo}
+              alt='Image bas droit'
+            />
+          </div>
+          <a href='#text-container'>
+            <button
+              onClick={() => handleShowResultsClick('value')}
+              className='ConceptPhotos-btn-right ConceptPhotos-btn'
+            >
+              {dataV.value_title1_fr}
+            </button>
+          </a>
         </div>
       </div>
       {showResults && (
-        <div className='text-container'>
+        <div className='text-container-desktop' id='text-container'>
           <h2 className='Text-Concept'>
             {showConceptValue === 'value'
-              ? value.value_title2_fr
-              : concept.concept_title2_fr}
+              ? dataV.value_title2_fr
+              : dataC.concept_title2_fr}
           </h2>
-          <p className='Text-Valeurs'>
-            {showConceptValue === 'value'
-              ? value.value_content_fr
-              : concept.concept_content_fr}
-          </p>
-          {console.log(concept)}
+          {showConceptValue === 'value' ? (
+            <p
+              className='Text-Valeurs'
+              dangerouslySetInnerHTML={{
+                __html: `${dataV.value_content_fr}`
+              }}
+            ></p>
+          ) : (
+            <p
+              className='Text-Valeurs'
+              dangerouslySetInnerHTML={{
+                __html: `${dataC.concept_content_fr}`
+              }}
+            ></p>
+          )}
         </div>
       )}
     </>

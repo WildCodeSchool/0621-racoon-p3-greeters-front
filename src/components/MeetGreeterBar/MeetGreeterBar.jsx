@@ -65,7 +65,9 @@ const MeetGreeterBar = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const resData = await axios.get('http://localhost:3000/thematic')
+      const resData = await axios.get(
+        `${process.env.REACT_APP_API_ROUTE}/thematic`
+      )
       setTheme(resData.data)
     }
     getData()
@@ -75,7 +77,9 @@ const MeetGreeterBar = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const resData = await axios.get('http://localhost:3000/languages')
+      const resData = await axios.get(
+        `${process.env.REACT_APP_API_ROUTE}/languages`
+      )
       setLangue(resData.data)
     }
     getData()
@@ -85,7 +89,7 @@ const MeetGreeterBar = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const resData = await axios.get('http://localhost:3000/city')
+      const resData = await axios.get(`${process.env.REACT_APP_API_ROUTE}/city`)
       setCity(resData.data)
     }
     getData()

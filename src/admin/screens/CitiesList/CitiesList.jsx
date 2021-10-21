@@ -5,6 +5,7 @@ import AdminMenu from '../../components/AdminMenu/AdminMenu'
 
 import axios from 'axios'
 import 'boxicons'
+import { FaCity } from 'react-icons/fa'
 
 import './CitiesList.css'
 
@@ -13,7 +14,7 @@ const CitiesList = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const resData = await axios.get('http://localhost:3000/city')
+      const resData = await axios.get(`${process.env.REACT_APP_API_ROUTE}/city`)
       setCities(resData.data)
     }
     getData()
@@ -25,7 +26,9 @@ const CitiesList = () => {
     <>
       <AdminMenu />
       <div className='cities-list-container'>
-        <h1 className='cities-list-title'>Villes</h1>
+        <h1 className='cities-list-title'>
+          <FaCity /> <span className='h1-title'>Villes</span>
+        </h1>
         <table className='cities-table'>
           <thead>
             <tr className='cities-row'>

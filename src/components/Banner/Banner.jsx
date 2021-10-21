@@ -1,7 +1,6 @@
-import { City } from '../../data'
 import { Link } from 'react-router-dom'
-import React, { useContext } from 'react'
-import { LangueContext } from '../../context'
+import { useContext } from 'react'
+import { LangueContext } from '../../context/langueContext'
 
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
@@ -16,9 +15,10 @@ const Banner = () => {
   const language = useContext(LangueContext)
   const englishMode = language.state.englishMode
 
+  //Get banner from the db
   useEffect(() => {
     const getData = async () => {
-      const resData = await axios.get('http://localhost:3000/city')
+      const resData = await axios.get(`${process.env.REACT_APP_API_ROUTE}/city`)
       setBannerCity(resData.data)
     }
     getData()
@@ -27,24 +27,32 @@ const Banner = () => {
   const handleDragStart = e => e.preventDefault()
 
   const item = []
-  City.map(d => {
-    let photo = (
-      <div>
-        <img
-          src={d.city_banner}
-          onDragStart={handleDragStart}
-          className='banner-img'
-        />
-        <Link to='/meetgreeter'>
-          <button className='banner-button'>
-            {englishMode ? 'Book your journey' : 'Réserver votre balade'}
-          </button>
-        </Link>
-        <h2 className='banner-text'>Découvrir {d.city_name}</h2>
-      </div>
-    )
-    item.push(photo)
-  })
+  // Filter City with no banner
+  const cityWithBan = bannerCity.filter(
+    d => d.city_banner != null && d.city_banner != ''
+  )
+  {
+    bannerCity
+      ? cityWithBan.map(d => {
+          let photo = (
+            <div>
+              <img
+                src={d.city_banner}
+                onDragStart={handleDragStart}
+                className='banner-img'
+              />
+              <a href='/meetgreeter' alt=''>
+                <button className='banner-button'>
+                  {englishMode ? 'Book your journey' : 'Réserver votre balade'}
+                </button>
+              </a>
+              <h2 className='banner-text'>Découvrir {d.city_name}</h2>
+            </div>
+          )
+          item.push(photo)
+        })
+      : null
+  }
 
   return (
     <div className='Banner' data-aos='fade-zoom-in'>

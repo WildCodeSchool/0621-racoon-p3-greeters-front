@@ -1,34 +1,24 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-
 import './ConceptDescription.css'
 
-const ConceptDescription = () => {
-  const [description, setDescription] = useState([])
-  useEffect(() => {
-    const getDataDescription = async () => {
-      const resData = await axios.get('http://localhost:3000/description')
-      console.log(resData.data[0])
-      setDescription(resData.data[0])
-    }
-    getDataDescription()
-  }, [])
+const ConceptDescription = props => {
   return (
-    <>
-      {description && (
-        <div className='ConceptDescription-Container'>
-          <div>
-            <h2 className='ConceptDescription-Rencontre'>
-              {description.description_title2_fr}
-            </h2>
-          </div>
-
-          <div className='ConceptDescription-Texte'>
-            <p>{description.description_content_fr}</p>
-          </div>
+    <div className='ConceptDescription-Container' data-aos='fade-down'>
+      <>
+        <div>
+          <h2 className='ConceptDescription-Rencontre'>
+            {props.data.description_title2_fr}
+          </h2>
         </div>
-      )}
-    </>
+
+        <div className='ConceptDescription-Texte'>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: `${props.data.description_content_fr}`
+            }}
+          ></p>
+        </div>
+      </>
+    </div>
   )
 }
 

@@ -1,29 +1,71 @@
-import { NavLink } from 'react-router-dom'
+import { useContext } from 'react'
+import { Context } from '../../../context/Context'
+import Swal from 'sweetalert2'
+
+import { NavLink, useHistory } from 'react-router-dom'
+import { FaCity, FaBook } from 'react-icons/fa'
+import { ImProfile } from 'react-icons/im'
+import { RiComputerLine, RiAdminLine } from 'react-icons/ri'
+import { HiOutlineLogin } from 'react-icons/hi'
+
 import './AdminMenu.css'
 
 function AdminMenu() {
+  const { dispatch } = useContext(Context)
+  let history = useHistory()
+
+  const handleLogOut = async e => {
+    e.preventDefault()
+    dispatch({
+      type: 'LOGOUT'
+    })
+    Swal.fire({
+      icon: 'warning',
+      title: 'Déconnexion',
+      confirmButtonColor: 'purple'
+    }).then(() => {
+      history.push('/')
+    })
+  }
+
   return (
     <div className='sidebar'>
       <ul className='nav-links'>
-        <NavLink to='/'>
-          <div className='returnButton'>
-            <span>&#11013;</span>
-          </div>
-        </NavLink>
+        <li>
+          <span onClick={handleLogOut} className='returnButton'>
+            <HiOutlineLogin />
+          </span>
+          Administration
+        </li>
         <NavLink to='/admin'>
-          <li>Vue d'ensemble</li>
+          <li>
+            <RiComputerLine />
+            &nbsp;&nbsp;Vue d'ensemble
+          </li>
         </NavLink>
         <NavLink to='/admin/content'>
-          <li>Contenu</li>
+          <li>
+            <FaBook />
+            &nbsp;&nbsp;Contenu
+          </li>
         </NavLink>
         <NavLink to='/admin/list-greeters'>
-          <li>Greeters</li>
+          <li>
+            <ImProfile />
+            &nbsp;&nbsp;Greeters
+          </li>
         </NavLink>
         <NavLink to='/admin/list-cities'>
-          <li>Villes</li>
+          <li>
+            <FaCity />
+            &nbsp;&nbsp;Villes
+          </li>
         </NavLink>
         <NavLink to='#'>
-          <li>Administration</li>
+          <li>
+            <RiAdminLine />
+            &nbsp;&nbsp;Administration
+          </li>
         </NavLink>
       </ul>
     </div>

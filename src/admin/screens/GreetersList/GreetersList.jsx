@@ -9,6 +9,7 @@ import './GreetersList.css'
 
 import axios from 'axios'
 import 'boxicons'
+import { ImProfile } from 'react-icons/im'
 
 const GreetersList = () => {
   const [greeters, setGreeters] = useState([])
@@ -26,7 +27,7 @@ const GreetersList = () => {
   const { isShowing: isNewGFormShowed, toggle: toggleNewGForm } = useModal()
   //Get greeters from database
   const getData = async () => {
-    const resData = await axios.get('http://localhost:3000/person')
+    const resData = await axios.get(`${process.env.REACT_APP_API_ROUTE}/person`)
     setGreeters(resData.data.result)
   }
   useEffect(() => {
@@ -38,7 +39,10 @@ const GreetersList = () => {
   }
 
   const postData = async () => {
-    const result = await axios.post('http://localhost:3000/person', data)
+    const result = await axios.post(
+      `${process.env.REACT_APP_API_ROUTE}/person`,
+      data
+    )
     console.log(result)
     getData()
   }
@@ -53,7 +57,9 @@ const GreetersList = () => {
     <>
       <AdminMenu />
       <div className='greeters-list-container'>
-        <h1 className='greeters-list-title'>Greeters</h1>
+        <h1 className='greeters-list-title'>
+          <ImProfile /> <span className='h1-title'>Greeters</span>
+        </h1>
         <button onClick={toggleNewGForm}>Ajouter un nouveau Greeter</button>
         <table className='greeters-table'>
           <thead>

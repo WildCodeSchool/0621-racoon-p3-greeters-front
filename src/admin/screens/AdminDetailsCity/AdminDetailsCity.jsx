@@ -3,6 +3,7 @@ import useModal from '../../components/CustomHooks/UseModal'
 import Modal from '../../components/Modal/Modal'
 import axios from 'axios'
 import 'boxicons'
+import { FaCity } from 'react-icons/fa'
 
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
@@ -54,12 +55,14 @@ const AdminDetailsCity = () => {
 
   //Get data from back
   const getData = async () => {
-    const resData = await axios.get(`http://localhost:3000/city/${cityId}`)
+    const resData = await axios.get(
+      `${process.env.REACT_APP_API_ROUTE}/city/${cityId}`
+    )
     setCity(resData.data)
   }
   const getPhotosData = async () => {
     const resData = await axios.get(
-      `http://localhost:3000/photos/admin/${cityId}`
+      `${process.env.REACT_APP_API_ROUTE}/photos/admin/${cityId}`
     )
     setPhotos(resData.data)
   }
@@ -70,17 +73,23 @@ const AdminDetailsCity = () => {
 
   const putData = async (name, value) => {
     console.log(value)
-    const results = await axios.put(`http://localhost:3000/city/${cityId}`, {
-      [name]: value
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/city/${cityId}`,
+      {
+        [name]: value
+      }
+    )
     getData()
   }
 
   const putPhotosData = async (name, value) => {
     console.log(value)
-    const results = await axios.put(`http://localhost:3000/photos/${cityId}`, {
-      [name]: value
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/photos/${cityId}`,
+      {
+        [name]: value
+      }
+    )
     getData()
   }
 
@@ -120,7 +129,9 @@ const AdminDetailsCity = () => {
       {city[0] && photos[0] ? (
         // Form
         <div className='admin-details-city-container'>
-          <h1 className='admin-details-city-title'>Villes</h1>
+          <h1 className='admin-details-city-title'>
+            <FaCity /> Villes
+          </h1>
           <ul className='admin-details-city-list'>
             <li className='admin-details-city-item'>
               <span>Nom</span> : {city[0].city_name}

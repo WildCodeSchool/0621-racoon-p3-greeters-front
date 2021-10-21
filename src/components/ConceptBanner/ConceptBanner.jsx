@@ -1,12 +1,25 @@
-import image1 from '../../assets/concept-accueil.jpeg'
+import { LangueContext } from '../../context/langueContext'
+import { useContext } from 'react'
 
 import './ConceptBanner.css'
 
-const ConceptBanner = () => {
+const ConceptBanner = props => {
+  const language = useContext(LangueContext)
+  const englishMode = language.state.englishMode
   return (
-    <div className='ConceptBanner-Container'>
-      <h2 className='ConceptBanner-title'> Qu'est ce qu'un Greeters ?</h2>
-      <img className='ConceptBanner-image' src={image1} alt="Image d'accueil" />
+    <div className='ConceptBanner-Container' data-aos='fade-right'>
+      <>
+        <h2 className='ConceptBanner-title'>
+          {englishMode
+            ? props.data.description_title1_en
+            : props.data.description_title1_fr}
+        </h2>
+        <img
+          className='ConceptBanner-image'
+          src={props.data.description_photo}
+          alt="Image d'accueil"
+        />
+      </>
     </div>
   )
 }

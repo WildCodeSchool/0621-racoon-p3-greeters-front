@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react/cjs/react.development'
-import { LangueContext } from '../../context'
+import { LangueContext } from '../../context/langueContext'
 import { useContext } from 'react'
 import ReactPaginate from 'react-paginate'
 import axios from 'axios'
@@ -19,7 +19,9 @@ const GreetersPagination = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const resData = await axios.get('http://localhost:3000/person')
+      const resData = await axios.get(
+        `${process.env.REACT_APP_API_ROUTE}/person`
+      )
       setGreeters(resData.data.result)
     }
     getData()

@@ -11,20 +11,15 @@
   font-size: 2.5rem;
   color : rgba(0, 0, 0, 0.6);
   border-bottom: 1px solid black;
-
-
 }
 
 .admin-details-city-list{
   padding-top: 20px;
   margin: 0 50px;
-
-
 }
 
 .admin-details-city-item{
   padding: 20px 0;
-
   border-bottom: 1px solid;
   list-style: none;
 }
@@ -33,7 +28,6 @@
   text-decoration: underline;
   font-weight: bold;
   color : rgba(0, 0, 0, 0.8);
-
 }
 
 .admin-photo-city {

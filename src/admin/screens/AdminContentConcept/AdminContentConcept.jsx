@@ -61,7 +61,9 @@ const AdminContentConcept = () => {
 
   //Get data from back
   const getData = async () => {
-    const resData = await axios.get(`http://localhost:3000/concept`)
+    const resData = await axios.get(
+      `${process.env.REACT_APP_API_ROUTE}/concept`
+    )
     setConcept(resData.data)
   }
   useEffect(() => {
@@ -70,65 +72,92 @@ const AdminContentConcept = () => {
 
   // Put routes
   const putTitle1FrData = async () => {
-    const results = await axios.put(`http://localhost:3000/concept`, {
-      concept_title1_fr: conceptTitle1Fr
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/concept`,
+      {
+        concept_title1_fr: conceptTitle1Fr
+      }
+    )
     getData()
   }
 
   const putTitle1EnData = async () => {
-    const results = await axios.put(`http://localhost:3000/concept`, {
-      concept_title1_en: conceptTitle1En
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/concept`,
+      {
+        concept_title1_en: conceptTitle1En
+      }
+    )
     getData()
   }
 
   const putTitle2FrData = async () => {
-    const results = await axios.put(`http://localhost:3000/concept`, {
-      concept_title2_fr: conceptTitle2Fr
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/concept`,
+      {
+        concept_title2_fr: conceptTitle2Fr
+      }
+    )
     getData()
   }
 
   const putTitle2EnData = async () => {
-    const results = await axios.put(`http://localhost:3000/concept`, {
-      concept_title2_en: conceptTitle2En
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/concept`,
+      {
+        concept_title2_en: conceptTitle2En
+      }
+    )
     getData()
   }
 
   const putTitle3FrData = async () => {
-    const results = await axios.put(`http://localhost:3000/concept`, {
-      concept_title3_fr: conceptTitle3Fr
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/concept`,
+      {
+        concept_title3_fr: conceptTitle3Fr
+      }
+    )
     getData()
   }
 
   const putTitle3EnData = async () => {
-    const results = await axios.put(`http://localhost:3000/concept`, {
-      concept_title3_en: conceptTitle3En
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/concept`,
+      {
+        concept_title3_en: conceptTitle3En
+      }
+    )
     getData()
   }
 
   const putContentFrData = async () => {
-    const results = await axios.put(`http://localhost:3000/concept`, {
-      concept_content_fr: conceptContentFr
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/concept`,
+      {
+        concept_content_fr: conceptContentFr
+      }
+    )
     getData()
   }
 
   const putContentEnData = async () => {
-    const results = await axios.put(`http://localhost:3000/concept`, {
-      concept_content_en: conceptContentEn
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/concept`,
+      {
+        concept_content_en: conceptContentEn
+      }
+    )
     getData()
   }
 
   const putPhotoData = async () => {
-    const results = await axios.put(`http://localhost:3000/concept`, {
-      concept_photo: conceptPhoto
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/concept`,
+      {
+        concept_photo: conceptPhoto
+      }
+    )
     getData()
   }
 
@@ -272,7 +301,12 @@ const AdminContentConcept = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Photo</span> : {concept[0].concept_photo}
+              <span>Photo</span> :{' '}
+              <img
+                className='admin-photo-concept'
+                src={concept[0].concept_photo}
+                alt=''
+              />
               <button
                 onClick={toggleconceptPhotoForm}
                 className='admin-details-icon-btn'

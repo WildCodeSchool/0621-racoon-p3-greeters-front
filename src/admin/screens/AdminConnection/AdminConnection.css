@@ -1,5 +1,7 @@
 .AdminConnection {
-  max-width: 50vw;
+  display: flex;
+  justify-content: center;
+  max-width: 60vw;
   min-height: 60vh;
   margin: 0 auto;
   margin-top: 25px;
@@ -17,7 +19,6 @@
   align-items: center;
   padding: 25px;
   margin: 50px;
-  /* background-color: rgba(0, 0, 0, 0.1); */
   background-color: rgb(253, 247, 240);
   box-shadow: 0px 2px 5px -5px black;
   border-radius: 10px;

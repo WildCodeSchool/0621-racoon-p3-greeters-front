@@ -11,7 +11,7 @@ import './GreeterProfil.css'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 
-const GreeterProfil = ({ getCoordinates }) => {
+const GreeterProfil = ({ setGetCordinates }) => {
   useEffect(() => {
     Aos.init({ duration: 1000 })
   }, [])
@@ -21,9 +21,10 @@ const GreeterProfil = ({ getCoordinates }) => {
 
   useEffect(() => {
     const getData = async () => {
-      const resultData = await axios.get(`http://localhost:3000/person/${id}`)
+      const resultData = await axios.get(
+        `${process.env.REACT_APP_API_ROUTE}/person/${id}`
+      )
       setGreeterData(resultData.data)
-
       const mapData = {
         position: [
           resultData.data.result[0].city_latitude,
@@ -31,7 +32,7 @@ const GreeterProfil = ({ getCoordinates }) => {
         ],
         name: resultData.data.result[0].city_name
       }
-      getCoordinates(mapData)
+      setGetCordinates(mapData)
     }
     getData()
   }, [])

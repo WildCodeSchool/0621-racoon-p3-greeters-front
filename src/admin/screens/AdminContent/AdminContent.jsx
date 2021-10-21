@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import AdminMenu from '../../components/AdminMenu/AdminMenu'
+import { FaBook } from 'react-icons/fa'
 
 import './AdminContent.css'
 
@@ -9,7 +10,9 @@ const AdminContent = () => {
       <AdminMenu />
 
       <div className='AdminContent-container'>
-        <h1 className='AdminContent-big-title'>Contenu</h1>
+        <h1 className='AdminContent-big-title'>
+          <FaBook /> <span className='h1-title'>Contenu</span>
+        </h1>
         <Link to='/admin/content/description'>
           <section className='AdminContent-section up-section'>
             <h2 className='AdminContent-title'>Qu'est ce qu'un Greeter</h2>

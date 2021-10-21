@@ -1,5 +1,6 @@
-import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
+import { PrivateRoute } from './use/useSecureRoute'
 
 import Admin from './admin/screens/Admin/Admin'
 import AdminConnection from './admin/screens/AdminConnection/AdminConnection'
@@ -48,39 +49,36 @@ const App = () => {
           <Route path='/concept' exact>
             <Concept />
           </Route>
-          <Route path='/admin' exact>
+          <Route path='/admin/connection' exact>
+            <AdminConnection />
+          </Route>
+          <PrivateRoute path='/admin' exact>
             <Admin />
-          </Route>
-          <Route path='/admin/connection' exact>
-            <AdminConnection />
-          </Route>
-          <Route path='/admin/content' exact>
+          </PrivateRoute>
+          <PrivateRoute path='/admin/content' exact>
             <AdminContent />
-          </Route>
-          <Route path='/admin/content/description' exact>
+          </PrivateRoute>
+          <PrivateRoute path='/admin/content/description' exact>
             <AdminContentDescription />
-          </Route>
-          <Route path='/admin/content/values' exact>
+          </PrivateRoute>
+          <PrivateRoute path='/admin/content/values' exact>
             <AdminContentValues />
-          </Route>
-          <Route path='/admin/content/concept' exact>
+          </PrivateRoute>
+          <PrivateRoute path='/admin/content/concept' exact>
             <AdminContentConcept />
-          </Route>
-          <Route path='/admin/connection' exact>
-            <AdminConnection />
-          </Route>
-          <Route path='/admin/list-greeters' exact>
-            <GreetersList />
-          </Route>
-          <Route path='/admin/list-cities' exact>
-            <CitiesList />
-          </Route>
-          <Route path='/admin/details-greeter/:greeterId' exact>
+          </PrivateRoute>
+          <PrivateRoute path='/admin/details-greeter/:greeterId' exact>
             <AdminDetailsGreeter />
-          </Route>
-          <Route path='/admin/details-city/:cityId' exact>
+          </PrivateRoute>
+          <PrivateRoute path='/admin/details-city/:cityId' exact>
             <AdminDetailsCity />
-          </Route>
+          </PrivateRoute>
+          <PrivateRoute path='/admin/list-greeters' exact>
+            <GreetersList />
+          </PrivateRoute>
+          <PrivateRoute path='/admin/list-cities' exact>
+            <CitiesList />
+          </PrivateRoute>
         </Switch>
       </BrowserRouter>
     </div>

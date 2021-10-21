@@ -1,3 +1,5 @@
+import { LangueContext } from '../../context/langueContext'
+import { useContext } from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
@@ -6,18 +8,24 @@ import GreeterCard from '../GreeterCard/GreeterCard'
 import './Greeters.css'
 import { Link } from 'react-router-dom'
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
 const Greeters = () => {
+  const language = useContext(LangueContext)
+  const englishMode = language.state.englishMode
   const [greeters, setGreeters] = useState([])
 
   useEffect(() => {
     const getData = async () => {
-      const resData = await axios.get('http://localhost:3000/person?limit=true')
+      const resData = await axios.get(
+        `${process.env.REACT_APP_API_ROUTE}/person?limit=true`
+      )
       setGreeters(resData.data.result)
     }
+    Aos.init({ duration: 1000 })
     getData()
   }, [])
-
-  console.log(greeters)
 
   /* Animation */
   const [show, setShow] = useState(false)
@@ -35,21 +43,21 @@ const Greeters = () => {
   })
 
   return (
-    <div
-      className={show ? 'Greeters' : 'Greeters'}
-      data-aos='fade-right'
-      data-aos-anchor-placement='top-center'
-    >
-      <h2 className='greeters-title'>Les Greeters</h2>
+    <div className={'Greeters'} data-aos='fade-right'>
+      <h2 className='greeters-title'>
+        {englishMode ? 'Greeters' : 'Les Greeters'}
+      </h2>
 
       <div className='greeters-container'>
         {greeters
           ? greeters.map((g, index) => <GreeterCard key={index} {...g} />)
           : null}
       </div>
-      <Link to='/meetgreeter'>
-        <button className='greeters-btn'>Tout Voir</button>
-      </Link>
+      <a href='/meetgreeter' alt=''>
+        <button className='greeters-btn'>
+          {englishMode ? 'See All' : 'Tout Voir'}
+        </button>
+      </a>
     </div>
   )
 }

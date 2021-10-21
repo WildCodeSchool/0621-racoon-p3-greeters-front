@@ -49,8 +49,9 @@ const AdminContentValues = () => {
 
   //Get data from back
   const getData = async () => {
-    const resData = await axios.get(`http://localhost:3000/value`)
+    const resData = await axios.get(`${process.env.REACT_APP_API_ROUTE}/value`)
     setValues(resData.data)
+    console.log(resData.data)
   }
   useEffect(() => {
     getData()
@@ -58,51 +59,72 @@ const AdminContentValues = () => {
 
   // Put routes
   const putTitle1FrData = async () => {
-    const results = await axios.put(`http://localhost:3000/values`, {
-      value_title1_fr: valuesTitle1Fr
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/value`,
+      {
+        values_title1_fr: valuesTitle1Fr
+      }
+    )
     getData()
   }
 
   const putTitle1EnData = async () => {
-    const results = await axios.put(`http://localhost:3000/values`, {
-      value_title1_en: valuesTitle1En
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/value`,
+      {
+        values_title1_en: valuesTitle1En
+      }
+    )
     getData()
   }
 
   const putTitle2FrData = async () => {
-    const results = await axios.put(`http://localhost:3000/values`, {
-      value_title2_fr: valuesTitle2Fr
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/value`,
+      {
+        values_title2_fr: valuesTitle2Fr
+      }
+    )
     getData()
   }
 
   const putTitle2EnData = async () => {
-    const results = await axios.put(`http://localhost:3000/values`, {
-      value_title2_en: valuesTitle2En
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/value`,
+      {
+        values_title2_en: valuesTitle2En
+      }
+    )
     getData()
   }
 
   const putContentFrData = async () => {
-    const results = await axios.put(`http://localhost:3000/values`, {
-      value_content_fr: valuesContentFr
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/value`,
+      {
+        values_content_fr: valuesContentFr
+      }
+    )
     getData()
   }
 
   const putContentEnData = async () => {
-    const results = await axios.put(`http://localhost:3000/values`, {
-      value_content_en: valuesContentEn
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/value`,
+      {
+        values_content_en: valuesContentEn
+      }
+    )
     getData()
   }
 
   const putPhotoData = async () => {
-    const results = await axios.put(`http://localhost:3000/values`, {
-      value_photo: valuesPhoto
-    })
+    const results = await axios.put(
+      `${process.env.REACT_APP_API_ROUTE}/value`,
+      {
+        values_photo: valuesPhoto
+      }
+    )
     getData()
   }
 
@@ -153,7 +175,7 @@ const AdminContentValues = () => {
       <AdminMenu />
       {values[0] ? (
         <div className='admin-details-city-container'>
-          <h1 className='admin-details-city-title'>Page values</h1>
+          <h1 className='admin-details-city-title'>Page valeurs</h1>
           <ul className='admin-details-city-list'>
             <li className='admin-details-city-item'>
               <span>Titre en français</span> : {values[0].value_title1_fr}
@@ -210,7 +232,12 @@ const AdminContentValues = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Photo</span> : {values[0].value_photo}
+              <span>Photo</span> :{' '}
+              <img
+                className='admin-photo-value'
+                src={values[0].value_photo}
+                alt=''
+              />
               <button
                 onClick={toggleValuesPhotoForm}
                 className='admin-details-icon-btn'

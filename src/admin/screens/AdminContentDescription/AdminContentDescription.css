@@ -1,37 +1,25 @@
 .AdminContentPage {
-  /* width: 70%;
-  margin-left: 30%;
-text-align: center;
-padding: 20px;
-border: 2px solid black; */
 width: 70%;
-/* margin-left: 30%; */
 justify-content: space-between;
-/* text-align: center; */
 padding: 20px;
-/* border: 2px solid black; */
-/* justify-content: space-around; */
-
-
 }
 
 .AdminContentPage .page-table {
   display: flex;
   flex-direction: row;
   width: 100%;
-  /* border: 2px solid black; */
-  /* justify-content: space-around; */
 }
 
 .AdminContentPage table {
   width: 50%;
-  /* background-color: salmon; */
-  /* justify-content: space-around; */
 }
 
 .table tr{
     padding: 20px;
     border: 2px solid black;
     cursor: pointer;
-  
+}
+
+.admin-photo-desc {
+  width: 20vw;
 }

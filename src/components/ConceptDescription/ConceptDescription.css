@@ -1,3 +1,16 @@
 .ConceptDescription-Container{
 text-align: center;
 }
+
+.ConceptDescription-Texte{
+  padding: 1em;
+  width: 90%;
+  background: #f5f3f3;
+  border: 1px solid #333;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+  box-shadow: 1px 1px 1px black;
+font-family: var(--font-typo);
+}

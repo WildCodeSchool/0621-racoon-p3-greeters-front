@@ -1,14 +1,18 @@
 import { NavLink } from 'react-router-dom'
-import { useState } from 'react'
-import { useContext } from 'react'
-import { LangueContext } from '../../context'
+import { useState, useEffect, useContext } from 'react'
+import { LangueContext } from '../../context/langueContext'
 import Swal from 'sweetalert2'
 import logo from '../../assets/greeters-logo-red.PNG'
 import SearchBar from '../SearchBar/SearchBar'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 import './Navbar.css'
 
 const Navbar = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 })
+  }, [])
   /***** Language selection */
   const [language, setLanguage] = useState('fr')
 
@@ -97,27 +101,33 @@ const Navbar = () => {
       <div
         className={showMenu ? 'nav-open toShow-menu' : 'nav-open toHide-menu'}
       >
-        <NavLink to='/concept'>
+        <a href='/concept' alt=''>
           <h3>Qu'est ce qu'un greeter ?</h3>
-        </NavLink>
+        </a>
 
         {/*
-       <NavLink to='/our-values'>
+       <a href='/our-values'>
           <h3>Nos valeurs</h3>
-        </NavLink>
+        </a>
       */}
 
-        <NavLink to='/meetgreeter'>
+        <a href='/meetgreeter' alt=''>
           <h3>Rencontrer un greeter</h3>
-        </NavLink>
+        </a>
 
-        <NavLink to='/booking'>
+        <a
+          href='https://gestion.greeters.fr/visits/new'
+          alt=''
+          target='_blank'
+          rel='noreferrer'
+          noreferrer
+        >
           <h3>Réserver une balade</h3>
-        </NavLink>
+        </a>
 
-        <NavLink to='/contact'>
+        <a href='/contact' alt=''>
           <h3>Nous contacter</h3>
-        </NavLink>
+        </a>
       </div>
     </div>
   )

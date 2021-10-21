@@ -1,88 +1,81 @@
-import L from 'leaflet'
+import { useEffect, useState } from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
-// Import icons
-import pointer2 from '../../assets/map/pointer2.png'
+import Aos from 'aos'
+import axios from 'axios'
+import L from 'leaflet'
 
+import 'aos/dist/aos.css'
 import './Map.css'
 
-const MapComponent = ({ coordinates }) => {
-  /* Structure coordinates reçues: 
-  coordinates {
-    position: [lat, long],
-    name: 'Tours'
+import pointer from '../../assets/map/pointer.png'
+
+const MapComponent = ({ cordinates }) => {
+  // Loading animation
+  useEffect(() => {
+    Aos.init({ duration: 1000 })
+  }, [])
+
+  const [cityDB, setCityDB] = useState(null)
+
+  // Axios to fetch all the cities info
+  const getCityData = async () => {
+    const resCityData = await axios.get(
+      `${process.env.REACT_APP_API_ROUTE}/city`
+    )
+    setCityDB(resCityData.data)
   }
-  */
-  // Static data for home map
-  const city = [
-    {
-      name: 'Tours',
-      cordonates: [47.39, 0.68],
-      icon: {
-        lat: 47.39,
-        lng: 0.68
-      }
-    },
-    {
-      name: 'Chinon',
-      cordonates: [47.1, 0.14],
-      icon: {
-        lat: 47.1,
-        lng: 0.14
-      }
-    },
-    {
-      name: 'Jouè-lés-Tours',
-      cordonates: [47.35, 0.66],
-      icon: {
-        lat: 47.35,
-        lng: 0.66
-      }
+
+  // Cordinates loading
+  useEffect(() => {
+    if (cordinates) {
+      const uniqueCordinates = [
+        {
+          city_longitude: cordinates.position[1],
+          city_latitude: cordinates.position[0],
+          city_name: cordinates.name
+        }
+      ]
+      setCityDB(uniqueCordinates)
+    } else {
+      getCityData()
     }
-  ]
+  }, [cordinates])
 
-  const redIcon = L.icon({
-    iconUrl: pointer2, // image red
-    iconSize: [50, 40], // size of the icon
-    shadowSize: [50, 64], // size of the shadow
-    iconAnchor: [40, 40], // point of the icon which will correspond to marker's location
-    popupAnchor: [-3, -86]
+  // Map icon settings
+  const mapIcon = L.icon({
+    iconUrl: pointer,
+    iconSize: [50, 40],
+    shadowSize: [50, 64],
+    iconAnchor: [10, 30],
+    popupAnchor: [10, -35]
   })
-
   return (
     <div className='MapComponent' data-aos='fade-down'>
       {/* Using the map module */}
-      <MapContainer
-        className='map'
-        center={city[0].cordonates} //coordinates ? coordinates :
-        zoom={8}
-        scrollWheelZoom={false}
-      >
-        <TileLayer
-          attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-        />
-        {
-          /*coordinates ? (
-          <Marker
-            position={[coordinates.position[0], coordinates.position[1]]}
-            icon={redIcon}
-          >
-            <Popup>{coordinates.name}</Popup>
-          </Marker>
-        ) : (*/
-          city.map((element, index) => (
+
+      {cityDB && (
+        <MapContainer
+          className='map'
+          center={[cityDB[0].city_longitude, cityDB[0].city_latitude]}
+          zoom={cityDB.length == 1 ? 13 : 8}
+          scrollWheelZoom={false}
+        >
+          <TileLayer
+            attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+          />
+          {cityDB.map((element, index) => (
             <Marker
               key={index}
-              position={[element.icon.lat, element.icon.lng]}
-              icon={redIcon}
+              position={[element.city_longitude, element.city_latitude]}
+              icon={mapIcon}
             >
-              <Popup>{element.name}</Popup>
+              <Popup>{element.city_name}</Popup>
             </Marker>
-          ))
-          // )}
-        }
-      </MapContainer>
+          ))}
+        </MapContainer>
+      )}
     </div>
   )
 }

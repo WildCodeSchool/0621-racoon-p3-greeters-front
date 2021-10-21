@@ -1,16 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+require('dotenv').config()
 import 'leaflet/dist/leaflet.css'
 import './index.css'
 import App from './App'
+import { AdminProvider } from './context/Context'
 import reportWebVitals from './reportWebVitals'
-import { LanguageProvider } from './context'
+import { LanguageProvider } from './context/langueContext'
 
 ReactDOM.render(
   <React.StrictMode>
-    <LanguageProvider>
-      <App />
-    </LanguageProvider>
+    <AdminProvider>
+      <LanguageProvider>
+        <App />
+      </LanguageProvider>
+    </AdminProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )

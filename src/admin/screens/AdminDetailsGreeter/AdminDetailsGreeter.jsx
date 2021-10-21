@@ -3,6 +3,7 @@ import useModal from '../../components/CustomHooks/UseModal'
 import Modal from '../../components/Modal/Modal'
 import axios from 'axios'
 import 'boxicons'
+import { ImProfile } from 'react-icons/im'
 
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
@@ -66,7 +67,9 @@ const AdminDetailsGreeter = () => {
   }, [])
 
   const getData = async () => {
-    const resData = await axios.get(`http://localhost:3000/person/${greeterId}`)
+    const resData = await axios.get(
+      `${process.env.REACT_APP_API_ROUTE}/person/${greeterId}`
+    )
     setGreeters(resData.data.result)
     console.log(greeters)
   }
@@ -74,7 +77,7 @@ const AdminDetailsGreeter = () => {
   // function to send modified entriezzz dinamicallyy
 
   const putData = async (name, value) => {
-    await axios.put(`http://localhost:3000/person/${greeterId}`, {
+    await axios.put(`${process.env.REACT_APP_API_ROUTE}/person/${greeterId}`, {
       [name]: value
     })
     getData()
@@ -102,7 +105,9 @@ const AdminDetailsGreeter = () => {
       <AdminMenu />
       {greeters[0] && (
         <div className='admin-details-greeter-container'>
-          <h1 className='admin-details-greeter-title'>Greeter</h1>
+          <h1 className='admin-details-greeter-title'>
+            <ImProfile /> Greeter
+          </h1>
           <ul className='admin-details-greeter-list'>
             <li className='admin-details-greeter-item'>
               <span>Prénom</span> :
@@ -185,7 +190,12 @@ const AdminDetailsGreeter = () => {
               </button>
             </li>
             <li className='admin-details-greeter-item'>
-              <span>Photo</span> : {greeters[0].person_photo}
+              <span>Photo</span> :{' '}
+              <img
+                className='admin-greeter-photo'
+                src={greeters[0].person_photo}
+                alt=''
+              />
               <button
                 onClick={toggleGreeterPhotoForm}
                 className='admin-details-icon-btn'

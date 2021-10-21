@@ -13,6 +13,7 @@
   transform: translateX(-50%);
   border-radius: 25px;
   object-fit: cover;
+  box-shadow: 0px 0px 8px -3px black;
 }
 
 .banner-text {
@@ -45,6 +46,12 @@
   border-radius: 66px;
   color: #FFFFFF;
   cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.banner-button:hover {
+  background-color: white;
+  color: black;
 }
 
 .alice-carousel__prev-btn, .alice-carousel__next-btn{

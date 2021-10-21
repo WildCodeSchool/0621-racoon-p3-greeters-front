@@ -11,8 +11,6 @@
   color : rgba(0, 0, 0, 0.6);
   font-size: 2.5rem;
   border-bottom: 1px solid black;
-
-
 }
 
 .admin-details-greeter-list{
@@ -39,4 +37,8 @@
   right: 5px;
   cursor: pointer;
   padding: 0 2px;
+}
+
+.admin-greeter-photo {
+  width: 20vw;
 }

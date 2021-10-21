@@ -16,6 +16,11 @@
   font-size: 2.5rem;
 }
 
+.greeters-list-title .h1-title {
+  font-size: 3.7rem;
+  margin-left: 25px;
+}
+
 .greeters-table {
   margin: 2vh 2vw;
 }

@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from 'react'
 import BannerCity from '../../components/BannerCity/BannerCity'
 import Footer from '../../components/Footer/Footer'
 import Navbar from '../../components/Navbar/Navbar'
-import { LangueContext } from '../../context'
+import { LangueContext } from '../../context/langueContext'
 import axios from 'axios'
 
 import Aos from 'aos'
@@ -22,9 +22,10 @@ const InfoCity = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const resultData = await axios.get(`http://localhost:3000/photos/${id}`)
-      setInfoCity(resultData.data)
-      console.log(resultData.data)
+      const resultData = await axios.get(
+        `${process.env.REACT_APP_API_ROUTE}/photos/${id}`
+      )
+      setInfoCity(resultData.data[0])
     }
     getData()
   }, [id])
@@ -33,14 +34,13 @@ const InfoCity = () => {
       <Navbar />
       <BannerCity />
       <div className='city-content'>
-        {infoCity &&
-          infoCity.map((l, index) => {
-            return (
-              <section key={index}>
-                {englishMode ? l.city_description_en : l.city_description_fr}
-              </section>
-            )
-          })}
+        {infoCity && (
+          <section>
+            {englishMode && infoCity
+              ? infoCity.city_description_en
+              : infoCity.city_description_fr}
+          </section>
+        )}
       </div>
       <Footer />
     </>
