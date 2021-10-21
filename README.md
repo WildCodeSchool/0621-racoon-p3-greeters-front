@@ -1,3 +1,5 @@
+<img src="./homePage.png">
+
 ## loirevalleygreeters.com / partie front 
 
 Refonte du site loirevalleygreeters.com 
@@ -18,7 +20,7 @@ Pour démarrer le serveur:
 
 Créez un fichier .env sur la base du fichier .env.sample 
 exemple : REACT_APP_API_ROUTE=http://localhost:3000
-Ensuite lancez le serveur back-end("npm start") puis le front-end.
+Ensuite lancez le serveur back-end (`npm start`) puis le refaire sur le front-end.
  
 ## Réflexion
 
