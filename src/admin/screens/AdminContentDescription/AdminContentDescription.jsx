@@ -175,7 +175,6 @@ const AdminContentDescription = () => {
 
   return (
     <>
-      {console.log('LAAAAA')}
       <AdminMenu />
       {description[0] ? (
         <div className='admin-details-city-container'>

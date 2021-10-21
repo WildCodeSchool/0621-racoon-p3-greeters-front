@@ -1,5 +1,3 @@
-import image1 from '../../assets/concept-accueil.jpeg'
-
 import './ConceptBanner.css'
 
 const ConceptBanner = props => {
