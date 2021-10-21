@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react/cjs/react.development'
 import ReactPaginate from 'react-paginate'
+
 import axios from 'axios'
 
 import GreeterCard from '../GreeterCard/GreeterCard'

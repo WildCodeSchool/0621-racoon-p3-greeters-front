@@ -1,12 +1,12 @@
-import { useContext } from 'react'
 import { Context } from '../../../context/Context'
-import Swal from 'sweetalert2'
-
 import { NavLink, useHistory } from 'react-router-dom'
 import { FaCity, FaBook } from 'react-icons/fa'
 import { ImProfile } from 'react-icons/im'
 import { RiComputerLine, RiAdminLine } from 'react-icons/ri'
 import { HiOutlineLogin } from 'react-icons/hi'
+import { useContext } from 'react'
+
+import Swal from 'sweetalert2'
 
 import './AdminMenu.css'
 

@@ -1,6 +1,6 @@
-import { useHistory } from 'react-router-dom'
-import { useContext } from 'react'
 import { LangueContext } from '../../context/langueContext'
+import { useContext } from 'react'
+
 import './GreeterCard.css'
 
 const GreeterCard = props => {

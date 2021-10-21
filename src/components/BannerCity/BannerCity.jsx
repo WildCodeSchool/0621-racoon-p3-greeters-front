@@ -1,11 +1,12 @@
-import { useState, useEffect, useContext } from 'react'
-import { useParams } from 'react-router'
-import axios from 'axios'
-import { LangueContext } from '../../context/langueContext'
 import AliceCarousel from 'react-alice-carousel'
-import 'react-alice-carousel/lib/alice-carousel.css'
+import { LangueContext } from '../../context/langueContext'
+import { useParams } from 'react-router'
+import { useState, useEffect, useContext } from 'react'
+
+import axios from 'axios'
 
 import './BannerCity.css'
+import 'react-alice-carousel/lib/alice-carousel.css'
 
 const BannerCity = () => {
   const language = useContext(LangueContext)

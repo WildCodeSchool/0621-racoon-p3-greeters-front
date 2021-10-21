@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { createContext, useReducer, useEffect } from 'react'
 import Reducer from './Reducer'
 

@@ -8,10 +8,10 @@ import GreeterProfil from '../../components/GreeterProfil/GreeterProfil'
 import Map from '../../components/Map/Map'
 import Navbar from '../../components/Navbar/Navbar'
 
-import '../../components/GreetersPagination/GreetersPagination.css'
-
 import Aos from 'aos'
+
 import 'aos/dist/aos.css'
+import '../../components/GreetersPagination/GreetersPagination.css'
 
 const Greeter = () => {
   const [greeterCordinates, setGreeterCordinates] = useState(null)

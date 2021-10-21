@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react/cjs/react.development'
+import { FaCity } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
+import { useEffect, useState } from 'react/cjs/react.development'
 
 import AdminMenu from '../../components/AdminMenu/AdminMenu'
 
 import axios from 'axios'
 import 'boxicons'
-import { FaCity } from 'react-icons/fa'
 
 import './CitiesList.css'
 

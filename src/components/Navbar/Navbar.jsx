@@ -1,12 +1,15 @@
+import { LangueContext } from '../../context/langueContext'
 import { NavLink } from 'react-router-dom'
 import { useState, useEffect, useContext } from 'react'
-import { LangueContext } from '../../context/langueContext'
-import Swal from 'sweetalert2'
-import logo from '../../assets/greeters-logo-red.PNG'
-import SearchBar from '../SearchBar/SearchBar'
-import Aos from 'aos'
-import 'aos/dist/aos.css'
 
+import Swal from 'sweetalert2'
+import SearchBar from '../SearchBar/SearchBar'
+
+import Aos from 'aos'
+
+import logo from '../../assets/greeters-logo-red.PNG'
+
+import 'aos/dist/aos.css'
 import './Navbar.css'
 
 const Navbar = () => {

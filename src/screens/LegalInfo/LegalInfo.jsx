@@ -1,8 +1,9 @@
-import React, { useContext, useEffect } from 'react'
 import { LangueContext } from '../../context/langueContext'
+import React, { useContext, useEffect } from 'react'
 
-import Footer from '../../components/Footer/Footer'
 import Navbar from '../../components/Navbar/Navbar'
+import Footer from '../../components/Footer/Footer'
+
 import Aos from 'aos'
 
 import 'aos/dist/aos.css'

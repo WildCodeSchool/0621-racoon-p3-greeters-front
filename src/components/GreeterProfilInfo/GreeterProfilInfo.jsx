@@ -1,5 +1,5 @@
-import { useContext } from 'react'
 import { LangueContext } from '../../context/langueContext'
+import { useContext } from 'react'
 
 import './GreeterProfilInfo.css'
 

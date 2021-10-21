@@ -1,14 +1,15 @@
-import axios from 'axios'
-import { useState, useContext, useEffect } from 'react'
 import { Context } from '../../../context/Context'
 import { useHistory } from 'react-router-dom'
-import Swal from 'sweetalert2'
+import { useState, useContext, useEffect } from 'react'
+
+import Navbar from '../../../components/Navbar/Navbar'
 
 import Aos from 'aos'
-import 'aos/dist/aos.css'
+import axios from 'axios'
+import Swal from 'sweetalert2'
 
 import './AdminConnection.css'
-import Navbar from '../../../components/Navbar/Navbar'
+import 'aos/dist/aos.css'
 
 const AdminConnection = () => {
   useEffect(() => {

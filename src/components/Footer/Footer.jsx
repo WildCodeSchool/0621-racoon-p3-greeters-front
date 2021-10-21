@@ -1,10 +1,10 @@
-import { useContext } from 'react'
 import { LangueContext } from '../../context/langueContext'
+import { useContext } from 'react'
 
-import { NavLink } from 'react-router-dom'
 import logo1 from '../../assets/logo-greeters-france.png'
 import logo2 from '../../assets/Logo-greeters-internationnal.png'
 import logo3 from '../../assets/Logo-greeters2.png'
+
 import './Footer.css'
 
 const Footer = () => {
