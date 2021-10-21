@@ -8,7 +8,7 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 
 import './AdminConnection.css'
-import { Navbar } from 'react-bootstrap'
+import Navbar from '../../../components/Navbar/Navbar'
 
 const AdminConnection = () => {
   useEffect(() => {
