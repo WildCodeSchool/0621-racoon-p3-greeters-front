@@ -86,7 +86,14 @@ margin: 20px;
   margin: 0;
 }
 
-@media (max-width: 500px) { 
+@media screen and (min-width: 641px) and (max-width: 900px) {
+  .footer-logo-content {
+    margin-left:0px;
+    margin-right: 0px
+  }
+}
+
+@media (max-width: 640px) { 
   .globalCollon{
     display:flex ;
     flex-direction: column;
