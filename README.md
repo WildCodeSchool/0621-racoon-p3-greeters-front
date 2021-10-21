@@ -4,7 +4,7 @@ Refonte du site loirevalleygreeters.com
 
 ## Status du Projet
 
-Ce projet est actuellement en développement. Les utilisateurs peuvent filtrer les greeters par thèmatique, ville et par langue. 
+Ce projet est actuellement en développement.
 
 ## Instructions d'installation et de configuration
 
@@ -16,12 +16,10 @@ Installation:
 
 Pour démarrer le serveur:
 
-`npm start`  
-
-Pour voir l'app:
-
-`localhost:3001/`  
-
+Créez un fichier .env sur la base du fichier .env.sample 
+exemple : REACT_APP_API_ROUTE=http://localhost:3000
+Ensuite lancez le serveur back-end("npm start") puis le front-end.
+ 
 ## Réflexion
 
 Il s'agissait d'un projet de 7 semaines construit au cours de notre formation de développeur web à la Wild Code School. Les objectifs du projet comprenaient l'utilisation des technologies apprises jusqu'à présent.
