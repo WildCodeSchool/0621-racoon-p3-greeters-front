@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+## loirevalleygreeters.com / partie front 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Refonte du site loirevalleygreeters.com 
 
-## Available Scripts
+## Status du Projet
 
-In the project directory, you can run:
+Ce projet est actuellement en développement.
 
-### `npm start`
+## Instructions d'installation et de configuration
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Clonez ce repository. Vous aurez besoin de `node` et `npm` installés globalement sur votre machine.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Installation:
 
-### `npm test`
+`npm install`  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Pour démarrer le serveur:
 
-### `npm run build`
+Créez un fichier .env sur la base du fichier .env.sample 
+exemple : REACT_APP_API_ROUTE=http://localhost:3000
+Ensuite lancez le serveur back-end("npm start") puis le front-end.
+ 
+## Réflexion
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Il s'agissait d'un projet de 7 semaines construit au cours de notre formation de développeur web à la Wild Code School. Les objectifs du projet comprenaient l'utilisation des technologies apprises jusqu'à présent.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+À l'origine, nous devions refaire un site existant (Drupal) permettant aux utilisateurs de réserver une balade avec un greeter. Nous avons commencé le processus en utilisant le passe-partout "create-react-app", puis en ajoutant "react-router".
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+L'un des principaux défis que nous avons rencontrés était la communication entre le back-end et le front-end.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+En fin de compte, les technologies mises en œuvre dans ce projet sont React, React-Router, axios, emailjs-com, leaflet, sweetalert2, react-paginate, react-select, aos et une quantité importante de JSX et CSS. Nous avons choisi d'utiliser "create-react-app" pour minimiser la configuration initiale.  
