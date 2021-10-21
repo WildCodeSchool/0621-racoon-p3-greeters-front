@@ -1,8 +1,8 @@
-import { useContext } from 'react'
-import { Redirect, Route } from 'react-router'
-import axios from 'axios'
-
 import { Context } from '../context/Context'
+import { Redirect, Route } from 'react-router'
+import { useContext } from 'react'
+
+import axios from 'axios'
 
 export const PrivateRoute = ({ children, ...rest }) => {
   const { dispatch } = useContext(Context)

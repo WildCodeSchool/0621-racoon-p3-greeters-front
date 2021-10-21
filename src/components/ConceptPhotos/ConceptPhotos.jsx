@@ -1,9 +1,5 @@
-import { useState, useEffect, useContext } from 'react'
 import { LangueContext } from '../../context/langueContext'
-import axios from 'axios'
-
-import image2 from '../../assets/concept-gauche.jpeg'
-import image3 from '../../assets/concept-droit.jpeg'
+import { useState, useEffect, useContext } from 'react'
 
 import './ConceptPhotos.css'
 

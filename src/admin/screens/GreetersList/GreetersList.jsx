@@ -1,15 +1,15 @@
-import { useEffect, useState } from 'react/cjs/react.development'
+import { ImProfile } from 'react-icons/im'
 import { NavLink } from 'react-router-dom'
+import { useEffect, useState } from 'react/cjs/react.development'
 
 import AdminMenu from '../../components/AdminMenu/AdminMenu'
-import useModal from '../../components/CustomHooks/UseModal'
 import Modal from '../../components/Modal/Modal'
-
-import './GreetersList.css'
+import useModal from '../../components/CustomHooks/UseModal'
 
 import axios from 'axios'
 import 'boxicons'
-import { ImProfile } from 'react-icons/im'
+
+import './GreetersList.css'
 
 const GreetersList = () => {
   const [greeters, setGreeters] = useState([])

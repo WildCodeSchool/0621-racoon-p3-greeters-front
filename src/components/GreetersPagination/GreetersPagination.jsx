@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react/cjs/react.development'
 import { LangueContext } from '../../context/langueContext'
 import { useContext } from 'react'
+import { useState, useEffect } from 'react/cjs/react.development'
 import ReactPaginate from 'react-paginate'
+
 import axios from 'axios'
 
 import GreeterCard from '../GreeterCard/GreeterCard'

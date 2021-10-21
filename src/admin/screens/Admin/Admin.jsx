@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
 import { FaCity, FaBook } from 'react-icons/fa'
 import { ImProfile } from 'react-icons/im'
+import { Link } from 'react-router-dom'
 import { RiComputerLine, RiAdminLine } from 'react-icons/ri'
 
 import AdminMenu from '../../components/AdminMenu/AdminMenu'
