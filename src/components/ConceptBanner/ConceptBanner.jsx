@@ -1,6 +1,5 @@
-import { LangueContext } from '../../context'
+import { LangueContext } from '../../context/langueContext'
 import { useContext } from 'react'
-import image1 from '../../assets/concept-accueil.jpeg'
 
 import './ConceptBanner.css'
 

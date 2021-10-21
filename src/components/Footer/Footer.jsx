@@ -62,11 +62,11 @@ const Footer = () => {
               </svg>
             </a>
           </div>
-          <NavLink to='/contact'>
+          <a href='/contact'>
             <button className='button'>
               {englishMode ? 'Contact Us' : 'Contactez-nous'}
             </button>
-          </NavLink>
+          </a>
         </div>
 
         <div className='globalCollon'>
@@ -104,19 +104,20 @@ const Footer = () => {
             <ul className='Info 2'>
               <li></li>
               <li>
-                <a href={`${process.env.REACT_APP_API_ROUTE}`}>
-                  {englishMode ? 'home' : 'Accueil'}
-                </a>
+                <a href='/'>{englishMode ? 'home' : 'Accueil'}</a>
               </li>
               <li>
-                <a href={`${process.env.REACT_APP_API_ROUTE}/meetgreeter`}>
-                  Rencontrer un Greeters
+                <a href='/meetgreeter'>
+                  {englishMode ? 'Meet a greeter' : 'Rencontrer un Greeters'}
                 </a>
               </li>
-              <li>
-                {englishMode ? 'Meet a greeter' : 'Rencontrer un Greeters'}
-              </li>
-              <li>{englishMode ? 'Reservation' : 'Réservation'}</li>
+              <a
+                href='https://gestion.greeters.fr/visits/new'
+                target='_blank'
+                rel='noreferrer'
+              >
+                <li>{englishMode ? 'Reservation' : 'Réservation'}</li>
+              </a>
             </ul>
           </div>
 
@@ -203,13 +204,31 @@ const Footer = () => {
             </h4>
           </div> */}
           <div className='footer-logo-content'>
-            <img src={logo1} alt='logo' />
-            <img src={logo2} alt='logo' />
-            <img src={logo3} alt='logo' />
+            <a
+              href='https://greeters.fr/destinations'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <img src={logo1} alt='logo' />
+            </a>
+            <a
+              href='https://internationalgreeter.org/fr'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <img src={logo2} alt='logo' />
+            </a>
+            <a
+              href='https://www.tours-tourisme.fr/'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <img src={logo3} alt='logo' />
+            </a>
             <p className='mention-legal-tittle'>
-              <NavLink exact to='/legalinfo' className='legal-link'>
+              <a href='/legalinfo' className='legal-link'>
                 {englishMode ? 'Legal informations' : 'Mentions légales'}
-              </NavLink>
+              </a>
             </p>
           </div>
         </div>

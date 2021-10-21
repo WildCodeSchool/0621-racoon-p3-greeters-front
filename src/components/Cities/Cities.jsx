@@ -4,12 +4,11 @@ import CityCard from '../CityCard/CityCard'
 import { LangueContext } from '../../context/langueContext'
 import axios from 'axios'
 
-const language = useContext(LangueContext)
-const englishMode = language.state.englishMode
-
 import './Cities.css'
 
 const Cities = () => {
+  const language = useContext(LangueContext)
+  const englishMode = language.state.englishMode
   const [city, setCity] = useState([])
   //Get Cities photos from db
   useEffect(() => {
@@ -33,16 +32,15 @@ const Cities = () => {
 
   return (
     <div className='Cities' data-aos='fade-right'>
-      <h2 className='cities-title'>Les villes à découvrir</h2>
+      <h2 className='cities-title'>
+        {englishMode ? 'Cities to Discover' : 'Villes à découvrir'}
+      </h2>
 
       <div className='cities-container'>
         {uniqueCity.map((c, index) => (
           <CityCard key={index} {...c} />
         ))}
       </div>
-      <button className='cities-btn'>
-        {englishMode ? 'See All' : 'Tout Voir'}
-      </button>
     </div>
   )
 }

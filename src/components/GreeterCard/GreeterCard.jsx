@@ -1,10 +1,9 @@
 import { useHistory } from 'react-router-dom'
 import { useContext } from 'react'
-import { LangueContext } from '../../context'
+import { LangueContext } from '../../context/langueContext'
 import './GreeterCard.css'
 
 const GreeterCard = props => {
-  const history = useHistory()
   const language = useContext(LangueContext)
   const englishMode = language.state.englishMode
 
@@ -22,7 +21,6 @@ const GreeterCard = props => {
           <p className='greeter_city'>
             {englishMode ? 'Stroll in' : 'Balade à'} {props.city_name}
           </p>
-          {/* <h2 className='greeter-name'>{props.person_firstname}</h2> */}
         </div>
       </a>
     </div>

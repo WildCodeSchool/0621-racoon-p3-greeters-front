@@ -1,4 +1,4 @@
-import { LangueContext } from '../../context'
+import { LangueContext } from '../../context/langueContext'
 import { useContext } from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
