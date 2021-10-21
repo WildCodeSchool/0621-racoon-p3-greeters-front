@@ -22,6 +22,7 @@
   width: 20rem;
   height: 3rem;
   border-radius: 10rem;
+  font-family: var(--font-typo-text);
 }
 
 .meet-greeter-btn{
