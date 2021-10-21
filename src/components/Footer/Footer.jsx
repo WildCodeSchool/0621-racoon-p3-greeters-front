@@ -152,7 +152,7 @@ const Footer = () => {
                 target='_blank'
                 rel='noreferrer'
               >
-                Gare SCNCF
+                Gare SNCF
               </a>
             </li>
             <li>

@@ -69,11 +69,21 @@ const ConceptPhotos = ({ dataC, dataV }) => {
               ? dataV.value_title2_fr
               : dataC.concept_title2_fr}
           </h2>
-          <p className='Text-Valeurs'>
-            {showConceptValue === 'value'
-              ? dataV.value_content_fr
-              : dataC.concept_content_fr}
-          </p>
+          {showConceptValue === 'value' ? (
+            <p
+              className='Text-Valeurs'
+              dangerouslySetInnerHTML={{
+                __html: `${dataV.value_content_fr}`
+              }}
+            ></p>
+          ) : (
+            <p
+              className='Text-Valeurs'
+              dangerouslySetInnerHTML={{
+                __html: `${dataC.concept_content_fr}`
+              }}
+            ></p>
+          )}
         </div>
       )}
     </>
