@@ -6,6 +6,8 @@ import GreeterProfil from '../../components/GreeterProfil/GreeterProfil'
 import Map from '../../components/Map/Map'
 
 import './Greeter.css'
+import '../../components/GreetersPagination/GreetersPagination.css'
+
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 
