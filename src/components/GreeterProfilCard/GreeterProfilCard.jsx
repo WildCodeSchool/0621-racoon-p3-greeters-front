@@ -1,8 +1,11 @@
 import React from 'react'
-
+import { LangueContext } from '../../context'
+import { useContext } from 'react'
 import './GreeterProfilCard.css'
 
 const GreeterProfilCard = props => {
+  const language = useContext(LangueContext)
+  const englishMode = language.state.englishMode
   return (
     <div className='greeter-profil-bloc-card' aos-data='fade-right'>
       <img
@@ -19,7 +22,7 @@ const GreeterProfilCard = props => {
         rel='noreferrer'
       >
         <button className='greeter-profil-bloc-card-btn'>
-          Réservez votre balade
+          {englishMode ? 'Book your trip' : 'Réservez votre balade'}
         </button>
       </a>
     </div>

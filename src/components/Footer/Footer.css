@@ -35,6 +35,7 @@
 .globalCollon {
   display:flex ;
   margin: 20px 20px 0px 20px;
+  justify-content: space-evenly
 }
 .Titre {
   padding: 20px;
@@ -57,10 +58,11 @@ margin: 20px;
 }
 .footer-logo-content {
   margin-left:200px;
+  margin-right: 33px
 }
 .footer-logo-content img {
   display: flex;
-  width: 300px;
+  width: 170px;
   padding: 20px;
 }
 .legal-link {
@@ -71,6 +73,14 @@ margin: 20px;
 }
 .logo-mention-legale {
   display: block;
+}
+
+.mention-legal-tittle {
+  font-size: 10px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  margin: 0;
 }
 
 @media (max-width: 500px) { 

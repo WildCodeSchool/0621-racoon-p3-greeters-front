@@ -44,7 +44,8 @@ const BannerCity = () => {
   }
   return (
     <>
-      <h1>DECOUVRIR</h1>
+      <h1>{englishMode ? 'DISCOVER' : 'DECOUVRIR'}</h1>
+      <h2>{bannerCity[0] && bannerCity[0].city_name}</h2>
       <div className='banner-city-container'>
         <AliceCarousel
           mouseTracking
