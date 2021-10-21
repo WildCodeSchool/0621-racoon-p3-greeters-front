@@ -1,5 +1,7 @@
 .AdminConnection {
-  max-width: 50vw;
+  display: flex;
+  justify-content: center;
+  max-width: 60vw;
   min-height: 60vh;
   margin: 0 auto;
   margin-top: 25px;

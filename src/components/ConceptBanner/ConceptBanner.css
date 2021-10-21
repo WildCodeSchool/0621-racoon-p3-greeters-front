@@ -11,7 +11,7 @@
 .ConceptBanner-image {
   position: relative;
   border-radius: 20px;
-  width: 80%;
+  width: 100%;
   object-fit: cover;
   z-index: 3;
 }
@@ -21,13 +21,20 @@
   width: 100%;
   position: absolute;
   z-index: 10;
-  padding-top: 15vh;
+  padding-top: 12vh;
   text-shadow: 2px 2px 2px black;
   text-align: center;
   font-family: 'Titillium Web', sans-serif;
   font-style: normal;
   font-weight: 900;
-  font-size: 5vw;
+  font-size: 4vw;
 }
   
+@media screen and (max-width:800px) {
+  .ConceptBanner-title {
+    font-size: 4vw;
+    padding-top: 9vh;
+  }
+}
+
 

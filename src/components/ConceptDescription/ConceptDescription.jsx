@@ -1,6 +1,3 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-
 import './ConceptDescription.css'
 
 const ConceptDescription = props => {
@@ -14,7 +11,11 @@ const ConceptDescription = props => {
         </div>
 
         <div className='ConceptDescription-Texte'>
-          <p>{props.data.description_content_fr}</p>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: `${props.data.description_content_fr}`
+            }}
+          ></p>
         </div>
       </>
     </div>
