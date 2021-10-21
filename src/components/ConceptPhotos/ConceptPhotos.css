@@ -61,23 +61,7 @@
     background-color: black;
     color: white;
   }
- .ConceptPhotos-btn-left{
-  font-family: var(--font-typo-text);
-  background-color: #faf0e6;
-  padding: 0 30px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 27px;
-  border: 2px solid black;
-  box-sizing: border-box;
-  border-radius: 66px;
-  color: black;
-  cursor: pointer;
-  transition: 0.4s linear;
-  line-height: 20px;
-  margin: 10px;  
- }
+ 
 
  .Text-Concept{
   text-align: center;
