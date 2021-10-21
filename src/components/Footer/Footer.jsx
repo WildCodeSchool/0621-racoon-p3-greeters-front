@@ -71,11 +71,7 @@ const Footer = () => {
           <h4 className='sousTitre'>Office de tourisme</h4>
           <ul className='Info'>
             <li>
-              <a
-                href='https://www.tours-tourisme.fr/'
-                target='_blank'
-                rel='noreferrer'
-              >
+              <a href='mailto:https://www.tours-tourisme.fr/'>
                 info@tours-tourisme.fr
               </a>
             </li>
@@ -96,8 +92,14 @@ const Footer = () => {
         <div className='Titre'>
           <h4 className='sousTitre'>Accès rapides</h4>
           <ul className='Info 2'>
-            <li>Accueil</li>
-            <li>Rencontrer un Greeters</li>
+            <li>
+              <a href={`${process.env.REACT_APP_API_ROUTE}`}>Accueil</a>
+            </li>
+            <li>
+              <a href={`${process.env.REACT_APP_API_ROUTE}/meetgreeter`}>
+                Rencontrer un Greeters
+              </a>
+            </li>
             <li>Réservation</li>
           </ul>
         </div>
