@@ -19,3 +19,7 @@ padding: 20px;
     border: 2px solid black;
     cursor: pointer;
 }
+
+.admin-photo-desc {
+  width: 20vw;
+}

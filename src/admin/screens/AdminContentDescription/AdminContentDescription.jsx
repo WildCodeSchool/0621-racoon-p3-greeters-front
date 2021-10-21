@@ -175,9 +175,8 @@ const AdminContentDescription = () => {
 
   return (
     <>
-      {console.log('LAAAAA')}
       <AdminMenu />
-      {description ? (
+      {description[0] ? (
         <div className='admin-details-city-container'>
           <h1 className='admin-details-city-title'>Page Description</h1>
           <ul className='admin-details-city-list'>
@@ -242,7 +241,12 @@ const AdminContentDescription = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Photo</span> : {description[0].description_photo}
+              <span>Photo</span> :{' '}
+              <img
+                className='admin-photo-desc'
+                src={description[0].description_photo}
+                alt=''
+              />
               <button
                 onClick={toggleDescriptionPhotoForm}
                 className='admin-details-icon-btn'

@@ -301,7 +301,12 @@ const AdminContentConcept = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Photo</span> : {concept[0].concept_photo}
+              <span>Photo</span> :{' '}
+              <img
+                className='admin-photo-concept'
+                src={concept[0].concept_photo}
+                alt=''
+              />
               <button
                 onClick={toggleconceptPhotoForm}
                 className='admin-details-icon-btn'

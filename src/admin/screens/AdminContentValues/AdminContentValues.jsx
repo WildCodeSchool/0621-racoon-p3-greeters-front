@@ -232,7 +232,12 @@ const AdminContentValues = () => {
               </button>
             </li>
             <li className='admin-details-city-item'>
-              <span>Photo</span> : {values[0].value_photo}
+              <span>Photo</span> :{' '}
+              <img
+                className='admin-photo-value'
+                src={values[0].value_photo}
+                alt=''
+              />
               <button
                 onClick={toggleValuesPhotoForm}
                 className='admin-details-icon-btn'

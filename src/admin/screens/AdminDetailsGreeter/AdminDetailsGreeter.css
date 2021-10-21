@@ -38,3 +38,7 @@
   cursor: pointer;
   padding: 0 2px;
 }
+
+.admin-greeter-photo {
+  width: 20vw;
+}

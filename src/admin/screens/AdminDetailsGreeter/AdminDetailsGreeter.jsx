@@ -190,7 +190,12 @@ const AdminDetailsGreeter = () => {
               </button>
             </li>
             <li className='admin-details-greeter-item'>
-              <span>Photo</span> : {greeters[0].person_photo}
+              <span>Photo</span> :{' '}
+              <img
+                className='admin-greeter-photo'
+                src={greeters[0].person_photo}
+                alt=''
+              />
               <button
                 onClick={toggleGreeterPhotoForm}
                 className='admin-details-icon-btn'
