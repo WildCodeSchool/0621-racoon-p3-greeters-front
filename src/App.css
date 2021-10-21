@@ -1,9 +1,7 @@
 :root {
   --text-color: #ff0d0d;
   --bg-color-beige: #faf0e6;
-  --font-typo: 'Titillium Web', sans-serif;
-}
-
-a {
-  text-decoration: none;
+  --font-typo-title: 'Titillium Web 900', sans-serif;
+  --font-typo-subtitle: 'Titillium Web 400', sans-serif;
+  --font-typo-text: 'Titillium Web 200', sans-serif;
 }

@@ -1,3 +1,7 @@
+import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { LangueContext } from '../../context'
+
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 
@@ -8,6 +12,8 @@ import axios from 'axios'
 
 const Banner = () => {
   const [bannerCity, setBannerCity] = useState([])
+  const language = useContext(LangueContext)
+  const englishMode = language.state.englishMode
 
   //Get banner from the db
   useEffect(() => {
@@ -35,7 +41,11 @@ const Banner = () => {
                 onDragStart={handleDragStart}
                 className='banner-img'
               />
-              <button className='banner-button'>Réserver Votre Balade</button>
+              <Link to='/meetgreeter'>
+                <button className='banner-button'>
+                  {englishMode ? 'Book your journey' : 'Réserver votre balade'}
+                </button>
+              </Link>
               <h2 className='banner-text'>Découvrir {d.city_name}</h2>
             </div>
           )

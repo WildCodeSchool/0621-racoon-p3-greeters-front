@@ -2,17 +2,23 @@
   display: flex;
   width:55vw;
 }
+.greeter-profil-bloc-info-name {
+  font-size:40px;
+  font-family: var(--font-typo-title);
+}
 
 .greeter-profil-bloc-info-bloc1 {
-margin: 0 2vw 0 0;
+  margin: 0 2vw 0 0;
 }
 
 .greeter-profil-bloc-info-city {
   font-size:18px;
+  font-family: var(--font-typo-text);
 }
 
 
 .greeter-profil-bloc-info-description {
+  font-family: var(--font-typo-text);
   text-align:justify;
   width:38vw;
   box-sizing: border-box;
@@ -29,8 +35,9 @@ margin: 0 2vw 0 0;
   border-radius: 20px 0;
   text-align: center;
 }
-h4 {
-  font-size:19px;
+.greeter-profil-bloc-h4 {
+  font-size:20px;
+  font-family: var(--font-typo-subtitle);
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1280px) {
@@ -68,7 +75,7 @@ h4 {
     margin:10vw;
     width:80vw;
   }
-  h4 {
+  .greeter-profil-bloc-h4 {
     font-size:20px;
   }
 }

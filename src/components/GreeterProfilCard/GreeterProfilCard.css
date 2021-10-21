@@ -5,7 +5,6 @@
 }
 
 .greeter-profil-bloc-card-img {
-  /* margin-bottom: 50px; */
   width:30vw;
   border-radius: 20px;
   margin-top: 23px;
@@ -14,6 +13,7 @@
 
 .greeter-profil-bloc-card-btn {
   background-color: var(--bg-color-beige);
+  font-family: var(--font-typo-text);
   position: absolute;
   top: 99%;
   left: 50%;
@@ -41,6 +41,7 @@
   text-align: left;
   font-size: 17px;
   text-align: justify;
+  font-family: var(--font-typo-text);
 }
 
 h4 {

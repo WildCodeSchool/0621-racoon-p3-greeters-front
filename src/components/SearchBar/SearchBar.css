@@ -3,7 +3,6 @@
   margin-right: 1rem;
   position: relative;
   width: 15vw;
-  font-family: var(--font-typo);
 }
 
 .searchBar input {

@@ -1,16 +1,14 @@
-*{
-  font-family: var(--font-typo);
-}
-
 .title-meet{
   text-align: center;
   padding-top: 3rem;
   font-size: 3rem;
+  font-family: var(--font-typo-title);
 }
 
 .little-title-meet{
   text-align: center;
   font-size: 2rem;
+  font-family: var(--font-typo-subtitle);
 }
 
 @media screen and (max-width:950px) {
