@@ -75,7 +75,9 @@ const Footer = () => {
                 info@tours-tourisme.fr
               </a>
             </li>
-            <li> 02 47 70 37 37</li>
+            <li>
+              <a href='tel:+332 47 70 37 37'>02 47 70 37 37</a>
+            </li>
             <li>
               <a
                 href='https://goo.gl/maps/HrpUV6CXtHkvmFfd8'
