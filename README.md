@@ -2,7 +2,7 @@
 
 Refonte du site loirevalleygreeters.com 
 
-## Status du Projet
+## Statut du Projet
 
 Ce projet est actuellement en développement.
 
