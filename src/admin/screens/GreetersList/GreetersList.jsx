@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react/cjs/react.development'
 import { NavLink } from 'react-router-dom'
+import axios from 'axios'
+import 'boxicons'
+import { ImProfile } from 'react-icons/im'
 
 import AdminMenu from '../../components/AdminMenu/AdminMenu'
 import useModal from '../../components/CustomHooks/UseModal'
 import Modal from '../../components/Modal/Modal'
 
 import './GreetersList.css'
-
-import axios from 'axios'
-import 'boxicons'
-import { ImProfile } from 'react-icons/im'
 
 const GreetersList = () => {
   const [greeters, setGreeters] = useState([])
@@ -43,7 +42,6 @@ const GreetersList = () => {
       `${process.env.REACT_APP_API_ROUTE}/person`,
       data
     )
-    console.log(result)
     getData()
   }
 
@@ -103,14 +101,12 @@ const GreetersList = () => {
                 placeholder='Prénom'
                 name='person_firstname'
                 onChange={e => handleChange(e)}
-                // value={person_firstname}
               />
               <input
                 type='text'
                 placeholder='Greeter catch phrase fr'
                 name='person_catch_phrase_fr'
                 onChange={e => handleChange(e)}
-                // value={person_firstname}
               />
               <input
                 type='text'

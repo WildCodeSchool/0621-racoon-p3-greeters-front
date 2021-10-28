@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
-
-import { useState } from 'react/cjs/react.development'
+import { useState, useEffect } from 'react'
+import Aos from 'aos'
 
 import Footer from '../../components/Footer/Footer'
 import GreetersPagination from '../../components/GreetersPagination/GreetersPagination'
@@ -8,10 +7,8 @@ import GreeterProfil from '../../components/GreeterProfil/GreeterProfil'
 import Map from '../../components/Map/Map'
 import Navbar from '../../components/Navbar/Navbar'
 
-import '../../components/GreetersPagination/GreetersPagination.css'
-
-import Aos from 'aos'
 import 'aos/dist/aos.css'
+import '../../components/GreetersPagination/GreetersPagination.css'
 
 const Greeter = () => {
   const [greeterCordinates, setGreeterCordinates] = useState(null)

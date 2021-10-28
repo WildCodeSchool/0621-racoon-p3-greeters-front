@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import { useState, useEffect, useContext } from 'react'
 
-import image2 from '../../assets/concept-gauche.jpeg'
-import image3 from '../../assets/concept-droit.jpeg'
+import { LangueContext } from '../../context/langueContext'
 
 import './ConceptPhotos.css'
 
 const ConceptPhotos = ({ dataC, dataV }) => {
+  const language = useContext(LangueContext)
+  const englishMode = language.state.englishMode
+
   const [okData, setOkData] = useState(false)
 
   useEffect(() => {
@@ -40,7 +41,7 @@ const ConceptPhotos = ({ dataC, dataV }) => {
               onClick={() => handleShowResultsClick('concept')}
               className='ConceptPhotos-btn-left ConceptPhotos-btn'
             >
-              {dataC.concept_title1_fr}
+              {englishMode ? dataC.concept_title1_en : dataC.concept_title1_fr}
             </button>
           </a>
         </div>
@@ -57,7 +58,7 @@ const ConceptPhotos = ({ dataC, dataV }) => {
               onClick={() => handleShowResultsClick('value')}
               className='ConceptPhotos-btn-right ConceptPhotos-btn'
             >
-              {dataV.value_title1_fr}
+              {englishMode ? dataV.value_title1_en : dataV.value_title1_fr}
             </button>
           </a>
         </div>
@@ -66,21 +67,31 @@ const ConceptPhotos = ({ dataC, dataV }) => {
         <div className='text-container-desktop' id='text-container'>
           <h2 className='Text-Concept'>
             {showConceptValue === 'value'
-              ? dataV.value_title2_fr
+              ? englishMode
+                ? dataV.value_title2_en
+                : dataV.value_title2_fr
+              : englishMode
+              ? dataC.concept_title2_en
               : dataC.concept_title2_fr}
           </h2>
           {showConceptValue === 'value' ? (
             <p
               className='Text-Valeurs'
               dangerouslySetInnerHTML={{
-                __html: `${dataV.value_content_fr}`
+                __html: `${
+                  englishMode ? dataV.value_content_en : dataV.value_content_fr
+                }`
               }}
             ></p>
           ) : (
             <p
               className='Text-Valeurs'
               dangerouslySetInnerHTML={{
-                __html: `${dataC.concept_content_fr}`
+                __html: `${
+                  englishMode
+                    ? dataC.concept_content_en
+                    : dataC.concept_content_fr
+                }`
               }}
             ></p>
           )}

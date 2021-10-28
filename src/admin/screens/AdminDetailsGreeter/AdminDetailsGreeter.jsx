@@ -1,12 +1,12 @@
-import AdminMenu from '../../components/AdminMenu/AdminMenu'
-import useModal from '../../components/CustomHooks/UseModal'
-import Modal from '../../components/Modal/Modal'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router'
 import axios from 'axios'
 import 'boxicons'
 import { ImProfile } from 'react-icons/im'
 
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+import AdminMenu from '../../components/AdminMenu/AdminMenu'
+import Modal from '../../components/Modal/Modal'
+import useModal from '../../components/CustomHooks/UseModal'
 
 import './AdminDetailsGreeter.css'
 

@@ -1,14 +1,12 @@
-import { Link } from 'react-router-dom'
-import { useContext } from 'react'
-import { LangueContext } from '../../context/langueContext'
-
-import AliceCarousel from 'react-alice-carousel'
-import 'react-alice-carousel/lib/alice-carousel.css'
-
-import './Banner.css'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 
 import axios from 'axios'
+import AliceCarousel from 'react-alice-carousel'
+
+import { LangueContext } from '../../context/langueContext'
+
+import './Banner.css'
+import 'react-alice-carousel/lib/alice-carousel.css'
 
 const Banner = () => {
   const [bannerCity, setBannerCity] = useState([])

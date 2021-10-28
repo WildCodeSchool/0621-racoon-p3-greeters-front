@@ -1,17 +1,14 @@
-import React from 'react'
+import { useContext, useEffect } from 'react'
+import Aos from 'aos'
 import emailjs from 'emailjs-com'
-import { LangueContext } from '../../context/langueContext'
-import { useContext } from 'react'
-import { useEffect } from 'react'
-
 import Swal from 'sweetalert2'
 
-import Aos from 'aos'
-import 'aos/dist/aos.css'
-
-import './Contact.css'
-import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
+import { LangueContext } from '../../context/langueContext'
+import Navbar from '../../components/Navbar/Navbar'
+
+import 'aos/dist/aos.css'
+import './Contact.css'
 
 const Contact = () => {
   const language = useContext(LangueContext)

@@ -1,11 +1,12 @@
 import { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router'
 import axios from 'axios'
-import { LangueContext } from '../../context/langueContext'
 import AliceCarousel from 'react-alice-carousel'
-import 'react-alice-carousel/lib/alice-carousel.css'
+
+import { LangueContext } from '../../context/langueContext'
 
 import './BannerCity.css'
+import 'react-alice-carousel/lib/alice-carousel.css'
 
 const BannerCity = () => {
   const language = useContext(LangueContext)
@@ -20,7 +21,6 @@ const BannerCity = () => {
         `${process.env.REACT_APP_API_ROUTE}/photos/${id}`
       )
       setBannerCity(resData.data)
-      console.log(resData.data[0].city_name)
     }
     getData()
   }, [id])

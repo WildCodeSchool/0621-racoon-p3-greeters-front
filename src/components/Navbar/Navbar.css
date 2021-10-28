@@ -96,7 +96,6 @@
   cursor: pointer;
   margin: 10px;
   height: 45px;
-  /* width: 45px; */
   border: none;
   background-color: transparent;
   font-size: 1.5rem;
@@ -105,10 +104,6 @@
 /**** Navbar dynamic open ****/
 .toShow-button {
   background-color: white;
-}
-
-.toHide-button {
-  /* background-color: #FDF7F0; */
 }
 
 .toShow-menu {
@@ -131,7 +126,6 @@
   width: 100%;
   min-height: 20vh;
   padding: 10px;
-  /* background-color: #FDF7F0; */
   background-color: #fefefe;
   transition: 0.3s linear;
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);

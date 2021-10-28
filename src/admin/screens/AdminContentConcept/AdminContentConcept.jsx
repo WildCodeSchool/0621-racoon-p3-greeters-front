@@ -1,10 +1,10 @@
-import AdminMenu from '../../components/AdminMenu/AdminMenu'
-import useModal from '../../components/CustomHooks/UseModal'
-import Modal from '../../components/Modal/Modal'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import 'boxicons'
 
-import { useEffect, useState } from 'react'
+import AdminMenu from '../../components/AdminMenu/AdminMenu'
+import Modal from '../../components/Modal/Modal'
+import useModal from '../../components/CustomHooks/UseModal'
 
 import './AdminContentConcept.css'
 

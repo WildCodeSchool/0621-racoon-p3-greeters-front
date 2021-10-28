@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react/cjs/react.development'
 import { NavLink } from 'react-router-dom'
-
-import AdminMenu from '../../components/AdminMenu/AdminMenu'
-
 import axios from 'axios'
 import 'boxicons'
 import { FaCity } from 'react-icons/fa'
+
+import AdminMenu from '../../components/AdminMenu/AdminMenu'
 
 import './CitiesList.css'
 
@@ -19,8 +18,6 @@ const CitiesList = () => {
     }
     getData()
   }, [])
-
-  // console.log(cities)
 
   return (
     <>

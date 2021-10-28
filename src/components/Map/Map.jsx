@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-
 import Aos from 'aos'
 import axios from 'axios'
 import L from 'leaflet'
 
+import pointer from '../../assets/map/pointer.png'
+
 import 'aos/dist/aos.css'
 import './Map.css'
-
-import pointer from '../../assets/map/pointer.png'
 
 const MapComponent = ({ cordinates }) => {
   // Loading animation

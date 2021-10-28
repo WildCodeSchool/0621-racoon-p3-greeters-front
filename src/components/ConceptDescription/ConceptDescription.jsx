@@ -1,19 +1,31 @@
+import { useContext } from 'react'
+
+import { LangueContext } from '../../context/langueContext'
+
 import './ConceptDescription.css'
 
 const ConceptDescription = props => {
+  const language = useContext(LangueContext)
+  const englishMode = language.state.englishMode
   return (
     <div className='ConceptDescription-Container' data-aos='fade-down'>
       <>
         <div>
           <h2 className='ConceptDescription-Rencontre'>
-            {props.data.description_title2_fr}
+            {englishMode
+              ? props.data.description_title2_en
+              : props.data.description_title2_fr}
           </h2>
         </div>
 
         <div className='ConceptDescription-Texte'>
           <p
             dangerouslySetInnerHTML={{
-              __html: `${props.data.description_content_fr}`
+              __html: `${
+                englishMode
+                  ? props.data.description_content_en
+                  : props.data.description_content_fr
+              }`
             }}
           ></p>
         </div>

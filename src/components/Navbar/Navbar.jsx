@@ -1,12 +1,13 @@
-import { NavLink } from 'react-router-dom'
 import { useState, useEffect, useContext } from 'react'
-import { LangueContext } from '../../context/langueContext'
+import { NavLink } from 'react-router-dom'
+import Aos from 'aos'
 import Swal from 'sweetalert2'
+
+import { LangueContext } from '../../context/langueContext'
 import logo from '../../assets/greeters-logo-red.PNG'
 import SearchBar from '../SearchBar/SearchBar'
-import Aos from 'aos'
-import 'aos/dist/aos.css'
 
+import 'aos/dist/aos.css'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -104,12 +105,6 @@ const Navbar = () => {
         <a href='/concept' alt=''>
           <h3>Qu'est ce qu'un greeter ?</h3>
         </a>
-
-        {/*
-       <a href='/our-values'>
-          <h3>Nos valeurs</h3>
-        </a>
-      */}
 
         <a href='/meetgreeter' alt=''>
           <h3>Rencontrer un greeter</h3>

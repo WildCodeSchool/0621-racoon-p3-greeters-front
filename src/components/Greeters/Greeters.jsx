@@ -1,15 +1,12 @@
-import { LangueContext } from '../../context/langueContext'
-import { useContext } from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
+import Aos from 'aos'
 import axios from 'axios'
 
+import { LangueContext } from '../../context/langueContext'
 import GreeterCard from '../GreeterCard/GreeterCard'
 
-import './Greeters.css'
-import { Link } from 'react-router-dom'
-
-import Aos from 'aos'
 import 'aos/dist/aos.css'
+import './Greeters.css'
 
 const Greeters = () => {
   const language = useContext(LangueContext)

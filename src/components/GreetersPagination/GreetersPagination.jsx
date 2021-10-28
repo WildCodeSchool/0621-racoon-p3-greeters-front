@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react/cjs/react.development'
-import { LangueContext } from '../../context/langueContext'
-import { useContext } from 'react'
-import ReactPaginate from 'react-paginate'
+import { useContext, useState, useEffect } from 'react'
 import axios from 'axios'
+import ReactPaginate from 'react-paginate'
 
+import { LangueContext } from '../../context/langueContext'
 import GreeterCard from '../GreeterCard/GreeterCard'
 
 import './GreetersPagination.css'
@@ -16,7 +15,6 @@ const GreetersPagination = () => {
   const [greeters, setGreeters] = useState([])
 
   // fetch all greeters
-
   useEffect(() => {
     const getData = async () => {
       const resData = await axios.get(

@@ -1,12 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-require('dotenv').config()
 import 'leaflet/dist/leaflet.css'
 import './index.css'
 import App from './App'
 import { AdminProvider } from './context/Context'
-import reportWebVitals from './reportWebVitals'
 import { LanguageProvider } from './context/langueContext'
+import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
   <React.StrictMode>

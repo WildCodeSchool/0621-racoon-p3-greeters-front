@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import Select from 'react-select'
-import makeAnimated from 'react-select/animated'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
+import makeAnimated from 'react-select/animated'
+import Select from 'react-select'
+
 import GreetersPaginationFiltered from '../../components/GreetersPaginationFiltered/GreetersPaginationFiltered'
 
 import './MeetGreeterBar.css'

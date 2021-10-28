@@ -1,12 +1,13 @@
-import { useParams } from 'react-router'
 import { useState, useEffect, useContext } from 'react'
-import BannerCity from '../../components/BannerCity/BannerCity'
-import Footer from '../../components/Footer/Footer'
-import Navbar from '../../components/Navbar/Navbar'
-import { LangueContext } from '../../context/langueContext'
+import { useParams } from 'react-router'
+import Aos from 'aos'
 import axios from 'axios'
 
-import Aos from 'aos'
+import BannerCity from '../../components/BannerCity/BannerCity'
+import Footer from '../../components/Footer/Footer'
+import { LangueContext } from '../../context/langueContext'
+import Navbar from '../../components/Navbar/Navbar'
+
 import 'aos/dist/aos.css'
 import './InfoCity.css'
 

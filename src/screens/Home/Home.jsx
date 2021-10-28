@@ -8,8 +8,8 @@ import Map from '../../components/Map/Map'
 import Navbar from '../../components/Navbar/Navbar'
 
 import Aos from 'aos'
-import 'aos/dist/aos.css'
 
+import 'aos/dist/aos.css'
 import './Home.css'
 
 const Home = () => {

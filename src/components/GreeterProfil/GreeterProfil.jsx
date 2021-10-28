@@ -1,15 +1,13 @@
-import { useParams } from 'react-router'
 import { useState, useEffect } from 'react'
-
+import { useParams } from 'react-router'
+import Aos from 'aos'
 import axios from 'axios'
 
 import GreeterProfilCard from '../GreeterProfilCard/GreeterProfilCard'
 import GreeterProfilInfo from '../GreeterProfilInfo/GreeterProfilInfo'
 
-import './GreeterProfil.css'
-
-import Aos from 'aos'
 import 'aos/dist/aos.css'
+import './GreeterProfil.css'
 
 const GreeterProfil = ({ setGetCordinates }) => {
   useEffect(() => {

@@ -1,8 +1,9 @@
 import { useEffect, useState, useContext } from 'react'
 
+import axios from 'axios'
+
 import CityCard from '../CityCard/CityCard'
 import { LangueContext } from '../../context/langueContext'
-import axios from 'axios'
 
 import './Cities.css'
 

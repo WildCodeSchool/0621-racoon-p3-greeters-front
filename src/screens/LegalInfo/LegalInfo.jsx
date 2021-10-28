@@ -1,9 +1,9 @@
-import React, { useContext, useEffect } from 'react'
-import { LangueContext } from '../../context/langueContext'
+import { useContext, useEffect } from 'react'
+import Aos from 'aos'
 
 import Footer from '../../components/Footer/Footer'
+import { LangueContext } from '../../context/langueContext'
 import Navbar from '../../components/Navbar/Navbar'
-import Aos from 'aos'
 
 import 'aos/dist/aos.css'
 import './LegalInfo.css'

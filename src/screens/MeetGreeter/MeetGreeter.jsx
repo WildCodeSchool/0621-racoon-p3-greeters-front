@@ -1,13 +1,12 @@
+import { useContext, useEffect } from 'react'
+import Aos from 'aos'
+
 import { LangueContext } from '../../context/langueContext'
-import { useContext } from 'react'
-import { useEffect } from 'react'
 import Footer from '../../components/Footer/Footer'
 import MeetGreeterBar from '../../components/MeetGreeterBar/MeetGreeterBar'
 import Navbar from '../../components/Navbar/Navbar'
 
-import Aos from 'aos'
 import 'aos/dist/aos.css'
-
 import './MeetGreeter.css'
 
 const MeetGreeter = () => {

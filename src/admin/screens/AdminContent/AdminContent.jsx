@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
-import AdminMenu from '../../components/AdminMenu/AdminMenu'
 import { FaBook } from 'react-icons/fa'
+
+import AdminMenu from '../../components/AdminMenu/AdminMenu'
 
 import './AdminContent.css'
 

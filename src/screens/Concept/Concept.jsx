@@ -1,15 +1,15 @@
+import { useState, useEffect } from 'react'
 import Aos from 'aos'
-import 'aos/dist/aos.css'
+import axios from 'axios'
+
 import ConceptBanner from '../../components/ConceptBanner/ConceptBanner'
 import ConceptDescription from '../../components/ConceptDescription/ConceptDescription'
 import ConceptPhoto from '../../components/ConceptPhotos/ConceptPhotos'
-import Navbar from '../../components/Navbar/Navbar'
-import { useEffect } from 'react'
-
-import './Concept.css'
 import Footer from '../../components/Footer/Footer'
-import { useState } from 'react'
-import axios from 'axios'
+import Navbar from '../../components/Navbar/Navbar'
+
+import 'aos/dist/aos.css'
+import './Concept.css'
 
 const Concept = () => {
   const [descriptionData, setDescriptionData] = useState('')
@@ -21,7 +21,6 @@ const Concept = () => {
       `${process.env.REACT_APP_API_ROUTE}/description`
     )
     setDescriptionData(resData1.data[0])
-    console.log(resData1)
   }
 
   const getConceptData = async () => {
@@ -29,13 +28,11 @@ const Concept = () => {
       `${process.env.REACT_APP_API_ROUTE}/concept`
     )
     setConceptData(resData2.data[0])
-    console.log(resData2)
   }
 
   const getValueData = async () => {
     const resData3 = await axios.get(`${process.env.REACT_APP_API_ROUTE}/value`)
     setValueData(resData3.data[0])
-    console.log(resData3)
   }
 
   useEffect(() => {
@@ -48,7 +45,6 @@ const Concept = () => {
   return (
     <div className='concept'>
       <Navbar />
-      {console.log(descriptionData)}
       <>
         <ConceptBanner data={descriptionData} />
         <ConceptDescription data={descriptionData} />

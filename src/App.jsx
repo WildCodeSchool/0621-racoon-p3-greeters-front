@@ -1,7 +1,5 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import { PrivateRoute } from './use/useSecureRoute'
-
 import Admin from './admin/screens/Admin/Admin'
 import AdminConnection from './admin/screens/AdminConnection/AdminConnection'
 import AdminContent from './admin/screens/AdminContent/AdminContent'
@@ -18,8 +16,8 @@ import GreetersList from './admin/screens/GreetersList/GreetersList'
 import Home from './screens/Home/Home'
 import InfoCity from './screens/InfoCity/InfoCity'
 import LegalInfo from './screens/LegalInfo/LegalInfo'
-
 import MeetGreeter from './screens/MeetGreeter/MeetGreeter'
+import { PrivateRoute } from './use/useSecureRoute'
 
 import './App.css'
 
