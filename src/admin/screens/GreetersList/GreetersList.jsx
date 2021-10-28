@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react/cjs/react.development'
+import { useEffect, useState } from 'react'
+import { ImProfile } from 'react-icons/im'
 import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 import 'boxicons'
-import { ImProfile } from 'react-icons/im'
 
 import AdminMenu from '../../components/AdminMenu/AdminMenu'
-import useModal from '../../components/CustomHooks/UseModal'
 import Modal from '../../components/Modal/Modal'
+import useModal from '../../components/CustomHooks/UseModal'
 
 import './GreetersList.css'
 

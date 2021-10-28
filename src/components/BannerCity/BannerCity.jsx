@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router'
+
 import axios from 'axios'
 import AliceCarousel from 'react-alice-carousel'
 

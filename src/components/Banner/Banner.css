@@ -47,6 +47,7 @@
   color: #FFFFFF;
   cursor: pointer;
   transition: 0.2s linear;
+  padding: 10px;
 }
 
 .banner-button:hover {

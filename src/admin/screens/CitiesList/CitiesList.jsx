@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react/cjs/react.development'
+import { FaCity } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 import 'boxicons'
-import { FaCity } from 'react-icons/fa'
 
 import AdminMenu from '../../components/AdminMenu/AdminMenu'
 

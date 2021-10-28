@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
 import { FaBook } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 import AdminMenu from '../../components/AdminMenu/AdminMenu'
 

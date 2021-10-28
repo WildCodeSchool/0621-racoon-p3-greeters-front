@@ -71,7 +71,6 @@ const AdminDetailsGreeter = () => {
       `${process.env.REACT_APP_API_ROUTE}/person/${greeterId}`
     )
     setGreeters(resData.data.result)
-    console.log(greeters)
   }
 
   // function to send modified entriezzz dinamicallyy
@@ -99,7 +98,6 @@ const AdminDetailsGreeter = () => {
     if (e.target[0].name === 'person_lang?') toggleGreeterLangForm()
     if (e.target[0].name === 'person_photo') toggleGreeterPhotoForm()
   }
-
   return (
     <>
       <AdminMenu />
@@ -120,7 +118,7 @@ const AdminDetailsGreeter = () => {
               {greeters[0].person_firstname}
             </li>
             <li className='admin-details-greeter-item'>
-              <span>Phrase d'accroche</span> :{' '}
+              <span>Phrase d'accroche</span> :
               <button
                 onClick={toggleGreeterCatchForm}
                 className='admin-details-icon-btn'
@@ -130,7 +128,7 @@ const AdminDetailsGreeter = () => {
               {greeters[0].person_catch_phrase_fr}
             </li>
             <li className='admin-details-greeter-item'>
-              <span>Phrase d'accroche en anglais</span> :{' '}
+              <span>Phrase d'accroche en anglais</span> :
               <button
                 onClick={toggleGreeterCatchEnForm}
                 className='admin-details-icon-btn'
@@ -150,7 +148,7 @@ const AdminDetailsGreeter = () => {
               {greeters[0].person_description_fr}
             </li>
             <li className='admin-details-greeter-item'>
-              <span>Descriptif en anglais</span> :{' '}
+              <span>Descriptif en anglais</span> :
               <button
                 onClick={toggleGreeterDescEnForm}
                 className='admin-details-icon-btn'
@@ -170,8 +168,7 @@ const AdminDetailsGreeter = () => {
               {greeters[0].city_name}
             </li>
             <li className='admin-details-greeter-item'>
-              {' '}
-              <span>Langues</span> :{' '}
+              <span>Langues</span> :
               <button
                 onClick={toggleGreeterLangForm}
                 className='admin-details-icon-btn'
@@ -180,8 +177,7 @@ const AdminDetailsGreeter = () => {
               </button>
             </li>
             <li className='admin-details-greeter-item'>
-              {' '}
-              <span>Thématiques</span> :{' '}
+              <span>Thématiques</span> :
               <button
                 onClick={toggleGreeterThemForm}
                 className='admin-details-icon-btn'
@@ -190,7 +186,7 @@ const AdminDetailsGreeter = () => {
               </button>
             </li>
             <li className='admin-details-greeter-item'>
-              <span>Photo</span> :{' '}
+              <span>Photo</span> :
               <img
                 className='admin-greeter-photo'
                 src={greeters[0].person_photo}
