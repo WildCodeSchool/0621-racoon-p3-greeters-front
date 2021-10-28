@@ -1,0 +1,41 @@
+.admin-details-city-container{
+  position: absolute;
+  width: 70%;
+  left: 30%;
+}
+
+.admin-details-city-title{
+  padding: 20px 0;
+  text-align: center;
+  margin: 0 50px;
+  font-size: 2.5rem;
+  color : rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid black;
+}
+
+.admin-details-city-list{
+  padding-top: 20px;
+  margin: 0 50px;
+}
+
+.admin-details-city-item{
+  padding: 20px 0;
+  border-bottom: 1px solid;
+  list-style: none;
+}
+
+.admin-details-city-item span{
+  text-decoration: underline;
+  font-weight: bold;
+  color : rgba(0, 0, 0, 0.8);
+}
+
+.admin-photo-city {
+  width: 20vw;
+}
+
+.admin-details-city-container h3 {
+  text-decoration: underline;
+  font-weight: bold;
+  color : rgba(0, 0, 0, 0.8);
+}

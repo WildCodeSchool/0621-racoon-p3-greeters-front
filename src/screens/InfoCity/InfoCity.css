@@ -1,0 +1,16 @@
+.city-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0px 100px 100px 100px;
+  font-size: 20px;
+  text-align: justify;
+  font-family: var(--font-typo-text);
+}
+
+@media screen and (max-width:700px) {
+  .city-content {
+    font-size: 16px;
+    padding: 0 39px 39px 39px;
+  }
+}

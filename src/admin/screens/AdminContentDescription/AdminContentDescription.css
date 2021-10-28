@@ -1,0 +1,25 @@
+.AdminContentPage {
+width: 70%;
+justify-content: space-between;
+padding: 20px;
+}
+
+.AdminContentPage .page-table {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.AdminContentPage table {
+  width: 50%;
+}
+
+.table tr{
+    padding: 20px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.admin-photo-desc {
+  width: 20vw;
+}

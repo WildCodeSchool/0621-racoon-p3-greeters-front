@@ -1,0 +1,21 @@
+.title-meet{
+  text-align: center;
+  padding-top: 3rem;
+  font-size: 3rem;
+}
+
+.little-title-meet{
+  text-align: center;
+  font-size: 2rem;
+  font-family: var(--font-typo-subtitle);
+}
+
+@media screen and (max-width:950px) {
+  .title-meet{
+    padding-top: 2rem;
+    font-size: 2rem;
+  }
+  .little-title-meet{
+    font-size: 1rem;
+  }
+}

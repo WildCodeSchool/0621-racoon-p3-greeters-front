@@ -1,0 +1,49 @@
+.meetbar {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meet-items {
+  display: flex;
+  text-align: center;
+  width: 95vw;
+  justify-content: space-evenly;
+  height: 10vh;
+  align-items: center;
+  
+}
+
+
+.meet-select{
+  width: 20rem;
+  height: 3rem;
+  border-radius: 10rem;
+  font-family: var(--font-typo-text);
+  background:var(  --bg-color-beige);
+}
+
+.meet-greeter-btn{
+  margin-top: 2rem;
+  transform: translateX(-50%);
+  position: relative;
+  left: 50%;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: white;
+  text-align: center;
+  width: 15rem;
+
+}
+
+@media (max-width: 700px) {
+  .meet-items{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+  }
+  .meet-select {
+    margin: 5px 0px;
+  }
+}

@@ -1,0 +1,61 @@
+.banner-city {
+  width: 90vw;
+  height: 70vh;
+  position: relative;
+  left: 5%;
+  border-radius: 25px;
+  object-fit: cover;
+}
+
+.banner-city-container {
+  height: 80vh;
+}
+
+.banner-city-main-container{
+  width: 100vw;
+} 
+h1 {
+  width: 50vw;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 40px auto;
+  font-family: var(--font-typo);
+}
+
+.alice-carousel__prev-btn, .alice-carousel__next-btn {
+  display: none;
+}
+
+.alice-carousel__dots {
+  position: absolute;
+  bottom: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 12;
+}
+
+.alice-carousel__dots-item:not(.__custom):hover, 
+.alice-carousel__dots-item:not(.__custom).__active {
+  background-color: #ff0d0d;
+}
+.banner-city-text {
+  font-family: 'Titillium Web', sans-serif;
+  background-color: rgba(102, 56, 56, 0.35);
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%);
+  font-style: normal;
+  font-weight: bold;
+  line-height: 27px;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: xx-large;
+}
+
+@media screen and (max-width:500px){
+  .banner-city-text {
+    font-size: 20px;
+  }
+}

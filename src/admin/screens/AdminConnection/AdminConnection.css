@@ -1,0 +1,72 @@
+.AdminConnection {
+  display: flex;
+  justify-content: center;
+  max-width: 60vw;
+  min-height: 60vh;
+  margin: 0 auto;
+  margin-top: 25px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px -5px black;
+  
+}
+
+.AdminConnection fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  margin: 50px;
+  background-color: rgb(253, 247, 240);
+  box-shadow: 0px 2px 5px -5px black;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.2)
+}
+
+.AdminConnection label {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.AdminConnection input {
+  width: 20vw;
+  padding: 1vw;
+  margin: 1vw;
+  border-radius: 10px;
+  transition: 0.2s linear;
+}
+
+.AdminConnection input:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.AdminConnection input:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.AdminConnection caption {
+  font-size: .7em;
+}
+
+.AdminConnection button {
+  cursor: pointer;
+  min-width: 100px;
+  padding: 10px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: 0.2s linear;
+  font-weight: bold;
+}
+
+.AdminConnection button:hover {
+  background-color: red;
+  transform: scale(1.1);
+  color: white;
+}
+
+.AdminConnection .connection-required {
+  color: red;
+}

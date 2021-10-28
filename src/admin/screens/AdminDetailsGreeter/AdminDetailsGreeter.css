@@ -1,0 +1,44 @@
+.admin-details-greeter-container{
+  position: absolute;
+  width: 70%;
+  left: 30%;
+}
+
+.admin-details-greeter-title{
+  padding: 20px 0;
+  text-align: center;
+  margin: 0 50px;
+  color : rgba(0, 0, 0, 0.6);
+  font-size: 2.5rem;
+  border-bottom: 1px solid black;
+}
+
+.admin-details-greeter-list{
+  padding-top: 20px ;
+  margin: 0 50px;
+}
+
+.admin-details-greeter-item{
+  padding: 20px 0;
+  border-bottom: 1px solid;
+  list-style: none;
+}
+
+.admin-details-greeter-item span{
+  text-decoration: underline;
+  font-weight: bold;
+  color : rgba(0, 0, 0, 0.8);
+}
+
+.admin-details-icon-btn{
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+  padding: 0 2px;
+}
+
+.admin-greeter-photo {
+  width: 20vw;
+}

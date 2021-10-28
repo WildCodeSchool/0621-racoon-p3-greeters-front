@@ -1,0 +1,115 @@
+.row {
+  background: var(--bg-color-beige);
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social {
+  margin:16px;
+}
+
+.button{
+  font-family: 'Titillium Web', sans-serif;
+  background-color: var(--bg-color-beige);
+  padding: 0 30px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 66px;
+  color: black;
+  cursor: pointer;
+  transition: 0.2s linear;
+  line-height: 50px;
+}
+.button:hover {
+  color: white;
+  background: black;
+}
+.globalCollon {
+  display:flex ;
+  margin: 20px 20px 0px 20px;
+  justify-content: space-evenly
+}
+.Titre {
+  padding: 20px;
+}
+.Titre img {
+  padding-top: 35px;
+  width: 200px;
+}
+.Info {
+  list-style-type: none;
+  margin:20px;
+  padding:0px;
+}
+.sousTitre {
+margin: 20px;
+}
+.Info li a {
+  text-decoration: none;
+  color: black;
+}
+.footer-logo-content {
+  margin-left:200px;
+  margin-right: 33px
+}
+.footer-logo-content img {
+  display: flex;
+  width: 170px;
+  padding: 20px;
+}
+.legal-link {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  margin-top:10px;
+}
+.logo-mention-legale {
+  display: block;
+}
+
+.mention-legal-tittle {
+  font-size: 10px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  margin: 0;
+}
+
+@media screen and (min-width: 641px) and (max-width: 900px) {
+  .footer-logo-content {
+    margin-left:0px;
+    margin-right: 0px
+  }
+}
+
+@media (max-width: 640px) { 
+  .globalCollon{
+    display:flex ;
+    flex-direction: column;
+    justify-content: center;
+}
+.footer-logo-content {
+  margin: 0 auto;
+}
+.footer-logo-content img {
+  margin:0 auto;
+  display: block;
+}
+.button {
+  padding: 0 20px;
+}
+.social {
+  margin:10px;
+  }
+}

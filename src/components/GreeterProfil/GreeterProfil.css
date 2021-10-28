@@ -1,0 +1,28 @@
+.greeter-profil {
+  display: flex;
+  justify-content: center;
+  margin-top:1vh;
+}
+
+.greeter-profil-left {
+  padding: 0 2vw 0vh 0vw;
+}
+
+.greeter-profil-right {
+  padding: 0 0vw 2vh 0;
+} 
+
+@media screen and (max-width: 1024px) {
+  .greeter-profil {
+    display: block;
+    text-align: center;
+    margin-top: 8vh;
+  }
+  .greeter-profil-left {
+    padding: 0;
+  }
+  
+  .greeter-profil-right {
+    padding: 0;
+  } 
+}
